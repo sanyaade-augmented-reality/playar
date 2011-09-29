@@ -30,7 +30,7 @@ The main server also handles communications between the game slot for teaming in
 Each time a new game is started, a virtual copy of it is launch in the java environment. At the start request, it receive the socket port to use privately with the player and start listening for players’ request on the dedicated socket port. At startup it load the requested cartridge, load the lua game table related to the cartridge, verify if the player as already started this game, restore player state if necessary, and compile by itself all the functions specific to that scenario and to this player. As long as the timeout preset is not reach, It remain idle in the memory, Always ready to answer to it’s unique players’ requests. 
 
 
-= What can we do with this server?
+= What can we do with this server?=
 The playar server can be used to role playing a game based on gps location. A lot of possible usage can be achieve with this server. Creating scenario for team building events. Viral Marketing campaing. Geo Enhanced TV shows or movies. Interactive touristical guide. Simulation for Emergency  disaster. Just build the scenario you want on Urwigo, upload and it’s ready to play.
 
  Easy …as 1 2 3 …!

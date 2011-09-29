@@ -2,14 +2,11 @@
 
 = Playar  Geo-MMORPG Game Server Features =
 
--Wherigo cartridge compatible
--Urwigo project compatible.
--Team Playing
--Layar Vision compatible
--Upload your cartridge scenario and play at it.
-
----- 
-
+Wherigo cartridge compatible
+Urwigo project compatible.
+Team Playing
+Layar Vision compatible
+Upload your cartridge scenario and play at it.
 
 = Key Concept of Playar server =
 

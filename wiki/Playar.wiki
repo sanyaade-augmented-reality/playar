@@ -61,7 +61,7 @@ Run your MatchsServers build.
 
 Start imajiematch application on tomcat
 
-Put your layar api endpoint to http://<yourhost>:8080/IMAJIEMATCH/layar?developerID=<YOUR ID SET IN CONSTANTS.JAVA>
+Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerID=<YOUR ID SET IN CONSTANTS.JAVA>
 
 And enjoy.
 

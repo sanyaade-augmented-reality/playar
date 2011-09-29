@@ -49,7 +49,7 @@ Adjust the settings of those files according to your system.
 On MainServerProject we have 2 files to build. MatchsServers.java and PlayerMatchServer.java.
 (TODO Configuration need to be moved to a property file)
 
-Place the build made out of those 2 files ( with librairies and classes) in the directory according to the setting in the <Constant.java> files.
+Place the build made out of those 2 files ( with librairies and classes) in the directory according to the setting in the Constant.java files.
 
 Place the demo cartriges with the media content folder in the directory you chose in the Constants files.
 Build and deploy on tomcat7 imajiematch project.
@@ -58,7 +58,7 @@ Run your MatchsServers build.
 
 Start imajiematch application on tomcat
 
-Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerID=(YOUR ID SET IN CONSTANTS.JAVA)
+Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerID=YOUR_ID_SET_IN_CONSTANTS.JAVA
 
 And enjoy.
 

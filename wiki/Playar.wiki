@@ -66,9 +66,9 @@ Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerI
 And enjoy.
 
 ==Left to be done on dev:==
--Callback return on player input request for clues.
--Team Gaming behavior
--Work on stability
--Finish the integration on community builder.
+Callback return on player input request for clues.
+Team Gaming behavior
+Work on stability
+Finish the integration on community builder.
 
 (SOON How to build a cartridge compatible with Playar and Layar Vision)

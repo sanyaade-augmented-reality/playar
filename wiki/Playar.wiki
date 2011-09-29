@@ -31,7 +31,7 @@ Each time a new game is started, a virtual copy of it is launch in the java envi
 
 
 = What can we do with this server?=
-The playar server can be used to role playing a game based on gps location. A lot of possible usage can be achieve with this server. Creating scenario for team building events. Viral Marketing campaing. Geo Enhanced TV shows or movies. Interactive touristical guide. Simulation for Emergency  disaster. Just build the scenario you want on Urwigo, upload and it’s ready to play.
+The playar server can be used to drive role playing a game based on gps location. A lot of possible usage can be achieve with this server. Creating scenario for team building events. Viral Marketing campaing. Geo Enhanced TV shows or movies. Interactive touristical guide. Simulation for Emergency  disaster. Just build the scenario you want on Urwigo, upload and it’s ready to play.
 
  Easy …as 1 2 3 …!
 

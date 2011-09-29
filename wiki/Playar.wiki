@@ -39,9 +39,9 @@ The playar server can be used to role playing a game based on gps location. A lo
 As of writing those lines, playar server is still in pre-alpha release. But we’re close to have the first alpha release unveil. The original plan was to be at this state of development at the end of the year. But Layar Vision Challenge push us in an tremendous amount of work over the last 6 weeks. And having the server in this state of development put us closer than ever to achieve the goals we have at imajie with this server.
 
 ==Prerequisties:==
--Tomcat7
--Apache server with jomla 1.7
--Community builder joomla component installed
+Tomcat7
+Apache server with jomla 1.7
+Community builder joomla component installed
 
 ==Configuration:==
 There is 2 files involve in the configuration Both same name Constant.java located in org.imajie.server.web of imajiematch project and MatchsServer project. 

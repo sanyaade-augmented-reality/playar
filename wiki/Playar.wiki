@@ -47,9 +47,10 @@ As of writing those lines, playar server is still in pre-alpha release. But weâ€
 -Community builder joomla component installed
 
 ==Configuration:==
-There is 2 files involve in the configuration  (TODO Need to be moved to a property file) Both same name <Constant.java> located in org.imajie.server.web of imajiematch project and MatchsServer project. 
+There is 2 files involve in the configuration Both same name <Constant.java> located in org.imajie.server.web of imajiematch project and MatchsServer project. 
 Adjust the settings of those files according to your system.
 On MainServerProject we have 2 files to build.<MatchsServers.java> and <PlayerMatchServer.java>.
+(TODO Configuration need to be moved to a property file)
 
 Place the build made out of those 2 files ( with librairies and classes) in the directory according to the setting in the <Constant.java> files.
 
@@ -71,4 +72,3 @@ And enjoy.
 -Finish the integration on community builder.
 
 (SOON How to build a cartridge compatible with Playar and Layar Vision)
-

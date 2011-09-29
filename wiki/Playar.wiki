@@ -47,9 +47,9 @@ As of writing those lines, playar server is still in pre-alpha release. But weâ€
 -Community builder joomla component installed
 
 ==Configuration:==
-There is 2 files involve in the configuration Both same name <Constant.java> located in org.imajie.server.web of imajiematch project and MatchsServer project. 
+There is 2 files involve in the configuration Both same name Constant.java located in org.imajie.server.web of imajiematch project and MatchsServer project. 
 Adjust the settings of those files according to your system.
-On MainServerProject we have 2 files to build.<MatchsServers.java> and <PlayerMatchServer.java>.
+On MainServerProject we have 2 files to build. MatchsServers.java and PlayerMatchServer.java.
 (TODO Configuration need to be moved to a property file)
 
 Place the build made out of those 2 files ( with librairies and classes) in the directory according to the setting in the <Constant.java> files.
@@ -61,7 +61,7 @@ Run your MatchsServers build.
 
 Start imajiematch application on tomcat
 
-Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerID=<YOUR ID SET IN CONSTANTS.JAVA>
+Put your layar api endpoint to http://yourhost:8080/IMAJIEMATCH/layar?developerID=(YOUR ID SET IN CONSTANTS.JAVA)
 
 And enjoy.
 

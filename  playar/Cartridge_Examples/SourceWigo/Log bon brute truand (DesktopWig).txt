@@ -1,0 +1,610 @@
+init:
+Deleting: C:\Users\Etudiant\Desktop\OpenWIG\DesktopWIG\build\built-jar.properties
+deps-jar:
+Updating property file: C:\Users\Etudiant\Desktop\OpenWIG\DesktopWIG\build\built-jar.properties
+compile:
+run:
+Creating engine...
+Creating state...
+Building javafunc map...
+Loading stdlib...calling...
+Registering WIG libs...
+Building event queue...
+Loading gwc...loading code...parsing...calling...
+PROP: (unnamed).Id is set to 9a24926b-8a2e-4ca2-b0b5-6827d9d4a20f
+PROP: Blondin.Name is set to Blondin
+PROP: Blondin.Description is set to 
+PROP: Blondin.AltText is set to 
+PROP: Blondin.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1dff3a2
+PROP: (unnamed).Id is set to 5e945045-0f5c-4443-9907-65f2fc5e6da8
+PROP: La Brute.Name is set to La Brute
+PROP: La Brute.Description is set to 
+PROP: La Brute.AltText is set to 
+PROP: La Brute.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1f42b49
+PROP: (unnamed).Id is set to ccca44fe-8627-4af6-b175-78b99436ef18
+PROP: Le Truand.Name is set to Le Truand
+PROP: Le Truand.Description is set to 
+PROP: Le Truand.AltText is set to 
+PROP: Le Truand.Resources is set to se.krka.kahlua.vm.LuaTableImpl@145e044
+PROP: (unnamed).Id is set to 652c6fba-f684-4ac5-8a7d-11a34afd0838
+PROP: Accueil.Name is set to Accueil
+PROP: Accueil.Description is set to 
+PROP: Accueil.AltText is set to 
+PROP: Accueil.Resources is set to se.krka.kahlua.vm.LuaTableImpl@86c347
+PROP: (unnamed).Id is set to 698984df-71ff-47e3-91be-173d5bc7a304
+PROP: Blondin visage.Name is set to Blondin visage
+PROP: Blondin visage.Description is set to 
+PROP: Blondin visage.AltText is set to 
+PROP: Blondin visage.Resources is set to se.krka.kahlua.vm.LuaTableImpl@17e6a96
+PROP: (unnamed).Id is set to bafd0ce8-76d6-491b-b820-9152cebf6823
+PROP: Bip Windows.Name is set to Bip Windows
+PROP: Bip Windows.Description is set to 
+PROP: Bip Windows.AltText is set to 
+PROP: Bip Windows.Resources is set to se.krka.kahlua.vm.LuaTableImpl@87a5cc
+PROP: (unnamed).Id is set to fa123679-680b-42db-a787-b1b854237e9e
+PROP: Affiche du film.Name is set to Affiche du film
+PROP: Affiche du film.Description is set to 
+PROP: Affiche du film.AltText is set to 
+PROP: Affiche du film.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1960f05
+PROP: (unnamed).Id is set to 349b52a6-86d8-4ff2-9171-2a886d01af3e
+PROP: Blondin 2.Name is set to Blondin 2
+PROP: Blondin 2.Description is set to 
+PROP: Blondin 2.AltText is set to 
+PROP: Blondin 2.Resources is set to se.krka.kahlua.vm.LuaTableImpl@b42cbf
+PROP: (unnamed).Id is set to 570aaea2-4c52-42f4-847f-56a2f4b78800
+PROP: Tombe #1.Name is set to Tombe #1
+PROP: Tombe #1.Description is set to La reponse a l'epreuve ? Tombe Zone Sud ? est sur cette tombe dont la coordonnee est:<BR>
+N46 52.363 W71 09.835
+PROP: Tombe #1.AltText is set to 
+PROP: Tombe #1.Resources is set to se.krka.kahlua.vm.LuaTableImpl@e5b723
+PROP: (unnamed).Id is set to 9502c55e-2bf4-40a6-898b-b9a3a68b1724
+PROP: Tombe #2.Name is set to Tombe #2
+PROP: Tombe #2.Description is set to La reponse a l'epreuve ? Tombe Zone Ouest ? est sur cette tombe dont la coordonnee est:<BR>
+N46 52.355 W71 09.874
+PROP: Tombe #2.AltText is set to 
+PROP: Tombe #2.Resources is set to se.krka.kahlua.vm.LuaTableImpl@15a8767
+PROP: (unnamed).Id is set to 4c59cca2-e4c1-476b-8349-55de91fd540c
+PROP: Tombe #3.Name is set to Tombe #3
+PROP: Tombe #3.Description is set to La reponse a l'epreuve ? Tombe Zone Nord ? est sur cette tombe dont la coordonnee est:<BR>
+N46 52.423 W71 09.941
+PROP: Tombe #3.AltText is set to 
+PROP: Tombe #3.Resources is set to se.krka.kahlua.vm.LuaTableImpl@6f7ce9
+PROP: (unnamed).Id is set to f09ede1b-1f81-49cd-a75c-ce839b82eafd
+PROP: Tombe #1 petit.Name is set to Tombe #1 petit
+PROP: Tombe #1 petit.Description is set to 
+PROP: Tombe #1 petit.AltText is set to 
+PROP: Tombe #1 petit.Resources is set to se.krka.kahlua.vm.LuaTableImpl@171bbc9
+PROP: (unnamed).Id is set to 3205d762-cde4-463b-8096-4ae31c75172e
+PROP: La Brute Visage.Name is set to La Brute Visage
+PROP: La Brute Visage.Description is set to 
+PROP: La Brute Visage.AltText is set to 
+PROP: La Brute Visage.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1dfafd1
+PROP: (unnamed).Id is set to ed176229-df57-42e5-92c6-ebe7ca9e26b2
+PROP: Le Truand Visage.Name is set to Le Truand Visage
+PROP: Le Truand Visage.Description is set to 
+PROP: Le Truand Visage.AltText is set to 
+PROP: Le Truand Visage.Resources is set to se.krka.kahlua.vm.LuaTableImpl@8fce95
+PROP: (unnamed).Id is set to 1f531dc9-18bc-45fe-a8b7-1c70bf345f75
+PROP: Tombe #2 petit.Name is set to Tombe #2 petit
+PROP: Tombe #2 petit.Description is set to 
+PROP: Tombe #2 petit.AltText is set to 
+PROP: Tombe #2 petit.Resources is set to se.krka.kahlua.vm.LuaTableImpl@143c8b3
+PROP: (unnamed).Id is set to b2a6d8bd-caf9-47e0-aaf0-f22a61407d82
+PROP: Tombe #3 petit.Name is set to Tombe #3 petit
+PROP: Tombe #3 petit.Description is set to 
+PROP: Tombe #3 petit.AltText is set to 
+PROP: Tombe #3 petit.Resources is set to se.krka.kahlua.vm.LuaTableImpl@12d7a10
+PROP: (unnamed).Id is set to 037051a5-4283-4019-9a43-762c1d87d11e
+PROP: Zubulus_msg.Name is set to Zubulus_msg
+PROP: Zubulus_msg.Description is set to 
+PROP: Zubulus_msg.AltText is set to 
+PROP: Zubulus_msg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@a8c488
+PROP: (unnamed).Id is set to ba8d917b-9934-46c7-94cc-e0b01a637b86
+PROP: Le Bon, la brute et le truand.Name is set to Le Bon, la brute et le truand
+PROP: Le Bon, la brute et le truand.Description is set to Vous souvenez-vous de ce bon vieux film de Sergio Leone, datant de 1966, dans lequel la finale se passait dans un cimetiere? (Vous me voyez venir?...)<BR>
+<BR>
+Le tresor, que voulaient s'approprier les 3 mercenaires - Blondin, le Bon (Clint Eastwood), la Brute (Lee Van Cleef) et le Truand (Eli Wallach) - etait cache dans une des tombes d'un immense cimetiere dont seul Blondin connaissait le nom sur la pierre tombale. (La, me voyez-vous venir?...)<BR>
+<BR>
+Le jeu se deroule, he oui, dans un cimetiere. Vous devrez decouvrir les reponses sur 3 pierres tombales. Lorsque vous aurez decouvert ces reponses, et seulement lorsque ces 3 reponses seront correctes, la direction vers la cache apparaitra dans le jeu.
+PROP: Le Bon, la brute et le truand.Visible is set to true
+PROP: Le Bon, la brute et le truand.Activity is set to Geocache
+PROP: Le Bon, la brute et le truand.StartingLocationDescription is set to 
+PROP: Le Bon, la brute et le truand.StartingLocation is set to ZonePoint(45.5154532974572,-73.5601326502991,Distance(0.0))
+PROP: Le Bon, la brute et le truand.Version is set to 1.0
+PROP: Le Bon, la brute et le truand.Company is set to 
+PROP: Le Bon, la brute et le truand.Author is set to Zubulus
+PROP: Le Bon, la brute et le truand.BuilderVersion is set to URWIGO 1.12.4091.37853
+PROP: Le Bon, la brute et le truand.CreateDate is set to 09/01/2010 22:35:56
+PROP: Le Bon, la brute et le truand.PublishDate is set to 1/1/0001 12:00:00 AM
+PROP: Le Bon, la brute et le truand.UpdateDate is set to 09/08/2011 18:03:44
+PROP: Le Bon, la brute et le truand.LastPlayedDate is set to 1/1/0001 12:00:00 AM
+PROP: Le Bon, la brute et le truand.TargetDevice is set to PocketPC
+PROP: Le Bon, la brute et le truand.TargetDeviceVersion is set to 0
+PROP: Le Bon, la brute et le truand.StateId is set to 1
+PROP: Le Bon, la brute et le truand.CountryId is set to 2
+PROP: Le Bon, la brute et le truand.Complete is set to false
+PROP: Le Bon, la brute et le truand.UseLogging is set to true
+PROP: Le Bon, la brute et le truand.Media is set to Accueil
+ZONE: setItem KeyId.... value : e02a8232-f213-4d52-9209-3e241a0f4e9a
+PROP: (unnamed).Id is set to e02a8232-f213-4d52-9209-3e241a0f4e9a
+ZONE: setItem KeyName.... value : Zone Sud
+PROP: Zone Sud.Name is set to Zone Sud
+ZONE: setItem KeyDescription.... value : Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"Decedee le 16 sept 1955 agee de 59 ans", prenom?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+PROP: Zone Sud.Description is set to Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"Decedee le 16 sept 1955 agee de 59 ans", prenom?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+ZONE: setItem KeyVisible.... value : true
+PROP: Zone Sud.Visible is set to true
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@1feca64
+PROP: Zone Sud.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1feca64
+PROP: cmdRepondre.Custom is set to true
+PROP: cmdRepondre.Id is set to 8fb4774d-7d4c-4e1f-97fc-e34d14af9508
+PROP: cmdRepondre.WorksWithAll is set to true
+PROP: cmdFelicitations.Custom is set to true
+PROP: cmdFelicitations.Id is set to f37da3c8-7368-4cb0-a998-5e7fc6bfaca9
+PROP: cmdFelicitations.WorksWithAll is set to true
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: Zone Sud.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : Always
+PROP: Zone Sud.ShowObjects is set to Always
+ZONE: setItem KeyProximityRange.... value : Distance(60.0)
+PROP: Zone Sud.ProximityRange is set to Distance(60.0)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: Zone Sud.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : true
+PROP: Zone Sud.Active is set to true
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@998b08
+PROP: Zone Sud.Points is set to se.krka.kahlua.vm.LuaTableImpl@998b08
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(46.8726355137025,-71.1639466475272,Distance(0.0))
+PROP: Zone Sud.OriginalPoint is set to ZonePoint(46.8726355137025,-71.1639466475272,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: Zone Sud.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Meters
+PROP: Zone Sud.ProximityRangeUOM is set to Meters
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: Zone Sud.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: Zone Sud.InRangeName is set to 
+ZONE: setItem KeyId.... value : 4e33d158-92d5-4c27-a86b-874aabdca683
+PROP: (unnamed).Id is set to 4e33d158-92d5-4c27-a86b-874aabdca683
+ZONE: setItem KeyName.... value : Zone Ouest
+PROP: Zone Ouest.Name is set to Zone Ouest
+ZONE: setItem KeyDescription.... value : Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"1882 - 1948", prenom?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+PROP: Zone Ouest.Description is set to Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"1882 - 1948", prenom?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+ZONE: setItem KeyVisible.... value : true
+PROP: Zone Ouest.Visible is set to true
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@76cbf7
+PROP: Zone Ouest.Commands is set to se.krka.kahlua.vm.LuaTableImpl@76cbf7
+PROP: cmdRepondre.Custom is set to true
+PROP: cmdRepondre.Id is set to e749abe4-7275-454e-8cba-180dbdb2124c
+PROP: cmdRepondre.WorksWithAll is set to true
+PROP: cmdFelicitations.Custom is set to true
+PROP: cmdFelicitations.Id is set to 2a13169c-1abb-4e0a-83a0-6c39d65a5325
+PROP: cmdFelicitations.WorksWithAll is set to true
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: Zone Ouest.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: Zone Ouest.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(60.0)
+PROP: Zone Ouest.ProximityRange is set to Distance(60.0)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: Zone Ouest.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : true
+PROP: Zone Ouest.Active is set to true
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@148cc8c
+PROP: Zone Ouest.Points is set to se.krka.kahlua.vm.LuaTableImpl@148cc8c
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(46.8727175,-71.1647775,Distance(0.0))
+PROP: Zone Ouest.OriginalPoint is set to ZonePoint(46.8727175,-71.1647775,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: Zone Ouest.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Meters
+PROP: Zone Ouest.ProximityRangeUOM is set to Meters
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: Zone Ouest.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: Zone Ouest.InRangeName is set to 
+ZONE: setItem KeyId.... value : 1db909b7-74b0-4fff-9f7a-4077a14c272c
+PROP: (unnamed).Id is set to 1db909b7-74b0-4fff-9f7a-4077a14c272c
+ZONE: setItem KeyName.... value : Zone Nord
+PROP: Zone Nord.Name is set to Zone Nord
+ZONE: setItem KeyDescription.... value : Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"1452", premier prenom sur cette pierre tombale (en haut et a gauche)?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+PROP: Zone Nord.Description is set to Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"1452", premier prenom sur cette pierre tombale (en haut et a gauche)?<BR>
+<BR>
+Lorsque vous l'aurez trouvee, allez voir le mercenaire et repondez a la question.
+ZONE: setItem KeyVisible.... value : true
+PROP: Zone Nord.Visible is set to true
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@6d084b
+PROP: Zone Nord.Commands is set to se.krka.kahlua.vm.LuaTableImpl@6d084b
+PROP: cmdRepondre.Custom is set to true
+PROP: cmdRepondre.Id is set to 37d8c8de-2c3e-4668-9ea3-9020c7e9ef0e
+PROP: cmdRepondre.WorksWithAll is set to true
+PROP: cmdFelicitations.Custom is set to true
+PROP: cmdFelicitations.Id is set to 0464963f-7d5b-4f09-b791-d9c0cbf1aa07
+PROP: cmdFelicitations.WorksWithAll is set to true
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: Zone Nord.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: Zone Nord.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(60.0)
+PROP: Zone Nord.ProximityRange is set to Distance(60.0)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: Zone Nord.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : true
+PROP: Zone Nord.Active is set to true
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@3bb2b8
+PROP: Zone Nord.Points is set to se.krka.kahlua.vm.LuaTableImpl@3bb2b8
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(46.8737125,-71.1657675,Distance(0.0))
+PROP: Zone Nord.OriginalPoint is set to ZonePoint(46.8737125,-71.1657675,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: Zone Nord.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Meters
+PROP: Zone Nord.ProximityRangeUOM is set to Meters
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: Zone Nord.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: Zone Nord.InRangeName is set to 
+ZONE: setItem KeyId.... value : d72864c9-005f-4ef3-959f-c594e0545b7a
+PROP: (unnamed).Id is set to d72864c9-005f-4ef3-959f-c594e0545b7a
+ZONE: setItem KeyName.... value : Barriere
+PROP: Barriere.Name is set to Barriere
+ZONE: setItem KeyDescription.... value : Franchissez cette barriere (elle devrait etre ouverte), c'est le passage vers la cache. Une fois rendu ici, la zone de la cache apparaitra dans la liste des zones.
+PROP: Barriere.Description is set to Franchissez cette barriere (elle devrait etre ouverte), c'est le passage vers la cache. Une fois rendu ici, la zone de la cache apparaitra dans la liste des zones.
+ZONE: setItem KeyVisible.... value : false
+PROP: Barriere.Visible is set to false
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@152544e
+PROP: Barriere.Commands is set to se.krka.kahlua.vm.LuaTableImpl@152544e
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: Barriere.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: Barriere.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(60.0)
+PROP: Barriere.ProximityRange is set to Distance(60.0)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: Barriere.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : false
+PROP: Barriere.Active is set to false
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@1cdeff
+PROP: Barriere.Points is set to se.krka.kahlua.vm.LuaTableImpl@1cdeff
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(46.8731337015408,-71.1656403497028,Distance(0.0))
+PROP: Barriere.OriginalPoint is set to ZonePoint(46.8731337015408,-71.1656403497028,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: Barriere.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Meters
+PROP: Barriere.ProximityRangeUOM is set to Meters
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: Barriere.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: Barriere.InRangeName is set to 
+ZONE: setItem KeyId.... value : 812603fa-e9d4-43ca-80e2-1d574e39d7af
+PROP: (unnamed).Id is set to 812603fa-e9d4-43ca-80e2-1d574e39d7af
+ZONE: setItem KeyName.... value : La Cache (Zone finale)
+PROP: La Cache (Zone finale).Name is set to La Cache (Zone finale)
+ZONE: setItem KeyDescription.... value : C'est a cet endroit que vous trouverez la cache.<BR>
+<BR>
+(attention, n'allez pas trop loin, il y a une petite falaise pas tres loin de la cache)
+PROP: La Cache (Zone finale).Description is set to C'est a cet endroit que vous trouverez la cache.<BR>
+<BR>
+(attention, n'allez pas trop loin, il y a une petite falaise pas tres loin de la cache)
+ZONE: setItem KeyVisible.... value : false
+PROP: La Cache (Zone finale).Visible is set to false
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@17471e0
+PROP: La Cache (Zone finale).Commands is set to se.krka.kahlua.vm.LuaTableImpl@17471e0
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: La Cache (Zone finale).DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: La Cache (Zone finale).ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(60.0)
+PROP: La Cache (Zone finale).ProximityRange is set to Distance(60.0)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: La Cache (Zone finale).AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : false
+PROP: La Cache (Zone finale).Active is set to false
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@1e04cbf
+PROP: La Cache (Zone finale).Points is set to se.krka.kahlua.vm.LuaTableImpl@1e04cbf
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(46.8724946797324,-71.1650828406143,Distance(0.0))
+PROP: La Cache (Zone finale).OriginalPoint is set to ZonePoint(46.8724946797324,-71.1650828406143,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: La Cache (Zone finale).DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Meters
+PROP: La Cache (Zone finale).ProximityRangeUOM is set to Meters
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: La Cache (Zone finale).OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: La Cache (Zone finale).InRangeName is set to 
+PROP: (unnamed).Id is set to b9404c61-4162-4b89-8dd2-4e61f77d861c
+PROP: Blondin.Name is set to Blondin
+PROP: Blondin.Description is set to 
+PROP: Blondin.Visible is set to false
+PROP: Blondin.Media is set to Blondin
+PROP: Blondin.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1d2068d
+PROP: cmdParleravec.Custom is set to true
+PROP: cmdParleravec.Id is set to 5adb3d8e-a7f0-410b-99a5-8afda58332b3
+PROP: cmdParleravec.WorksWithAll is set to true
+PROP: cmdParlerencoreplus.Custom is set to true
+PROP: cmdParlerencoreplus.Id is set to 2337f38b-c9a6-45ee-834c-d6001f0f00d0
+PROP: cmdParlerencoreplus.WorksWithAll is set to true
+PROP: cmdFairelepreuve.Custom is set to true
+PROP: cmdFairelepreuve.Id is set to 48a3e5d7-b858-4a1b-a023-e65b9c0dc72c
+PROP: cmdFairelepreuve.WorksWithAll is set to true
+PROP: cmdAuRevoir.Custom is set to true
+PROP: cmdAuRevoir.Id is set to 7b71690e-ff9c-4459-bda5-1e1cdd31e079
+PROP: cmdAuRevoir.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Blondin.ObjectLocation is set to nil
+PROP: Blondin.Gender is set to Male
+PROP: Blondin.Type is set to NPC
+PROP: (unnamed).Id is set to 814ceee3-d4fa-4ffd-979b-5baa5263a88c
+PROP: Le Truand.Name is set to Le Truand
+PROP: Le Truand.Description is set to 
+PROP: Le Truand.Visible is set to false
+PROP: Le Truand.Media is set to Le Truand
+PROP: Le Truand.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1ac2f9c
+PROP: cmdParleravec.Custom is set to true
+PROP: cmdParleravec.Id is set to e2b2d6a8-716f-4361-9d3b-8853b3025d27
+PROP: cmdParleravec.WorksWithAll is set to true
+PROP: cmdFairelepreuve.Custom is set to true
+PROP: cmdFairelepreuve.Id is set to 9b883d4d-c928-4950-af9c-38453c8a5630
+PROP: cmdFairelepreuve.WorksWithAll is set to true
+PROP: cmdAuRevoir.Custom is set to true
+PROP: cmdAuRevoir.Id is set to a24bd201-6f95-460c-a18f-550439a37ebb
+PROP: cmdAuRevoir.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Le Truand.ObjectLocation is set to nil
+PROP: Le Truand.Gender is set to Male
+PROP: Le Truand.Type is set to NPC
+PROP: (unnamed).Id is set to 79da5ea3-2b5b-4d1d-9d52-66c2b9927976
+PROP: La Brute.Name is set to La Brute
+PROP: La Brute.Description is set to 
+PROP: La Brute.Visible is set to false
+PROP: La Brute.Media is set to La Brute
+PROP: La Brute.Commands is set to se.krka.kahlua.vm.LuaTableImpl@169ca65
+PROP: cmdParleravec.Custom is set to true
+PROP: cmdParleravec.Id is set to c673a07e-2f48-413b-961a-2cc377e10d43
+PROP: cmdParleravec.WorksWithAll is set to true
+PROP: cmdFairelepreuve.Custom is set to true
+PROP: cmdFairelepreuve.Id is set to 8f9af2e1-1491-4841-9a0c-0fa19bb90a2b
+PROP: cmdFairelepreuve.WorksWithAll is set to true
+PROP: cmdAurevoir.Custom is set to true
+PROP: cmdAurevoir.Id is set to 656c35e6-c5a1-4bb3-971d-d5dce67589cc
+PROP: cmdAurevoir.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: La Brute.ObjectLocation is set to nil
+PROP: La Brute.Gender is set to Male
+PROP: La Brute.Type is set to NPC
+PROP: (unnamed).Id is set to 5d021dd9-bd5b-44d2-8b0c-f7b9f9abd93a
+PROP: Affiche du film.Name is set to Affiche du film
+PROP: Affiche du film.Description is set to 
+PROP: Affiche du film.Visible is set to true
+PROP: Affiche du film.Media is set to Affiche du film
+PROP: Affiche du film.Commands is set to se.krka.kahlua.vm.LuaTableImpl@66e815
+PROP: cmdInfo.Custom is set to true
+PROP: cmdInfo.Id is set to 485eb674-bffe-455d-ab8e-15d34fee12f1
+PROP: cmdInfo.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Affiche du film.ObjectLocation is set to nil
+PROP: Affiche du film.Locked is set to false
+PROP: Affiche du film.Opened is set to false
+PROP: (unnamed).Id is set to e9d15b02-3a93-4108-beab-4c06a16fc54a
+PROP: Tombe dans la Zone Sud.Name is set to Tombe dans la Zone Sud
+PROP: Tombe dans la Zone Sud.Description is set to 
+PROP: Tombe dans la Zone Sud.Visible is set to false
+PROP: Tombe dans la Zone Sud.Media is set to Tombe #1
+PROP: Tombe dans la Zone Sud.Commands is set to se.krka.kahlua.vm.LuaTableImpl@ece65
+PROP: cmdInfo.Custom is set to true
+PROP: cmdInfo.Id is set to a53371fc-cb3a-4af5-a4c3-26a03d9fb642
+PROP: cmdInfo.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Tombe dans la Zone Sud.ObjectLocation is set to nil
+PROP: Tombe dans la Zone Sud.Locked is set to false
+PROP: Tombe dans la Zone Sud.Opened is set to false
+PROP: (unnamed).Id is set to 3afaf1b4-8909-4ee0-acbd-dba5590ca848
+PROP: Tombe a l'Ouest.Name is set to Tombe a l'Ouest
+PROP: Tombe a l'Ouest.Description is set to 
+PROP: Tombe a l'Ouest.Visible is set to false
+PROP: Tombe a l'Ouest.Media is set to Tombe #2
+PROP: Tombe a l'Ouest.Commands is set to se.krka.kahlua.vm.LuaTableImpl@106082
+PROP: cmdInfo.Custom is set to true
+PROP: cmdInfo.Id is set to 68a3875e-a921-437a-aa12-ec20e933810b
+PROP: cmdInfo.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Tombe a l'Ouest.ObjectLocation is set to nil
+PROP: Tombe a l'Ouest.Locked is set to false
+PROP: Tombe a l'Ouest.Opened is set to false
+PROP: (unnamed).Id is set to 48344d3e-f63a-4a0d-809a-eef77dc26474
+PROP: Tombe de la Zone Nord.Name is set to Tombe de la Zone Nord
+PROP: Tombe de la Zone Nord.Description is set to 
+PROP: Tombe de la Zone Nord.Visible is set to false
+PROP: Tombe de la Zone Nord.Media is set to Tombe #3
+PROP: Tombe de la Zone Nord.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1301ed8
+PROP: cmdInfo.Custom is set to true
+PROP: cmdInfo.Id is set to 0d664a70-86b4-4737-906f-894ff3798b90
+PROP: cmdInfo.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Tombe de la Zone Nord.ObjectLocation is set to nil
+PROP: Tombe de la Zone Nord.Locked is set to false
+PROP: Tombe de la Zone Nord.Opened is set to false
+PROP: (unnamed).Id is set to d2d3fee0-8f08-420f-8440-50047bac0b72
+PROP: Tombe Zone Sud.Name is set to Tombe Zone Sud
+PROP: Tombe Zone Sud.Description is set to Cette epreuve n'est pas encore completee!<BR>
+<BR>
+Trouvez la tombe dans la Zone Sud.
+PROP: Tombe Zone Sud.Visible is set to true
+PROP: Tombe Zone Sud.Media is set to Blondin visage
+PROP: Tombe Zone Sud.Active is set to true
+PROP: Tombe Zone Sud.Complete is set to false
+PROP: Tombe Zone Sud.CorrectState is set to None
+PROP: (unnamed).Id is set to 865b6f6c-cfa2-43f6-9062-99886a918ea4
+PROP: Tombe Zone Ouest.Name is set to Tombe Zone Ouest
+PROP: Tombe Zone Ouest.Description is set to Cette epreuve n'est pas encore completee!<BR>
+<BR>
+Trouvez la tombe dans la Zone Ouest.
+PROP: Tombe Zone Ouest.Visible is set to true
+PROP: Tombe Zone Ouest.Media is set to Le Truand Visage
+PROP: Tombe Zone Ouest.Active is set to true
+PROP: Tombe Zone Ouest.Complete is set to false
+PROP: Tombe Zone Ouest.CorrectState is set to None
+PROP: (unnamed).Id is set to 26998423-d312-4cf3-8aec-e9a3499c2112
+PROP: Tombe Zone Nord.Name is set to Tombe Zone Nord
+PROP: Tombe Zone Nord.Description is set to Cette epreuve n'est pas encore completee!<BR>
+<BR>
+Trouvez la tombe dans la Zone Nord.
+PROP: Tombe Zone Nord.Visible is set to true
+PROP: Tombe Zone Nord.Media is set to La Brute Visage
+PROP: Tombe Zone Nord.Active is set to true
+PROP: Tombe Zone Nord.Complete is set to false
+PROP: Tombe Zone Nord.CorrectState is set to None
+PROP: Le Bon, la brute et le truand.ZVariables is set to se.krka.kahlua.vm.LuaTableImpl@a37368
+PROP: (unnamed).Id is set to 828a5b29-023a-40e0-bb80-b9a9bee6f950
+PROP: Q_aff_indices.Name is set to Q_aff_indices
+PROP: Q_aff_indices.Description is set to demande si on affiche les indices
+PROP: Q_aff_indices.Visible is set to true
+PROP: Q_aff_indices.Media is set to Blondin visage
+PROP: Q_aff_indices.Choices is set to se.krka.kahlua.vm.LuaTableImpl@edc3a2
+PROP: Q_aff_indices.InputType is set to MultipleChoice
+PROP: Q_aff_indices.Text is set to Voulez-vous des indices?
+PROP: (unnamed).Id is set to 2c83dbd9-d267-4902-945d-1e4ade618ac0
+PROP: Q_#1_Zone_Sud.Name is set to Q_#1_Zone_Sud
+PROP: Q_#1_Zone_Sud.Description is set to 
+PROP: Q_#1_Zone_Sud.Visible is set to true
+PROP: Q_#1_Zone_Sud.Media is set to Blondin visage
+PROP: Q_#1_Zone_Sud.InputType is set to Text
+PROP: Q_#1_Zone_Sud.Text is set to Question:<BR>
+<BR>
+Decedee le 16 sept 1955 agee de 59 ans, prenom?
+PROP: (unnamed).Id is set to 6ee0fef9-9706-4559-aac7-9d858168a29a
+PROP: Q_#2_Zone_Ouest.Name is set to Q_#2_Zone_Ouest
+PROP: Q_#2_Zone_Ouest.Description is set to 
+PROP: Q_#2_Zone_Ouest.Visible is set to true
+PROP: Q_#2_Zone_Ouest.Media is set to Le Truand Visage
+PROP: Q_#2_Zone_Ouest.InputType is set to Text
+PROP: Q_#2_Zone_Ouest.Text is set to Question:<BR>
+<BR>
+1882 - 1948, prenom?
+PROP: (unnamed).Id is set to 17c720f8-d8ae-495f-8cc1-cc3900f4fcda
+PROP: Q_#3_Zone_Nord.Name is set to Q_#3_Zone_Nord
+PROP: Q_#3_Zone_Nord.Description is set to 
+PROP: Q_#3_Zone_Nord.Visible is set to true
+PROP: Q_#3_Zone_Nord.Media is set to La Brute Visage
+PROP: Q_#3_Zone_Nord.InputType is set to Text
+PROP: Q_#3_Zone_Nord.Text is set to Trouvez la tombe sur laquelle est grave...<BR>
+<BR>
+"1452", premier prenom sur cette pierre tombale (en haut et a gauche)?
+PROP: Le Bon, la brute et le truand.OnStart is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:957
+PROP: Le Bon, la brute et le truand.OnRestore is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:982
+ZONE: setItem KeyOncmdRepondre.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:984
+PROP: Zone Sud.OncmdRepondre is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:984
+ZONE: setItem KeyOncmdFelicitations.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:989
+PROP: Zone Sud.OncmdFelicitations is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:989
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1001
+PROP: Zone Sud.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1001
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1011
+PROP: Zone Sud.OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1011
+ZONE: setItem KeyOncmdRepondre.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1021
+PROP: Zone Ouest.OncmdRepondre is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1021
+ZONE: setItem KeyOncmdFelicitations.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1026
+PROP: Zone Ouest.OncmdFelicitations is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1026
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1038
+PROP: Zone Ouest.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1038
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1050
+PROP: Zone Ouest.OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1050
+ZONE: setItem KeyOncmdRepondre.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1060
+PROP: Zone Nord.OncmdRepondre is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1060
+ZONE: setItem KeyOncmdFelicitations.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1065
+PROP: Zone Nord.OncmdFelicitations is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1065
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1077
+PROP: Zone Nord.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1077
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1089
+PROP: Zone Nord.OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1089
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1099
+PROP: Barriere.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1099
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1119
+PROP: La Cache (Zone finale).OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1119
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1130
+PROP: La Cache (Zone finale).OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1130
+PROP: Q_aff_indices.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1141
+PROP: Q_#1_Zone_Sud.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1170
+PROP: Q_#2_Zone_Ouest.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1238
+PROP: Q_#3_Zone_Nord.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1310
+PROP: Blondin.OncmdParleravec is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1382
+PROP: Blondin.OncmdParlerencoreplus is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1392
+PROP: Blondin.OncmdFairelepreuve is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1397
+PROP: Blondin.OncmdAuRevoir is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1402
+PROP: Le Truand.OncmdParleravec is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1412
+PROP: Le Truand.OncmdFairelepreuve is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1420
+PROP: Le Truand.OncmdAuRevoir is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1425
+PROP: La Brute.OncmdParleravec is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1435
+PROP: La Brute.OncmdFairelepreuve is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1443
+PROP: La Brute.OncmdAurevoir is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1448
+PROP: Affiche du film.OncmdInfo is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1458
+PROP: Tombe dans la Zone Sud.OncmdInfo is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1466
+PROP: Tombe a l'Ouest.OncmdInfo is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1474
+Setting remaining properties...
+Starting game...
+PROP: Tombe de la Zone Nord.OncmdInfo is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:1480
+PROP: (unnamed).CompletionCode is set to 123456789012345
+PROP: Mr. Smith.Name is set to Mr. Smith
+EVNT: Le Bon, la brute et le truand.OnStart
+CALL: MessageBox - Cherchez 3 tombes, une dans chacune des 3 zones. Un mercenaire se trouve dans chacune de ces zones. 
+PROP: cmdParlerencoreplus.Enabled is set to false
+BTTN: Button1 pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:970
+CALL: MessageBox - Dirigez-vous maintenant vers une des 3 zones, lorsque vous y serez, un des 3 mercenaires vous y accu
+BTTN: (cancel) pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:970
+EVNT: Zone Sud.OnEnter
+PROP: Blondin.Visible is set to true
+CALL: MessageBox - Vous entrez dans la zone Sud.
+
+
+
+Cette zone est gardee par Blondin, le Bon.
+EVNT: Blondin.OncmdParleravec
+CALL: MessageBox - Une des tombes que vous cherchez se trouve dans cette zone-ci, la Zone Sud.
+BTTN: Button1 pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:56
+PROP: cmdParlerencoreplus.Enabled is set to true
+BTTN: (cancel) pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:56
+EVNT: Blondin.OncmdParlerencoreplus
+CALL: GetInput - Q_aff_indices
+EVNT: Q_aff_indices.OnGetInput (Oui)
+PROP: Tombe dans la Zone Sud.Visible is set to true
+PROP: Tombe a l'Ouest.Visible is set to true
+PROP: Tombe de la Zone Nord.Visible is set to true
+PROP: cmdParlerencoreplus.Enabled is set to false
+CALL: MessageBox - Vous trouverez les indices dans l'inventaire...
+BTTN: Button1 pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:56
+CALL: ShowScreen(2) 
+BTTN: (cancel) pressed
+callback: function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-64938775-4a95-437f-aed0-b45fc53c0d02.lua:56
+EVNT: Tombe de la Zone Nord.OncmdInfo
+CALL: MessageBox - C'est la tombe a rechercher dans la Zone Nord
+BUILD SUCCESSFUL (total time: 38 seconds)

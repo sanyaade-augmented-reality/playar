@@ -1,0 +1,81 @@
+-------------------
+cartridge Zooventure started (openWIG r386)
+-------------------
+9:56:25|0.0|0.0|0.0|1.0|:: EVNT: Zooventure.OnStart
+9:56:25|0.0|0.0|0.0|1.0|:: CALL: Dialog - "Bienvenue sur la scene de crime Agent Imajieste. Je suis fier que tu ai repondu a l'appel et que tu
+9:56:25|0.0|0.0|0.0|1.0|:: PROP: La foret Temperee.Visible is set to true
+9:56:25|0.0|0.0|0.0|1.0|:: PROP: La foret Temperee.Active is set to true
+9:56:25|0.0|0.0|0.0|1.0|:: PROP: Va a la foret temperee.Active is set to true
+9:56:25|0.0|0.0|0.0|1.0|:: EEND: Zooventure.OnStart
+9:56:50|45.258|-72.9204|0.0|1.0|:: ZONE: inside La foret Temperee
+9:56:50|45.258|-72.9204|0.0|1.0|:: EVNT: La foret Temperee.OnEnter
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: UseWith.Enabled is set to false
+9:56:50|45.258|-72.9204|0.0|1.0|:: CALL: MessageBox - "Ici tu est dans la foret temperee. Heureusement il semble que la queue du cochon est toujours tire-
+9:56:50|45.258|-72.9204|0.0|1.0|:: MOVE: Cochon to La foret Temperee
+9:56:50|45.258|-72.9204|0.0|1.0|:: MOVE: Poule to La foret Temperee
+9:56:50|45.258|-72.9204|0.0|1.0|:: MOVE: Gardien de zoo to La foret Temperee
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: Cochon.Visible is set to true
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: Gardien de zoo.Visible is set to true
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: Va a la foret temperee.Complete is set to true
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:56:50|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:56:50|45.258|-72.9204|0.0|1.0|:: EEND: La foret Temperee.OnEnter
+-------------------
+cartridge Zooventure started (openWIG r386)
+-------------------
+9:58:1|45.258|-72.9204|0.0|1.0|:: EVNT: Zooventure.OnStart
+9:58:1|45.258|-72.9204|0.0|1.0|:: CALL: Dialog - "Bienvenue sur la scene de crime Agent Imajieste. Je suis fier que tu ai repondu a l'appel et que tu
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: La foret Temperee.Visible is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: La foret Temperee.Active is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Va a la foret temperee.Active is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: EEND: Zooventure.OnStart
+9:58:1|45.258|-72.9204|0.0|1.0|:: ZONE: inside La foret Temperee
+9:58:1|45.258|-72.9204|0.0|1.0|:: EVNT: La foret Temperee.OnEnter
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: UseWith.Enabled is set to false
+9:58:1|45.258|-72.9204|0.0|1.0|:: CALL: MessageBox - "Ici tu est dans la foret temperee. Heureusement il semble que la queue du cochon est toujours tire-
+9:58:1|45.258|-72.9204|0.0|1.0|:: MOVE: Cochon to La foret Temperee
+9:58:1|45.258|-72.9204|0.0|1.0|:: MOVE: Poule to La foret Temperee
+9:58:1|45.258|-72.9204|0.0|1.0|:: MOVE: Gardien de zoo to La foret Temperee
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Cochon.Visible is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Gardien de zoo.Visible is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Va a la foret temperee.Complete is set to true
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:58:1|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:58:1|45.258|-72.9204|0.0|1.0|:: EEND: La foret Temperee.OnEnter
+9:58:8|45.258|-72.9204|0.0|1.0|:: STOR: storing game
+9:58:9|45.258|-72.9204|0.0|1.0|:: STOR: store successful
+-------------------
+cartridge Zooventure started (openWIG r386)
+-------------------
+9:58:25|45.258|-72.9204|0.0|1.0|:: java.lang.NullPointerException
+
+stack trace: 
+-------------------
+cartridge Zooventure started (openWIG r386)
+-------------------
+9:58:51|45.258|-72.9204|0.0|1.0|:: EVNT: Zooventure.OnStart
+9:58:51|45.258|-72.9204|0.0|1.0|:: CALL: Dialog - "Bienvenue sur la scene de crime Agent Imajieste. Je suis fier que tu ai repondu a l'appel et que tu
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: La foret Temperee.Visible is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: La foret Temperee.Active is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Va a la foret temperee.Active is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: EEND: Zooventure.OnStart
+9:58:51|45.258|-72.9204|0.0|1.0|:: ZONE: inside La foret Temperee
+9:58:51|45.258|-72.9204|0.0|1.0|:: EVNT: La foret Temperee.OnEnter
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: UseWith.Enabled is set to false
+9:58:51|45.258|-72.9204|0.0|1.0|:: CALL: MessageBox - "Ici tu est dans la foret temperee. Heureusement il semble que la queue du cochon est toujours tire-
+9:58:51|45.258|-72.9204|0.0|1.0|:: MOVE: Cochon to La foret Temperee
+9:58:51|45.258|-72.9204|0.0|1.0|:: MOVE: Poule to La foret Temperee
+9:58:51|45.258|-72.9204|0.0|1.0|:: MOVE: Gardien de zoo to La foret Temperee
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Cochon.Visible is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Gardien de zoo.Visible is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Va a la foret temperee.Complete is set to true
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:58:51|45.258|-72.9204|0.0|1.0|:: PROP: Return.Enabled is set to false
+9:58:51|45.258|-72.9204|0.0|1.0|:: EEND: La foret Temperee.OnEnter
+9:59:34|45.258|-72.9204|0.0|1.0|:: STOR: storing game
+9:59:35|45.258|-72.9204|0.0|1.0|:: STOR: store successful
+-------------------
+cartridge Zooventure started (openWIG r386)
+-------------------
+9:59:38|45.258|-72.9204|0.0|1.0|:: EVNT: Zooventure.OnRestore
+9:59:38|45.258|-72.9204|0.0|1.0|:: EEND: Zooventure.OnRestore

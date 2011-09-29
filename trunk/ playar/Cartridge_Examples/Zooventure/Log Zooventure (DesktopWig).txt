@@ -1,0 +1,589 @@
+init:
+Deleting: C:\Users\Etudiant\Desktop\OpenWIG\DesktopWIG\build\built-jar.properties
+deps-jar:
+Updating property file: C:\Users\Etudiant\Desktop\OpenWIG\DesktopWIG\build\built-jar.properties
+compile:
+run:
+Creating engine...
+Creating state...
+Building javafunc map...
+Loading stdlib...calling...
+Registering WIG libs...
+Building event queue...
+Loading gwc...loading code...parsing...calling...
+PROP: (unnamed).Id is set to 7c7c74e6-7c7e-4b7c-ae01-aa6c7c503bfd
+PROP: brianpenguin.Name is set to brianpenguin
+PROP: brianpenguin.Description is set to 
+PROP: brianpenguin.AltText is set to 
+PROP: brianpenguin.Resources is set to se.krka.kahlua.vm.LuaTableImpl@b8c8e6
+PROP: (unnamed).Id is set to 5b4d2102-bb8f-42a6-aa1e-8b1af6be4f49
+PROP: brianpenguinmsg.Name is set to brianpenguinmsg
+PROP: brianpenguinmsg.Description is set to 
+PROP: brianpenguinmsg.AltText is set to 
+PROP: brianpenguinmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@18d9850
+PROP: (unnamed).Id is set to ac4bbfaa-70eb-480c-97b5-0b95ca465837
+PROP: colobus.Name is set to colobus
+PROP: colobus.Description is set to 
+PROP: colobus.AltText is set to 
+PROP: colobus.Resources is set to se.krka.kahlua.vm.LuaTableImpl@10ab323
+PROP: (unnamed).Id is set to 793cfaed-424a-4443-846e-3cd6f9bf7606
+PROP: colobusmsg.Name is set to colobusmsg
+PROP: colobusmsg.Description is set to 
+PROP: colobusmsg.AltText is set to 
+PROP: colobusmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@176e552
+PROP: (unnamed).Id is set to c0408c74-bbac-4991-ade9-6d41cab8c58a
+PROP: hen.Name is set to hen
+PROP: hen.Description is set to 
+PROP: hen.AltText is set to 
+PROP: hen.Resources is set to se.krka.kahlua.vm.LuaTableImpl@c980c9
+PROP: (unnamed).Id is set to ef55aba6-98c3-46a6-977d-cd6018fe704b
+PROP: henmsg.Name is set to henmsg
+PROP: henmsg.Description is set to 
+PROP: henmsg.AltText is set to 
+PROP: henmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@12611a7
+PROP: (unnamed).Id is set to 9f9d0cc3-c1cc-48ea-b6ef-3cf97d093951
+PROP: jaredpenguin.Name is set to jaredpenguin
+PROP: jaredpenguin.Description is set to 
+PROP: jaredpenguin.AltText is set to 
+PROP: jaredpenguin.Resources is set to se.krka.kahlua.vm.LuaTableImpl@12ad19e
+PROP: (unnamed).Id is set to dad965d1-fcef-4a7f-b1a2-b6a5ee57e7b1
+PROP: jaredpenguinmsg.Name is set to jaredpenguinmsg
+PROP: jaredpenguinmsg.Description is set to 
+PROP: jaredpenguinmsg.AltText is set to 
+PROP: jaredpenguinmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@281d4b
+PROP: (unnamed).Id is set to fe78eccf-361f-493d-8cf4-2a3d271425ea
+PROP: penguingroup.Name is set to penguingroup
+PROP: penguingroup.Description is set to 
+PROP: penguingroup.AltText is set to 
+PROP: penguingroup.Resources is set to se.krka.kahlua.vm.LuaTableImpl@19b5217
+PROP: (unnamed).Id is set to 1db9eac1-4e0c-4247-a9cd-4ba30a7fab97
+PROP: penguingroupmsg.Name is set to penguingroupmsg
+PROP: penguingroupmsg.Description is set to 
+PROP: penguingroupmsg.AltText is set to 
+PROP: penguingroupmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@2a6f16
+PROP: (unnamed).Id is set to feb9b4ef-82b4-45ce-94bf-7deab253e634
+PROP: pinkbackgorilla.Name is set to pinkbackgorilla
+PROP: pinkbackgorilla.Description is set to 
+PROP: pinkbackgorilla.AltText is set to 
+PROP: pinkbackgorilla.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1e3118a
+PROP: (unnamed).Id is set to ce4d6ed0-d7f9-4d88-acff-ef7819c5df46
+PROP: pinkbackgorillamsg.Name is set to pinkbackgorillamsg
+PROP: pinkbackgorillamsg.Description is set to 
+PROP: pinkbackgorillamsg.AltText is set to 
+PROP: pinkbackgorillamsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@94884d
+PROP: (unnamed).Id is set to 1c6ac57d-83ff-4278-879f-5d51a704c2c8
+PROP: sadpig.Name is set to sadpig
+PROP: sadpig.Description is set to 
+PROP: sadpig.AltText is set to 
+PROP: sadpig.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1807ca8
+PROP: (unnamed).Id is set to 1a9fdcec-aadf-4811-ab2e-38d7f10158f7
+PROP: sadpigmsg.Name is set to sadpigmsg
+PROP: sadpigmsg.Description is set to 
+PROP: sadpigmsg.AltText is set to 
+PROP: sadpigmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@7808b9
+PROP: (unnamed).Id is set to bfe5a26d-9f31-420b-8853-501503197161
+PROP: zonepenguinpool.Name is set to zonepenguinpool
+PROP: zonepenguinpool.Description is set to 
+PROP: zonepenguinpool.AltText is set to 
+PROP: zonepenguinpool.Resources is set to se.krka.kahlua.vm.LuaTableImpl@84da23
+PROP: (unnamed).Id is set to f91fb88a-bdd3-4e37-839f-b00ea286b091
+PROP: zonerainforest.Name is set to zonerainforest
+PROP: zonerainforest.Description is set to 
+PROP: zonerainforest.AltText is set to 
+PROP: zonerainforest.Resources is set to se.krka.kahlua.vm.LuaTableImpl@d3d6f
+PROP: (unnamed).Id is set to 5eff3727-bb75-4314-82d6-4375a8f139ae
+PROP: egg2msg.Name is set to egg2msg
+PROP: egg2msg.Description is set to 
+PROP: egg2msg.AltText is set to 
+PROP: egg2msg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@13c468a
+PROP: (unnamed).Id is set to 2f6ae9fb-f0f6-4eb6-8968-d115aa09e4cb
+PROP: zonetemperate.Name is set to zonetemperate
+PROP: zonetemperate.Description is set to 
+PROP: zonetemperate.AltText is set to 
+PROP: zonetemperate.Resources is set to se.krka.kahlua.vm.LuaTableImpl@3b1d04
+PROP: (unnamed).Id is set to 6e24d401-e34a-4fea-9ef8-76ee6a044687
+PROP: egg2.Name is set to egg2
+PROP: egg2.Description is set to 
+PROP: egg2.AltText is set to 
+PROP: egg2.Resources is set to se.krka.kahlua.vm.LuaTableImpl@ee22f7
+PROP: (unnamed).Id is set to 1f442092-13b1-42ac-bf04-8c6207b6ad00
+PROP: egg.Name is set to egg
+PROP: egg.Description is set to 
+PROP: egg.AltText is set to 
+PROP: egg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@39ab89
+PROP: (unnamed).Id is set to 447f4cc9-5990-415e-aae1-f245050032b2
+PROP: eggmsg.Name is set to eggmsg
+PROP: eggmsg.Description is set to 
+PROP: eggmsg.AltText is set to 
+PROP: eggmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@2cb49d
+PROP: (unnamed).Id is set to 4fdba360-943e-4383-b277-a1eb9b8e2d3e
+PROP: zookeepermsg.Name is set to zookeepermsg
+PROP: zookeepermsg.Description is set to 
+PROP: zookeepermsg.AltText is set to 
+PROP: zookeepermsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@105d88a
+PROP: (unnamed).Id is set to 189003c2-4046-4dfb-9059-69a22eae9feb
+PROP: zookeeper.Name is set to zookeeper
+PROP: zookeeper.Description is set to 
+PROP: zookeeper.AltText is set to 
+PROP: zookeeper.Resources is set to se.krka.kahlua.vm.LuaTableImpl@93d6bc
+PROP: (unnamed).Id is set to 036df397-cb07-4e52-b415-c0c98bf0479a
+PROP: lemon.Name is set to lemon
+PROP: lemon.Description is set to 
+PROP: lemon.AltText is set to 
+PROP: lemon.Resources is set to se.krka.kahlua.vm.LuaTableImpl@1f6df4c
+PROP: (unnamed).Id is set to 35cd246c-ca19-4da5-a2d3-df2d114acd04
+PROP: lemonmsg.Name is set to lemonmsg
+PROP: lemonmsg.Description is set to 
+PROP: lemonmsg.AltText is set to 
+PROP: lemonmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@be0e27
+PROP: (unnamed).Id is set to 29ddbd76-23b2-4852-9c11-1e55781f9ed5
+PROP: shampoo.Name is set to shampoo
+PROP: shampoo.Description is set to 
+PROP: shampoo.AltText is set to 
+PROP: shampoo.Resources is set to se.krka.kahlua.vm.LuaTableImpl@193385d
+PROP: (unnamed).Id is set to 0f6cb3e6-2931-42a7-a49d-2e2df3e60311
+PROP: shampoomsg.Name is set to shampoomsg
+PROP: shampoomsg.Description is set to 
+PROP: shampoomsg.AltText is set to 
+PROP: shampoomsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@5973ea
+PROP: (unnamed).Id is set to 4e5fea5b-f5b0-4999-a6bc-4ba0a4aa7e84
+PROP: happypig.Name is set to happypig
+PROP: happypig.Description is set to 
+PROP: happypig.AltText is set to 
+PROP: happypig.Resources is set to se.krka.kahlua.vm.LuaTableImpl@c9131c
+PROP: (unnamed).Id is set to b5b13b0f-6cde-43b9-8866-17e1a38e7ffb
+PROP: happypigmsg.Name is set to happypigmsg
+PROP: happypigmsg.Description is set to 
+PROP: happypigmsg.AltText is set to 
+PROP: happypigmsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@105b99f
+PROP: (unnamed).Id is set to 0ed1b3e3-6705-4204-ae45-b252d40cc38b
+PROP: silverbackgorilla.Name is set to silverbackgorilla
+PROP: silverbackgorilla.Description is set to 
+PROP: silverbackgorilla.AltText is set to 
+PROP: silverbackgorilla.Resources is set to se.krka.kahlua.vm.LuaTableImpl@dda25b
+PROP: (unnamed).Id is set to 001d7e3e-db93-47dd-81d2-aed203bfb6f3
+PROP: silverbackgorillamsg.Name is set to silverbackgorillamsg
+PROP: silverbackgorillamsg.Description is set to 
+PROP: silverbackgorillamsg.AltText is set to 
+PROP: silverbackgorillamsg.Resources is set to se.krka.kahlua.vm.LuaTableImpl@ce2187
+PROP: (unnamed).Id is set to 141e66c3-aee2-42d4-aa00-fe88afa7d4fb
+PROP: Intro.Name is set to Intro
+PROP: Intro.Description is set to 
+PROP: Intro.AltText is set to 
+PROP: Intro.Resources is set to se.krka.kahlua.vm.LuaTableImpl@fb56b1
+PROP: (unnamed).Id is set to c7d0e059-68e8-4e2c-be6a-5071dfb81651
+PROP: Dame Bleue.Name is set to Dame Bleue
+PROP: Dame Bleue.Description is set to 
+PROP: Dame Bleue.AltText is set to 
+PROP: Dame Bleue.Resources is set to se.krka.kahlua.vm.LuaTableImpl@f8968f
+PROP: (unnamed).Id is set to f744e810-855a-4ed8-aec6-9fa2a13bf1b4
+PROP: Heartbeat.Name is set to Heartbeat
+PROP: Heartbeat.Description is set to 
+PROP: Heartbeat.AltText is set to 
+PROP: Heartbeat.Resources is set to se.krka.kahlua.vm.LuaTableImpl@64c34e
+PROP: (unnamed).Id is set to 1d5db4cd-ae7c-4d9e-a3e2-a5d40893a45b
+PROP: Zooventure.Name is set to Zooventure
+PROP: Zooventure.Description is set to Qu'est-ce qui ce passe au Zoo? Quelque chose semble ne pas tourner rond. Est-ce que les pingouin font du grabuge ?
+PROP: Zooventure.Visible is set to true
+PROP: Zooventure.Activity is set to TourGuide
+PROP: Zooventure.StartingLocationDescription is set to 
+PROP: Zooventure.StartingLocation is set to ZonePoint(45.2581360594693,-72.9201339921226,Distance(0.0))
+PROP: Zooventure.Version is set to 1
+PROP: Zooventure.Company is set to Imajie.tv
+PROP: Zooventure.Author is set to Imajie.tv
+PROP: Zooventure.BuilderVersion is set to URWIGO 1.12.4091.37853
+PROP: Zooventure.CreateDate is set to 01/12/2008 17:33:36
+PROP: Zooventure.PublishDate is set to 1/1/0001 12:00:00 AM
+PROP: Zooventure.UpdateDate is set to 09/06/2011 13:30:21
+PROP: Zooventure.LastPlayedDate is set to 1/1/0001 12:00:00 AM
+PROP: Zooventure.TargetDevice is set to PocketPC
+PROP: Zooventure.TargetDeviceVersion is set to 0
+PROP: Zooventure.StateId is set to 1
+PROP: Zooventure.CountryId is set to 2
+PROP: Zooventure.Complete is set to false
+PROP: Zooventure.UseLogging is set to true
+PROP: Zooventure.Media is set to penguingroup
+ZONE: setItem KeyId.... value : 28431a01-8cd1-44c5-9ae5-f7c3bb95453d
+PROP: (unnamed).Id is set to 28431a01-8cd1-44c5-9ae5-f7c3bb95453d
+ZONE: setItem KeyName.... value : La piscine des pingouins
+PROP: La piscine des pingouins.Name is set to La piscine des pingouins
+ZONE: setItem KeyDescription.... value : 
+PROP: La piscine des pingouins.Description is set to 
+ZONE: setItem KeyVisible.... value : false
+PROP: La piscine des pingouins.Visible is set to false
+ZONE: setItem KeyMedia.... value : zonepenguinpool
+PROP: La piscine des pingouins.Media is set to zonepenguinpool
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@15253d5
+PROP: La piscine des pingouins.Commands is set to se.krka.kahlua.vm.LuaTableImpl@15253d5
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: La piscine des pingouins.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: La piscine des pingouins.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(62.1792)
+PROP: La piscine des pingouins.ProximityRange is set to Distance(62.1792)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: La piscine des pingouins.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : false
+PROP: La piscine des pingouins.Active is set to false
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@1fddc31
+PROP: La piscine des pingouins.Points is set to se.krka.kahlua.vm.LuaTableImpl@1fddc31
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(45.25797,-72.9202,Distance(0.0))
+PROP: La piscine des pingouins.OriginalPoint is set to ZonePoint(45.25797,-72.9202,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: La piscine des pingouins.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Feet
+PROP: La piscine des pingouins.ProximityRangeUOM is set to Feet
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: La piscine des pingouins.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: La piscine des pingouins.InRangeName is set to 
+ZONE: setItem KeyId.... value : d10a169e-b8ea-455b-aa60-fc2b7780421b
+PROP: (unnamed).Id is set to d10a169e-b8ea-455b-aa60-fc2b7780421b
+ZONE: setItem KeyName.... value : La foret Temperee
+PROP: La foret Temperee.Name is set to La foret Temperee
+ZONE: setItem KeyDescription.... value : 
+PROP: La foret Temperee.Description is set to 
+ZONE: setItem KeyVisible.... value : false
+PROP: La foret Temperee.Visible is set to false
+ZONE: setItem KeyMedia.... value : zonetemperate
+PROP: La foret Temperee.Media is set to zonetemperate
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@1835282
+PROP: La foret Temperee.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1835282
+ZONE: setItem KeyDistanceRange.... value : Distance(-0.3048)
+PROP: La foret Temperee.DistanceRange is set to Distance(-0.3048)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: La foret Temperee.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(61.2648)
+PROP: La foret Temperee.ProximityRange is set to Distance(61.2648)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: La foret Temperee.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : false
+PROP: La foret Temperee.Active is set to false
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@9df354
+PROP: La foret Temperee.Points is set to se.krka.kahlua.vm.LuaTableImpl@9df354
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(45.25813,-72.9204,Distance(0.0))
+PROP: La foret Temperee.OriginalPoint is set to ZonePoint(45.25813,-72.9204,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Feet
+PROP: La foret Temperee.DistanceRangeUOM is set to Feet
+ZONE: setItem KeyProximityRangeUOM.... value : Feet
+PROP: La foret Temperee.ProximityRangeUOM is set to Feet
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: La foret Temperee.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: La foret Temperee.InRangeName is set to 
+ZONE: setItem KeyId.... value : ec38696c-463f-4f7a-afc9-9679cd67eb1e
+PROP: (unnamed).Id is set to ec38696c-463f-4f7a-afc9-9679cd67eb1e
+ZONE: setItem KeyName.... value : La Foret Tropicale
+PROP: La Foret Tropicale.Name is set to La Foret Tropicale
+ZONE: setItem KeyDescription.... value : 
+PROP: La Foret Tropicale.Description is set to 
+ZONE: setItem KeyVisible.... value : false
+PROP: La Foret Tropicale.Visible is set to false
+ZONE: setItem KeyMedia.... value : zonerainforest
+PROP: La Foret Tropicale.Media is set to zonerainforest
+ZONE: setItem KeyCommands.... value : se.krka.kahlua.vm.LuaTableImpl@1d225a7
+PROP: La Foret Tropicale.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1d225a7
+ZONE: setItem KeyDistanceRange.... value : Distance(0.0)
+PROP: La Foret Tropicale.DistanceRange is set to Distance(0.0)
+ZONE: setItem KeyShowObjects.... value : OnEnter
+PROP: La Foret Tropicale.ShowObjects is set to OnEnter
+ZONE: setItem KeyProximityRange.... value : Distance(60.3504)
+PROP: La Foret Tropicale.ProximityRange is set to Distance(60.3504)
+ZONE: setItem KeyAllowSetPositionTo.... value : false
+PROP: La Foret Tropicale.AllowSetPositionTo is set to false
+ZONE: setItem KeyActive.... value : false
+PROP: La Foret Tropicale.Active is set to false
+ZONE: setItem KeyPoints.... value : se.krka.kahlua.vm.LuaTableImpl@9f5011
+PROP: La Foret Tropicale.Points is set to se.krka.kahlua.vm.LuaTableImpl@9f5011
+ZONE: setItem KeyOriginalPoint.... value : ZonePoint(45.25766,-72.9203,Distance(0.0))
+PROP: La Foret Tropicale.OriginalPoint is set to ZonePoint(45.25766,-72.9203,Distance(0.0))
+ZONE: setItem KeyDistanceRangeUOM.... value : Meters
+PROP: La Foret Tropicale.DistanceRangeUOM is set to Meters
+ZONE: setItem KeyProximityRangeUOM.... value : Feet
+PROP: La Foret Tropicale.ProximityRangeUOM is set to Feet
+ZONE: setItem KeyOutOfRangeName.... value : 
+PROP: La Foret Tropicale.OutOfRangeName is set to 
+ZONE: setItem KeyInRangeName.... value : 
+PROP: La Foret Tropicale.InRangeName is set to 
+PROP: (unnamed).Id is set to 6059de6c-0783-4138-965b-a41b14e56ed1
+PROP: Gardien de zoo.Name is set to Gardien de zoo
+PROP: Gardien de zoo.Description is set to 
+PROP: Gardien de zoo.Visible is set to false
+PROP: Gardien de zoo.Media is set to zookeeper
+PROP: Gardien de zoo.Commands is set to se.krka.kahlua.vm.LuaTableImpl@141b571
+PROP: Talk.Custom is set to true
+PROP: Talk.Id is set to dd977e29-fa33-4209-8e25-62b53dab3553
+PROP: Talk.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Gardien de zoo.ObjectLocation is set to nil
+PROP: Gardien de zoo.Gender is set to Male
+PROP: Gardien de zoo.Type is set to NPC
+PROP: (unnamed).Id is set to 9798a2c3-7899-4301-aae9-87c09c2db601
+PROP: Poule.Name is set to Poule
+PROP: Poule.Description is set to 
+PROP: Poule.Visible is set to false
+PROP: Poule.Media is set to hen
+PROP: Poule.Commands is set to se.krka.kahlua.vm.LuaTableImpl@ef137d
+PROP: Talk.Custom is set to true
+PROP: Talk.Id is set to 2aa76095-71b1-4e27-9bc9-4606c52a3f3f
+PROP: Talk.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to 3848f475-2794-4fb7-8f4a-2921655d9ea4
+PROP: Examine.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Poule.ObjectLocation is set to nil
+PROP: Poule.Gender is set to Female
+PROP: Poule.Type is set to NPC
+PROP: (unnamed).Id is set to da69b10a-6552-4833-a6ea-08022eb26c66
+PROP: Cochon.Name is set to Cochon
+PROP: Cochon.Description is set to 
+PROP: Cochon.Visible is set to false
+PROP: Cochon.Media is set to happypig
+PROP: Cochon.Commands is set to se.krka.kahlua.vm.LuaTableImpl@e32802
+PROP: Talk.Custom is set to true
+PROP: Talk.Id is set to a6dd3847-3d8a-417c-92b4-d57c5a32ded3
+PROP: Talk.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to 034e0041-44a2-40ee-8a51-e095dde146ea
+PROP: Examine.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Cochon.ObjectLocation is set to nil
+PROP: Cochon.Gender is set to Male
+PROP: Cochon.Type is set to NPC
+PROP: (unnamed).Id is set to e814eb28-613b-432c-906c-e32abfb03304
+PROP: Gorille.Name is set to Gorille
+PROP: Gorille.Description is set to 
+PROP: Gorille.Visible is set to false
+PROP: Gorille.Media is set to pinkbackgorilla
+PROP: Gorille.Commands is set to se.krka.kahlua.vm.LuaTableImpl@157c2bd
+PROP: Talk.Custom is set to true
+PROP: Talk.Id is set to cdf2c06b-bff7-4d53-a2ef-1658adeffc23
+PROP: Talk.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to a8776eb1-35e8-41e2-873d-671a2af9d2aa
+PROP: Examine.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Gorille.ObjectLocation is set to nil
+PROP: Gorille.Gender is set to Male
+PROP: Gorille.Type is set to NPC
+PROP: (unnamed).Id is set to 8ff69871-22a5-4ead-94cb-e313d661a4de
+PROP: Macaque.Name is set to Macaque
+PROP: Macaque.Description is set to 
+PROP: Macaque.Visible is set to false
+PROP: Macaque.Media is set to colobus
+PROP: Macaque.Commands is set to se.krka.kahlua.vm.LuaTableImpl@b23210
+PROP: Talk.Custom is set to true
+PROP: Talk.Id is set to 06216de4-e4fc-4faf-af3d-f38158ebf976
+PROP: Talk.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to 21aa458c-9332-43ce-b43f-a15cc7a28d09
+PROP: Examine.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Macaque.ObjectLocation is set to nil
+PROP: Macaque.Gender is set to Male
+PROP: Macaque.Type is set to NPC
+PROP: (unnamed).Id is set to e0ffcb75-bbb0-4d15-a87a-f02e98e4ab86
+PROP: Brian le pingouin.Name is set to Brian le pingouin
+PROP: Brian le pingouin.Description is set to 
+PROP: Brian le pingouin.Visible is set to false
+PROP: Brian le pingouin.Media is set to brianpenguin
+PROP: Brian le pingouin.Commands is set to se.krka.kahlua.vm.LuaTableImpl@6ac461
+PROP: Take.Custom is set to true
+PROP: Take.Id is set to 427b8096-3cda-4495-822e-974b73d6a0d5
+PROP: Take.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to d2621b7f-cc92-4551-adbd-c7c478aaaca4
+PROP: Examine.WorksWithAll is set to true
+PROP: Return.Custom is set to true
+PROP: Return.Id is set to 1ee86ee3-960c-4074-a6db-6a6b58ee839a
+PROP: Return.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Brian le pingouin.ObjectLocation is set to nil
+PROP: Brian le pingouin.Gender is set to Male
+PROP: Brian le pingouin.Type is set to NPC
+PROP: (unnamed).Id is set to 95f9b704-612a-4929-bc79-01d88141009e
+PROP: Jared le pingouin.Name is set to Jared le pingouin
+PROP: Jared le pingouin.Description is set to 
+PROP: Jared le pingouin.Visible is set to true
+PROP: Jared le pingouin.Media is set to jaredpenguin
+PROP: Jared le pingouin.Commands is set to se.krka.kahlua.vm.LuaTableImpl@182da3d
+PROP: Take.Custom is set to true
+PROP: Take.Id is set to 99275f5f-66f9-4e34-af7e-e8fada3332f1
+PROP: Take.WorksWithAll is set to true
+PROP: Examine.Custom is set to true
+PROP: Examine.Id is set to 2bb80522-111a-4721-94c5-6f2ea4783132
+PROP: Examine.WorksWithAll is set to true
+PROP: Return.Custom is set to true
+PROP: Return.Id is set to 010008c8-f82a-49e5-9cc7-817ca2baaaff
+PROP: Return.WorksWithAll is set to true
+ITem setted position.....null
+
+PROP: Jared le pingouin.ObjectLocation is set to nil
+PROP: Jared le pingouin.Gender is set to Male
+PROP: Jared le pingouin.Type is set to NPC
+PROP: (unnamed).Id is set to 0abfdcfc-d6da-4c8c-ae43-e34a7b90e084
+PROP: Shampoing.Name is set to Shampoing
+PROP: Shampoing.Description is set to 
+PROP: Shampoing.Visible is set to false
+PROP: Shampoing.Media is set to shampoo
+PROP: Shampoing.Commands is set to se.krka.kahlua.vm.LuaTableImpl@1c5f743
+PROP: UseWith.Custom is set to true
+PROP: UseWith.Id is set to 13b4a12f-7f7a-44d1-8b5b-109706188c5c
+PROP: UseWith.WorksWithAll is set to false
+PROP: UseWith.WorksWithListIds is set to se.krka.kahlua.vm.LuaTableImpl@1ec8909
+ITem setted position.....null
+
+PROP: Shampoing.ObjectLocation is set to nil
+PROP: Shampoing.Locked is set to false
+PROP: Shampoing.Opened is set to false
+PROP: (unnamed).Id is set to 7dfef979-cb2d-4ad2-bc3c-d8af61301b02
+PROP: Tire-bouchonner la queue du cochon..Name is set to Tire-bouchonner la queue du cochon.
+PROP: Tire-bouchonner la queue du cochon..Description is set to Il semble que l'un des pingouins a completement etire la queue du cochon. Tu doit trouver une maniere de la remettre en tire-bouchon pour lui eviter une profonde humiliation..
+PROP: Tire-bouchonner la queue du cochon..Visible is set to true
+PROP: Tire-bouchonner la queue du cochon..Media is set to sadpig
+PROP: Tire-bouchonner la queue du cochon..Active is set to false
+PROP: Tire-bouchonner la queue du cochon..Complete is set to false
+PROP: Tire-bouchonner la queue du cochon..CorrectState is set to None
+PROP: (unnamed).Id is set to 9609f85b-2b76-4297-89d7-54b664118f7c
+PROP: Va a la foret temperee.Name is set to Va a la foret temperee
+PROP: Va a la foret temperee.Description is set to Dirige toi vers la foret temperee pour jetter un oeil sur les animaux.
+PROP: Va a la foret temperee.Visible is set to true
+PROP: Va a la foret temperee.Media is set to zonetemperate
+PROP: Va a la foret temperee.Active is set to false
+PROP: Va a la foret temperee.Complete is set to false
+PROP: Va a la foret temperee.CorrectState is set to None
+PROP: (unnamed).Id is set to 231abfeb-ca07-4bf2-b5d8-d11a16536aac
+PROP: Va a la foret tropicale.Name is set to Va a la foret tropicale
+PROP: Va a la foret tropicale.Description is set to JeTte un coup d'oeil la-bas pour voir ce qui s'y passe !
+PROP: Va a la foret tropicale.Visible is set to true
+PROP: Va a la foret tropicale.Media is set to zonerainforest
+PROP: Va a la foret tropicale.Active is set to false
+PROP: Va a la foret tropicale.Complete is set to false
+PROP: Va a la foret tropicale.CorrectState is set to None
+PROP: (unnamed).Id is set to 7502ffdd-929c-4d44-b0e2-aab239e319be
+PROP: Trouve Jared le Pingouin.Name is set to Trouve Jared le Pingouin
+PROP: Trouve Jared le Pingouin.Description is set to  Jared le Pingouin a cause des troubles un peu partout dans le zoo! Ne le laisse pas s'echapper.
+PROP: Trouve Jared le Pingouin.Visible is set to true
+PROP: Trouve Jared le Pingouin.Media is set to jaredpenguin
+PROP: Trouve Jared le Pingouin.Active is set to false
+PROP: Trouve Jared le Pingouin.Complete is set to false
+PROP: Trouve Jared le Pingouin.CorrectState is set to None
+PROP: (unnamed).Id is set to 5d2fa517-048a-442f-998d-3baa2cf29ad4
+PROP: Trouve Brian le pingouin..Name is set to Trouve Brian le pingouin.
+PROP: Trouve Brian le pingouin..Description is set to On ne peux laissez un trouble fete comme celui-la en liberte ! Trouve ce pingouin.
+PROP: Trouve Brian le pingouin..Visible is set to true
+PROP: Trouve Brian le pingouin..Media is set to brianpenguin
+PROP: Trouve Brian le pingouin..Active is set to false
+PROP: Trouve Brian le pingouin..Complete is set to false
+PROP: Trouve Brian le pingouin..CorrectState is set to None
+PROP: (unnamed).Id is set to 419bd390-90d1-49a5-902f-90200d71345e
+PROP: Va a la piscine des pingouins.Name is set to Va a la piscine des pingouins
+PROP: Va a la piscine des pingouins.Description is set to Va a la piscine des pingoins et discute avec le gardien de zoo pour savoir la suite!
+PROP: Va a la piscine des pingouins.Visible is set to true
+PROP: Va a la piscine des pingouins.Media is set to zonepenguinpool
+PROP: Va a la piscine des pingouins.Active is set to false
+PROP: Va a la piscine des pingouins.Complete is set to false
+PROP: Va a la piscine des pingouins.CorrectState is set to None
+PROP: (unnamed).Id is set to e4c33a94-7dc8-4bad-b2d7-1c78551d1c76
+PROP: Coiffe les cheveux du gorille..Name is set to Coiffe les cheveux du gorille.
+PROP: Coiffe les cheveux du gorille..Description is set to Rose ne semble pas etre la bonne couleur pour un gorille. 
+PROP: Coiffe les cheveux du gorille..Visible is set to true
+PROP: Coiffe les cheveux du gorille..Media is set to pinkbackgorilla
+PROP: Coiffe les cheveux du gorille..Active is set to false
+PROP: Coiffe les cheveux du gorille..Complete is set to false
+PROP: Coiffe les cheveux du gorille..CorrectState is set to None
+PROP: Zooventure.ZVariables is set to se.krka.kahlua.vm.LuaTableImpl@1bb60c3
+PROP: (unnamed).Id is set to 28b13c66-430a-43aa-8c21-8c993ed7e922
+PROP: Puzzleone.Name is set to Puzzleone
+PROP: Puzzleone.Description is set to 
+PROP: Puzzleone.Visible is set to true
+PROP: Puzzleone.InputType is set to Text
+PROP: Puzzleone.Text is set to "According to the information board near the electrical meter, how many volts does it take to turn the bathroom lights on?"
+PROP: (unnamed).Id is set to 8e271859-62ec-4aac-8ca2-953272825691
+PROP: Puzzletwo.Name is set to Puzzletwo
+PROP: Puzzletwo.Description is set to 
+PROP: Puzzletwo.Visible is set to true
+PROP: Puzzletwo.InputType is set to Text
+PROP: Puzzletwo.Text is set to "Find the chart with all of the birds and use it as a reference. The penguin is hiding in the indoor exhibits of the rain forest canopy bird room. Look for the bird with the skinniest neck. What is the bird s name?"
+PROP: UseWith.WorksWithList is set to se.krka.kahlua.vm.LuaTableImpl@cdb06e
+PROP: Zooventure.OnStart is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1062
+PROP: Zooventure.OnRestore is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1082
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1084
+PROP: La piscine des pingouins.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1084
+ZONE: setItem KeyOnProximity.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1095
+PROP: La piscine des pingouins.OnProximity is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1095
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1098
+PROP: La foret Temperee.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1098
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1113
+PROP: La foret Temperee.OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1113
+ZONE: setItem KeyOnEnter.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1120
+PROP: La Foret Tropicale.OnEnter is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1120
+ZONE: setItem KeyOnExit.... value : function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1135
+PROP: La Foret Tropicale.OnExit is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1135
+PROP: Puzzleone.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1140
+PROP: Puzzletwo.OnGetInput is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1170
+PROP: Gardien de zoo.OnTalk is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1198
+PROP: Poule.OnTalk is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1262
+PROP: Poule.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1297
+PROP: Cochon.OnTalk is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1303
+PROP: Cochon.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1345
+PROP: Gorille.OnTalk is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1351
+PROP: Gorille.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1400
+PROP: Macaque.OnTalk is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1413
+PROP: Macaque.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1449
+PROP: Brian le pingouin.OnTake is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1455
+PROP: Brian le pingouin.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1479
+Setting remaining properties...
+Starting game...
+PROP: Brian le pingouin.OnReturn is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1485
+PROP: Jared le pingouin.OnTake is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1510
+PROP: Jared le pingouin.OnExamine is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1531
+PROP: Jared le pingouin.OnReturn is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1537
+PROP: Shampoing.OnUseWith is set to function @C:/Users/Etudiant/AppData/Local/Temp/urwigo-src-00a85fcc-e17c-40b8-b3fa-f496ff444eeb.lua:1562
+PROP: Zooventure.MsgBoxCBFuncs is set to se.krka.kahlua.vm.LuaTableImpl@1fa1bb6
+PROP: (unnamed).CompletionCode is set to 123456789012345
+PROP: Mr. Smith.Name is set to Mr. Smith
+EVNT: Zooventure.OnStart
+CALL: Dialog - "Bienvenue sur la scene de crime Agent Imajieste. Je suis fier que tu ai repondu a l'appel et que tu
+ZONE: setItem KeyVisible.... value : true
+PROP: La foret Temperee.Visible is set to true
+ZONE: setItem KeyActive.... value : true
+PROP: La foret Temperee.Active is set to true
+PROP: Va a la foret temperee.Active is set to true
+EVNT: La foret Temperee.OnEnter
+PROP: UseWith.Enabled is set to false
+CALL: MessageBox - "Ici tu est dans la foret temperee. Heureusement il semble que la queue du cochon est toujours tire-
+PROP: Cochon.Visible is set to true
+PROP: Gardien de zoo.Visible is set to true
+PROP: Va a la foret temperee.Complete is set to true
+PROP: Return.Enabled is set to false
+PROP: Return.Enabled is set to false
+EVNT: Cochon.OnExamine
+CALL: MessageBox - Le cochon est le quatrieme animal le plus intelligent derriere les humain, primates, et les cetaces 
+EVNT: Cochon.OnTalk
+CALL: Dialog - "Salut, je me souviens de toi, tu as tire-bouchonne ma queue pour la danse de la grange!"
+PROP: Poule.Visible is set to true
+PROP: Trouve Brian le pingouin..Active is set to true
+EVNT: Poule.OnTalk
+CALL: Dialog - "Le pingouin vient juste d'aller a la toilette. Mais il n'y a plus d'electricite. Tu auras beaucoup 
+EVNT: Poule.OnTalk
+CALL: GetInput - Puzzleone
+EVNT: Puzzleone.OnGetInput (1000)
+CALL: Dialog - *Brian le pingouin applaudi avec ses ailes*
+PROP: Brian le pingouin.Visible is set to true
+PROP: Trouve Brian le pingouin..Complete is set to true
+EVNT: Brian le pingouin.OnTake
+CALL: Dialog - Ton sac contient: Brian le Pingouin
+PROP: Take.Enabled is set to false
+PROP: Va a la foret tropicale.Active is set to true
+ZONE: setItem KeyVisible.... value : true
+PROP: La Foret Tropicale.Visible is set to true
+ZONE: setItem KeyActive.... value : true
+PROP: La Foret Tropicale.Active is set to true
+BUILD SUCCESSFUL (total time: 1 minute 29 seconds)

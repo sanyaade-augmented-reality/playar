@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" override="true" path="/IMAJIEMATCH" reloadable="true" sessionCookiePath="/">
+  <!--<Context antiJARLocking="true" path="/imajiematch" sessionCookiePath="/" override='true' reloadable='true' sessionCookieDomain=".imajiematch.imajie.tv" >
+<session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+
+  <session-timeout>180</session-timeout>
+  <cookie-config>
+
+    <max-age>
+      31536000
+    </max-age>
+  </cookie-config>
+ </session-config>
+
+<Manager
+    className="org.apache.catalina.session.PersistentManager"
+    debug="0"
+    saveOnRestart="true"
+    minIdleSwap="900"
+    maxIdleSwap="1200"
+    maxIdleBackup="600">
+    <Store
+      className="org.apache.catalina.session.JDBCStore"
+      driverName="com.mysql.jdbc.Driver"
+      connectionURL=
+        "jdbc:mysql://localhost/tomcat?user=root&amp;password=passw0rd"
+      sessionTable="tomcat$session"
+      sessionIdCol="id"
+      sessionDataCol="data"
+      sessionValidCol="valid_session"
+      sessionMaxInactiveCol="max_inactive"
+      sessionLastAccessedCol="last_access"
+    />
+  </Manager> -->
+</Context>

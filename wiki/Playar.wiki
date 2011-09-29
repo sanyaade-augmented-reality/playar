@@ -14,7 +14,7 @@ In front end, Playar server use Joomla 1.7 with community builder.
 
 The server is made out of  4 parts:
 
-==Webv Server==	
+==Web Server==	
 Community, Access control, mission preparation on joomla server. Front end part of Playar is on an Apache Tomcat7 server. Render user interface game behavior result from Player Server to Layar. Render the mission control interface in layar.
 
 (You can access this via the layer action menu on layar)

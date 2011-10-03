@@ -58,12 +58,17 @@ public class GetInventoryJspBean implements Serializable {
 
         }
 
-        if (session.getAttribute("inventoryCount") != null) {
-            if (!session.getAttribute("inventoryCount").toString().equals("")) {
+        
+        
+        if (session.getAttribute("inventoryList") != null) {
+            
+            String list = (String) session.getAttribute("inventoryList");
+            count = list.length();
+            if (count > 0) {
 
-                count = (int) Long.parseLong(session.getAttribute("inventoryCount").toString());
+                
 
-                String list = (String) session.getAttribute("inventoryList");
+                
 
 
                 msg = msg + "<ul data-role='listview' data-theme='a'>";
@@ -131,8 +136,6 @@ public class GetInventoryJspBean implements Serializable {
             msg = "Nothing in your inventory</br><div data-role='fieldcontain'  data-theme='a'><a href='controlpanel.jsp' data-transition='slide' data-role='button'>Mission Control</a> <a href='parameters.jsp' data-role='button'>Parameters</a><a href='http://m.layar.com/open/imajiematch' data-transition='slide' data-role='button'>Return to mission</a></div>";
 
         }
-
-
 
 
         return msg;

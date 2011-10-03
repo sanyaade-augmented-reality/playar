@@ -60,26 +60,21 @@ public class GetYouseeJspBean implements Serializable {
         }
         
         
-        if (session.getAttribute("youseeCount") != null) {
-            if (!session.getAttribute("youseeCount").toString().equals("")) {
-                
-                count = (int) Long.parseLong(session.getAttribute("youseeCount").toString());
-                
-                
-                String list = (String) session.getAttribute("youseeList");
-                
+        if (session.getAttribute("youseeList") != null) {
+            
+            String list = (String) session.getAttribute("youseeList");
+            count = list.length();
+            
+            if (count > 0) {
+      
                 msg = msg + "<ul data-role='listview' data-theme='a'>";
-                
-                
-                
+          
                 String delimiter = "\\|!\\|";
                 String[] temp = list.split(delimiter);
                 for (int i = 0; i < temp.length; i++) {
                     if (i == 0) {
                     } else {
-                        
-                        
-                        
+                      
                         String title = "";
                         String description = "";
                         String hotspotAltitude = "";
@@ -88,11 +83,7 @@ public class GetYouseeJspBean implements Serializable {
                         String hotspotDistance = "";
                         String resultDistance = "";
                         String friendlyDistance = "";
-                        
-                        
-                        
-                        
-                        
+                     
                         String hotspot = temp[i];
                         String delimiter2 = "\\|\\|";
                         String[] temp2 = hotspot.split(delimiter2);

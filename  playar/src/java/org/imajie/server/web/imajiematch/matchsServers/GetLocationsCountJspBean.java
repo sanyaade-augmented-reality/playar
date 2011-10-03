@@ -6,7 +6,6 @@ package org.imajie.server.web.imajiematch.matchsServers;
 
 
 import java.io.Serializable;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -28,10 +27,24 @@ public class GetLocationsCountJspBean implements Serializable {
         
         HttpSession session = request.getSession(true);
         
-        if (session.getAttribute("zoneCount") != null) {
         
-        msg = session.getAttribute("zoneCount").toString();
         
+         
+                
+        
+        
+        if (session.getAttribute("zoneList") != null) {
+       
+            String delimiter = "\\|!\\|";
+                String[] temp = session.getAttribute("zoneList").toString().split(delimiter);
+            
+            
+            
+       if (temp.length == 0) {
+                msg = "0";
+            } else {
+                msg = msg + (temp.length - 1);
+            }
         
         } else {
         

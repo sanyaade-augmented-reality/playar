@@ -21,6 +21,7 @@
     String practice = "";
     String gameType = "";
     String authorized = "";
+    String matchToStart = request.getParameter("match");
 
     if (session.getAttribute("username") != null) {
 
@@ -143,9 +144,17 @@
 
                     if (authorized.equals("yes")) {
 
+                       // <jsp:forward page="start2.jsp/>
                 %> 
+                 <%= match.start2(request)%>
+                
+                 <a href='controlpanel.jsp' data-role='button'>Mission Control</a>
+           
+                <a href='parameters.jsp' data-role='button'>Parameters</a>
+                
 
-                <jsp:forward page="start2.jsp" />
+                <a href="http://m.layar.com/open/imajiematch" data-role="button">Go to your mission</a>
+
 
                 <%} else {%>
                 

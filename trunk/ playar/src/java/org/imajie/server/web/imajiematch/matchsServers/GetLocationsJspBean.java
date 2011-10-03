@@ -66,17 +66,22 @@ public class GetLocationsJspBean implements Serializable {
 
 
 
-        if (session.getAttribute("zoneCount") != null) {
+        if (session.getAttribute("zoneList") != null) {
+            String list = (String) session.getAttribute("zoneList");
 
-            if (!session.getAttribute("zoneCount").toString().equals("")) {
+            count = list.length();
+            if (count > 0) {
 
 
 
-                count = (int) Long.parseLong(session.getAttribute("zoneCount").toString());
+                
 
                 msg = msg + "<ul data-role='listview' data-theme='a'>";
 
-                String list = (String) session.getAttribute("zoneList");
+                
+                
+                
+                
                 String delimiter = "\\|!\\|";
                 String[] temp = list.split(delimiter);
                 for (int i = 0; i < temp.length; i++) {

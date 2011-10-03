@@ -1,14 +1,14 @@
 package org.imajie.server.web.imajiematch.matchsServers.gps;
 
 import java.io.IOException;
-import javax.microedition.io.Connector;
-import javax.microedition.io.StreamConnection;
+//import javax.microedition.io.Connector;
+//import javax.microedition.io.StreamConnection;
 
 /** NMEAParser that knows Bluetooth and can connect to a given address. */
 public class BluetoothGPS extends NMEAParser {
 	
 	private String bluetoothAddress = null;
-	private StreamConnection bluetoothConnection;
+	//private StreamConnection bluetoothConnection;
 
 	public BluetoothGPS () { }
 	
@@ -25,17 +25,17 @@ public class BluetoothGPS extends NMEAParser {
 	/** called from NMEAParser's own thread, before reading starts */
 	@Override
 	protected void makeConnection () throws IOException {
-		bluetoothConnection = (StreamConnection)Connector.open(bluetoothAddress);
-		stream = bluetoothConnection.openInputStream();
-		connected = true;
+//		bluetoothConnection = (StreamConnection)Connector.open(bluetoothAddress);
+//		stream = bluetoothConnection.openInputStream();
+//		connected = true;
 	}
 
 	@Override
 	public void disconnect () {
-		super.disconnect();
-		if (bluetoothConnection != null) try {
-			bluetoothConnection.close();
-		} catch (IOException e) { }
+//		super.disconnect();
+//		if (bluetoothConnection != null) try {
+//			bluetoothConnection.close();
+//		} catch (IOException e) { }
 	}
 
 	/**

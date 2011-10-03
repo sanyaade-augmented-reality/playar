@@ -25,9 +25,18 @@ public class GetYouseeCountJspBean implements Serializable {
         
         HttpSession session = request.getSession(true);
         
-        if (session.getAttribute("youseeCount") != null) {
+        if (session.getAttribute("youseeList") != null) {
         
-        msg = session.getAttribute("youseeCount").toString();
+       String delimiter = "\\|!\\|";
+                String[] temp = session.getAttribute("youseeList").toString().split(delimiter);
+            
+            
+            
+        if (temp.length == 0) {
+                msg = "0";
+            } else {
+                msg = msg + (temp.length - 1);
+            }
         
         
         } else {

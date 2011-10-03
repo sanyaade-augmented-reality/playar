@@ -25,10 +25,18 @@ public class GetTasksCountJspBean implements Serializable {
         
         HttpSession session = request.getSession(true);
         
-        if (session.getAttribute("tasksCount") != null) {
+        if (session.getAttribute("tasksList") != null) {
         
-        msg = session.getAttribute("tasksCount").toString();
-        
+        String delimiter = "\\|!\\|";
+                String[] temp = session.getAttribute("tasksList").toString().split(delimiter);
+            
+            
+            
+        if (temp.length == 0) {
+                msg = "0";
+            } else {
+                msg = msg + (temp.length - 1);
+            }
         
         } else {
         

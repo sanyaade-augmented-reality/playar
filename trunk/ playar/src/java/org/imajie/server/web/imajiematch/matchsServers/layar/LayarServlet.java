@@ -455,7 +455,7 @@ public class LayarServlet extends HttpServlet {
 
             RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
-            int zoneCount = (int) Double.parseDouble(session.getAttribute("zoneCount").toString());
+            //int zoneCount = (int) Double.parseDouble(session.getAttribute("zoneCount").toString());
             String zoneList = session.getAttribute("zoneList").toString();
 
             String list = (String) session.getAttribute("tasksList");

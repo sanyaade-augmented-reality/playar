@@ -59,14 +59,16 @@ public class GetTasksJspBean implements Serializable {
             
         }
         
-        if (session.getAttribute("tasksCount") != null) {
-            if (!session.getAttribute("tasksCount").toString().equals("")) {
+        if (session.getAttribute("tasksList") != null) {
+            String list = (String) session.getAttribute("tasksList");
+            count = list.length();
+            if (count > 0) {
                 
-                count = (int) Long.parseLong(session.getAttribute("tasksCount").toString());
+                count = list.length();
                 
                 msg = msg + "<ul data-role='listview' data-theme='a'>";
                 
-                String list = (String) session.getAttribute("tasksList");
+                
                 String delimiter = "\\|!\\|";
                 String[] temp = list.split(delimiter);
                 for (int i = 0; i < temp.length; i++) {
@@ -119,7 +121,7 @@ public class GetTasksJspBean implements Serializable {
                 }
                 
             }
-        } else {
+        }else {
             
             msg = "You got no task to do</br><div data-role='fieldcontain'  data-theme='a'><a href='controlpanel.jsp' data-transition='slide' data-role='button'>Mission Control</a> <a href='parameters.jsp' data-role='button'>Parameters</a><a href='http://m.layar.com/open/imajiematch' data-transition='slide' data-role='button'>Return to mission</a></div>";
             

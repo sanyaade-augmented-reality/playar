@@ -23,6 +23,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.imajie.server.web.imajiematch.matchsServers.DiskIO;
 import org.imajie.server.web.imajiematch.matchsServers.openwig.ZonePoint;
 import org.imajie.server.web.Constants;
@@ -224,7 +226,7 @@ public class MainServerProtocol {
 
                                     System.out.println("User set to port:" + p.toString());
 
-                                    System.out.print("java -jar " + Constants.PLAYER_SERVER_LAUNCH_SCRIPT + " " + port + " " + username + " " + lat + " " + lon + " " + alt + " " + accuracy + " " + match + "");
+                                    System.out.print("java -jar " + Constants.PLAYER_SERVER_LAUNCH_SCRIPT + " \"" + port + "\" \"" + username + "\" \"" + lat + "\" \"" + lon + "\" \"" + alt + "\" \"" + accuracy + "\" \"" + match + "\"");
 
 
                                     insertDone = true;
@@ -471,6 +473,17 @@ public class MainServerProtocol {
 
                 }
 
+                
+//                String cartridgeDescription = "";
+//                        
+//                        String[] description = cartridgeDetails[1].split("<BR>");
+//                        
+//                        for (int iii = 0; iii< description.length; iii++) {
+//                        
+//                        cartridgeDescription = cartridgeDescription + "(!!BR!!)";
+//                        
+//                        }
+                
                 String msg = formHeader
                         + "<div data-role='fieldcontain'  data-theme='a'>"
                         + "<h2>" + cartridgeDetails[0] + "</h2></div>"
@@ -501,7 +514,7 @@ public class MainServerProtocol {
 
                 msg = msg + formFooter;
 
-                theOutput = "MATCH_DETAILS||" + msg;
+                theOutput = "MATCH_DETAILS||" + msg + "MATCH_DETAILS|!!|";
                 state = COMMAND;
 
             }
@@ -615,7 +628,15 @@ public class MainServerProtocol {
 
                         cartridgeDetails = DiskIO.matchDetails(gameList[i]);
 
-
+//                        String cartridgeDescription = "";
+//                        
+//                        String[] description = cartridgeDetails[1].split("<BR>");
+//                        
+//                        for (int iii = 0; iii< description.length; iii++) {
+//                        
+//                        cartridgeDescription = cartridgeDescription + "(!!BR!!)";
+//                        
+//                        }
 
 
                         ZonePoint zp = new ZonePoint(Double.parseDouble(cartridgeDetails[2].toString()), Double.parseDouble(cartridgeDetails[3].toString()), 0);
@@ -626,7 +647,7 @@ public class MainServerProtocol {
                     }
                 }
 
-                theOutput = "LAYAR_REFRESH||||||" + count + msg;
+                theOutput = "LAYAR_REFRESH||||||" + count + msg +"|!!!|LAYAR_REFRESH";
                 state = COMMAND;
             }
         } /* **********************************************
@@ -769,6 +790,17 @@ public class MainServerProtocol {
             t1 = System.currentTimeMillis();
         } while ((t1 - t0) < (n));
     }
+    private static final Pattern REMOVE_TAGS = Pattern.compile("<.+?>"); 
+ 
+public static String removeTags(String string) { 
+    if (string == null || string.length() == 0) { 
+        return string; 
+    } 
+ 
+    Matcher m = REMOVE_TAGS.matcher(string); 
+    return m.replaceAll(""); 
+} 
+
 }
 
 class Processes {

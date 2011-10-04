@@ -170,7 +170,7 @@ public class MainServerClientProtocol {
         else if (state == GET_LAYAR_REFRESH) {
             if (theInput != null) {
                 if (theInput.equalsIgnoreCase("Location?")) {
-
+//"|!!!|LAYAR_REFRESH"
                    
                     String latitude = "0";
                     String longitude = "0";
@@ -211,17 +211,30 @@ public class MainServerClientProtocol {
          *********************************************** */ //
         else if (state == LAYAR_REFRESH) {
             if (theInput != null) {
-                if (theInput.contains("LAYAR_REFRESH||||||")) {
+                
+                
+                  matchDetails = matchDetails + theInput.toString();
 
-                    
-session.setAttribute("LayarMatchsList", theInput.replace("LAYAR_REFRESH||||||", ""));
 
+//                }
+                
+                if (theInput.contains("|!!!|LAYAR_REFRESH")) {
+                        
+                        matchDetails = matchDetails.replace("LAYAR_REFRESH||||||", "");
+                        matchDetails = matchDetails.replace("|!!!|LAYAR_REFRESH", "");
+                    session.setAttribute("LayarMatchsList", matchDetails);
                     theOutput = "KILL_THREAD";
-                    
                     state = KILL_THREAD;
-
-
+                    
                 }
+                
+                
+                
+                
+            } else { 
+                
+                state = LAYAR_REFRESH;
+            
             }
         }
         /* **********************************************
@@ -331,15 +344,25 @@ session.setAttribute("LayarMatchsList", theInput.replace("LAYAR_REFRESH||||||", 
             }
         } else if (state == SESSION_MATCH_DETAILS) {
             if (theInput != null) {
-                if (theInput.contains("MATCH_DETAILS||")) {
+                
+//                if (theInput.contains("MATCH_DETAILS||")) {
 
-                    session.setAttribute("MatchDetails", theInput.replace("MATCH_DETAILS||", ""));
+                    matchDetails = matchDetails + theInput.toString();
 
+
+//                }
+                
+                if (theInput.contains("MATCH_DETAILS|!!|")) {
+                        
+                        matchDetails = matchDetails.replace("MATCH_DETAILS||", "");
+                        matchDetails = matchDetails.replace("MATCH_DETAILS|!!|", "");
+                    session.setAttribute("MatchDetails", matchDetails);
                     theOutput = "KILL_THREAD";
                     state = KILL_THREAD;
-
-
+                    
                 }
+            } else { state = SESSION_MATCH_DETAILS;
+            
             }
         } else if (state == KILL_THREAD) {
             if (theInput != null) {
@@ -393,6 +416,7 @@ session.setAttribute("LayarMatchsList", theInput.replace("LAYAR_REFRESH||||||", 
         return theOutput;
     }
 
+    private String matchDetails = "";
     public static void waiting(int n) {
 
         long t0, t1;

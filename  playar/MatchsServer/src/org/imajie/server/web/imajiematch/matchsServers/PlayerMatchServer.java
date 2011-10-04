@@ -51,15 +51,42 @@ public class PlayerMatchServer {
             for (String s : args) {
 
 
+                String argPort = args[0];
+                argPort = argPort.replace("\"", "");
+                argPort = argPort.replace("\"", "");
+                port = Integer.parseInt(argPort);
 
-                port = Integer.parseInt(args[0]);
-
-                username = args[1];
-                lat = args[2];
-                lon = args[3];
-                alt = args[4];
-                accuracy = args[5];
-                match = args[6];
+                String argusername = args[1];
+                argusername = argusername.replace("\"", "");
+                argusername= argusername.replace("\"", "");         
+                username = argusername;
+                
+                String arglat = args[2];
+                arglat = arglat.replace("\"", "");
+                arglat= arglat.replace("\"", ""); 
+                lat = arglat;
+                
+                
+                
+                String arglon = args[3];
+                arglon = arglon.replace("\"", "");
+                arglon= arglon.replace("\"", ""); 
+                lon = arglon;
+                
+                String argalt = args[4];
+                argalt = argalt.replace("\"", "");
+                argalt= argalt.replace("\"", "");
+                alt = argalt;
+                
+                String argaccuracy = args[5];
+                argaccuracy = argaccuracy.replace("\"", "");
+                argaccuracy= argaccuracy.replace("\"", "");
+                accuracy = argaccuracy;
+                
+                String argmatch = args[6];
+                argmatch = argmatch.replace("\"", "");
+                argmatch= argmatch.replace("\"", "");
+                match = argmatch;
 
 
 

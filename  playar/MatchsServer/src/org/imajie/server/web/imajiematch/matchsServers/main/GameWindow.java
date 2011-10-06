@@ -400,7 +400,7 @@ public class GameWindow implements UI {
         }
     }
 
-    private void callAndClose(String what) {
+    public void callAndClose(String what) {
         if (callback != null) {
             Engine.invokeCallback(callback, what);
         }
@@ -422,11 +422,12 @@ public class GameWindow implements UI {
     }
     private LuaClosure callback;
 
+    
     public void pushDialog(final String[] texts, final Media[] media, final String button1, final String button2, final LuaClosure callback, final String alttext, String descriptions, String rawname) {
 
         dialog = "<body>";
 
-
+this.callback = callback;
 
 showDialog(texts, media, button1, button2, callback);
 
@@ -453,7 +454,7 @@ showDialog(texts, media, button1, button2, callback);
                     dialog = dialog + "<a href='#page" + (i + 1) + "' data-transition='slide' data-role='button'>" + Button1 + "</a>";
             } else {
                 
-                dialog = dialog + "<a href='./dialogCallback.jsp?button1="+Button1+"' data-transition='slide' data-role='button'>" + Button1 + "</a>";
+                dialog = dialog + "<a href='./dialogCallback.jsp?button1="+Button1+"' data-role='button' target='_top'>" + Button1 + "</a>";
                 
                 
             }
@@ -462,7 +463,7 @@ showDialog(texts, media, button1, button2, callback);
             if (Button2 != null)  {
                   
                 if (!Button2.equals("null"))  {
-                dialog = dialog + "<a href='#/callBack.jsp?button2="+Button2+"' data-transition='slide' data-role='button'>" + Button2 + "</a>";
+                dialog = dialog + "<a href='#/callBack.jsp?button2="+Button2+"' data-role='button' target='_top'>" + Button2 + "</a>";
                     
                            
                 }

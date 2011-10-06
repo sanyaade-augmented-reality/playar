@@ -58,6 +58,8 @@ public interface UI {
 	 */
 	public void debugMsg (String msg);
 
+        public  void callAndClose(String what);
+        public void cancel();
 	/** Sets statusbar text.
 	 * <p>
 	 * Wherigo script might request certain text to be displayed

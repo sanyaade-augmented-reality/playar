@@ -16,7 +16,6 @@
  */
 package org.imajie.server.web.imajiematch.matchsServers.sockets;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -45,7 +44,7 @@ public class ImajieMatchClientProtocol {
     private int state = START;
     private String playerState = "";
 
-    public String processInput(String theInput,HttpSession session, HttpServletRequest request) {
+    public String processInput(String theInput, HttpSession session, HttpServletRequest request) {
         String theOutput = null;
 
         if (state == START) {
@@ -56,7 +55,7 @@ public class ImajieMatchClientProtocol {
                 if (theInput.equals(session.getAttribute("username").toString())) {
 
 
-                    
+
                     theOutput = "REFRESH_LOCATION";
                     System.out.println("REFRESH_LOCATION");
                     state = REFRESH_LOCATION;
@@ -65,10 +64,10 @@ public class ImajieMatchClientProtocol {
                 } else {
 
 
-                    
+
                     theOutput = "KILL_THREAD";
                     System.out.println("KILL_THREAD");
-state = KILL_THREAD;
+                    state = KILL_THREAD;
                     // waiting(300);
 
 
@@ -76,9 +75,9 @@ state = KILL_THREAD;
 
 
             } else {
-            
-            state = START;
-            
+
+                state = START;
+
             }
 
 
@@ -91,16 +90,15 @@ state = KILL_THREAD;
                 if (theInput.equalsIgnoreCase("Process?")) {
 
                     theOutput = "Connection";
-                    
+
                     //waiting(300);
                     System.out.println("CALL_FINNISH");
-state = CALL_FINNISH;
+                    state = CALL_FINNISH;
                 }
-            }
-            else {
-            
-            state = KILL_THREAD;
-            
+            } else {
+
+                state = KILL_THREAD;
+
             }
         } /* **********************************************
          *************************************************
@@ -113,15 +111,15 @@ state = CALL_FINNISH;
                     // TODO IMPLEMENTS GET_LAYAR_REFRESH_POI
 
                     theOutput = "";
-                    
+
                     //waiting(300);
                     System.out.println("KILL_THREAD");
-state = KILL_THREAD;
+                    state = KILL_THREAD;
                 }
             } else {
-            
-            state = GET_LAYAR_REFRESH_POI;
-            
+
+                state = GET_LAYAR_REFRESH_POI;
+
             }
         } /* **********************************************
          *************************************************
@@ -133,18 +131,17 @@ state = KILL_THREAD;
 
 
                     theOutput = "GEOPOSITION||" + session.getAttribute("lat").toString() + "||" + session.getAttribute("lon").toString() + "||" + session.getAttribute("alt").toString() + "||" + session.getAttribute("accuracy").toString();
-                    
+
                     System.out.println("STATE");
-state = STATE;
+                    state = STATE;
                     //waiting(300);
 
 
                 }
-            }
-            else {
-            
-            state = REFRESH_LOCATION;
-            
+            } else {
+
+                state = REFRESH_LOCATION;
+
             }
 
 
@@ -156,43 +153,32 @@ state = STATE;
             playerState = playerState + theInput.toString();
             if (theInput != null) {
                 if (theInput.contains("PLAYER_STATE||||||")) {
-
-
-                        //PLAYER_STATE||||||
-                        //[ZONE]zoneList[]
-                        //[TASK]tasksList[]
-                        //[INVENTORY]inventoryList[]
-                        //[YOUSEE]youseeList[]
-                        //[BUTTON1]Button1[]
-                        //[BUTTON2]Button2[]
-                        //[DIALOGTEXT]dialogTexts[]
-                        //[DIALOGMEDIA]dialogMedia 
-                        //MEDIAALTTEXT altText |!!!|
-                        //MEDIADESCRIPTION description |!!!|  
-                        //MEDIARAWNAME rawName |!!!| 
-                        //  ZONECOUNT zoneCount
-                        //  TASKCOUNT tasksCount
-                        //  INVENTORYCOUNT inventoryCount
-                        //  YOUSEECOUNT youseeCount
-
-
-                    
-
-                    
-                    
-
-                    
-
+                    //PLAYER_STATE||||||
+                    //[ZONE]zoneList[]
+                    //[TASK]tasksList[]
+                    //[INVENTORY]inventoryList[]
+                    //[YOUSEE]youseeList[]
+                    //[BUTTON1]Button1[]
+                    //[BUTTON2]Button2[]
+                    //[DIALOGTEXT]dialogTexts[]
+                    //[DIALOGMEDIA]dialogMedia 
+                    //MEDIAALTTEXT altText |!!!|
+                    //MEDIADESCRIPTION description |!!!|  
+                    //MEDIARAWNAME rawName |!!!| 
+                    //  ZONECOUNT zoneCount
+                    //  TASKCOUNT tasksCount
+                    //  INVENTORYCOUNT inventoryCount
+                    //  YOUSEECOUNT youseeCount
                     //waiting(300);
                 }
                 if (theInput.contains("|!!|PLAYER_STATE")) {
-                    
-                    
-                    
-                    
+
+
+
+
                     playerState = playerState.replace("|!!|PLAYER_STATE", "");
-                    
-                    
+
+
                     String resultArrays = playerState.replace("PLAYER_STATE||||||", "");
 
                     String delimiter = "\\|!!!\\|";
@@ -201,12 +187,12 @@ state = STATE;
                     for (int ii = 0; ii < temp.length; ii++) {
 
                         if (ii == 0) {
-                            
+
                             session.setAttribute("zoneList", temp[ii]);
-                            
+
                         }
                         if (ii == 1) {
-                            
+
                             session.setAttribute("tasksList", temp[ii]);
                         }
                         if (ii == 2) {
@@ -229,112 +215,155 @@ state = STATE;
                         }
                         if (ii == 8) {
                             //"MEDIAALTTEXT"
-                            String MEDIAALTTEXT =  temp[ii].replace("MEDIAALTTEXT", "");
+                            String MEDIAALTTEXT = temp[ii].replace("MEDIAALTTEXT", "");
                             MEDIAALTTEXT = MEDIAALTTEXT.replace("|!!!|", "");
                             session.setAttribute("MEDIAALTTEXT", MEDIAALTTEXT);
                         }
                         if (ii == 9) {
                             //"MEDIADESCRIPTION"
-                            String MEDIADESCRIPTION =  temp[ii].replace("MEDIADESCRIPTION", "");
+                            String MEDIADESCRIPTION = temp[ii].replace("MEDIADESCRIPTION", "");
                             MEDIADESCRIPTION = MEDIADESCRIPTION.replace("|!!!|", "");
                             session.setAttribute("MEDIADESCRIPTION", MEDIADESCRIPTION);
                         }
                         if (ii == 10) {
                             //"MEDIARAWNAME"
-                            String MEDIARAWNAME =  temp[ii].replace("MEDIARAWNAME", "");
+                            String MEDIARAWNAME = temp[ii].replace("MEDIARAWNAME", "");
                             MEDIARAWNAME = MEDIARAWNAME.replace("|!!!|", "");
                             session.setAttribute("MEDIARAWNAME", MEDIARAWNAME);
                         }
                         if (ii == 11) {
                             //"ZONECOUNT" + GameWindow.zoneCount+ "|!!!|";
-                            String zoneCount =  temp[ii].replace("ZONECOUNT", "");
+                            String zoneCount = temp[ii].replace("ZONECOUNT", "");
                             zoneCount = zoneCount.replace("|!!!|", "");
                             session.setAttribute("zoneCount", zoneCount);
                         }
                         if (ii == 12) {
                             //"TASKCOUNT" + GameWindow.tasksCount+ "|!!!|";
-                            String tasksCount =  temp[ii].replace("TASKCOUNT", "");
+                            String tasksCount = temp[ii].replace("TASKCOUNT", "");
                             tasksCount = tasksCount.replace("|!!!|", "");
                             session.setAttribute("tasksCount", tasksCount);
                         }
                         if (ii == 13) {
                             //"INVENTORYCOUNT" + GameWindow.inventoryCount+ "|!!!|";
-                            String inventoryCount =  temp[ii].replace("INVENTORYCOUNT", "");
+                            String inventoryCount = temp[ii].replace("INVENTORYCOUNT", "");
                             inventoryCount = inventoryCount.replace("|!!!|", "");
                             session.setAttribute("inventoryCount", inventoryCount);
                         }
                         if (ii == 14) {
                             //"YOUSEECOUNT" + GameWindow.youseeCount+ "";
-                            String youseeCount =  temp[ii].replace("YOUSEECOUNT", "");
+                            String youseeCount = temp[ii].replace("YOUSEECOUNT", "");
                             youseeCount = youseeCount.replace("|!!!|", "");
                             session.setAttribute("youseeCount", youseeCount);
                         }
                         if (ii == 15) {
                             //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
-                            String PLAYMEDIA_CALL =  temp[ii].replace("PLAYMEDIA_CALL", "");
+                            String PLAYMEDIA_CALL = temp[ii].replace("PLAYMEDIA_CALL", "");
                             PLAYMEDIA_CALL = PLAYMEDIA_CALL.replace("|!!!|", "");
                             session.setAttribute("PLAYMEDIA_CALL", PLAYMEDIA_CALL);
                         }
                         if (ii == 16) {
                             //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
-                            String DIALOG =  temp[ii].replace("DIALOG", "");
+                            String DIALOG = temp[ii].replace("DIALOG", "");
                             DIALOG = DIALOG.replace("|!!!|", "");
                             session.setAttribute("DIALOG", DIALOG);
                         }
 
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                theOutput = "CALLBACK";
-                
-                System.out.println("CALLBACK");
-                state = CALLBACK;
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    theOutput = "CALLBACK";
+
+                    System.out.println("CALLBACK");
+                    state = CALLBACK;
                 }
             } else {
-            
-            state = STATE;
-            
+
+                state = STATE;
+
             }
         } /* **********************************************
          *************************************************
          *     Player Input CallBack Command Method
          *********************************************** */ //
         else if (state == CALLBACK) {
+
             if (theInput != null) {
                 if (theInput.equalsIgnoreCase("Input?")) {
+                    if (session.getAttribute("sendCallback") != null) {
+
+                        if (session.getAttribute("sendCallback").toString().equals("true")) {
+
+                            if (request.getParameter("button1") != null) {
+
+                                theOutput = "PLAYER_CALLBACK" + request.getParameter("button1");
 
 
-                    theOutput = "PLAYER_CALLBACK";
-                    
+                            } else {
+
+                                theOutput = "PLAYER_CALLBACK" + request.getParameter("button2");
+
+                            }
+
+                            theOutput = "PLAYER_CALLBACK";
+
+                        } else {
+
+                            theOutput = "PLAYER_CALLBACK";
+
+                        }
+
+
+                    } else {
+
+                        theOutput = "PLAYER_CALLBACK";
+
+                    }
+
+
+
 
                     System.out.println("CALLBACK");
-state = PLAYER_CALLBACK;
+                    
+                    state = PLAYER_CALLBACK;
                     //waiting(300);
                 }
-            }
-            else {
-            
-            state = CALLBACK;
-            
+            } else {
+
+                state = CALLBACK;
+
             }
         } /* **********************************************
          *************************************************
          *     Player Input CallBack Command Method
          *********************************************** */ //
         else if (state == PLAYER_CALLBACK) {
+            
             if (theInput != null) {
                 if (theInput.contains("PLAYER_CALLBACK_STATE||")) {
+
+                    String resultRequest = theInput.replace("PLAYER_CALLBACK_STATE||", "");
+
+                    if (resultRequest.equals("REFRESH")) {
+                        
+                        session.setAttribute("REFRESH", "REFRESH");
+                        
+                    } else {
+                        
+                        
+                        
+                    }
+
 
 
                     theOutput = "SAVE";
@@ -343,11 +372,10 @@ state = PLAYER_CALLBACK;
 
                     // waiting(300);
                 }
-            }
-            else {
-            
-            state = PLAYER_CALLBACK;
-            
+            } else {
+
+                state = PLAYER_CALLBACK;
+
             }
         } /* **********************************************
          *************************************************
@@ -365,11 +393,10 @@ state = PLAYER_CALLBACK;
 
                     // waiting(300);
                 }
-            }
-            else {
-            
-            state = SAVE;
-            
+            } else {
+
+                state = SAVE;
+
             }
         } /* **********************************************
          *************************************************

@@ -53,6 +53,8 @@ public class GameWindow implements UI {
     public static String mediaName;
     public static String mediaType;
     public static String mediaOverride;
+    public static String triviaInput;
+    public static String dialog;
     /** List of zones.
      * Its source reads data from <code>Engine.instance.cartridge.zones</code>
      */
@@ -138,11 +140,13 @@ public class GameWindow implements UI {
                     } else {
                         description = "";
                     }
+                    String friendlyDistance = "";
 
-                    ZonePoint zp = new ZonePoint(t.position.latitude, t.position.longitude, 0);
-
-                    String friendlyDistance = Navigator.getDistanceAndDirection(zp);
-
+//                    if (t.position.latitude != 0 || t.position.longitude != 0) {
+//                        ZonePoint zp = new ZonePoint(t.position.latitude, t.position.longitude, 0);
+//
+//                        friendlyDistance = Navigator.getDistanceAndDirection(zp);
+//                    }
                     String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance;
                     list = list + "|!|" + content;
                 }
@@ -252,6 +256,7 @@ public class GameWindow implements UI {
 //    
 //    }
     private EventTableDetails details = new EventTableDetails(this);
+    private boolean buttonsVisible = true;
 
     /** Timer for refreshing navigation displays. */
 //	private FrameTimer refresher = new FrameTimer(this, new ActionListener() {
@@ -322,74 +327,176 @@ public class GameWindow implements UI {
     public void setStatusText(String text) {
     }
 
-    
-    public void showDialog (String[] texts, Media[] media, String btn1, String btn2, LuaClosure callback) {
-		this.callback = callback;
-		this.texts = texts;
-		this.media = media;
-		Button1 = (btn1 == null ? "OK" : btn1);
-		Button2 = (btn2);
-		//button2.setVisible(btn2 != null);
-		page = -1;
-		flipPage();
-	}
-    
-    private void flipPage () {
-		page++;
-		if (page >= texts.length) {
-			callAndClose("Button1");
-		} else {
-			//setDescription(texts[page]);
-			//setMedia(media[page]);
-		}
-	}
+    public void showDialog(String[] texts, Media[] media, String btn1, String btn2, LuaClosure callback) {
+        this.callback = callback;
+        this.texts = texts;
+        this.media = media;
+        Button1 = (btn1 == null ? "OK" : btn1);
+        Button2 = (btn2);
+        //button2.setVisible(btn2 != null);
+        page = -1;
+        flipPage();
+    }
 
-	
-	protected void buttonClicked (String button) {
-		if (button == Button1) flipPage();
-		else if (button == Button2) callAndClose("Button2");
-	}
-        
-        
-        private void callAndClose (String what) {
-		if (callback != null) Engine.invokeCallback(callback, what);
-		//parent.close();
-	}
-        private int page;
-	/** texts of individual pages */
-	private String[] texts;
-	/** pictures for individual pages */
-	private Media[] media;
+    private void flipPage() {
 
-	/** Called by parent window to indicate that the Dialog was cancelled.
-	 * If the callback is present, it must be called with null parameter.
-	 */
-	public void cancel () {
-		if (callback != null) Engine.invokeCallback(callback, null);
-	}
-        
-        private LuaClosure callback;
-        
-    
+
+        // TODO IMPLEMENTS MULTIPKLE PAGES DIALOG IN JQUERY MULTI-PAGE
+        //
+        //
+//        <!DOCTYPE html>
+//<html>
+//<head>
+//    <meta name="viewport" content="width=device-width, initial-scale=1">
+//    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css"/>
+//    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+//    <script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+//</head>
+//<body>
+//<div data-role="page" id="page1">
+//    <div data-role="header">
+//        <h6>Welcome...</h6>
+//    </div>
+//    <div data-role="content">
+//        <a href="#page2">Go to Page 2</a>
+//        <p><a href="list.html">Listing Page</a></p>
+//    </div>
+//    <div data-role="footer">
+//        <h2>Footer Content</h2>
+//    </div>
+//</div>
+// 
+//<div data-role="page" id="page2">
+//    <div data-role="header">
+//        <a href="index.html" data-icon="home">Home</a>
+//        <h6>2nd Page</h6>
+//        <a data-rel="back" data-icon="back">Go back</a>
+//    </div>
+//    <div data-role="content">
+//        <a href="#page1">Return to Page 1</a>
+//    </div>
+//    <div data-role="footer">
+//        <h2>Footer Content</h2>
+//    </div>
+//</div>
+//</body>
+//</html>
+
+
+        page++;
+        if (page >= texts.length) {
+            callAndClose("Button1");
+        } else {
+            //setDescription(texts[page]);
+            //setMedia(media[page]);
+        }
+    }
+
+    protected void buttonClicked(String button) {
+        if (button == Button1) {
+            flipPage();
+        } else if (button == Button2) {
+            callAndClose("Button2");
+        }
+    }
+
+    private void callAndClose(String what) {
+        if (callback != null) {
+            Engine.invokeCallback(callback, what);
+        }
+        //parent.close();
+    }
+    private int page;
+    /** texts of individual pages */
+    private String[] texts;
+    /** pictures for individual pages */
+    private Media[] media;
+
+    /** Called by parent window to indicate that the Dialog was cancelled.
+     * If the callback is present, it must be called with null parameter.
+     */
+    public void cancel() {
+        if (callback != null) {
+            Engine.invokeCallback(callback, null);
+        }
+    }
+    private LuaClosure callback;
+
     public void pushDialog(final String[] texts, final Media[] media, final String button1, final String button2, final LuaClosure callback, final String alttext, String descriptions, String rawname) {
 
+        dialog = "<body>";
+
+
+
+showDialog(texts, media, button1, button2, callback);
+
         for (int i = 0; i < texts.length; i++) {
-            
+
+
             description = description + texts[i] + "\n";
+
+
+
+            dialog = dialog + "<div data-role='page' id='page" + i + "' style='min-height:100%' data-theme='a'>"
+                    + "<div data-role='header'  data-theme='b'>"
+                    + "<h6>Dialog</h6>"
+                    + "</div>"
+                    + " <div data-role='fieldcontain'  data-theme='a' align='center'>"
+                    + "<p>"
+                    + "<IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + media[i].name +"."+ media[i].type + "' align='center'>"
+                    + "<h4 align='center'>" + texts[i] + "</h4>"
+                    + "</p>"
+                    + "<p>";
             
+            if (i < texts.length - 1) {
+            
+                    dialog = dialog + "<a href='#page" + (i + 1) + "' data-transition='slide' data-role='button'>" + Button1 + "</a>";
+            } else {
+                
+                dialog = dialog + "<a href='./dialogCallback.jsp?button1="+Button1+"' data-transition='slide' data-role='button'>" + Button1 + "</a>";
+                
+                
+            }
+            
+            
+            if (Button2 != null)  {
+                  
+                if (!Button2.equals("null"))  {
+                dialog = dialog + "<a href='#/callBack.jsp?button2="+Button2+"' data-transition='slide' data-role='button'>" + Button2 + "</a>";
+                    
+                           
+                }
+            
+            }     
+                            
+                            dialog = dialog + "</p>"
+                    + "</div>"
+                    + "<div data-role='footer' data-theme='b'>"
+                    + "<h4>&copy; imajie.tv 2011</h4>"
+                    + "</div>"
+                    + "</div>";
+
+
+
         }
+
+
+        dialog = dialog + "</div><body>";
+
+
+
         altText = alttext;
-       // description = descriptions;
+        // description = descriptions;
         rawName = rawname;
         dialogTexts = arrayToString(texts, ",");
-        
-        
-        showDialog(texts, media, button1, button2, callback);
+
+
+        //showDialog(texts, media, button1, button2, callback);
         // TODO IMPLEMENTS THE MEDIA ARRAY GESTION FOR LAYAR
-        
-        dialogMedia = media[0].name+"."+media[0].type;
-        
-        
+
+        dialogMedia = media[0].name + "." + media[0].type;
+
+
         //Button1 = button1;
         //Button2 = button2;
 
@@ -410,47 +517,93 @@ public class GameWindow implements UI {
         }
         return result.toString();
     }
-
     private ArrayList<String> options = new ArrayList<String>();
-    
-    public void pushInput(final EventTable input) {
-        
-        String text = Engine.removeHtml((String)input.rawget("Text"));
-		String inputText  = (text);
-		String inputMedia = (input.media.name);
 
-		String type = (String)input.rawget("InputType");
-		if ("Text".equals(type)) {
-			// hide buttons
-			//for (String button : options) button.setVisible(false);
-			// show text/answer
-			//textInput.setVisible(true);
-			//textInput.setText("");
-			//answer.setVisible(true);
-		} else if ("MultipleChoice".equals(type)) {
-			// hide text/answer
-			//textInput.setVisible(false);
-			//answer.setVisible(false);
-			LuaTable choices = (LuaTable)input.rawget("Choices");
-			int n = choices.len();
-			// make sure we have enough buttons
-			for (int i = options.size(); i < n; i++) {
-				String jb = new String();
-				options.add(jb);
-				//addButton(jb);
-			}
-			// set up choices
-			for (int i = 0; i < n; i++) {
-				String choice = (String)choices.rawget(new Double(i+1));
-				String jb = options.get(i);
-				jb = choice;
-				//jb.setVisible(true);
-			}
-			// hide the rest
+    public void pushInput(final EventTable input) {
+
+
+
+
+        String text = Engine.removeHtml((String) input.rawget("Text"));
+        String inputText = (text);
+        String inputMedia = (input.media.name);
+
+        String type = (String) input.rawget("InputType");
+        if ("Text".equals(type)) {
+            // hide buttons
+            buttonsVisible = false;
+            //for (String button : options) button.setVisible(false);
+            // show text/answer
+            //textInput.setVisible(true);
+            //textInput.setText("");
+            //answer.setVisible(true);
+
+
+            triviaInput = " <div data-role='fieldcontain'   data-theme='a'><label  data-theme='a' for='answer'>Answer</label><input type='text' name='answer' id='username' value=''  /></div><input type='submit'  id='callBack' data-theme='a' value='" + text + "'/>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        } else if ("MultipleChoice".equals(type)) {
+            // hide text/answer
+            //textInput.setVisible(false);
+            //answer.setVisible(false);
+            LuaTable choices = (LuaTable) input.rawget("Choices");
+            int n = choices.len();
+            // make sure we have enough buttons
+            for (int i = options.size(); i < n; i++) {
+                String jb = new String();
+                options.add(jb);
+                //addButton(jb);
+            }
+            // set up choices
+            for (int i = 0; i < n; i++) {
+                String choice = (String) choices.rawget(new Double(i + 1));
+                String jb = options.get(i);
+                jb = choice;
+                //jb.setVisible(true);
+            }
+            // hide the rest
 //			for (int i = n; i < options.size(); i++) {
 //				options.get(i).setVisible(false);
 //			}
-		}
+        }
 //		rightPanel.revalidate();
         //session.setAttribute("input", input.toString());
     }
@@ -481,7 +634,7 @@ public class GameWindow implements UI {
                 // figure out which submenu
                 showDetails(details);
                 break;
-            
+
         }
     }
 
@@ -489,7 +642,7 @@ public class GameWindow implements UI {
     }
 
     public void playSound(Media media) {
-        
+
         mediaName = media.name;
         mediaType = media.type;
         mediaOverride = media.altText;

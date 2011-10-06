@@ -241,9 +241,9 @@ public class StartMatchsJspBean implements Serializable {
 
 
 
-        if (session.getAttribute("dialogTexts") == null) {
+        if (session.getAttribute("DIALOG") == null) {
 
-            while (session.getAttribute("dialogTexts") == null) {
+            while (session.getAttribute("DIALOG") != null) {
                 // TODO implements something more realable than this could cause memory leak
             }
 
@@ -273,7 +273,7 @@ public class StartMatchsJspBean implements Serializable {
         if (session.getAttribute("callback") != null) {
             // text = session.getAttribute("callback").toString();
         }
-
+        
 
 //        String task = media;
 //        String delimiter2 = "\\|\\|";
@@ -312,10 +312,17 @@ public class StartMatchsJspBean implements Serializable {
 
         if (matchStarted == true) {
 
-            msg = " <div data-role='fieldcontain'  data-theme='a' align='center'><IMG SRC= '../icon?matchtitle=" + match + "&icon=" + media + "' align='center'><h4 align='center'>" + text + "</h4></div>";
-        } else {
-            msg = " <div data-role='fieldcontain'  data-theme='a' align='center'><p align='center'><h4 align='center'>You already playing a game. Please Logout to quit this game first. Then login again.</h4></p></div>";
+//            msg = " <div data-role='fieldcontain'  data-theme='a' align='center'><IMG SRC= '../icon?matchtitle=" + match + "&icon=" + media + "' align='center'><h4 align='center'>" + text + "</h4></div>";
+//        } else {
+//            msg = " <div data-role='fieldcontain'  data-theme='a' align='center'><p align='center'><h4 align='center'>You already playing a game. Please Logout to quit this game first. Then login again.</h4></p></div>";
 
+           
+             msg = session.getAttribute("DIALOG").toString();
+        
+            
+            
+            
+            
         }
 
 

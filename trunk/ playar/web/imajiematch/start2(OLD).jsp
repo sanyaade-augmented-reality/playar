@@ -1,20 +1,16 @@
 <%-- 
-    Document   : controlpanel
-    Created on : Aug 22, 2011, 10:15:59 PM
-    Author     : Carl Tremblay
+    Document   : start
+    Created on : Aug 28, 2011, 10:19:16 PM
+    Author     : Carl Tremblay <carl_tremblay at imajie.tv>
 --%>
 
 
 
+<jsp:useBean id="match" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.StartMatchsJspBean" />
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-
-<jsp:useBean id="locationsCount" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.GetLocationsCountJspBean" />
-<jsp:useBean id="inventoryCount" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.GetInventoryCountJspBean" />
-<jsp:useBean id="tasksCount" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.GetTasksCountJspBean" />
-<jsp:useBean id="youseeCount" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.GetYouseeCountJspBean" />
-
 
 <%
     //String tagId = request.getParameter("id");
@@ -51,17 +47,19 @@
 
 
 
+    
 %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
-        <title>Mission Control</title>
+        <title>Start</title>
 
         <!--      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
-
-       <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-
-        <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>-->
+        
+               <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+        
+                <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>-->
 
 
         <!----><link rel="stylesheet" href="js/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.css" />
@@ -69,8 +67,10 @@
 
         <script src="js/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.js"></script>
 
+
+
         <script type="text/javascript" language="javascript">
-            $(document).ready(function(){
+              $(document).ready(function(){
         
         var    dheight = $('html').height(),
             cbody = $('#contentbody').height(),
@@ -110,37 +110,30 @@
 });
 
         </script>
-
-
-
-
     </head>
-
-
     <body>
-        <div data-role="page" style="min-height:100%" data-theme='a'>
+
+
+        <div data-role="page" style="min-height:100%">
             <div data-role="header"  data-theme="b">
 
-<h1>Mission Control</h1>
+                <h1>Mission Instructions</h1>
 
-	
-
-                
 
             </div><!-- /header -->
 
-            <div data-role="content">
+            <div data-role="content"  data-theme="a">        
 
-                <ul data-role="listview" data-theme="a">
-
-                    <li><a href="inventory.jsp" data-transition="slide"><IMG SRC= "images/inventory.png">Inventory (<%= inventoryCount.getCount(request)%>)</a></li>
-                    <li><a href="tasks.jsp" data-transition="slide"><IMG SRC= "images/tasks.png">Tasks (<%= tasksCount.getCount(request)%>)</a></li>
-                    <li><a href="locations.jsp" data-transition="slide"><IMG SRC= "images/locations.png">Locations (<%= locationsCount.getCount(request)%>)</a></li>
-                    <li><a href="yousee.jsp" data-transition="slide"><IMG SRC= "images/yousee.png">You See (<%= youseeCount.getCount(request)%>)</a></li>
-                    <li><a href="parameters.jsp" data-transition="slide"><IMG SRC= "images/cartridge.png">Parameters</a></li>
+                <%= match.start2(request)%>
 
 
-                </ul>
+                
+                <a href='controlpanel.jsp' data-role='button'>Mission Control</a>
+           
+                <a href='parameters.jsp' data-role='button'>Parameters</a>
+                
+
+                <a href="http://m.layar.com/open/imajiematch" data-role="button">Go to your mission</a>
 
 
             </div><!-- /Content -->
@@ -156,5 +149,7 @@
 
 
         </div> 
+
+
     </body>
 </html>

@@ -73,52 +73,12 @@
 
         <script src="js/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.js"></script>
 
-        <script type="text/javascript" language="javascript">
-              $(document).ready(function(){
         
-        var    dheight = $('html').height(),
-            cbody = $('#contentbody').height(),
-            wheight = $(window).height(),
-            cheight = wheight - dheight + cbody;
-            
-        if (wheight > dheight){
-            $('#contentbody').height(cheight);
-        }
-        
-        $(window).resize(function(){
-            wheight = $(window).height();
-            noscroll();
-            changepush();
-        });
-
-        function noscroll(){
-           if (wheight > dheight) {
-                $('html').addClass('noscroll');
-           }
-
-            else if (wheight <= dheight) {
-                $('html').removeClass('noscroll');
-            }
-            
-            else {}
-
-        }
-
-        function changepush(){
-           if (wheight > dheight) {
-                   $('#contentbody').height(wheight-dheight+cbody);
-           }
-            
-        }
-
-});
-
-        </script>
     </head>
     <body>
         
         
-        <div data-role="page" style="min-height:100%">
+        <div data-role="page" style="min-height:100%" data-theme='a'>
             <div data-role="header"  data-theme="b">
 
                 <h1>Mission Details</h1>

@@ -160,77 +160,77 @@ public class LayarServlet extends HttpServlet {
 
 
             // the solution to the problem
-            
+
             int port = 4000;
             String host = "localhost";
-            
-            try {
-            Socket imajieMatchSocket = null;
-            PrintWriter out2 = null;
-            BufferedReader in = null;
 
             try {
-                imajieMatchSocket = new Socket(host, port);
-                out2 = new PrintWriter(imajieMatchSocket.getOutputStream(), true);
-                in = new BufferedReader(new InputStreamReader(imajieMatchSocket.getInputStream()));
-            } catch (UnknownHostException e) {
-                System.err.println("Don't know about host: " + host + ".");
-                
-            } catch (IOException e) {
+                Socket imajieMatchSocket = null;
+                PrintWriter out2 = null;
+                BufferedReader in = null;
 
-             
-                System.err.println("Couldn't get I/O for the connection to: " + host + ".");
-               
+                try {
+                    imajieMatchSocket = new Socket(host, port);
+                    out2 = new PrintWriter(imajieMatchSocket.getOutputStream(), true);
+                    in = new BufferedReader(new InputStreamReader(imajieMatchSocket.getInputStream()));
+                } catch (UnknownHostException e) {
+                    System.err.println("Don't know about host: " + host + ".");
+
+                } catch (IOException e) {
+
+
+                    System.err.println("Couldn't get I/O for the connection to: " + host + ".");
+
+                }
+
+
+
+                String fromServer;
+                String fromUser;
+                MainServerClientProtocol imp = new MainServerClientProtocol(session, 7);
+
+                fromUser = imp.processInput(null, session, request);
+                out2.println(fromUser);
+
+
+                while ((fromServer = in.readLine()) != null) {
+                    System.out.println(fromServer);
+
+                    fromUser = imp.processInput(fromServer, session, request);
+                    if (fromUser != null) {
+                        System.out.println(fromUser);
+                        out2.println(fromUser);
+                    }
+
+                    if (fromServer.equals("Bye.")) {
+
+                        break;
+                    }
+                    if (fromServer.equals("Me?")) {
+
+                        break;
+                    }
+
+
+                }
+
+
+                System.out.println("Process finish");
+                out2.close();
+                in.close();
+
+                imajieMatchSocket.close();
+
+
+                System.out.println("Process finish");
+
+            } catch (IOException ex) {
+
+                Logger.getLogger(LayarServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            
-           
-            String fromServer;
-            String fromUser;
-            MainServerClientProtocol imp = new MainServerClientProtocol(session, 7);
-
-            fromUser = imp.processInput(null,session,request);
-            out2.println(fromUser);
-
-
-            while ((fromServer = in.readLine()) != null) {
-                System.out.println(fromServer);
-
-                fromUser = imp.processInput(fromServer, session,request);
-                if (fromUser != null) {
-                    System.out.println(fromUser);
-                    out2.println(fromUser);
-                }
-
-                if (fromServer.equals("Bye.")) {
-
-                    break;
-                }
-                if (fromServer.equals("Me?")) {
-
-                    break;
-                }
-
-
-            }
-
-
-            System.out.println("Process finish");
-            out2.close();
-            in.close();
-
-            imajieMatchSocket.close();
-
-
-            System.out.println("Process finish");
-
-        } catch (IOException ex) {
-            
-            Logger.getLogger(LayarServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
             // End the solution to the problem
-       
+
             String result = "";
             if (session.getAttribute("LayarMatchsList") != null) {
                 result = session.getAttribute("LayarMatchsList").toString();
@@ -305,54 +305,49 @@ public class LayarServlet extends HttpServlet {
 
                         JSONObject text = new JSONObject();
                         text.accumulate("title", StringEscapeUtils.escapeJavaScript(cartridgeDetails[0]));
-                        
-                         if (cartridgeDetails[4].contains("***VISION")) { 
-                             
-                         } else {   
-                             text.accumulate("description", cartridgeDetails[1]);
-                        text.accumulate("footnote", "Powered by ImajieMatch");
-                             
-                             
-                         }
-                        
+
+                        if (cartridgeDetails[4].contains("***VISION")) {
+                        } else {
+                            text.accumulate("description", cartridgeDetails[1]);
+                            text.accumulate("footnote", "Powered by ImajieMatch");
+
+
+                        }
+
                         poi.accumulate("text", text);
 
-                         if (cartridgeDetails[4].contains("***VISION")) { 
-                      
-                         } else { 
-                         
-                         poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
-                             
-                         }
+                        if (cartridgeDetails[4].contains("***VISION")) {
+                        } else {
 
-                        
+                            poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
+
+                        }
+
+
                         poi.accumulate("doNotIndex", false);
 
                         poi.accumulate("inFocus", false);
 
                         if (cartridgeDetails[4].contains("***VISION")) {
                             poi.accumulate("showSmallBiw", false);
-                        } else { 
-                            
+                        } else {
+
                             poi.accumulate("showSmallBiw", true);
                         }
-                        
-                        
+
+
 
                         poi.accumulate("showBiwOnClick", false);
 
 
 
-                        if (cartridgeDetails[4].contains("***VISION")) { 
-                            
-                            
-                            
+                        if (cartridgeDetails[4].contains("***VISION")) {
                         } else {
-                        
-                        JSONObject icon = new JSONObject();
-                        icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
-                        icon.accumulate("type", "0");
-                        poi.accumulate("icon", icon);
+
+                            JSONObject icon = new JSONObject();
+                            icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
+                            icon.accumulate("type", "0");
+                            poi.accumulate("icon", icon);
 
                         }
                         // Forces the POI's BIW style to "classic" or "collapsed". 
@@ -365,10 +360,10 @@ public class LayarServlet extends HttpServlet {
                         // Actions
                         JSONArray actions = new JSONArray();
                         JSONObject action1 = new JSONObject();
-                        if (cartridgeDetails[4].contains("***VISION")) { 
+                        if (cartridgeDetails[4].contains("***VISION")) {
                             action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start.jsp?match=" + cartridgeDetails[0]);
                         } else {
-                        action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/startmatch.jsp?match=" + cartridgeDetails[0]);
+                            action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/startmatch.jsp?match=" + cartridgeDetails[0]);
                         }
                         action1.accumulate("label", "View Mission");
 
@@ -382,7 +377,7 @@ public class LayarServlet extends HttpServlet {
                         action1.accumulate("closeBiw", true);
                         action1.accumulate("showActivity", false);
                         action1.accumulate("activityMessage", "");
-                       
+
 
 
                         if (cartridgeDetails[4].contains("***VISION")) {
@@ -393,11 +388,11 @@ public class LayarServlet extends HttpServlet {
                         } else {
 
                             action1.accumulate("autoTriggerOnly ", false);
-                             action1.accumulate("autoTriggerRange", "10");
+                            action1.accumulate("autoTriggerRange", "10");
 
                         }
 
-                         // Autotrigger indicator for Vision enabled POIs. 
+                        // Autotrigger indicator for Vision enabled POIs. 
 
                         actions.add(action1);
 
@@ -410,9 +405,9 @@ public class LayarServlet extends HttpServlet {
                         transform.accumulate("scale", params.getScale());
                         poi.accumulate("transform", transform);
 
-                        
-                      
-                        
+
+
+
                         // Transform values
                         JSONObject object = new JSONObject();
                         // Content type of the object. Can be one of the following:
@@ -420,27 +415,27 @@ public class LayarServlet extends HttpServlet {
                         //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
                         //   model/vnd.layar.l3d for 3D models
                         //   image/jpeg, image/gif, image/png for images
-                        
-                        
-                        
-                        
-                        if (cartridgeDetails[4].contains("***VISION")) { 
+
+
+
+
+                        if (cartridgeDetails[4].contains("***VISION")) {
                             object.accumulate("contentType", "image/png");
                             object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=getMission.png");
                             object.accumulate("size", "0.25");
-                            
-                        } else { 
-                            
+
+                        } else {
+
                             object.accumulate("contentType", "image/png");
-                        object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
-                       // object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashidsmall.jpg");
-                        object.accumulate("size", "1.0");
+                            object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
+                            // object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashidsmall.jpg");
+                            object.accumulate("size", "1.0");
                         }
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
                         //object.accumulate("size", params.getSize());
                         poi.accumulate("object", object);
 
@@ -612,13 +607,13 @@ public class LayarServlet extends HttpServlet {
                         //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
                         //   model/vnd.layar.l3d for 3D models
                         //   image/jpeg, image/gif, image/png for images
-                        
+
                         if (media.contains(".jpg")) {
-                        object.accumulate("contentType", "image/jpeg");
-                            
+                            object.accumulate("contentType", "image/jpeg");
+
                         } else {
-                        object.accumulate("contentType", "image/png");
-                        
+                            object.accumulate("contentType", "image/png");
+
                         }
                         object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
                         //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
@@ -813,77 +808,82 @@ public class LayarServlet extends HttpServlet {
 
         } else {
 
-            JSONObject showDialog = new JSONObject();
+            // TODO IMPLEMENTS SHOWDIALOG SESSION ATTRIBUTES        
+            if (session.getAttribute("showDialog") != null) {
+                if (session.getAttribute("showDialog").toString() != "false") {
 
-            showDialog.accumulate("title", "Mission : " + gameStarted + "");
+                    JSONObject showDialog = new JSONObject();
+
+                    showDialog.accumulate("title", "Mission : " + gameStarted + "");
 
 
 
-            String msg = "";
-            int counts = 0;
+                    String msg = "";
+                    int counts = 0;
 
-            if (session.getAttribute("tasksCount") != null) {
+                    if (session.getAttribute("tasksCount") != null) {
 
-                counts = (int) Long.parseLong(session.getAttribute("tasksCount").toString());
+                        counts = (int) Long.parseLong(session.getAttribute("tasksCount").toString());
 
+                    }
+
+                    String dialogTexts = "";
+
+                    if (session.getAttribute("dialogTexts") != null) {
+
+                        dialogTexts = session.getAttribute("dialogTexts").toString();
+
+
+                    }
+
+
+
+                    msg = "Mission agent: " + username + ".\n\n" + dialogTexts + "";
+
+
+                    showDialog.accumulate("description", msg);
+
+                    JSONArray messageActions = new JSONArray();
+
+                    JSONObject messageAction1 = new JSONObject();
+
+
+                    messageAction1.accumulate("contentType", "text/html");
+                    messageAction1.accumulate("method", "GET");
+                    messageAction1.accumulate("activityType", "1");
+                    messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button1=" + session.getAttribute("Button1"));
+                    messageAction1.accumulate("label", session.getAttribute("Button1"));
+                    //messageAction1.accumulate("label", "Tasks (" + counts + ")");
+                    messageActions.add(messageAction1);
+
+
+                    if (session.getAttribute("Button2") != null || session.getAttribute("Button2") != "null") {
+                        JSONObject messageAction2 = new JSONObject();
+
+
+                        messageAction2.accumulate("contentType", "text/html");
+                        messageAction2.accumulate("method", "GET");
+                        messageAction2.accumulate("activityType", "1");
+                        messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button2=" + session.getAttribute("Button2"));
+                        messageAction2.accumulate("label", session.getAttribute("Button2"));
+                        //messageAction1.accumulate("label", "Tasks (" + counts + ")");
+                        messageActions.add(messageAction2);
+                    }
+
+
+
+
+
+
+
+
+
+                    showDialog.accumulate("actions", messageActions);
+
+
+                    layer.accumulate("showDialog", showDialog);
+                }
             }
-
-            String dialogTexts = "";
-
-            if (session.getAttribute("dialogTexts") != null) {
-
-                dialogTexts = session.getAttribute("dialogTexts").toString();
-
-
-            }
-
-
-
-            msg = "Mission agent: " + username + ".\n\n" + dialogTexts + "";
-
-
-            showDialog.accumulate("description", msg);
-
-            JSONArray messageActions = new JSONArray();
-
-            JSONObject messageAction1 = new JSONObject();
-
-
-            messageAction1.accumulate("contentType", "text/html");
-            messageAction1.accumulate("method", "GET");
-            messageAction1.accumulate("activityType", "1");
-            messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button1="+session.getAttribute("Button1"));           
-            messageAction1.accumulate("label", session.getAttribute("Button1"));
-            //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-            messageActions.add(messageAction1);
-
-            
-            if (session.getAttribute("Button2") != null || session.getAttribute("Button2") != "null") {
-            JSONObject messageAction2 = new JSONObject();
-
-
-            messageAction2.accumulate("contentType", "text/html");
-            messageAction2.accumulate("method", "GET");
-            messageAction2.accumulate("activityType", "1");
-            messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button2="+session.getAttribute("Button2"));           
-            messageAction2.accumulate("label", session.getAttribute("Button2"));
-            //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-            messageActions.add(messageAction2);
-            }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            showDialog.accumulate("actions", messageActions);
-
-
-            layer.accumulate("showDialog", showDialog);
-
         }
         //layer.accumulate("deletedHotspots", "");
 
@@ -908,6 +908,4 @@ public class LayarServlet extends HttpServlet {
         String uid = new java.rmi.server.UID().toString(); // guaranteed unique
         return URLEncoder.encode(uid, "UTF-8"); // encode any special chars
     }
-
-   
 }

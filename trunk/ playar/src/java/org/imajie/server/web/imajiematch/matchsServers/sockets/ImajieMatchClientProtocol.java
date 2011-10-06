@@ -43,6 +43,7 @@ public class ImajieMatchClientProtocol {
     private static final int KILL_THREAD = 10;
     private static final int GET_LAYAR_REFRESH_POI = 11;
     private int state = START;
+    private String playerState = "";
 
     public String processInput(String theInput,HttpSession session, HttpServletRequest request) {
         String theOutput = null;
@@ -74,6 +75,10 @@ state = KILL_THREAD;
                 }
 
 
+            } else {
+            
+            state = START;
+            
             }
 
 
@@ -92,6 +97,11 @@ state = KILL_THREAD;
 state = CALL_FINNISH;
                 }
             }
+            else {
+            
+            state = KILL_THREAD;
+            
+            }
         } /* **********************************************
          *************************************************
          *        Refresh layar player state
@@ -108,6 +118,10 @@ state = CALL_FINNISH;
                     System.out.println("KILL_THREAD");
 state = KILL_THREAD;
                 }
+            } else {
+            
+            state = GET_LAYAR_REFRESH_POI;
+            
             }
         } /* **********************************************
          *************************************************
@@ -127,6 +141,11 @@ state = STATE;
 
                 }
             }
+            else {
+            
+            state = REFRESH_LOCATION;
+            
+            }
 
 
         } /* **********************************************
@@ -134,6 +153,7 @@ state = STATE;
          *     Player State Command Method
          *********************************************** */ //
         else if (state == STATE) {
+            playerState = playerState + theInput.toString();
             if (theInput != null) {
                 if (theInput.contains("PLAYER_STATE||||||")) {
 
@@ -156,7 +176,24 @@ state = STATE;
                         //  YOUSEECOUNT youseeCount
 
 
-                    String resultArrays = theInput.replace("PLAYER_STATE||||||", "");
+                    
+
+                    
+                    
+
+                    
+
+                    //waiting(300);
+                }
+                if (theInput.contains("|!!|PLAYER_STATE")) {
+                    
+                    
+                    
+                    
+                    playerState = playerState.replace("|!!|PLAYER_STATE", "");
+                    
+                    
+                    String resultArrays = playerState.replace("PLAYER_STATE||||||", "");
 
                     String delimiter = "\\|!!!\\|";
                     String[] temp = resultArrays.split(delimiter);
@@ -238,16 +275,36 @@ state = STATE;
                             PLAYMEDIA_CALL = PLAYMEDIA_CALL.replace("|!!!|", "");
                             session.setAttribute("PLAYMEDIA_CALL", PLAYMEDIA_CALL);
                         }
+                        if (ii == 16) {
+                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
+                            String DIALOG =  temp[ii].replace("DIALOG", "");
+                            DIALOG = DIALOG.replace("|!!!|", "");
+                            session.setAttribute("DIALOG", DIALOG);
+                        }
 
                     }
-
-                    theOutput = "CALLBACK";
                     
-
-                    System.out.println("CALLBACK");
-state = CALLBACK;
-                    //waiting(300);
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                theOutput = "CALLBACK";
+                
+                System.out.println("CALLBACK");
+                state = CALLBACK;
                 }
+            } else {
+            
+            state = STATE;
+            
             }
         } /* **********************************************
          *************************************************
@@ -266,6 +323,11 @@ state = PLAYER_CALLBACK;
                     //waiting(300);
                 }
             }
+            else {
+            
+            state = CALLBACK;
+            
+            }
         } /* **********************************************
          *************************************************
          *     Player Input CallBack Command Method
@@ -281,6 +343,11 @@ state = PLAYER_CALLBACK;
 
                     // waiting(300);
                 }
+            }
+            else {
+            
+            state = PLAYER_CALLBACK;
+            
             }
         } /* **********************************************
          *************************************************
@@ -298,6 +365,11 @@ state = PLAYER_CALLBACK;
 
                     // waiting(300);
                 }
+            }
+            else {
+            
+            state = SAVE;
+            
             }
         } /* **********************************************
          *************************************************

@@ -118,7 +118,7 @@
          
         
 
-        <div data-role="page" style="min-height:100%" id="callAjaxPage">
+        <div data-role="page" style="min-height:100%" id="callAjaxPage"  data-theme="a">
 
             <div data-role="header"  data-theme="b">
 

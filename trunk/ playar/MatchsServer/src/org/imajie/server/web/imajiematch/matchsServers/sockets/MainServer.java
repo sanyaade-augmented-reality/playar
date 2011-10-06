@@ -222,7 +222,7 @@ class MainListener {
                 t.start();
             } catch (IOException e) {
                 System.out.println("Accept failed: 4000");
-                //System.exit(-1);
+                System.exit(-1);
             }
         }
     }

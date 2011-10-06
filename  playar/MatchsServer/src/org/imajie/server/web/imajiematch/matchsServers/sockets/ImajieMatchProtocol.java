@@ -194,8 +194,9 @@ public class ImajieMatchProtocol {
                 result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount+ "|!!!|";
                 result = result + "YOUSEECOUNT" + GameWindow.youseeCount+ "|!!!|";
                 result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName+"."+GameWindow.mediaType+"||"+GameWindow.mediaOverride + "|!!!|";
+                result = result + "DIALOG" + GameWindow.dialog+ "|!!!|";
                 
-                theOutput = result;
+                theOutput = result + "|!!|PLAYER_STATE";
 
                 
                 state = COMMAND;

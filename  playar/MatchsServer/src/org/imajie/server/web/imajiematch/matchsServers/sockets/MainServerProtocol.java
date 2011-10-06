@@ -458,8 +458,10 @@ public class MainServerProtocol {
                 //  + "Find this rabbit hole to enter the game: " + cartridgeDetails[4] + "</div>"
                 //         + "<div data-role='fieldcontain'  data-theme='a'>"
 
-                String formHeader = "<form action='start.jsp?match=" + match + "' data-transition='slide' method='post'> ";
-                String formFooter = "</form>";
+                 String formHeader = "";
+                String formFooter = "";
+                //String formHeader = "<form action='"+Constants.URL_SERVER+"/imajiematch/start.jsp?match=" + match + "'  method='post'> ";
+               // String formFooter = "</form>";
                 if (cartridgeDetails[4].contains("VISION")) {
 
                     formHeader = "";
@@ -496,7 +498,7 @@ public class MainServerProtocol {
 
                 if (rabbitHole.equals("<div data-role='fieldcontain'  data-theme='a'>")) {
 
-                    msg = msg + "<input type='submit' data-role='button' data-theme='a' value='Get Mission'/>";
+                    msg = msg + "<a href='"+Constants.URL_SERVER+"/imajiematch/start.jsp?match=" + match + "' data-role='button' target='_top'>Get Mission</a>";
 
 
                 } else {

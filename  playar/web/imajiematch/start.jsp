@@ -21,6 +21,7 @@
     String practice = "";
     String gameType = "";
     String authorized = "";
+    String matchStarted = "null";
     String matchToStart = request.getParameter("match");
 
     if (session.getAttribute("username") != null) {
@@ -51,8 +52,13 @@
         authorized = session.getAttribute("authorized").toString();
 
     }
+    if (session.getAttribute("gameStarted") != null) {
 
-    if (authorized.equals("yes")) {
+        matchStarted = session.getAttribute("gameStarted").toString();
+
+    }
+
+    if (authorized.equals("yes") && matchStarted.equals("null")) {
 
 
         match.start(request);
@@ -128,36 +134,32 @@
 
         </script>
     </head>
-    <body>
+          
+                <%
+
+                    if (authorized.equals("yes") && matchStarted.equals("null")) {
+
+                       // <jsp:forward page="start2.jsp/>
+                %> 
+                
+                 <%= match.start2(request)%>
+                
+                
 
 
-        <div data-role="page" style="min-height:100%">
+                <%} else if (!authorized.equals("yes")) {%>
+                <body>
+
+
+        <div data-role="page" style="min-height:100%"  data-theme='a'>
             <div data-role="header"  data-theme="b">
 
-                <h1>Mission Instructions</h1>
+                <h1>Warning</h1>
 
 
             </div><!-- /header -->
 
-            <div data-role="content"  data-theme="a" >        
-                <%
-
-                    if (authorized.equals("yes")) {
-
-                       // <jsp:forward page="start2.jsp/>
-                %> 
-                 <%= match.start2(request)%>
-                
-                 <a href='controlpanel.jsp' data-role='button'>Mission Control</a>
-           
-                <a href='parameters.jsp' data-role='button'>Parameters</a>
-                
-
-                <a href="http://m.layar.com/open/imajiematch" data-role="button">Go to your mission</a>
-
-
-                <%} else {%>
-                
+            <div data-role="content"  data-theme="a" >  
                 <div data-role='fieldcontain'  data-theme='a'>
                     <h3  align="center" >You need to be registered to get a mission. Please create an account or login with your username and password.</h3>
                     <a href="imajieste/login.jsp" data-transition='slide' data-role='button' data-theme="e">Login</a>
@@ -167,13 +169,7 @@
                     <a href='http://m.layar.com/open/imajiematch' data-transition='slide' data-role='button'>Return to Camera</a>
                     
                 </div>
-
-                <%    }%>
-
-
-
-
-            </div><!-- /Content -->
+</div><!-- /Content -->
 
             <div data-role="footer"  data-theme="b">
 
@@ -189,4 +185,48 @@
 
 
     </body>
+                <%    } else if (!matchStarted.equals("null") ) {%>
+               
+                <body>
+
+
+        <div data-role="page" style="min-height:100%"  data-theme='a'>
+            <div data-role="header"  data-theme="b">
+
+                <h1>Warning</h1>
+
+
+            </div><!-- /header -->
+
+            <div data-role="content"  data-theme="a" >  
+                <div data-role='fieldcontain'  data-theme='a'>
+                    <h3  align="center" >You already playing a game. Please Logout to quit this game first. Then login again.</h3>
+                    <a href="imajieste/logout.jsp" data-transition='slide' data-role='button' data-theme="e">Logout</a>
+                    <a href='controlpanel.jsp' data-transition='slide' data-role='button'>Mission Control</a>
+                    <a href='parameters.jsp' data-role='button'>Parameters</a>
+                    <a href='http://m.layar.com/open/imajiematch' data-transition='slide' data-role='button'>Return to Camera</a>
+                    
+                </div>
+</div><!-- /Content -->
+
+            <div data-role="footer"  data-theme="b">
+
+                <h4>&copy; imajie.tv 2011</h4>        
+
+
+            </div><!-- /Footer -->
+
+
+
+
+        </div> 
+
+
+    </body>
+                <%    }%>
+
+
+
+
+            
 </html>

@@ -112,43 +112,10 @@
         </script>
     </head>
     <body>
-
-
-        <div data-role="page" style="min-height:100%">
-            <div data-role="header"  data-theme="b">
-
-                <h1>Mission Instructions</h1>
-
-
-            </div><!-- /header -->
-
-            <div data-role="content"  data-theme="a">        
+     
 
                 <%= match.start2(request)%>
 
-
-                
-                <a href='controlpanel.jsp' data-role='button'>Mission Control</a>
-           
-                <a href='parameters.jsp' data-role='button'>Parameters</a>
-                
-
-                <a href="http://m.layar.com/open/imajiematch" data-role="button">Go to your mission</a>
-
-
-            </div><!-- /Content -->
-
-            <div data-role="footer"  data-theme="b">
-
-                <h4>&copy; imajie.tv 2011</h4>        
-
-
-            </div><!-- /Footer -->
-
-
-
-
-        </div> 
 
 
     </body>

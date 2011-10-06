@@ -118,7 +118,7 @@
     <body>
         
         
-        <div data-role="page" style="min-height:100%">
+        <div data-role="page" style="min-height:100%" data-theme='a'>
             <div data-role="header"  data-theme="b">
 
                 <h1>Mission Details</h1>

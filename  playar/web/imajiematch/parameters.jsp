@@ -132,7 +132,7 @@
     </head>
     <body>         
 
-        <div data-role="page" style="min-height:100%">
+        <div data-role="page" style="min-height:100%" data-theme='a'>
 
 
 
@@ -185,7 +185,7 @@
                         %>
                     </div> <!-- /header --> 
                     <div data-role="content"  data-theme="a">
-                        <form action="setParameters.jsp" data-transition="slide" method="post">
+                        <form action="setParameters.jsp" data-transition="slide" target="_top" method="post">
 
                             <div data-role="fieldcontain"  data-theme="a">
 

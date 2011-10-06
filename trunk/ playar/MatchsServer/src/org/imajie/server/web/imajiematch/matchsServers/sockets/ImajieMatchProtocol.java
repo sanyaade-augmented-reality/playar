@@ -16,7 +16,6 @@
  */
 package org.imajie.server.web.imajiematch.matchsServers.sockets;
 
-
 import org.imajie.server.web.imajiematch.matchsServers.main.GameWindow;
 import org.imajie.server.web.imajiematch.matchsServers.openwig.Engine;
 
@@ -75,7 +74,7 @@ public class ImajieMatchProtocol {
             } //***** Procces Call for a actual player state  *****
             else if (theInput.equalsIgnoreCase("STATE")) {
 
-                
+
                 //************ Build the result player state and return it
                 String result = "PLAYER_STATE||||||";
                 result = result + "ZONE" + GameWindow.zoneList + "|!!!|";
@@ -84,17 +83,17 @@ public class ImajieMatchProtocol {
                 result = result + "YOUSEE" + GameWindow.youseeList + "|!!!|";
                 result = result + "BUTTON1" + GameWindow.Button1 + "|!!!|";
                 result = result + "BUTTON2" + GameWindow.Button2 + "|!!!|";
-                result = result + "DIALOGTEXT" + GameWindow.dialogTexts+ "|!!!|";
-                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia+ "|!!!|"; 
-                result = result + "MEDIAALTTEXT" + GameWindow.altText+ "|!!!|";  
-                result = result + "MEDIADESCRIPTION" + GameWindow.description+ "|!!!|";  
-                result = result + "MEDIARAWNAME" + GameWindow.rawName+ "|!!!|";  
-                result = result + "ZONECOUNT" + GameWindow.zoneCount+ "|!!!|";
-                result = result + "TASKCOUNT" + GameWindow.tasksCount+ "|!!!|";
-                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount+ "|!!!|";
-                result = result + "YOUSEECOUNT" + GameWindow.youseeCount+ "|!!!|";
-                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName+"||"+GameWindow.mediaType+"||"+GameWindow.mediaOverride + "|!!!|";
-                
+                result = result + "DIALOGTEXT" + GameWindow.dialogTexts + "|!!!|";
+                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia + "|!!!|";
+                result = result + "MEDIAALTTEXT" + GameWindow.altText + "|!!!|";
+                result = result + "MEDIADESCRIPTION" + GameWindow.description + "|!!!|";
+                result = result + "MEDIARAWNAME" + GameWindow.rawName + "|!!!|";
+                result = result + "ZONECOUNT" + GameWindow.zoneCount + "|!!!|";
+                result = result + "TASKCOUNT" + GameWindow.tasksCount + "|!!!|";
+                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";
+                result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";
+                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "||" + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
+
                 theOutput = result;
 
                 state = COMMAND;
@@ -141,7 +140,7 @@ public class ImajieMatchProtocol {
         else if (state == REFRESH_LOCATION) {
             if (theInput.contains("GEOPOSITION||")) {
 
-                 //    Array to parse     lat||lon||alt||accuracy
+                //    Array to parse     lat||lon||alt||accuracy
                 String position = theInput.replace("GEOPOSITION||", "");
                 String delimiter = "\\|\\|";
                 String[] temp = position.split(delimiter);
@@ -150,7 +149,7 @@ public class ImajieMatchProtocol {
                 Double lon = null;
                 Double alt = null;
                 Double accuracy = null;
-                
+
                 for (int ii = 0; ii < temp.length; ii++) {
                     if (ii == 0) {
                         lat = Double.parseDouble(temp[ii]);;
@@ -174,8 +173,8 @@ public class ImajieMatchProtocol {
                 Engine.instance.accuracy = accuracy;
                 Engine.instance.player.refreshLocation();
 
-                
-                
+
+
                 //************ Build the result player state and return it
                 String result = "PLAYER_STATE||||||";
                 result = result + "ZONE" + GameWindow.zoneList + "|!!!|";
@@ -184,21 +183,21 @@ public class ImajieMatchProtocol {
                 result = result + "YOUSEE" + GameWindow.youseeList + "|!!!|";
                 result = result + "BUTTON1" + GameWindow.Button1 + "|!!!|";
                 result = result + "BUTTON2" + GameWindow.Button2 + "|!!!|";
-                result = result + "DIALOGTEXT" + GameWindow.dialogTexts+ "|!!!|";
-                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia+ "|!!!|"; 
-                result = result + "MEDIAALTTEXT" + GameWindow.altText+ "|!!!|";  
-                result = result + "MEDIADESCRIPTION" + GameWindow.description+ "|!!!|";  
-                result = result + "MEDIARAWNAME" + GameWindow.rawName+ "|!!!|";  
-                result = result + "ZONECOUNT" + GameWindow.zoneCount+ "|!!!|";
-                result = result + "TASKCOUNT" + GameWindow.tasksCount+ "|!!!|";
-                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount+ "|!!!|";
-                result = result + "YOUSEECOUNT" + GameWindow.youseeCount+ "|!!!|";
-                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName+"."+GameWindow.mediaType+"||"+GameWindow.mediaOverride + "|!!!|";
-                result = result + "DIALOG" + GameWindow.dialog+ "|!!!|";
-                
+                result = result + "DIALOGTEXT" + GameWindow.dialogTexts + "|!!!|";
+                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia + "|!!!|";
+                result = result + "MEDIAALTTEXT" + GameWindow.altText + "|!!!|";
+                result = result + "MEDIADESCRIPTION" + GameWindow.description + "|!!!|";
+                result = result + "MEDIARAWNAME" + GameWindow.rawName + "|!!!|";
+                result = result + "ZONECOUNT" + GameWindow.zoneCount + "|!!!|";
+                result = result + "TASKCOUNT" + GameWindow.tasksCount + "|!!!|";
+                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";
+                result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";
+                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "." + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
+                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+
                 theOutput = result + "|!!|PLAYER_STATE";
 
-                
+
                 state = COMMAND;
 
             }
@@ -210,10 +209,27 @@ public class ImajieMatchProtocol {
         else if (state == CALLBACK) {
             if (theInput.contains("PLAYER_CALLBACK")) {
 
+                String resultRequest = theInput.replace("PLAYER_CALLBACK", "");
 
+                if (resultRequest.equals("OK")) {
+                
+                    
+                    theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
+                    Engine.ui.callAndClose("OK");
+                
+                } else if (resultRequest.equals("CANCEL")) {
+                    Engine.ui.cancel();
+                    theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
+                
+                
+                } else {
                 
                 theOutput = "PLAYER_CALLBACK_STATE||";
-state = COMMAND;
+                
+                }
+                
+                
+                state = COMMAND;
 
             }
         }

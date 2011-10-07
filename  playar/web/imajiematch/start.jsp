@@ -147,7 +147,11 @@
                 
 
 
-                <%} else if (!authorized.equals("yes")) {%>
+                <% 
+
+               
+    
+    } else if (!authorized.equals("yes")) {%>
                 <body>
 
 

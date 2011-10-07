@@ -19,7 +19,6 @@ package org.imajie.server.web.imajiematch.matchsServers.sockets;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
 /**
  *
  * @author Carl Tremblay <carl_tremblay at imajie.tv>
@@ -46,9 +45,7 @@ public class MainServerClientProtocol {
     private static final int SESSION_MATCH_DETAILS = 13;
     private static final int LAYAR_REFRESH = 14;
     private int state = START;
-    public  int stateAfterStart = START;
-    
-    
+    public int stateAfterStart = START;
     public static String port = "777";
     public static String username = "Alfred";
     public static String lat = "0";
@@ -56,18 +53,17 @@ public class MainServerClientProtocol {
     public static String alt = "0";
     public static String accuracy = "10";
     //public static String match = MainServerClient.matchToPlay;
- 
 
     public MainServerClientProtocol(HttpSession session, int Requeststate) {
-        
+
         stateAfterStart = Requeststate;
-        
-        
-        
+
+
+
         //throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    public String processInput(String theInput,HttpSession session, HttpServletRequest request ) {
+    public String processInput(String theInput, HttpSession session, HttpServletRequest request) {
         String theOutput = null;
 
         if (state == START) {
@@ -110,6 +106,10 @@ public class MainServerClientProtocol {
                     theOutput = "KILL_THREAD";
 
                 }
+            } else {
+
+
+                state = START;
             }
 
 
@@ -125,6 +125,10 @@ public class MainServerClientProtocol {
                     state = GET_PORT;
 
                 }
+            } else {
+
+
+                state = NEW_GAME;
             }
         } /* **********************************************
          *************************************************
@@ -132,10 +136,10 @@ public class MainServerClientProtocol {
          *********************************************** */ //
         else if (state == GET_PORT) {
             if (theInput != null) {
-                
+
                 // TODO IMPLEMENTS THE HANDLE OF THIS ON THE RETURNED DISPLAY TO THE PLAYER
                 //FOR NOW it only handle playing or not playing without warnings
-                
+
                 if (theInput.contains("HAVE_FUN::PORT::")) {
 
                     session.setAttribute("PlayerServerSocketPort", theInput.replace("HAVE_FUN::PORT::", ""));
@@ -146,22 +150,26 @@ public class MainServerClientProtocol {
                 }
                 if (theInput.contains("SERVER_FULL")) {
 
-                    
+
                     session.setAttribute("gameStarted", "SERVER_FULL");
-                    
+
                     theOutput = "KILL_THREAD";
                     state = KILL_THREAD;
 
                 }
                 if (theInput.contains("ALREADY_PLAYING")) {
 
-                   
+
                     session.setAttribute("gameStarted", "ALREADY_PLAYING");
-                    
+
                     theOutput = "KILL_THREAD";
                     state = KILL_THREAD;
 
                 }
+            } else {
+
+
+                state = GET_PORT;
             }
         } /* **********************************************
          *************************************************
@@ -171,73 +179,74 @@ public class MainServerClientProtocol {
             if (theInput != null) {
                 if (theInput.equalsIgnoreCase("Location?")) {
 //"|!!!|LAYAR_REFRESH"
-                   
+
                     String latitude = "0";
                     String longitude = "0";
                     String radius = "10000";
-                    
+
                     if (session.getAttribute("lat") != null) {
-                    
+
                         latitude = session.getAttribute("lat").toString();
-                    
+
                     }
                     if (session.getAttribute("lon") != null) {
-                    
-                        longitude = session.getAttribute("lon").toString();
-                    
-                    }
-                     if (session.getAttribute("radius") != null) {
-                    
-                        radius = session.getAttribute("radius").toString();
-                    
-                    }
-                    
 
-                    theOutput = "LOCATION||||||" 
-                            + latitude + "||" 
-                            + longitude + "||" 
+                        longitude = session.getAttribute("lon").toString();
+
+                    }
+                    if (session.getAttribute("radius") != null) {
+
+                        radius = session.getAttribute("radius").toString();
+
+                    }
+
+
+                    theOutput = "LOCATION||||||"
+                            + latitude + "||"
+                            + longitude + "||"
                             + radius;
-                    
+
                     state = LAYAR_REFRESH;
 
 
                 }
+            } else {
+
+
+                state = GET_LAYAR_REFRESH;
             }
-        } 
-        
-         /* **********************************************
+        } /* **********************************************
          *************************************************
          *        Refresh layar player state to session
          *********************************************** */ //
         else if (state == LAYAR_REFRESH) {
             if (theInput != null) {
-                
-                
-                  matchDetails = matchDetails + theInput.toString();
+
+
+                matchDetails = matchDetails + theInput.toString();
 
 
 //                }
-                
+
                 if (theInput.contains("|!!!|LAYAR_REFRESH")) {
-                        
-                        matchDetails = matchDetails.replace("LAYAR_REFRESH||||||", "");
-                        matchDetails = matchDetails.replace("|!!!|LAYAR_REFRESH", "");
+
+                    matchDetails = matchDetails.replace("LAYAR_REFRESH||||||", "");
+                    matchDetails = matchDetails.replace("|!!!|LAYAR_REFRESH", "");
                     session.setAttribute("LayarMatchsList", matchDetails);
                     theOutput = "KILL_THREAD";
                     state = KILL_THREAD;
-                    
+
                 }
-                
-                
-                
-                
-            } else { 
-                
+
+
+
+
+            } else {
+
                 state = LAYAR_REFRESH;
-            
+
             }
-        }
-        /* **********************************************
+        } /* **********************************************
          *************************************************
          *        Restore a Game
          *********************************************** */ //
@@ -250,6 +259,10 @@ public class MainServerClientProtocol {
 
 
                 }
+            } else {
+
+
+                state = RESTORE_GAME;
             }
         } /* **********************************************
          *************************************************
@@ -266,6 +279,10 @@ public class MainServerClientProtocol {
                     //waiting(300);
 
                 }
+            } else {
+
+
+                state = PLAYER_MESSAGE;
             }
         } /* **********************************************
          *************************************************
@@ -278,38 +295,42 @@ public class MainServerClientProtocol {
                     String latitude = "0";
                     String longitude = "0";
                     String rad = "10000";
-                    
-                    
-                    
-                    if (session.getAttribute("lat") != null)  {
-                    
-                        latitude = session.getAttribute("lat").toString();
-                    
-                    }  
-                    
-                    if (session.getAttribute("lon") != null)  {
-                    
-                        longitude = session.getAttribute("lon").toString();
-                    
-                    } 
-                    
-                    if (session.getAttribute("radius") != null)  {
-                    
-                        rad = session.getAttribute("radius").toString();
-                    
-                    } 
-                    
-                    
 
-                    theOutput = "LOCATION||||||" 
-                            + latitude + "||" 
-                            + longitude + "||" 
+
+
+                    if (session.getAttribute("lat") != null) {
+
+                        latitude = session.getAttribute("lat").toString();
+
+                    }
+
+                    if (session.getAttribute("lon") != null) {
+
+                        longitude = session.getAttribute("lon").toString();
+
+                    }
+
+                    if (session.getAttribute("radius") != null) {
+
+                        rad = session.getAttribute("radius").toString();
+
+                    }
+
+
+
+                    theOutput = "LOCATION||||||"
+                            + latitude + "||"
+                            + longitude + "||"
                             + rad;
-                    
+
                     state = MATCHS;
 
 
                 }
+            } else {
+
+
+                state = GET_MATCHS;
             }
         } /* **********************************************
          *************************************************
@@ -319,13 +340,17 @@ public class MainServerClientProtocol {
             if (theInput != null) {
                 if (theInput.equalsIgnoreCase("MATCH_DETAILS?")) {
 
-                    
+
                     // TODO Probleme ici avec la variable match. Qui l'assigne et la declare ?
                     theOutput = "MATCH||" + session.getAttribute("lat") + "||" + session.getAttribute("lon") + "||" + request.getParameter("match");
                     state = SESSION_MATCH_DETAILS;
 
 
                 }
+            } else {
+
+
+                state = MATCH_DETAILS;
             }
         } /* **********************************************
          *************************************************
@@ -341,28 +366,33 @@ public class MainServerClientProtocol {
                     state = KILL_THREAD;
 
                 }
+            } else {
+
+
+                state = MATCHS;
             }
         } else if (state == SESSION_MATCH_DETAILS) {
             if (theInput != null) {
-                
+
 //                if (theInput.contains("MATCH_DETAILS||")) {
 
-                    matchDetails = matchDetails + theInput.toString();
+                matchDetails = matchDetails + theInput.toString();
 
 
 //                }
-                
+
                 if (theInput.contains("MATCH_DETAILS|!!|")) {
-                        
-                        matchDetails = matchDetails.replace("MATCH_DETAILS||", "");
-                        matchDetails = matchDetails.replace("MATCH_DETAILS|!!|", "");
+
+                    matchDetails = matchDetails.replace("MATCH_DETAILS||", "");
+                    matchDetails = matchDetails.replace("MATCH_DETAILS|!!|", "");
                     session.setAttribute("MatchDetails", matchDetails);
                     theOutput = "KILL_THREAD";
                     state = KILL_THREAD;
-                    
+
                 }
-            } else { state = SESSION_MATCH_DETAILS;
-            
+            } else {
+                state = SESSION_MATCH_DETAILS;
+
             }
         } else if (state == KILL_THREAD) {
             if (theInput != null) {
@@ -378,6 +408,10 @@ public class MainServerClientProtocol {
                     state = KILL_THREAD;
 
                 }
+            } else {
+
+
+                state = KILL_THREAD;
             }
         } else if (state == KILL_GAME) {
             if (theInput != null) {
@@ -396,27 +430,25 @@ public class MainServerClientProtocol {
 
 
                 }
+            } else {
+
+
+                state = KILL_GAME;
             }
         } /* **********************************************
          *************************************************
          *     Finnish process Method
          *********************************************** */ //
         else if (state == CALL_FINNISH) {
+        } else if (state == FINNISH) {
         }
-        
-        else if (state == FINNISH) {
-            
-            
-            
-            
-        }
-        
+
 
 
         return theOutput;
     }
-
     private String matchDetails = "";
+
     public static void waiting(int n) {
 
         long t0, t1;

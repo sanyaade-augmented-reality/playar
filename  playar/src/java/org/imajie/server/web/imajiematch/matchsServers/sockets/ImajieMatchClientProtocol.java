@@ -307,61 +307,63 @@ public class ImajieMatchClientProtocol {
                             if (request.getParameter("button1") != null) {
 
                                 theOutput = "PLAYER_CALLBACK" + request.getParameter("button1");
-
+                                state = PLAYER_CALLBACK;
 
                             } else {
 
                                 theOutput = "PLAYER_CALLBACK" + request.getParameter("button2");
-
+                                state = PLAYER_CALLBACK;
                             }
 
-                            theOutput = "PLAYER_CALLBACK";
+
 
                         } else {
 
                             theOutput = "PLAYER_CALLBACK";
-
+                            state = PLAYER_CALLBACK;
                         }
 
 
                     } else {
 
                         theOutput = "PLAYER_CALLBACK";
-
+                        state = PLAYER_CALLBACK;
                     }
 
 
 
 
                     System.out.println("CALLBACK");
-                    
+
                     state = PLAYER_CALLBACK;
                     //waiting(300);
+                } else {
+
+                    state = CALLBACK;
+
                 }
-            } else {
-
-                state = CALLBACK;
-
             }
-        } /* **********************************************
+            else {
+
+                    state = CALLBACK;
+
+                }
+        }/* **********************************************
          *************************************************
          *     Player Input CallBack Command Method
          *********************************************** */ //
         else if (state == PLAYER_CALLBACK) {
-            
+
             if (theInput != null) {
                 if (theInput.contains("PLAYER_CALLBACK_STATE||")) {
 
                     String resultRequest = theInput.replace("PLAYER_CALLBACK_STATE||", "");
 
                     if (resultRequest.equals("REFRESH")) {
-                        
+
                         session.setAttribute("REFRESH", "REFRESH");
-                        
+
                     } else {
-                        
-                        
-                        
                     }
 
 

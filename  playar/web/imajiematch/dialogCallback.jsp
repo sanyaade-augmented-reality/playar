@@ -3,7 +3,8 @@
     Created on : Oct 5, 2011, 10:58:19 PM
     Author     : Carl Tremblay <carl_tremblay at imajie.tv>
 --%>
-<%@page import="org.imajie.server.web.imajiematch.matchsServers.RefreshMatchsJspBean"%>
+<jsp:useBean id="match" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.RefreshMatchsJspBean" />
+
 <%
     //String tagId = request.getParameter("id");
     //String thumbnailId = request.getParameter("id_thumbnail");
@@ -47,11 +48,12 @@
 
         session.setAttribute("sendCallback", true);
 
-        RefreshMatchsJspBean.refresh(gameStarted, session.getAttribute("username").toString(), request);
+        
     }
 %> 
 
 <head>
+   <%= match.refresh(gameStarted, session.getAttribute("username").toString(), request) %>
 <script language='javascript'>
  
  

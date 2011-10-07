@@ -983,7 +983,7 @@ public class LuaState {
                 if (rethrow) {
                     throw e;
                 }
-            }Engine.prepareStateFinish = true;
+            }
         }
         
     }

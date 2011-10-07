@@ -142,12 +142,14 @@ public class EventTable implements LuaTable, Serializable {
         try {
             Object o = table.rawget(name);
             if (o instanceof LuaClosure) {
-                //System.out.println("Zone visible Before Call event.............." + Engine.instance.cartridge.visibleZones());
+                //System.out.println("Zone visible Before Call event.............." + Engine.instance.cartridge.visibleZones());                
+                
                 System.out.println("EVNT: " + toString() + "." + name + (param != null ? " (" + param.toString() + ")" : ""));
                 LuaClosure event = (LuaClosure) o;
                 Engine.state.call(event, this, param, null);
                 System.out.println("EEND: " + toString() + "." + name);
 
+                Engine.prepareStateFinish = true;
               //  Engine.tempSession.setAttribute("callEvent", toString() + "." + name.toString());
 
                 System.out.println("Attribute callEvent setted to session: " + name.toString());

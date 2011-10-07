@@ -50,8 +50,14 @@ public class ImajieMatchProtocol {
          *********************************************** */ //
         else if (state == COMMAND) {
 
+            while (!Engine.prepareStateFinish == true)  {
+                
+                
+            }
 
+            
 
+            
             //***** Player Refresh Location ************
             if (theInput.equalsIgnoreCase("REFRESH_LOCATION")) {
 

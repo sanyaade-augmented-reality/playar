@@ -241,15 +241,23 @@ public class StartMatchsJspBean implements Serializable {
 
 
 
-        if (session.getAttribute("DIALOG") == null) {
-
-            while (session.getAttribute("DIALOG") != null) {
-                // TODO implements something more realable than this could cause memory leak
-            }
+        while (session.getAttribute("DIALOG") == null) {
+           
 
 
         }
 
+//        try {
+//                session.getAttribute("DIALOG").wait();
+//
+//    //            while (session.getAttribute("DIALOG"). == null) {
+//    //                
+//    //                if
+//    //                // TODO implements something more realable than this could cause memory leak
+//    //            }
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(StartMatchsJspBean.class.getName()).log(Level.SEVERE, null, ex);
+//            }
 
 
 

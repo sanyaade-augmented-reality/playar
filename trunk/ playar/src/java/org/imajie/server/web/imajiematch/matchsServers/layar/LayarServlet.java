@@ -49,6 +49,10 @@ import org.imajie.server.web.imajiematch.matchsServers.sockets.MainServerClientP
 public class LayarServlet extends HttpServlet {
 
     public static boolean processFinish = false;
+    public static String playMediaCall = "null";
+    public static String dialog = "null";
+    public static boolean DoplayMediaCall = false;
+    public static boolean Dodialog = false;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -82,13 +86,14 @@ public class LayarServlet extends HttpServlet {
         double latitude = Utils.getDouble(request, "lat", 45.49);
         double longitude = Utils.getDouble(request, "lon", -73.56);
         double altitude = Utils.getDouble(request, "alt", 0);
-         String playMediaCall = "null";
-            String dialog = "null";
+
 
         // TODO implements max number of pois visible (Usefull for non-playaing state with a location with a lot of games to play) - layar
         //int max = Utils.getInt(request, "max", params.getMaxPOIs()); 
 
-        HttpSession session = request.getSession(true);
+        HttpSession session = null;
+
+        session = request.getSession(true);
 
         session.setAttribute("lat", latitude);
         session.setAttribute("lon", longitude);
@@ -153,9 +158,12 @@ public class LayarServlet extends HttpServlet {
         response.setContentType(Constants.CONTENT_TYPE_JSON);
 
         JSONObject layer = new JSONObject();
+        
+         // TODO "deletedHotspots":["spot0001", "spot0002"]
         JSONArray hotspots = new JSONArray();
 
         int count = 0;
+
 
 
         if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
@@ -450,25 +458,56 @@ public class LayarServlet extends HttpServlet {
 
         } else {
 
+            playMediaCall = "null";
+            dialog = "null";
             // TODO DELETE ALL POI
-
-           
 
 
 
             RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
+            if (session.getAttribute("playMediaCallPlayed") == null) {
+
+                session.setAttribute("playMediaCallPlayed", "");
+            }
 
             if (session.getAttribute("PLAYMEDIA_CALL") != null) {
 
 
-                playMediaCall = session.getAttribute("PLAYMEDIA_CALL").toString();
+                if (!session.getAttribute("PLAYMEDIA_CALL").toString().equals(session.getAttribute("playMediaCallPlayed").toString())) {
 
+
+                    playMediaCall = session.getAttribute("PLAYMEDIA_CALL").toString();
+
+                    session.setAttribute("playMediaCallPlayed", playMediaCall);
+                    DoplayMediaCall = true;
+
+                } else {
+
+                    DoplayMediaCall = false;
+
+                }
             }
 
             if (session.getAttribute("DIALOG") != null) {
 
-                dialog = session.getAttribute("DIALOG").toString();
+                
+
+                if (session.getAttribute("dialogPlayed") == null) {
+
+                    session.setAttribute("dialogPlayed", "");
+                }
+
+                if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall) {
+
+                    dialog = session.getAttribute("DIALOG").toString();
+                    session.setAttribute("dialogPlayed", dialog);
+                    Dodialog = true;
+
+                } else {
+                    Dodialog = false;
+                }
+
             }
 
             // *************************************************************
@@ -481,14 +520,14 @@ public class LayarServlet extends HttpServlet {
 
 
 
-            if (!playMediaCall.equals("null")) {
+            if (DoplayMediaCall) {
 
                 count++;
                 // TODO SET THE POI FOR THE MEDIA CALL EVENT 
 
                 JSONObject poi = new JSONObject();
 
-                poi.accumulate("id", 1000);
+                poi.accumulate("id", 1001);
 
 
                 poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
@@ -578,10 +617,9 @@ public class LayarServlet extends HttpServlet {
                 }
 
 
-                
+
             }
-            if (!dialog.equals("null")
-                    && playMediaCall.equals("null")) {
+            if (Dodialog && !DoplayMediaCall) {
 
 
                 count++;
@@ -607,7 +645,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject layarActionMedias = new JSONObject();
                 layarActionMedias.accumulate("contentType", "text/html");
                 layarActionMedias.accumulate("method", "GET");
-                layarActionMedias.accumulate("uri", "http://" + Constants.URL_SERVER + "/imajiematch/start2.jsp");
+                layarActionMedias.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start2.jsp");
                 layarActionMedias.accumulate("label", "Message");
                 layarActionMedias.accumulate("activityType", 3);
                 layarActionMedias.accumulate("autoTrigger", true);
@@ -617,18 +655,18 @@ public class LayarServlet extends HttpServlet {
                 poi.accumulate("actions", actions);
 
 
-hotspots.add(poi);
+                hotspots.add(poi);
 
 
 
 
-               // session.setAttribute("DIALOG", "null");
+                // session.setAttribute("DIALOG", "null");
             }
 
 
 
-            if (dialog.equals("null")
-                    && playMediaCall.equals("null")) {
+            if (!Dodialog
+                    && !DoplayMediaCall) {
 
 
 
@@ -698,7 +736,7 @@ hotspots.add(poi);
                 String list = (String) session.getAttribute("tasksList");
 
 
-                
+
                 String delimiter = "\\|!\\|";
                 String[] temp = zoneList.split(delimiter);
                 for (int i = 0; i < temp.length; i++) {
@@ -988,8 +1026,17 @@ hotspots.add(poi);
 
             layer.accumulate("errorCode", 21);
         }
-        layer.accumulate("refreshInterval", 180);
-        layer.accumulate("refreshDistance", 25);
+        if (Dodialog || DoplayMediaCall) {  
+            
+            layer.accumulate("refreshInterval", 30);
+            
+        }  else {
+            
+            layer.accumulate("refreshInterval", 180);
+            
+        }
+        
+        layer.accumulate("refreshDistance", 15);
 
 
 
@@ -1109,19 +1156,19 @@ hotspots.add(poi);
 
 
         out.write(layer.toString(2));
-        if (!dialog.equals("null")) {
-            session.setAttribute("DIALOG", "null");
-            dialog = "null";
-        }
-        if (!playMediaCall.equals("null")) {
-            session.setAttribute("PLAYMEDIA_CALL", "null");
-            playMediaCall = "null";
-        }
+
+
+
+        Dodialog = false;
+
+        DoplayMediaCall = false;
+
         out.close();
-        
-        
-        
-        
+
+
+
+
+
     }
 
     private static String generateSessionId() throws UnsupportedEncodingException {

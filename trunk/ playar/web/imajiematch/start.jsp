@@ -133,7 +133,12 @@
             });
 
         </script>
-    </head>
+        
+        
+        
+        
+        
+    
           
                 <%
 
@@ -142,7 +147,17 @@
                        // <jsp:forward page="start2.jsp/>
                 %> 
                 
-                 <%= match.start2(request)%>
+                
+                
+                <script language='javascript'>
+ 
+ 
+        window.location.replace("layar://imajiematch");
+ 
+   </script>
+                
+                
+                 </head>
                 
                 
 
@@ -152,6 +167,7 @@
                
     
     } else if (!authorized.equals("yes")) {%>
+    </head>
                 <body>
 
 

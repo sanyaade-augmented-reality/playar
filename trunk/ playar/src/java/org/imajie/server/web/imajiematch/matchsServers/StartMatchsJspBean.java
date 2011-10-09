@@ -116,25 +116,23 @@ public class StartMatchsJspBean implements Serializable {
                 long currentDate = System.currentTimeMillis() + 2000;
 
 
-               
 
 
-             
+
+
                 while (System.currentTimeMillis() < currentDate) {
-                    
-                    
                 }
 
 
-                 
 
 
 
-                    imajieMatchSocket = new Socket(host, Integer.parseInt(session.getAttribute("PlayerServerSocketPort").toString()));
-  
-                    out = new PrintWriter(imajieMatchSocket.getOutputStream(), true);
-                    in = new BufferedReader(new InputStreamReader(imajieMatchSocket.getInputStream()));
-                }  catch (UnknownHostException e) {
+
+                imajieMatchSocket = new Socket(host, Integer.parseInt(session.getAttribute("PlayerServerSocketPort").toString()));
+
+                out = new PrintWriter(imajieMatchSocket.getOutputStream(), true);
+                in = new BufferedReader(new InputStreamReader(imajieMatchSocket.getInputStream()));
+            } catch (UnknownHostException e) {
                 System.err.println("Don't know about host: " + host + ":::::Port:." + Integer.parseInt(session.getAttribute("PlayerServerSocketPort").toString()));
 
             } catch (IOException e) {
@@ -152,9 +150,10 @@ public class StartMatchsJspBean implements Serializable {
 
                 System.err.println("Couldn't get I/O for the connection to: " + host + ":::::Port:." + Integer.parseInt(session.getAttribute("PlayerServerSocketPort").toString()));
 
+          
             }
-
-
+            
+            
             String fromServer;
             String fromUser;
             ImajieMatchClientProtocol imp = new ImajieMatchClientProtocol();
@@ -242,9 +241,6 @@ public class StartMatchsJspBean implements Serializable {
 
 
         while (session.getAttribute("DIALOG") == null) {
-           
-
-
         }
 
 //        try {
@@ -281,7 +277,7 @@ public class StartMatchsJspBean implements Serializable {
         if (session.getAttribute("callback") != null) {
             // text = session.getAttribute("callback").toString();
         }
-        
+
 
 //        String task = media;
 //        String delimiter2 = "\\|\\|";
@@ -324,13 +320,13 @@ public class StartMatchsJspBean implements Serializable {
 //        } else {
 //            msg = " <div data-role='fieldcontain'  data-theme='a' align='center'><p align='center'><h4 align='center'>You already playing a game. Please Logout to quit this game first. Then login again.</h4></p></div>";
 
-           
-             msg = session.getAttribute("DIALOG").toString();
-        
-            
-            
-            
-            
+
+            msg = session.getAttribute("DIALOG").toString();
+
+
+
+
+
         }
 
 

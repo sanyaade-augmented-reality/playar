@@ -6,6 +6,8 @@
 
 
 
+
+<%@page import="org.imajie.server.web.imajiematch.matchsServers.RefreshMatchsJspBean"%>
 <jsp:useBean id="match" scope="request" class="org.imajie.server.web.imajiematch.matchsServers.StartMatchsJspBean" />
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,7 +22,9 @@
     String radius = "";
     String practice = "";
     String gameType = "";
-
+    String authorized = "";
+    String matchStarted = "null";
+    String matchToStart = request.getParameter("match");
 
     if (session.getAttribute("username") != null) {
 
@@ -45,9 +49,30 @@
 
     }
 
+    if (session.getAttribute("authorized") != null) {
+
+        authorized = session.getAttribute("authorized").toString();
+
+    }
+    if (session.getAttribute("gameStarted") != null) {
+
+        matchStarted = session.getAttribute("gameStarted").toString();
+
+    }
+
+    if (authorized.equals("yes") && matchStarted.equals("null")) {
 
 
-    
+        match.start(request);
+
+    } else {
+
+        String notAutorized = "";
+
+
+
+    }
+
 %>
 
 <html>
@@ -70,53 +95,54 @@
 
 
         <script type="text/javascript" language="javascript">
-              $(document).ready(function(){
+            $(document).ready(function(){
         
-        var    dheight = $('html').height(),
-            cbody = $('#contentbody').height(),
-            wheight = $(window).height(),
-            cheight = wheight - dheight + cbody;
+                var    dheight = $('html').height(),
+                cbody = $('#contentbody').height(),
+                wheight = $(window).height(),
+                cheight = wheight - dheight + cbody;
             
-        if (wheight > dheight){
-            $('#contentbody').height(cheight);
-        }
+                if (wheight > dheight){
+                    $('#contentbody').height(cheight);
+                }
         
-        $(window).resize(function(){
-            wheight = $(window).height();
-            noscroll();
-            changepush();
-        });
+                $(window).resize(function(){
+                    wheight = $(window).height();
+                    noscroll();
+                    changepush();
+                });
 
-        function noscroll(){
-           if (wheight > dheight) {
-                $('html').addClass('noscroll');
-           }
+                function noscroll(){
+                    if (wheight > dheight) {
+                        $('html').addClass('noscroll');
+                    }
 
-            else if (wheight <= dheight) {
-                $('html').removeClass('noscroll');
-            }
+                    else if (wheight <= dheight) {
+                        $('html').removeClass('noscroll');
+                    }
             
-            else {}
+                    else {}
 
-        }
+                }
 
-        function changepush(){
-           if (wheight > dheight) {
-                   $('#contentbody').height(wheight-dheight+cbody);
-           }
+                function changepush(){
+                    if (wheight > dheight) {
+                        $('#contentbody').height(wheight-dheight+cbody);
+                    }
             
-        }
+                }
 
-});
+            });
 
         </script>
-    </head>
-    <body>
-     
+        
+        
+  
+                
+                
+                 </head>
 
-                <%= match.start2(request)%>
+                <%= session.getAttribute("DIALOG").toString()%>
 
 
-
-    </body>
 </html>

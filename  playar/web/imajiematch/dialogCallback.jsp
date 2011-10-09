@@ -57,7 +57,7 @@
 <script language='javascript'>
  
  
-        window.location.replace("http://m.layar.com/open/imajiematch");
+        window.location.replace("layar://imajiematch");
  
    </script>
 </head>

@@ -25,6 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.imajie.server.web.Constants;
 
 /**
  *
@@ -106,7 +107,7 @@ public class GetLocationsJspBean implements Serializable {
                         String hotspot = temp[i];
                         String delimiter2 = "\\|\\|";
                         String[] temp2 = hotspot.split(delimiter2);
-
+                        String media = "";
 
 
                         for (int ii = 0; ii < temp2.length; ii++) {
@@ -131,9 +132,12 @@ public class GetLocationsJspBean implements Serializable {
                             if (ii == 6) {
                                 friendlyDistance = temp2[ii];
                             }
+                            if (ii == 7) {
+                                media = temp2[ii];
+                            }
                         }
 
-                        msg = msg + "<li><IMG SRC= 'images/locations.png'>" + title + " - " + friendlyDistance + "</a></li>";
+                        msg = msg + "<li><IMG SRC= '" + Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + ""+"'>" + title + " - " + friendlyDistance + "</a></li>";
                     }
 
                 }

@@ -5,6 +5,7 @@ import org.imajie.server.web.imajiematch.matchsServers.kahlua.vm.*;
 
 import java.io.*;
 import java.util.Vector;
+import org.imajie.server.web.imajiematch.matchsServers.main.GameWindow;
 
 public class EventTable implements LuaTable, Serializable {
 
@@ -72,27 +73,27 @@ public class EventTable implements LuaTable, Serializable {
 
         if ("Name".equals(key)) {
             name = BaseLib.rawTostring(value);
-         
+
         } else if ("Description".equals(key)) {
             description = Engine.removeHtml(BaseLib.rawTostring(value));
-         
+
         } else if ("Visible".equals(key)) {
             visible = LuaState.boolEval(value);
-         
+
         } else if ("ObjectLocation".equals(key)) {
 
             position = (ZonePoint) value;
 
         } else if ("Media".equals(key)) {
             media = (Media) value;
-     
+
             // TODO implements a debug state to see the line below in the logs
-           // System.out.println("PROP set to: " + media.name + " is set to " + media.type);
-        
-        
+            // System.out.println("PROP set to: " + media.name + " is set to " + media.type);
+
+
         } else if ("Icon".equals(key)) {
             icon = (Media) value;
-           
+
         }
     }
 
@@ -137,20 +138,20 @@ public class EventTable implements LuaTable, Serializable {
     public void callEvent(String name, Object param) {
         //System.out.println("Call Event.....Name: " +name +"  Params:"+param+"\n");
 
-       
+
 
         try {
             Object o = table.rawget(name);
             if (o instanceof LuaClosure) {
                 //System.out.println("Zone visible Before Call event.............." + Engine.instance.cartridge.visibleZones());                
-                
+
                 System.out.println("EVNT: " + toString() + "." + name + (param != null ? " (" + param.toString() + ")" : ""));
                 LuaClosure event = (LuaClosure) o;
                 Engine.state.call(event, this, param, null);
                 System.out.println("EEND: " + toString() + "." + name);
-
+                GameWindow.currentEvent = toString() + "." + name;
                 Engine.prepareStateFinish = true;
-              //  Engine.tempSession.setAttribute("callEvent", toString() + "." + name.toString());
+                //  Engine.tempSession.setAttribute("callEvent", toString() + "." + name.toString());
 
                 System.out.println("Attribute callEvent setted to session: " + name.toString());
                 //return event.toString();
@@ -159,7 +160,7 @@ public class EventTable implements LuaTable, Serializable {
 
 
 
-                
+
 
             }
 
@@ -187,7 +188,7 @@ public class EventTable implements LuaTable, Serializable {
         table.rawset(key, value);
         // TODO implements a debug state to see the line below in the logs
         //System.out.println("PROP set to: " + toString() + "." + key + " is set to " + (value == null ? "nil" : value.toString() + "." + key));
-     
+
     }
 
     public void setMetatable(LuaTable metatable) {

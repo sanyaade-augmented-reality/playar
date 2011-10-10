@@ -55,6 +55,7 @@ public class GameWindow implements UI {
     public static String mediaOverride;
     public static String triviaInput;
     public static String dialog;
+    public static String currentEvent;
     /** List of zones.
      * Its source reads data from <code>Engine.instance.cartridge.zones</code>
      */
@@ -90,7 +91,14 @@ public class GameWindow implements UI {
 
                     String friendlyDistance = Navigator.getDistanceAndDirection(zp);
 
-                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + distance + "||" + friendlyDistance;
+                    String zonemedia = "";
+                    if (z.media != null) {
+
+                        zonemedia = z.media.name + "." + z.media.type;
+                    }
+
+
+                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + distance + "||" + friendlyDistance + "||" + zonemedia;
                     list = list + "|!|" + content;
 
                     ret.add(z);
@@ -142,12 +150,19 @@ public class GameWindow implements UI {
                     }
                     String friendlyDistance = "";
 
+                    String youseemedia = "";
+                    if (t.media != null) {
+
+                        youseemedia = t.media.name + "." + t.media.type;
+
+                    }
+
 //                    if (t.position.latitude != 0 || t.position.longitude != 0) {
 //                        ZonePoint zp = new ZonePoint(t.position.latitude, t.position.longitude, 0);
 //
 //                        friendlyDistance = Navigator.getDistanceAndDirection(zp);
 //                    }
-                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance;
+                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance + "||" + youseemedia;
                     list = list + "|!|" + content;
                 }
 
@@ -193,7 +208,14 @@ public class GameWindow implements UI {
                         description = "";
                     }
 
-                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude;
+                    String inventorymedia = "";
+                    if (t.media != null) {
+
+                        inventorymedia = t.media.name + "." + t.media.type;
+
+                    }
+
+                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + inventorymedia;
                     list = list + "|!|" + content;
 
                 }
@@ -238,7 +260,12 @@ public class GameWindow implements UI {
                         description = "";
                     }
 
-                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude;
+                    String taskmedia = "";
+                    if (t.media != null) {
+
+                        taskmedia = t.media.name + "." + t.media.type;
+                    }
+                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + taskmedia;
                     list = list + "|!|" + content;
                 }
 
@@ -340,48 +367,7 @@ public class GameWindow implements UI {
 
     private void flipPage() {
 
-
-        // TODO IMPLEMENTS MULTIPKLE PAGES DIALOG IN JQUERY MULTI-PAGE
-        //
-        //
-//        <!DOCTYPE html>
-//<html>
-//<head>
-//    <meta name="viewport" content="width=device-width, initial-scale=1">
-//    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css"/>
-//    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-//    <script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
-//</head>
-//<body>
-//<div data-role="page" id="page1">
-//    <div data-role="header">
-//        <h6>Welcome...</h6>
-//    </div>
-//    <div data-role="content">
-//        <a href="#page2">Go to Page 2</a>
-//        <p><a href="list.html">Listing Page</a></p>
-//    </div>
-//    <div data-role="footer">
-//        <h2>Footer Content</h2>
-//    </div>
-//</div>
-// 
-//<div data-role="page" id="page2">
-//    <div data-role="header">
-//        <a href="index.html" data-icon="home">Home</a>
-//        <h6>2nd Page</h6>
-//        <a data-rel="back" data-icon="back">Go back</a>
-//    </div>
-//    <div data-role="content">
-//        <a href="#page1">Return to Page 1</a>
-//    </div>
-//    <div data-role="footer">
-//        <h2>Footer Content</h2>
-//    </div>
-//</div>
-//</body>
-//</html>
-
+        // unused function
 
         page++;
         if (page >= texts.length) {
@@ -393,6 +379,8 @@ public class GameWindow implements UI {
     }
 
     protected void buttonClicked(String button) {
+        // TODO implements this behavior in layar
+
         if (button == Button1) {
             flipPage();
         } else if (button == Button2) {
@@ -422,84 +410,89 @@ public class GameWindow implements UI {
     }
     private LuaClosure callback;
 
-    
     public void pushDialog(final String[] texts, final Media[] media, final String button1, final String button2, final LuaClosure callback, final String alttext, String descriptions, String rawname) {
 
         dialog = "<body>";
 
-this.callback = callback;
+        this.callback = callback;
 
-showDialog(texts, media, button1, button2, callback);
-
-        for (int i = 0; i < texts.length; i++) {
-
-
-            description = description + texts[i] + "\n";
+        showDialog(texts, media, button1, button2, callback);
+        if (texts.length > 1) {
+            for (int i = 0; i < texts.length; i++) {
 
 
+                description = description + texts[i] + "\n";
 
-            dialog = dialog + "<div data-role='page' id='page" + i + "' style='min-height:100%' data-theme='a'>"
-                    + "<div data-role='header'  data-theme='b'>"
-                    + "<h6>Dialog</h6>"
-                    + "</div>"
-                    + " <div data-role='fieldcontain'  data-theme='a' align='center'>"
-                    + "<p>"
-                    + "<IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + media[i].name +"."+ media[i].type + "' align='center'>"
-                    + "<h4 align='center'>" + texts[i] + "</h4>"
-                    + "</p>"
-                    + "<p>";
-            
-            if (i < texts.length - 1) {
-            
+
+
+                dialog = dialog + "<div data-role='page' id='page" + i + "' style='min-height:100%' data-theme='a'>"
+                        + "<div data-role='header'  data-theme='b'>"
+                        + "<h6>Dialog</h6>"
+                        + "</div>"
+                        + " <div data-role='fieldcontain'  data-theme='a' align='center'>"
+                        + "<p>"
+                        + "<IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + media[i].name + "." + media[i].type + "' align='center'>"
+                        + "<h4 align='center'>" + texts[i] + "</h4>"
+                        + "</p>"
+                        + "<p>";
+
+                if (i < texts.length - 1) {
+
                     dialog = dialog + "<a href='#page" + (i + 1) + "' data-transition='slide' data-role='button'>" + Button1 + "</a>";
-            } else {
-                
-                dialog = dialog + "<a href='./dialogCallback.jsp?button1="+Button1+"' data-role='button' target='_top'>" + Button1 + "</a>";
-                
-                
-            }
-            
-            
-            if (Button2 != null)  {
-                  
-                if (!Button2.equals("null"))  {
-                dialog = dialog + "<a href='#/callBack.jsp?button2="+Button2+"' data-role='button' target='_top'>" + Button2 + "</a>";
-                    
-                           
+                } else {
+
+                    dialog = dialog + "<a href='./dialogCallback.jsp?button1=" + Button1 + "' data-role='button' target='_top'>" + Button1 + "</a>";
+
+
                 }
+
+
+                if (Button2 != null) {
+
+                    if (!Button2.equals("null")) {
+                        dialog = dialog + "<a href='#/callBack.jsp?button2=" + Button2 + "' data-role='button' target='_top'>" + Button2 + "</a>";
+
+
+                    }
+
+                }
+
+                dialog = dialog + "</p>"
+                        + "</div>"
+                        + "<div data-role='footer' data-theme='b'>"
+                        + "<h4>&copy; imajie.tv 2011</h4>"
+                        + "</div>"
+                        + "</div>";
+
+
+
+            }
+
+
+            dialog = dialog + "</div><body>";
+
+
+
+            altText = alttext;
+            // description = descriptions;
+            rawName = rawname;
+            dialogTexts = currentEvent;
+
+
+            //showDialog(texts, media, button1, button2, callback);
+            // TODO IMPLEMENTS THE MEDIA ARRAY GESTION FOR LAYAR
+
+            dialogMedia = "null";
+
+        } else {
             
-            }     
-                            
-                            dialog = dialog + "</p>"
-                    + "</div>"
-                    + "<div data-role='footer' data-theme='b'>"
-                    + "<h4>&copy; imajie.tv 2011</h4>"
-                    + "</div>"
-                    + "</div>";
-
-
-
+            
+            
+            dialogTexts = arrayToString(texts, ",");
+            dialogMedia = media[0].name + "." + media[0].type;
+            
+            
         }
-
-
-        dialog = dialog + "</div><body>";
-
-
-
-        altText = alttext;
-        // description = descriptions;
-        rawName = rawname;
-        dialogTexts = arrayToString(texts, ",");
-
-
-        //showDialog(texts, media, button1, button2, callback);
-        // TODO IMPLEMENTS THE MEDIA ARRAY GESTION FOR LAYAR
-
-        dialogMedia = media[0].name + "." + media[0].type;
-
-
-        //Button1 = button1;
-        //Button2 = button2;
 
 
     }

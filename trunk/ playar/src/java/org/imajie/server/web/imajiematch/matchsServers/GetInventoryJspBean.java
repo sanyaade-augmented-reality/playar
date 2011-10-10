@@ -23,6 +23,7 @@ import java.util.TimerTask;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.imajie.server.web.Constants;
 
 /**
  *
@@ -87,7 +88,7 @@ public class GetInventoryJspBean implements Serializable {
                         String hotspotLatitude = "";
                         String hotspotLongitude = "";
                         String hotspotDistance = "";
-
+                        String media = "";
 
                         String hotspot = temp[i];
                         String delimiter2 = "\\|\\|";
@@ -112,10 +113,13 @@ public class GetInventoryJspBean implements Serializable {
                             if (ii == 5) {
                                 hotspotDistance = temp2[ii];
                             }
+                            if (ii == 6) {
+                                media = temp2[ii];
+                            }
                         }
 
 
-                        msg = msg + "<li><IMG SRC= 'images/inventory.png'>" + title + " </a></li>";
+                        msg = msg + "<li><IMG SRC= '" + Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + ""+"'>" + title + " </a></li>";
                     }
 
                 }

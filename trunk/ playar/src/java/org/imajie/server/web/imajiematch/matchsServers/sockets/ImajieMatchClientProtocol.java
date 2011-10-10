@@ -267,18 +267,47 @@ public class ImajieMatchClientProtocol {
                             DIALOG = DIALOG.replace("|!!!|", "");
                             session.setAttribute("DIALOG", DIALOG);
                         }
+                        if (ii == 17) {
+                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
+                            String SHOWDIALOG = temp[ii].replace("SHOWDIALOG", "");
+
+
+
+
+
+                            String SHOWDIALOGArrays = playerState.replace("PLAYER_STATE||||||", "");
+                            SHOWDIALOGArrays = SHOWDIALOGArrays.replace("|!!!|", "");
+
+                            String delimiter2 = "\\|\\|";
+                            String[] temp2 = SHOWDIALOGArrays.split(delimiter2);
+
+                            for (int iii = 0; iii < temp2.length; iii++) {
+
+                                if (temp2[0].equals("null")) {
+
+                                    session.setAttribute("showDialog", "null");
+
+                                } else {
+
+                                    session.setAttribute("showDialog", temp2[0]);
+                                    session.setAttribute("dialogMedia", temp2[1]);
+
+
+                                }
+
+
+                            }
+
+
+                        }
+                        if (ii == 18) {
+                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
+                            String CURRENTEVENT = temp[ii].replace("CURRENTEVENT", "");
+                            CURRENTEVENT = CURRENTEVENT.replace("|!!!|", "");
+                            session.setAttribute("CURRENTEVENT", CURRENTEVENT);
+                        }
 
                     }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -342,12 +371,11 @@ public class ImajieMatchClientProtocol {
                     state = CALLBACK;
 
                 }
+            } else {
+
+                state = CALLBACK;
+
             }
-            else {
-
-                    state = CALLBACK;
-
-                }
         }/* **********************************************
          *************************************************
          *     Player Input CallBack Command Method

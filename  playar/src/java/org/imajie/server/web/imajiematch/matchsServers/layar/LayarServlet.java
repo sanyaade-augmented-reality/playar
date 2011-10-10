@@ -965,15 +965,10 @@ public class LayarServlet extends HttpServlet {
 
 
                     String msg = "";
-                    int counts = 0;
-
-                    if (session.getAttribute("tasksCount") != null) {
-
-                        counts = (int) Long.parseLong(session.getAttribute("tasksCount").toString());
-
-                    }
+                   
 
                     String dialogTexts = "";
+                    String dialogMedia = "";
 
                     if (session.getAttribute("dialogTexts") != null) {
 
@@ -983,9 +978,16 @@ public class LayarServlet extends HttpServlet {
                     }
 
 
+                    if (session.getAttribute("dialogMedia") != null) {
+
+                        dialogMedia = session.getAttribute("dialogMedia").toString();
+
+
+                    }
 
                     msg = "Mission agent: " + username + ".\n\n" + dialogTexts + "";
 
+                    showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
 
                     showDialog.accumulate("description", msg);
 
@@ -997,7 +999,7 @@ public class LayarServlet extends HttpServlet {
                     messageAction1.accumulate("contentType", "text/html");
                     messageAction1.accumulate("method", "GET");
                     messageAction1.accumulate("activityType", "1");
-                    messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button1=" + session.getAttribute("Button1"));
+                    messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button1=" + session.getAttribute("Button1"));
                     messageAction1.accumulate("label", session.getAttribute("Button1"));
                     //messageAction1.accumulate("label", "Tasks (" + counts + ")");
                     messageActions.add(messageAction1);
@@ -1010,7 +1012,7 @@ public class LayarServlet extends HttpServlet {
                         messageAction2.accumulate("contentType", "text/html");
                         messageAction2.accumulate("method", "GET");
                         messageAction2.accumulate("activityType", "1");
-                        messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callback.jsp?button2=" + session.getAttribute("Button2"));
+                        messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button2=" + session.getAttribute("Button2"));
                         messageAction2.accumulate("label", session.getAttribute("Button2"));
                         //messageAction1.accumulate("label", "Tasks (" + counts + ")");
                         messageActions.add(messageAction2);

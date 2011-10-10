@@ -50,14 +50,12 @@ public class ImajieMatchProtocol {
          *********************************************** */ //
         else if (state == COMMAND) {
 
-            while (!Engine.prepareStateFinish == true)  {
-                
-                
+            while (!Engine.prepareStateFinish == true) {
             }
 
-            
 
-            
+
+
             //***** Player Refresh Location ************
             if (theInput.equalsIgnoreCase("REFRESH_LOCATION")) {
 
@@ -99,6 +97,22 @@ public class ImajieMatchProtocol {
                 result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";
                 result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";
                 result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "||" + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
+                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+
+                
+
+
+                if (!GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
+
+                    result = result + "SHOWDIALOG" + GameWindow.dialogTexts + "||" + GameWindow.dialogMedia + "|!!!|";
+                } else if (GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
+
+                    result = result + "SHOWDIALOGnull|||!!!|";
+                }
+
+                result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";
+
+                theOutput = result + "|!!|PLAYER_STATE";
 
                 theOutput = result;
 
@@ -201,6 +215,16 @@ public class ImajieMatchProtocol {
                 result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "." + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
                 result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
 
+                
+                
+                if (!GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
+
+                    result = result + "SHOWDIALOG" + GameWindow.dialogTexts + "||" + GameWindow.dialogMedia + "|!!!|";
+                } else if (GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
+
+                    result = result + "SHOWDIALOGnull|||!!!|";
+                }
+                result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";
                 theOutput = result + "|!!|PLAYER_STATE";
 
 
@@ -218,23 +242,23 @@ public class ImajieMatchProtocol {
                 String resultRequest = theInput.replace("PLAYER_CALLBACK", "");
 
                 if (resultRequest.equals("OK")) {
-                
-                    
+
+
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
                     Engine.ui.callAndClose("OK");
-                
+
                 } else if (resultRequest.equals("CANCEL")) {
                     Engine.ui.cancel();
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
-                
-                
+
+
                 } else {
-                
-                theOutput = "PLAYER_CALLBACK_STATE||";
-                
+
+                    theOutput = "PLAYER_CALLBACK_STATE||";
+
                 }
-                
-                
+
+
                 state = COMMAND;
 
             }

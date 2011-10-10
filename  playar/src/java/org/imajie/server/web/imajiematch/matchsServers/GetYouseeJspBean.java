@@ -25,6 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.imajie.server.web.Constants;
 
 /**
  *
@@ -87,6 +88,7 @@ public class GetYouseeJspBean implements Serializable {
                         String hotspot = temp[i];
                         String delimiter2 = "\\|\\|";
                         String[] temp2 = hotspot.split(delimiter2);
+                        String media = "";
                         
                         
                         
@@ -109,12 +111,15 @@ public class GetYouseeJspBean implements Serializable {
                             if (ii == 5) {
                                 hotspotDistance = temp2[ii];
                             }
-                            if (ii == 5) {
+                            if (ii == 6) {
                                 friendlyDistance = temp2[ii];
+                            }
+                            if (ii == 7) {
+                                media = temp2[ii];
                             }
                         }
                         
-                        msg = msg + "<li><IMG SRC= 'images/yousee.png'>" + title + " - " + friendlyDistance + "</a></li>";
+                        msg = msg + "<li><IMG SRC= '" + Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + ""+"'>" + title + " - " + friendlyDistance + "</a></li>";
                     }
                     
                 }

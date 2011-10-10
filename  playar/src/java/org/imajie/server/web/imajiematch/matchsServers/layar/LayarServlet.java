@@ -753,14 +753,14 @@ public class LayarServlet extends HttpServlet {
                             // Forces the POI's BIW style to "classic" or "collapsed". 
                             //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                             //if the POI is a Vision enabled POI.
-                            poi.accumulate("biwStyle", "collapsed");
+                            poi.accumulate("biwStyle", "classic");
 
 
 
                             // Actions
                             JSONArray actions = new JSONArray();
                             JSONObject action1 = new JSONObject();
-                            action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/callBack.jsp?zonePoint=" + title);
+                            action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
                             action1.accumulate("label", title + " Details");
 
                             // contenType
@@ -774,7 +774,7 @@ public class LayarServlet extends HttpServlet {
                             action1.accumulate("closeBiw", true);
                             action1.accumulate("showActivity", false);
                             action1.accumulate("activityMessage", "");
-                            action1.accumulate("autoTriggerRange", "10");
+                            //action1.accumulate("autoTriggerRange", "10");
                             action1.accumulate("autoTriggerOnly ", false);
                             action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
@@ -904,12 +904,12 @@ public class LayarServlet extends HttpServlet {
 
             if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
 
-                layer.accumulate("errorString", "No mission available at this location. Please try to adjust the Radar Range in the parameter menu below.");
+                layer.accumulate("errorString", "No mission available at this location. Adjust the Radar Range in the parameter menu below.");
 
 
             } else {
 
-                layer.accumulate("errorString", "Nothing available at this location. Please try to adjust the Radar Range in the parameter menu below or go to mission control for further details.");
+                layer.accumulate("errorString", "Nothing available at this location. Adjust the Radar Range in the parameter menu or go to mission control for further details.");
 
 
 

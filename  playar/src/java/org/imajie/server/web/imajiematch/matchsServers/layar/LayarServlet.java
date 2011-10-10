@@ -23,9 +23,6 @@ import java.io.Writer;
 import java.net.Socket;
 import java.net.URLEncoder;
 import java.net.UnknownHostException;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -57,26 +54,6 @@ public class LayarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        String sessionid = null;
-//        Cookie[] cookies = request.getCookies();
-//        if (cookies != null) {
-//            for (int i = 0; i < cookies.length; i++) {
-//                if (cookies[i].getName().equals("sessionid")) {
-//                    sessionid = cookies[i].getValue();
-//                    System.out.println("Cookie SessionID:" + sessionid);
-//                    break;
-//                }
-//            }
-//        }
-//
-//        // If the session ID wasn't sent, generate one.
-//        // Then be sure to send it to the client with the response.
-//        if (sessionid == null) {
-//            sessionid = generateSessionId();
-//            Cookie c = new Cookie("sessionid", sessionid);
-//            response.addCookie(c);
-//            System.out.println("Cookie Setted to ID:" + sessionid);
-//        }
 
 
         LayarParamsService params = LayarParamsService.instance();
@@ -86,10 +63,6 @@ public class LayarServlet extends HttpServlet {
         double latitude = Utils.getDouble(request, "lat", 45.49);
         double longitude = Utils.getDouble(request, "lon", -73.56);
         double altitude = Utils.getDouble(request, "alt", 0);
-
-
-        // TODO implements max number of pois visible (Usefull for non-playaing state with a location with a lot of games to play) - layar
-        //int max = Utils.getInt(request, "max", params.getMaxPOIs()); 
 
         HttpSession session = null;
 
@@ -158,8 +131,8 @@ public class LayarServlet extends HttpServlet {
         response.setContentType(Constants.CONTENT_TYPE_JSON);
 
         JSONObject layer = new JSONObject();
-        
-         // TODO "deletedHotspots":["spot0001", "spot0002"]
+
+        // TODO "deletedHotspots":["spot0001", "spot0002"]
         JSONArray hotspots = new JSONArray();
 
         int count = 0;
@@ -169,7 +142,12 @@ public class LayarServlet extends HttpServlet {
         if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
 
 
-            // the solution to the problem
+            //   **************************************************************************
+            //****************************************************************************
+            //
+            //       Set  Cartridge available POIS
+            //
+            //****************************************************************************
 
             int port = 4000;
             String host = "localhost";
@@ -192,8 +170,6 @@ public class LayarServlet extends HttpServlet {
                     System.err.println("Couldn't get I/O for the connection to: " + host + ".");
 
                 }
-
-
 
                 String fromServer;
                 String fromUser;
@@ -276,7 +252,7 @@ public class LayarServlet extends HttpServlet {
 
                         JSONObject poi = new JSONObject();
 
-                        poi.accumulate("id", i);
+                        poi.accumulate("id", StringEscapeUtils.escapeJavaScript(cartridgeDetails[0]));
 
 
                         //Placement of the POI. Can either be a geolocation or the key of a reference image 
@@ -363,7 +339,7 @@ public class LayarServlet extends HttpServlet {
                         // Forces the POI's BIW style to "classic" or "collapsed". 
                         //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                         //if the POI is a Vision enabled POI.
-                        poi.accumulate("biwStyle", "classic");
+                        poi.accumulate("biwStyle", "collapsed");
 
 
 
@@ -442,10 +418,6 @@ public class LayarServlet extends HttpServlet {
                             object.accumulate("size", "1.0");
                         }
 
-
-
-
-
                         //object.accumulate("size", params.getSize());
                         poi.accumulate("object", object);
 
@@ -491,7 +463,7 @@ public class LayarServlet extends HttpServlet {
 
             if (session.getAttribute("DIALOG") != null) {
 
-                
+
 
                 if (session.getAttribute("dialogPlayed") == null) {
 
@@ -510,24 +482,22 @@ public class LayarServlet extends HttpServlet {
 
             }
 
-            // *************************************************************
-            //
-            //            If mediacall is fired
-            //
-            //***************************************************************
-
-
-
 
 
             if (DoplayMediaCall) {
 
+                //   **************************************************************************
+                //****************************************************************************
+                //
+                //       Set  Media POIS
+                //
+                //****************************************************************************
                 count++;
-                // TODO SET THE POI FOR THE MEDIA CALL EVENT 
+
 
                 JSONObject poi = new JSONObject();
 
-                poi.accumulate("id", 1001);
+                poi.accumulate("id", playMediaCall);
 
 
                 poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
@@ -540,14 +510,6 @@ public class LayarServlet extends HttpServlet {
                 poi.accumulate("text", text);
 
                 JSONArray actions = new JSONArray();
-
-
-
-
-
-
-
-
 
                 if (playMediaCall.contains("||***VIDEO***")) {
 
@@ -622,11 +584,18 @@ public class LayarServlet extends HttpServlet {
             if (Dodialog && !DoplayMediaCall) {
 
 
+                //   **************************************************************************
+                //****************************************************************************
+                //
+                //       Set  Dialog POIS
+                //
+                //****************************************************************************
+
                 count++;
 
                 JSONObject poi = new JSONObject();
 
-                poi.accumulate("id", 1000);
+                poi.accumulate("id", session.getAttribute("dialogTexts"));
 
 
 
@@ -658,9 +627,6 @@ public class LayarServlet extends HttpServlet {
                 hotspots.add(poi);
 
 
-
-
-                // session.setAttribute("DIALOG", "null");
             }
 
 
@@ -668,69 +634,14 @@ public class LayarServlet extends HttpServlet {
             if (!Dodialog
                     && !DoplayMediaCall) {
 
+                //   **************************************************************************
+                //****************************************************************************
+                //
+                //       Set  Zone POIS
+                //
+                //****************************************************************************
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                //int zoneCount = (int) Double.parseDouble(session.getAttribute("zoneCount").toString());
                 String zoneList = session.getAttribute("zoneList").toString();
 
                 String list = (String) session.getAttribute("tasksList");
@@ -742,12 +653,9 @@ public class LayarServlet extends HttpServlet {
                 for (int i = 0; i < temp.length; i++) {
                     if (i == 0) {
                     } else {
-                        //msg = msg + "<li><IMG SRC= 'images/task-pending.png'>"+temp[i]+"</a></li>";
-
 
                         if (temp[i] != null) {
 
-                            //content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + distance;
                             String title = "";
                             String description = "";
                             String hotspotAltitude = "";
@@ -762,7 +670,7 @@ public class LayarServlet extends HttpServlet {
 
                             JSONObject poi = new JSONObject();
 
-                            poi.accumulate("id", i);
+
 
                             for (int ii = 0; ii < temp2.length; ii++) {
                                 if (ii == 0) {
@@ -802,6 +710,7 @@ public class LayarServlet extends HttpServlet {
                             //"anchor": "geo:52.3,4.5"
 
 
+                            poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
                             poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
 
                             JSONObject text = new JSONObject();
@@ -844,7 +753,7 @@ public class LayarServlet extends HttpServlet {
                             // Forces the POI's BIW style to "classic" or "collapsed". 
                             //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                             //if the POI is a Vision enabled POI.
-                            poi.accumulate("biwStyle", "classic");
+                            poi.accumulate("biwStyle", "collapsed");
 
 
 
@@ -910,31 +819,7 @@ public class LayarServlet extends HttpServlet {
                 }
 
 
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }
@@ -942,6 +827,12 @@ public class LayarServlet extends HttpServlet {
         JSONArray layarActions = new JSONArray();
 
 
+        //   **************************************************************************
+        //****************************************************************************
+        //
+        //       Set  the default layer buttons
+        //
+        //****************************************************************************
 
         JSONObject layarAction1 = new JSONObject();
         layarAction1.accumulate("contentType", "text/html");
@@ -1026,16 +917,16 @@ public class LayarServlet extends HttpServlet {
 
             layer.accumulate("errorCode", 21);
         }
-        if (Dodialog || DoplayMediaCall) {  
-            
+        if (Dodialog || DoplayMediaCall) {
+
             layer.accumulate("refreshInterval", 30);
-            
-        }  else {
-            
+
+        } else {
+
             layer.accumulate("refreshInterval", 180);
-            
+
         }
-        
+
         layer.accumulate("refreshDistance", 15);
 
 
@@ -1126,13 +1017,6 @@ public class LayarServlet extends HttpServlet {
                     }
 
 
-
-
-
-
-
-
-
                     showDialog.accumulate("actions", messageActions);
 
 
@@ -1149,7 +1033,7 @@ public class LayarServlet extends HttpServlet {
         //Set to null or do not send for default behavior, which is "classic" for geolocated POIs and "collapsed" 
         //for feature tracked POIs.
 
-        layer.accumulate("biwStyle", "classic");
+        layer.accumulate("biwStyle", "collapsed");
 
 
         layer.accumulate("disableClueMenu", false);
@@ -1164,9 +1048,6 @@ public class LayarServlet extends HttpServlet {
         DoplayMediaCall = false;
 
         out.close();
-
-
-
 
 
     }

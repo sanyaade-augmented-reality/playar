@@ -14,7 +14,17 @@
     String practice = "true";
     String gameType = "stand-alone";
     String gameStarted = "none";
+    String showControlPanel = request.getParameter("showControlPanel");
 
+    if (showControlPanel == "true") {
+        
+        session.setAttribute("showControlPanel", "true");
+        
+    } else if (showControlPanel == "false") {
+        
+        session.setAttribute("showControlPanel", "false");
+        
+    }
 
     if (session.getAttribute("username") != null) {
 

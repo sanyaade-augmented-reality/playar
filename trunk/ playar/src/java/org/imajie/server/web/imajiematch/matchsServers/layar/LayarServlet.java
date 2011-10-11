@@ -430,136 +430,490 @@ public class LayarServlet extends HttpServlet {
 
         } else {
 
-            playMediaCall = "null";
-            dialog = "null";
-            // TODO DELETE ALL POI
 
+            String showControlPanel = "false";
+            if (session.getAttribute("showControlPanel") != null) {
 
-
-            RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
-
-            if (session.getAttribute("playMediaCallPlayed") == null) {
-
-                session.setAttribute("playMediaCallPlayed", "");
-            }
-
-            if (session.getAttribute("PLAYMEDIA_CALL") != null) {
-
-
-                if (!session.getAttribute("PLAYMEDIA_CALL").toString().equals(session.getAttribute("playMediaCallPlayed").toString())) {
-
-
-                    playMediaCall = session.getAttribute("PLAYMEDIA_CALL").toString();
-
-                    session.setAttribute("playMediaCallPlayed", playMediaCall);
-                    DoplayMediaCall = true;
-
-                } else {
-
-                    DoplayMediaCall = false;
-
-                }
-            }
-
-            if (session.getAttribute("DIALOG") != null) {
-
-
-
-                if (session.getAttribute("dialogPlayed") == null) {
-
-                    session.setAttribute("dialogPlayed", "");
-                }
-
-                if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall && session.getAttribute("showDialog").toString().contains("null")) {
-
-                    dialog = session.getAttribute("DIALOG").toString();
-                    session.setAttribute("dialogPlayed", dialog);
-                    Dodialog = true;
-
-                } else {
-                    Dodialog = false;
-                }
-
-            }
-
-            String currentEvent = "";
-            if (session.getAttribute("CURRENTEVENT") != null) {
-
-                currentEvent = session.getAttribute("CURRENTEVENT").toString();
+                showControlPanel = session.getAttribute("showControlPanel").toString();
 
 
             }
+            //*******************************************************************************
+            //
+            //            Determine if need to show control panel instead of regular pois
+            //
+            //*******************************************************************************
+
+            if (showControlPanel == "true") {
 
 
 
-            if (DoplayMediaCall) {
+                //***************************************
+                // inventory icon poi
+                //***************************************
+                double inventoryAngle = 0;
+                String inventoryLatitude = "" + (latitude + 0.00005 * Math.cos(inventoryAngle));
+                String inventoryLongitude = "" + (longitude + 0.00005 * Math.sin(inventoryAngle));
 
-                //   **************************************************************************
-                //****************************************************************************
-                //
-                //       Set  Media POIS
-                //
-                //****************************************************************************
+                JSONObject inventoryPoi = new JSONObject();
                 count++;
 
+                inventoryPoi.accumulate("id", "Inventory");
+                inventoryPoi.accumulate("anchor", "geo:" + inventoryLatitude + "," + inventoryLongitude + "");
 
-                JSONObject poi = new JSONObject();
+                JSONObject inventoryText = new JSONObject();
+                inventoryText.accumulate("title", "Inventory");
+                inventoryText.accumulate("description", "Clic to get your inventory");
+                inventoryText.accumulate("footnote", "Powered by ImajieMatch");
+                inventoryPoi.accumulate("text", inventoryText);
+                inventoryPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
+                inventoryPoi.accumulate("doNotIndex", true);           
+                inventoryPoi.accumulate("inFocus", false);
+                inventoryPoi.accumulate("showSmallBiw", true);
+                inventoryPoi.accumulate("showBiwOnClick", false);
 
-                poi.accumulate("id", playMediaCall);
+                JSONObject inventoryIcon = new JSONObject();
+                inventoryIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
+                inventoryIcon.accumulate("type", "0");
+                inventoryPoi.accumulate("icon", inventoryIcon);
+
+                inventoryPoi.accumulate("biwStyle", "classic");
+
+                JSONArray inventoryActions = new JSONArray();
+                JSONObject inventoryAction1 = new JSONObject();
+                inventoryAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
+                inventoryAction1.accumulate("label", "Get Inventory");
+                inventoryAction1.accumulate("contentType", "text/html");
+                inventoryAction1.accumulate("method", "GET");
+                inventoryAction1.accumulate("activityType", 6);
+
+                inventoryAction1.accumulate("params", null);
+                inventoryAction1.accumulate("closeBiw", true);
+                inventoryAction1.accumulate("showActivity", false);
+                inventoryAction1.accumulate("activityMessage", "");
+                inventoryAction1.accumulate("autoTriggerOnly ", false);
+                inventoryAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                inventoryActions.add(inventoryAction1);
+
+                inventoryPoi.accumulate("actions", inventoryActions);
+
+                // Transform values
+                JSONObject inventoryTransform = new JSONObject();
+                inventoryTransform.accumulate("scale", params.getScale());
+                inventoryPoi.accumulate("transform", inventoryTransform);
+
+                // Transform values
+                JSONObject inventoryObject = new JSONObject();
+       
+                inventoryObject.accumulate("contentType", "image/png");
+                inventoryObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/inventory.jsp");      
+                inventoryObject.accumulate("size", params.getSize());
+                inventoryPoi.accumulate("object", inventoryObject);
+
+                hotspots.add(inventoryPoi);
+                
+                
+                
+                
+                //***************************************
+                // yousee icon poi
+                //***************************************
+                double youseeAngle = 30;
+                String youseeLatitude = "" + (latitude + 0.00005 * Math.cos(youseeAngle));
+                String youseeLongitude = "" + (longitude + 0.00005 * Math.sin(youseeAngle));
+
+                JSONObject youseePoi = new JSONObject();
+                count++;
+
+                youseePoi.accumulate("id", "yousee");
+                youseePoi.accumulate("anchor", "geo:" + youseeLatitude + "," + youseeLongitude + "");
+
+                JSONObject youseeText = new JSONObject();
+                youseeText.accumulate("title", "yousee");
+                youseeText.accumulate("description", "Clic to get your yousee");
+                youseeText.accumulate("footnote", "Powered by ImajieMatch");
+                youseePoi.accumulate("text", youseeText);
+                youseePoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
+                youseePoi.accumulate("doNotIndex", true);           
+                youseePoi.accumulate("inFocus", false);
+                youseePoi.accumulate("showSmallBiw", true);
+                youseePoi.accumulate("showBiwOnClick", false);
+
+                JSONObject youseeIcon = new JSONObject();
+                youseeIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
+                youseeIcon.accumulate("type", "0");
+                youseePoi.accumulate("icon", youseeIcon);
+
+                youseePoi.accumulate("biwStyle", "classic");
+
+                JSONArray youseeActions = new JSONArray();
+                JSONObject youseeAction1 = new JSONObject();
+                youseeAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
+                youseeAction1.accumulate("label", "Get yousee");
+                youseeAction1.accumulate("contentType", "text/html");
+                youseeAction1.accumulate("method", "GET");
+                youseeAction1.accumulate("activityType", 6);
+
+                youseeAction1.accumulate("params", null);
+                youseeAction1.accumulate("closeBiw", true);
+                youseeAction1.accumulate("showActivity", false);
+                youseeAction1.accumulate("activityMessage", "");
+                youseeAction1.accumulate("autoTriggerOnly ", false);
+                youseeAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                youseeActions.add(youseeAction1);
+
+                youseePoi.accumulate("actions", youseeActions);
+
+                // Transform values
+                JSONObject youseeTransform = new JSONObject();
+                youseeTransform.accumulate("scale", params.getScale());
+                youseePoi.accumulate("transform", youseeTransform);
+
+                // Transform values
+                JSONObject youseeObject = new JSONObject();
+       
+                youseeObject.accumulate("contentType", "image/png");
+                youseeObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/yousee.jsp");      
+                youseeObject.accumulate("size", params.getSize());
+                youseePoi.accumulate("object", youseeObject);
+
+                hotspots.add(youseePoi);
 
 
-                poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
 
-                JSONObject text = new JSONObject();
-                text.accumulate("title", StringEscapeUtils.escapeJavaScript("Message"));
+                 //***************************************
+                // locations icon poi
+                //***************************************
+                double locationsAngle = 60;
+                String locationsLatitude = "" + (latitude + 0.00005 * Math.cos(locationsAngle));
+                String locationsLongitude = "" + (longitude + 0.00005 * Math.sin(locationsAngle));
+
+                JSONObject locationsPoi = new JSONObject();
+                count++;
+
+                locationsPoi.accumulate("id", "locations");
+                locationsPoi.accumulate("anchor", "geo:" + locationsLatitude + "," + locationsLongitude + "");
+
+                JSONObject locationsText = new JSONObject();
+                locationsText.accumulate("title", "locations");
+                locationsText.accumulate("description", "Clic to get your locations");
+                locationsText.accumulate("footnote", "Powered by ImajieMatch");
+                locationsPoi.accumulate("text", locationsText);
+                locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
+                locationsPoi.accumulate("doNotIndex", true);           
+                locationsPoi.accumulate("inFocus", false);
+                locationsPoi.accumulate("showSmallBiw", true);
+                locationsPoi.accumulate("showBiwOnClick", false);
+
+                JSONObject locationsIcon = new JSONObject();
+                locationsIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/compass.png");
+                locationsIcon.accumulate("type", "0");
+                locationsPoi.accumulate("icon", locationsIcon);
+
+                locationsPoi.accumulate("biwStyle", "classic");
+
+                JSONArray locationsActions = new JSONArray();
+                JSONObject locationsAction1 = new JSONObject();
+                locationsAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp");
+                locationsAction1.accumulate("label", "Get locations");
+                locationsAction1.accumulate("contentType", "text/html");
+                locationsAction1.accumulate("method", "GET");
+                locationsAction1.accumulate("activityType", 6);
+
+                locationsAction1.accumulate("params", null);
+                locationsAction1.accumulate("closeBiw", true);
+                locationsAction1.accumulate("showActivity", false);
+                locationsAction1.accumulate("activityMessage", "");
+                locationsAction1.accumulate("autoTriggerOnly ", false);
+                locationsAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                locationsActions.add(locationsAction1);
+
+                locationsPoi.accumulate("actions", locationsActions);
+
+                // Transform values
+                JSONObject locationsTransform = new JSONObject();
+                locationsTransform.accumulate("scale", params.getScale());
+                locationsPoi.accumulate("transform", locationsTransform);
+
+                // Transform values
+                JSONObject locationsObject = new JSONObject();
+       
+                locationsObject.accumulate("contentType", "image/png");
+                locationsObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/locations.jsp");      
+                locationsObject.accumulate("size", params.getSize());
+                locationsPoi.accumulate("object", locationsObject);
+
+                hotspots.add(locationsPoi);
+
+                
+                 //***************************************
+                // tasks icon poi
+                //***************************************
+                double tasksAngle = 90;
+                String tasksLatitude = "" + (latitude + 0.00005 * Math.cos(tasksAngle));
+                String tasksLongitude = "" + (longitude + 0.00005 * Math.sin(tasksAngle));
+
+                JSONObject tasksPoi = new JSONObject();
+                count++;
+
+                tasksPoi.accumulate("id", "tasks");
+                tasksPoi.accumulate("anchor", "geo:" + tasksLatitude + "," + tasksLongitude + "");
+
+                
+                JSONObject tasksText = new JSONObject();
+                tasksText.accumulate("title", "tasks");
+                tasksText.accumulate("description", "Clic to get your tasks");
+                tasksText.accumulate("footnote", "Powered by ImajieMatch");
+                tasksPoi.accumulate("text", tasksText);
+                tasksPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
+                tasksPoi.accumulate("doNotIndex", true);           
+                tasksPoi.accumulate("inFocus", false);
+                tasksPoi.accumulate("showSmallBiw", true);
+                tasksPoi.accumulate("showBiwOnClick", false);
+
+                JSONObject tasksIcon = new JSONObject();
+                tasksIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
+                tasksIcon.accumulate("type", "0");
+                tasksPoi.accumulate("icon", tasksIcon);
+
+                tasksPoi.accumulate("biwStyle", "classic");
+
+                JSONArray tasksActions = new JSONArray();
+                JSONObject tasksAction1 = new JSONObject();
+                tasksAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
+                tasksAction1.accumulate("label", "Get tasks");
+                tasksAction1.accumulate("contentType", "text/html");
+                tasksAction1.accumulate("method", "GET");
+                tasksAction1.accumulate("activityType", 6);
+
+                tasksAction1.accumulate("params", null);
+                tasksAction1.accumulate("closeBiw", true);
+                tasksAction1.accumulate("showActivity", false);
+                tasksAction1.accumulate("activityMessage", "");
+                tasksAction1.accumulate("autoTriggerOnly ", false);
+                tasksAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                tasksActions.add(tasksAction1);
+
+                tasksPoi.accumulate("actions", tasksActions);
+
+                // Transform values
+                JSONObject tasksTransform = new JSONObject();
+                tasksTransform.accumulate("scale", params.getScale());
+                tasksPoi.accumulate("transform", tasksTransform);
+
+                // Transform values
+                JSONObject tasksObject = new JSONObject();
+       
+                tasksObject.accumulate("contentType", "image/png");
+                tasksObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/tasks.jsp");      
+                tasksObject.accumulate("size", params.getSize());
+                tasksPoi.accumulate("object", tasksObject);
+
+                hotspots.add(tasksPoi);
+      
+                 //***************************************
+                // parameters icon poi
+                //***************************************
+                double parametersAngle = 120;
+                String parametersLatitude = "" + (latitude + 0.00005 * Math.cos(parametersAngle));
+                String parametersLongitude = "" + (longitude + 0.00005 * Math.sin(parametersAngle));
+
+                JSONObject parametersPoi = new JSONObject();
+                count++;
+
+                parametersPoi.accumulate("id", "parameters");
+                parametersPoi.accumulate("anchor", "geo:" + parametersLatitude + "," + parametersLongitude + "");
+
+                
+                JSONObject parametersText = new JSONObject();
+                parametersText.accumulate("title", "parameters");
+                parametersText.accumulate("description", "Clic to get your parameters");
+                parametersText.accumulate("footnote", "Powered by ImajieMatch");
+                parametersPoi.accumulate("text", parametersText);
+                parametersPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
+                parametersPoi.accumulate("doNotIndex", true);           
+                parametersPoi.accumulate("inFocus", false);
+                parametersPoi.accumulate("showSmallBiw", true);
+                parametersPoi.accumulate("showBiwOnClick", false);
+
+                JSONObject parametersIcon = new JSONObject();
+                parametersIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
+                parametersIcon.accumulate("type", "0");
+                parametersPoi.accumulate("icon", parametersIcon);
+
+                parametersPoi.accumulate("biwStyle", "classic");
+
+                JSONArray parametersActions = new JSONArray();
+                JSONObject parametersAction1 = new JSONObject();
+                parametersAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/parameters.jsp");
+                parametersAction1.accumulate("label", "Get parameters");
+                parametersAction1.accumulate("contentType", "text/html");
+                parametersAction1.accumulate("method", "GET");
+                parametersAction1.accumulate("activityType", 6);
+
+                parametersAction1.accumulate("params", null);
+                parametersAction1.accumulate("closeBiw", true);
+                parametersAction1.accumulate("showActivity", false);
+                parametersAction1.accumulate("activityMessage", "");
+                parametersAction1.accumulate("autoTriggerOnly ", false);
+                parametersAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                parametersActions.add(parametersAction1);
+
+                parametersPoi.accumulate("actions", parametersActions);
+
+                // Transform values
+                JSONObject parametersTransform = new JSONObject();
+                parametersTransform.accumulate("scale", params.getScale());
+                parametersPoi.accumulate("transform", parametersTransform);
+
+                // Transform values
+                JSONObject parametersObject = new JSONObject();
+       
+                parametersObject.accumulate("contentType", "image/png");
+                parametersObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/parameters.jsp");      
+                parametersObject.accumulate("size", params.getSize());
+                parametersPoi.accumulate("object", parametersObject);
+
+                hotspots.add(parametersPoi);
 
 
-                text.accumulate("footnote", "Powered by ImajieMatch");
-                poi.accumulate("text", text);
+                session.setAttribute("showControlPanel", "false");
+            } else {
+                playMediaCall = "null";
+                dialog = "null";
+                // TODO DELETE ALL POI
 
-                JSONArray actions = new JSONArray();
 
-                if (playMediaCall.contains("||***VIDEO***")) {
 
-                    String media = playMediaCall.replace("||***VIDEO***", "");
-                    media = media.replace(".png", ".mp4");
-                    JSONObject layarActionMedias = new JSONObject();
-                    layarActionMedias.accumulate("contentType", "video/mp4");
-                    layarActionMedias.accumulate("method", "GET");
-                    layarActionMedias.accumulate("uri", "video://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                    layarActionMedias.accumulate("label", "Message");
-                    layarActionMedias.accumulate("activityType", 3);
-                    layarActionMedias.accumulate("autoTrigger", true);
-                    layarActionMedias.accumulate("autoTriggerRange", 20);
-                    layarActionMedias.accumulate("autoTriggerOnly", true);
-                    actions.add(layarActionMedias);
-                    poi.accumulate("actions", actions);
-                    hotspots.add(poi);
+                RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
+
+                if (session.getAttribute("playMediaCallPlayed") == null) {
+
+                    session.setAttribute("playMediaCallPlayed", "");
+                }
+
+                if (session.getAttribute("PLAYMEDIA_CALL") != null) {
+
+
+                    if (!session.getAttribute("PLAYMEDIA_CALL").toString().equals(session.getAttribute("playMediaCallPlayed").toString())) {
+
+
+                        playMediaCall = session.getAttribute("PLAYMEDIA_CALL").toString();
+
+                        session.setAttribute("playMediaCallPlayed", playMediaCall);
+                        DoplayMediaCall = true;
+
+                    } else {
+
+                        DoplayMediaCall = false;
+
+                    }
+                }
+
+                if (session.getAttribute("DIALOG") != null) {
+
+
+
+                    if (session.getAttribute("dialogPlayed") == null) {
+
+                        session.setAttribute("dialogPlayed", "");
+                    }
+
+                    if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall && session.getAttribute("showDialog").toString().contains("null")) {
+
+                        dialog = session.getAttribute("DIALOG").toString();
+                        session.setAttribute("dialogPlayed", dialog);
+                        Dodialog = true;
+
+                    } else {
+                        Dodialog = false;
+                    }
 
                 }
 
-                if (playMediaCall.contains("||***AUDIO***")) {
+                String currentEvent = "";
+                if (session.getAttribute("CURRENTEVENT") != null) {
 
-                    JSONObject layarActionMedias = new JSONObject();
-                    String media = playMediaCall.replace("||***AUDIO***", "");
-                    media = media.replace(".png", ".mp4");
-                    layarActionMedias.accumulate("contentTyp", "audio/mp3");
-                    layarActionMedias.accumulate("method", "GET");
-                    layarActionMedias.accumulate("uri", "audio://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                    layarActionMedias.accumulate("label", "Message");
-                    layarActionMedias.accumulate("activityType", 2);
-                    layarActionMedias.accumulate("autoTrigger", true);
-                    layarActionMedias.accumulate("autoTriggerRange", 20);
-                    layarActionMedias.accumulate("autoTriggerOnly", true);
-                    actions.add(layarActionMedias);
-                    poi.accumulate("actions", actions);
-                    hotspots.add(poi);
+                    currentEvent = session.getAttribute("CURRENTEVENT").toString();
+
 
                 }
 
 
-                // TODO FINISH THE IMPLEMENTS OF TELEPHONE CALLS BETWEEN PLAYERS OF SAME TEAM --- LAYAR 
-                if (playMediaCall.contains("||***TEL***")) {
+
+                if (DoplayMediaCall) {
+
+                    //   **************************************************************************
+                    //****************************************************************************
+                    //
+                    //       Set  Media POIS
+                    //
+                    //****************************************************************************
+                    count++;
+
+
+                    JSONObject poi = new JSONObject();
+
+                    poi.accumulate("id", playMediaCall);
+
+
+                    poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
+
+                    JSONObject text = new JSONObject();
+                    text.accumulate("title", StringEscapeUtils.escapeJavaScript("Message"));
+
+
+                    text.accumulate("footnote", "Powered by ImajieMatch");
+                    poi.accumulate("text", text);
+
+                    JSONArray actions = new JSONArray();
+
+                    if (playMediaCall.contains("||***VIDEO***")) {
+
+                        String media = playMediaCall.replace("||***VIDEO***", "");
+                        media = media.replace(".png", ".mp4");
+                        JSONObject layarActionMedias = new JSONObject();
+                        layarActionMedias.accumulate("contentType", "video/mp4");
+                        layarActionMedias.accumulate("method", "GET");
+                        layarActionMedias.accumulate("uri", "video://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                        layarActionMedias.accumulate("label", "Message");
+                        layarActionMedias.accumulate("activityType", 3);
+                        layarActionMedias.accumulate("autoTrigger", true);
+                        layarActionMedias.accumulate("autoTriggerRange", 20);
+                        layarActionMedias.accumulate("autoTriggerOnly", true);
+                        actions.add(layarActionMedias);
+                        poi.accumulate("actions", actions);
+                        hotspots.add(poi);
+
+                    }
+
+                    if (playMediaCall.contains("||***AUDIO***")) {
+
+                        JSONObject layarActionMedias = new JSONObject();
+                        String media = playMediaCall.replace("||***AUDIO***", "");
+                        media = media.replace(".png", ".mp4");
+                        layarActionMedias.accumulate("contentTyp", "audio/mp3");
+                        layarActionMedias.accumulate("method", "GET");
+                        layarActionMedias.accumulate("uri", "audio://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                        layarActionMedias.accumulate("label", "Message");
+                        layarActionMedias.accumulate("activityType", 2);
+                        layarActionMedias.accumulate("autoTrigger", true);
+                        layarActionMedias.accumulate("autoTriggerRange", 20);
+                        layarActionMedias.accumulate("autoTriggerOnly", true);
+                        actions.add(layarActionMedias);
+                        poi.accumulate("actions", actions);
+                        hotspots.add(poi);
+
+                    }
+
+
+                    // TODO FINISH THE IMPLEMENTS OF TELEPHONE CALLS BETWEEN PLAYERS OF SAME TEAM --- LAYAR 
+                    if (playMediaCall.contains("||***TEL***")) {
 //                JSONObject layarActionMedias = new JSONObject();
 //                layarActionMedias.accumulate("contentType", "application/vnd.layar.internal");
 //                layarActionMedias.accumulate("method", "GET");
@@ -570,10 +924,10 @@ public class LayarServlet extends HttpServlet {
 //                layarActionMedias.accumulate("autoTriggerRange", 20);
 //                layarActionMedias.accumulate("autoTriggerOnly", true);
 //                layarActions.add(layarActionMedias);
-                }
+                    }
 
-                // TODO FINISH THE IMPLEMENTS OF SMS CALLS BETWEEN PLAYERS OF SAME TEAM --- LAYAR 
-                if (playMediaCall.contains("||***SMS***")) {
+                    // TODO FINISH THE IMPLEMENTS OF SMS CALLS BETWEEN PLAYERS OF SAME TEAM --- LAYAR 
+                    if (playMediaCall.contains("||***SMS***")) {
 //                JSONObject layarActionMedias = new JSONObject();
 //                layarActionMedias.accumulate("contentType", "application/vnd.layar.internal");
 //                layarActionMedias.accumulate("method", "GET");
@@ -584,293 +938,87 @@ public class LayarServlet extends HttpServlet {
 //                layarActionMedias.accumulate("autoTriggerRange", 20);
 //                layarActionMedias.accumulate("autoTriggerOnly", true);
 //                layarActions.add(layarActionMedias);
-                }
-
-
-
-            }
-            if (Dodialog && !DoplayMediaCall) {
-
-
-                //   **************************************************************************
-                //****************************************************************************
-                //
-                //       Set  Dialog POIS
-                //
-                //****************************************************************************
-
-                count++;
-
-                JSONObject poi = new JSONObject();
-
-                poi.accumulate("id", session.getAttribute("dialogTexts"));
-
-
-
-                poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
-
-                JSONObject text = new JSONObject();
-                text.accumulate("title", StringEscapeUtils.escapeJavaScript("Dialog"));
-
-
-                text.accumulate("footnote", "Powered by ImajieMatch");
-                poi.accumulate("text", text);
-
-                JSONArray actions = new JSONArray();
-
-
-                JSONObject layarActionMedias = new JSONObject();
-                layarActionMedias.accumulate("contentType", "text/html");
-                layarActionMedias.accumulate("method", "GET");
-                layarActionMedias.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start2.jsp");
-                layarActionMedias.accumulate("label", "Message");
-                layarActionMedias.accumulate("activityType", 36);
-                layarActionMedias.accumulate("autoTrigger", true);
-                layarActionMedias.accumulate("autoTriggerRange", 20);
-                layarActionMedias.accumulate("autoTriggerOnly", true);
-                actions.add(layarActionMedias);
-                poi.accumulate("actions", actions);
-
-
-                hotspots.add(poi);
-
-
-            }
-
-
-
-            if (!Dodialog
-                    && !DoplayMediaCall) {
-
-                //   **************************************************************************
-                //****************************************************************************
-                //
-                //       Set  Zone POIS
-                //
-                //****************************************************************************
-
-
-                String zoneList = session.getAttribute("zoneList").toString();
-
-                String list = (String) session.getAttribute("tasksList");
-
-
-
-                String delimiter = "\\|!\\|";
-                String[] temp = zoneList.split(delimiter);
-                for (int i = 0; i < temp.length; i++) {
-                    if (i == 0) {
-                    } else {
-
-                        if (temp[i] != null) {
-
-
-                            String title = "";
-                            String description = "";
-                            String hotspotAltitude = "";
-                            String hotspotLatitude = "";
-                            String hotspotLongitude = "";
-                            String hotspotDistance = "";
-                            String frienddlyDistance = "";
-
-                            String hotspot = temp[i];
-                            String delimiter2 = "\\|\\|";
-                            String[] temp2 = hotspot.split(delimiter2);
-                            String media = "";
-
-
-
-
-
-
-
-                            for (int ii = 0; ii < temp2.length; ii++) {
-                                if (ii == 0) {
-                                    title = temp2[ii];
-                                }
-                                if (ii == 1) {
-                                    description = temp2[ii];
-                                }
-                                if (ii == 2) {
-                                    hotspotAltitude = temp2[ii];
-                                }
-                                if (ii == 3) {
-                                    hotspotLatitude = temp2[ii];
-                                }
-                                if (ii == 4) {
-                                    hotspotLongitude = temp2[ii];
-                                }
-                                if (ii == 5) {
-                                    hotspotDistance = temp2[ii];
-                                }
-                                if (ii == 6) {
-                                    frienddlyDistance = temp2[ii];
-                                }
-                                if (ii == 7) {
-                                    media = temp2[ii];
-                                }
-                            }
-
-
-                            if (!currentEvent.contentEquals(title + ".OnEnter")) {
-
-
-                                JSONObject poi = new JSONObject();
-                                count++;
-
-                                //String[] matchPois = new String[4];
-
-
-                                //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                                //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
-
-                                //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                                //  Layar also supports the geo: URI scheme for specifying geolocations.
-
-                                //"anchor": { "referenceImage": "myFirstImage" }
-
-                                //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
-
-                                //"anchor": "geo:52.3,4.5"
-
-
-                                poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
-                                poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
-
-                                JSONObject text = new JSONObject();
-                                text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
-                                text.accumulate("description", description);
-                                text.accumulate("footnote", "Powered by ImajieMatch");
-                                poi.accumulate("text", text);
-
-
-
-//                            if (session.getAttribute("dialogMedia") != null) {
-//
-//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
-//
-//                            }
-
-                                poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-
-                                if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
-
-                                    poi.accumulate("doNotIndex", false);
-                                } else {
-
-                                    poi.accumulate("doNotIndex", true);
-                                }
-                                poi.accumulate("inFocus", false);
-
-                                poi.accumulate("showSmallBiw", true);
-
-                                poi.accumulate("showBiwOnClick", false);
-
-
-
-                                JSONObject icon = new JSONObject();
-                                icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                icon.accumulate("type", "0");
-                                poi.accumulate("icon", icon);
-
-
-                                // Forces the POI's BIW style to "classic" or "collapsed". 
-                                //Default is "classic" if the POI is a geolocated POI and "collapsed" 
-                                //if the POI is a Vision enabled POI.
-                                poi.accumulate("biwStyle", "classic");
-
-
-
-                                // Actions
-                                JSONArray actions = new JSONArray();
-                                JSONObject action1 = new JSONObject();
-                                action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                                action1.accumulate("label", title + " Details");
-
-                                // contenType
-                                //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
-                                //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
-                                action1.accumulate("contentType", "text/html");
-                                action1.accumulate("method", "GET");
-                                action1.accumulate("activityType", 6);
-
-                                action1.accumulate("params", null);
-                                action1.accumulate("closeBiw", true);
-                                action1.accumulate("showActivity", false);
-                                action1.accumulate("activityMessage", "");
-                                //action1.accumulate("autoTriggerRange", "10");
-                                action1.accumulate("autoTriggerOnly ", false);
-                                action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
-
-                                actions.add(action1);
-
-
-                                poi.accumulate("actions", actions);
-
-                                // Transform values
-                                JSONObject transform = new JSONObject();
-                                //transform.accumulate("rotate", "");
-                                //transform.accumulate("translate", "");
-                                transform.accumulate("scale", params.getScale());
-                                poi.accumulate("transform", transform);
-
-                                // Transform values
-                                JSONObject object = new JSONObject();
-                                // Content type of the object. Can be one of the following:
-
-                                //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
-                                //   model/vnd.layar.l3d for 3D models
-                                //   image/jpeg, image/gif, image/png for images
-
-                                if (media.contains(".jpg")) {
-                                    object.accumulate("contentType", "image/jpeg");
-
-                                } else {
-                                    object.accumulate("contentType", "image/png");
-
-                                }
-                                object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                object.accumulate("size", params.getSize());
-                                poi.accumulate("object", object);
-
-                                hotspots.add(poi);
-                            }
-
-                        }
                     }
 
-                }
-                //**********************************************************************************
-                //
-                //          Add Yousee pois and place it around the player if no position specified
-                //
-                //**********************************************************************************
-                String youseeList = "";
-
-                if (session.getAttribute("youseeList") != null) {
-
-                    youseeList = session.getAttribute("youseeList").toString();
 
 
                 }
-                String delimiter3 = "\\|!\\|";
-                String[] temp3 = youseeList.split(delimiter3);
+                if (Dodialog && !DoplayMediaCall) {
 
-                if (temp3.length > 0) {
 
-                    double angle = 0 ;
-                    
-                    for (int i = 0; i < temp3.length; i++) {
+                    //   **************************************************************************
+                    //****************************************************************************
+                    //
+                    //       Set  Dialog POIS
+                    //
+                    //****************************************************************************
+
+                    count++;
+
+                    JSONObject poi = new JSONObject();
+
+                    poi.accumulate("id", session.getAttribute("dialogTexts"));
+
+
+
+                    poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
+
+                    JSONObject text = new JSONObject();
+                    text.accumulate("title", StringEscapeUtils.escapeJavaScript("Dialog"));
+
+
+                    text.accumulate("footnote", "Powered by ImajieMatch");
+                    poi.accumulate("text", text);
+
+                    JSONArray actions = new JSONArray();
+
+
+                    JSONObject layarActionMedias = new JSONObject();
+                    layarActionMedias.accumulate("contentType", "text/html");
+                    layarActionMedias.accumulate("method", "GET");
+                    layarActionMedias.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start2.jsp");
+                    layarActionMedias.accumulate("label", "Message");
+                    layarActionMedias.accumulate("activityType", 36);
+                    layarActionMedias.accumulate("autoTrigger", true);
+                    layarActionMedias.accumulate("autoTriggerRange", 20);
+                    layarActionMedias.accumulate("autoTriggerOnly", true);
+                    actions.add(layarActionMedias);
+                    poi.accumulate("actions", actions);
+
+
+                    hotspots.add(poi);
+
+
+                }
+
+
+
+                if (!Dodialog
+                        && !DoplayMediaCall) {
+
+                    //   **************************************************************************
+                    //****************************************************************************
+                    //
+                    //       Set  Zone POIS
+                    //
+                    //****************************************************************************
+
+
+                    String zoneList = session.getAttribute("zoneList").toString();
+
+                    String list = (String) session.getAttribute("tasksList");
+
+
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = zoneList.split(delimiter);
+                    for (int i = 0; i < temp.length; i++) {
                         if (i == 0) {
                         } else {
 
-                            if (temp3[i] != null) {
+                            if (temp[i] != null) {
 
 
-                                
-                                
-                                
                                 String title = "";
                                 String description = "";
                                 String hotspotAltitude = "";
@@ -879,10 +1027,15 @@ public class LayarServlet extends HttpServlet {
                                 String hotspotDistance = "";
                                 String frienddlyDistance = "";
 
-                                String hotspot = temp3[i];
+                                String hotspot = temp[i];
                                 String delimiter2 = "\\|\\|";
                                 String[] temp2 = hotspot.split(delimiter2);
                                 String media = "";
+
+
+
+
+
 
 
                                 for (int ii = 0; ii < temp2.length; ii++) {
@@ -905,52 +1058,44 @@ public class LayarServlet extends HttpServlet {
                                         hotspotDistance = temp2[ii];
                                     }
                                     if (ii == 6) {
+                                        frienddlyDistance = temp2[ii];
+                                    }
+                                    if (ii == 7) {
                                         media = temp2[ii];
                                     }
                                 }
 
 
-//                                x = cx + r * cos(a)
-//                                y = cy + r * sin(a)
-// float x = (float)(radius * Math.Cos(angleInDegrees * Math.PI / 180F)) + origin.X;
-//        float y = (float)(radius * Math.Sin(angleInDegrees * Math.PI / 180F)) + origin.Y;
+                                if (!currentEvent.contentEquals(title + ".OnEnter")) {
 
 
+                                    JSONObject poi = new JSONObject();
+                                    count++;
 
-                                if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude))  {
-                                    
-                                    hotspotLatitude = ""+(latitude + 0.00005 * Math.cos(angle));
-                                    hotspotLongitude = ""+(longitude + 0.00005 * Math.sin(angle));
-                                    hotspotAltitude = "0.0";
-                                }
-
-                                JSONObject poi = new JSONObject();
-                                count++;
-
-                                //String[] matchPois = new String[4];
+                                    //String[] matchPois = new String[4];
 
 
-                                //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                                //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
 
-                                //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                                //  Layar also supports the geo: URI scheme for specifying geolocations.
+                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
 
-                                //"anchor": { "referenceImage": "myFirstImage" }
+                                    //"anchor": { "referenceImage": "myFirstImage" }
 
-                                //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
 
-                                //"anchor": "geo:52.3,4.5"
+                                    //"anchor": "geo:52.3,4.5"
 
 
-                                poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
-                                poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+                                    poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                    poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
 
-                                JSONObject text = new JSONObject();
-                                text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
-                                text.accumulate("description", description);
-                                text.accumulate("footnote", "Powered by ImajieMatch");
-                                poi.accumulate("text", text);
+                                    JSONObject text = new JSONObject();
+                                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                    text.accumulate("description", description);
+                                    text.accumulate("footnote", "Powered by ImajieMatch");
+                                    poi.accumulate("text", text);
 
 
 
@@ -960,103 +1105,312 @@ public class LayarServlet extends HttpServlet {
 //
 //                            }
 
-                                poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
 
-                                if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+                                    if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
 
-                                    poi.accumulate("doNotIndex", false);
-                                } else {
+                                        poi.accumulate("doNotIndex", false);
+                                    } else {
 
-                                    poi.accumulate("doNotIndex", true);
+                                        poi.accumulate("doNotIndex", true);
+                                    }
+                                    poi.accumulate("inFocus", false);
+
+                                    poi.accumulate("showSmallBiw", true);
+
+                                    poi.accumulate("showBiwOnClick", false);
+
+
+
+                                    JSONObject icon = new JSONObject();
+                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    icon.accumulate("type", "0");
+                                    poi.accumulate("icon", icon);
+
+
+                                    // Forces the POI's BIW style to "classic" or "collapsed". 
+                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                    //if the POI is a Vision enabled POI.
+                                    poi.accumulate("biwStyle", "classic");
+
+
+
+                                    // Actions
+                                    JSONArray actions = new JSONArray();
+                                    JSONObject action1 = new JSONObject();
+                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
+                                    action1.accumulate("label", title + " Details");
+
+                                    // contenType
+                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                    action1.accumulate("contentType", "text/html");
+                                    action1.accumulate("method", "GET");
+                                    action1.accumulate("activityType", 6);
+
+                                    action1.accumulate("params", null);
+                                    action1.accumulate("closeBiw", true);
+                                    action1.accumulate("showActivity", false);
+                                    action1.accumulate("activityMessage", "");
+                                    //action1.accumulate("autoTriggerRange", "10");
+                                    action1.accumulate("autoTriggerOnly ", false);
+                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                    actions.add(action1);
+
+
+                                    poi.accumulate("actions", actions);
+
+                                    // Transform values
+                                    JSONObject transform = new JSONObject();
+                                    //transform.accumulate("rotate", "");
+                                    //transform.accumulate("translate", "");
+                                    transform.accumulate("scale", params.getScale());
+                                    poi.accumulate("transform", transform);
+
+                                    // Transform values
+                                    JSONObject object = new JSONObject();
+                                    // Content type of the object. Can be one of the following:
+
+                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                    //   model/vnd.layar.l3d for 3D models
+                                    //   image/jpeg, image/gif, image/png for images
+
+                                    if (media.contains(".jpg")) {
+                                        object.accumulate("contentType", "image/jpeg");
+
+                                    } else {
+                                        object.accumulate("contentType", "image/png");
+
+                                    }
+                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    object.accumulate("size", params.getSize());
+                                    poi.accumulate("object", object);
+
+                                    hotspots.add(poi);
                                 }
-                                poi.accumulate("inFocus", false);
 
-                                poi.accumulate("showSmallBiw", true);
-
-                                poi.accumulate("showBiwOnClick", false);
-
-
-
-                                JSONObject icon = new JSONObject();
-                                icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                icon.accumulate("type", "0");
-                                poi.accumulate("icon", icon);
-
-
-                                // Forces the POI's BIW style to "classic" or "collapsed". 
-                                //Default is "classic" if the POI is a geolocated POI and "collapsed" 
-                                //if the POI is a Vision enabled POI.
-                                poi.accumulate("biwStyle", "classic");
-
-
-
-                                // Actions
-                                JSONArray actions = new JSONArray();
-                                JSONObject action1 = new JSONObject();
-                                action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                                action1.accumulate("label", title + " Details");
-
-                                // contenType
-                                //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
-                                //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
-                                action1.accumulate("contentType", "text/html");
-                                action1.accumulate("method", "GET");
-                                action1.accumulate("activityType", 6);
-
-                                action1.accumulate("params", null);
-                                action1.accumulate("closeBiw", true);
-                                action1.accumulate("showActivity", false);
-                                action1.accumulate("activityMessage", "");
-                                //action1.accumulate("autoTriggerRange", "10");
-                                action1.accumulate("autoTriggerOnly ", false);
-                                action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
-
-                                actions.add(action1);
-
-
-                                poi.accumulate("actions", actions);
-
-                                // Transform values
-                                JSONObject transform = new JSONObject();
-                                //transform.accumulate("rotate", "");
-                                //transform.accumulate("translate", "");
-                                transform.accumulate("scale", params.getScale());
-                                poi.accumulate("transform", transform);
-
-                                // Transform values
-                                JSONObject object = new JSONObject();
-                                // Content type of the object. Can be one of the following:
-
-                                //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
-                                //   model/vnd.layar.l3d for 3D models
-                                //   image/jpeg, image/gif, image/png for images
-
-                                if (media.contains(".jpg")) {
-                                    object.accumulate("contentType", "image/jpeg");
-
-                                } else {
-                                    object.accumulate("contentType", "image/png");
-
-                                }
-                                object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                object.accumulate("size", params.getSize());
-                                poi.accumulate("object", object);
-
-                                hotspots.add(poi);
-
-
-                                angle = angle + 30;
                             }
                         }
 
                     }
+                    //**********************************************************************************
+                    //
+                    //         Set Yousee pois and place it around the player if no position specified
+                    //
+                    //**********************************************************************************
+                    String youseeList = "";
+
+                    if (session.getAttribute("youseeList") != null) {
+
+                        youseeList = session.getAttribute("youseeList").toString();
+
+
+                    }
+                    String delimiter3 = "\\|!\\|";
+                    String[] temp3 = youseeList.split(delimiter3);
+
+                    if (temp3.length > 0) {
+
+                        double angle = 0;
+
+                        for (int i = 0; i < temp3.length; i++) {
+                            if (i == 0) {
+                            } else {
+
+                                if (temp3[i] != null) {
+
+
+
+
+
+                                    String title = "";
+                                    String description = "";
+                                    String hotspotAltitude = "";
+                                    String hotspotLatitude = "";
+                                    String hotspotLongitude = "";
+                                    String hotspotDistance = "";
+                                    String frienddlyDistance = "";
+
+                                    String hotspot = temp3[i];
+                                    String delimiter2 = "\\|\\|";
+                                    String[] temp2 = hotspot.split(delimiter2);
+                                    String media = "";
+
+
+                                    for (int ii = 0; ii < temp2.length; ii++) {
+                                        if (ii == 0) {
+                                            title = temp2[ii];
+                                        }
+                                        if (ii == 1) {
+                                            description = temp2[ii];
+                                        }
+                                        if (ii == 2) {
+                                            hotspotAltitude = temp2[ii];
+                                        }
+                                        if (ii == 3) {
+                                            hotspotLatitude = temp2[ii];
+                                        }
+                                        if (ii == 4) {
+                                            hotspotLongitude = temp2[ii];
+                                        }
+                                        if (ii == 5) {
+                                            hotspotDistance = temp2[ii];
+                                        }
+                                        if (ii == 6) {
+                                            media = temp2[ii];
+                                        }
+                                    }
+
+
+//                                x = cx + r * cos(a)
+//                                y = cy + r * sin(a)
+// float x = (float)(radius * Math.Cos(angleInDegrees * Math.PI / 180F)) + origin.X;
+//        float y = (float)(radius * Math.Sin(angleInDegrees * Math.PI / 180F)) + origin.Y;
+
+
+
+                                    if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude)) {
+
+                                        hotspotLatitude = "" + (latitude + 0.00005 * Math.cos(angle));
+                                        hotspotLongitude = "" + (longitude + 0.00005 * Math.sin(angle));
+                                        hotspotAltitude = "0.0";
+                                    }
+
+                                    JSONObject poi = new JSONObject();
+                                    count++;
+
+                                    //String[] matchPois = new String[4];
+
+
+                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                    //"anchor": { "referenceImage": "myFirstImage" }
+
+                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                    //"anchor": "geo:52.3,4.5"
+
+
+                                    poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                    poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+
+                                    JSONObject text = new JSONObject();
+                                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                    text.accumulate("description", description);
+                                    text.accumulate("footnote", "Powered by ImajieMatch");
+                                    poi.accumulate("text", text);
+
+
+
+//                            if (session.getAttribute("dialogMedia") != null) {
+//
+//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
+//
+//                            }
+
+                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+
+                                    if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+
+                                        poi.accumulate("doNotIndex", false);
+                                    } else {
+
+                                        poi.accumulate("doNotIndex", true);
+                                    }
+                                    poi.accumulate("inFocus", false);
+
+                                    poi.accumulate("showSmallBiw", true);
+
+                                    poi.accumulate("showBiwOnClick", false);
+
+
+
+                                    JSONObject icon = new JSONObject();
+                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    icon.accumulate("type", "0");
+                                    poi.accumulate("icon", icon);
+
+
+                                    // Forces the POI's BIW style to "classic" or "collapsed". 
+                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                    //if the POI is a Vision enabled POI.
+                                    poi.accumulate("biwStyle", "classic");
+
+
+
+                                    // Actions
+                                    JSONArray actions = new JSONArray();
+                                    JSONObject action1 = new JSONObject();
+                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
+                                    action1.accumulate("label", title + " Details");
+
+                                    // contenType
+                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                    action1.accumulate("contentType", "text/html");
+                                    action1.accumulate("method", "GET");
+                                    action1.accumulate("activityType", 6);
+
+                                    action1.accumulate("params", null);
+                                    action1.accumulate("closeBiw", true);
+                                    action1.accumulate("showActivity", false);
+                                    action1.accumulate("activityMessage", "");
+                                    //action1.accumulate("autoTriggerRange", "10");
+                                    action1.accumulate("autoTriggerOnly ", false);
+                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                    actions.add(action1);
+
+
+                                    poi.accumulate("actions", actions);
+
+                                    // Transform values
+                                    JSONObject transform = new JSONObject();
+                                    //transform.accumulate("rotate", "");
+                                    //transform.accumulate("translate", "");
+                                    transform.accumulate("scale", params.getScale());
+                                    poi.accumulate("transform", transform);
+
+                                    // Transform values
+                                    JSONObject object = new JSONObject();
+                                    // Content type of the object. Can be one of the following:
+
+                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                    //   model/vnd.layar.l3d for 3D models
+                                    //   image/jpeg, image/gif, image/png for images
+
+                                    if (media.contains(".jpg")) {
+                                        object.accumulate("contentType", "image/jpeg");
+
+                                    } else {
+                                        object.accumulate("contentType", "image/png");
+
+                                    }
+                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    object.accumulate("size", params.getSize());
+                                    poi.accumulate("object", object);
+
+                                    hotspots.add(poi);
+
+
+                                    angle = angle + 30;
+                                }
+                            }
+
+                        }
+                    }
+
+
                 }
 
-
             }
-
-
         }
 
         JSONArray layarActions = new JSONArray();
@@ -1081,7 +1435,7 @@ public class LayarServlet extends HttpServlet {
             JSONObject layarAction1 = new JSONObject();
             layarAction1.accumulate("contentType", "text/html");
             layarAction1.accumulate("method", "GET");
-            layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/controlpanel.jsp");
+            layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?showControlPanel=true");
             layarAction1.accumulate("label", "Mission Control");
             layarAction1.accumulate("activityType", 3);
             layarActions.add(layarAction1);
@@ -1097,45 +1451,7 @@ public class LayarServlet extends HttpServlet {
             }
 
 
-            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-                JSONObject layarAction2 = new JSONObject();
-                layarAction2.accumulate("contentType", "text/html");
-                layarAction2.accumulate("method", "GET");
-                layarAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
-                layarAction2.accumulate("label", "Tasks");
-                layarAction2.accumulate("activityType", 3);
-                layarActions.add(layarAction2);
-            }
 
-
-            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-                JSONObject layarAction3 = new JSONObject();
-                layarAction3.accumulate("contentType", "text/html");
-                layarAction3.accumulate("method", "GET");
-                layarAction3.accumulate("uri", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
-                layarAction3.accumulate("label", "Inventory");
-                layarAction3.accumulate("activityType", 3);
-                layarActions.add(layarAction3);
-            }
-
-            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-                JSONObject layarAction4 = new JSONObject();
-                layarAction4.accumulate("contentType", "text/html");
-                layarAction4.accumulate("method", "GET");
-                layarAction4.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp");
-                layarAction4.accumulate("label", "Locations");
-                layarAction4.accumulate("activityType", 3);
-                layarActions.add(layarAction4);
-            }
-            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-                JSONObject layarAction5 = new JSONObject();
-                layarAction5.accumulate("contentType", "text/html");
-                layarAction5.accumulate("method", "GET");
-                layarAction5.accumulate("uri", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
-                layarAction5.accumulate("label", "You See");
-                layarAction5.accumulate("activityType", 3);
-                layarActions.add(layarAction5);
-            }
         } else {
 
             // If user is not loged in
@@ -1326,3 +1642,4 @@ public class LayarServlet extends HttpServlet {
         return URLEncoder.encode(uid, "UTF-8"); // encode any special chars
     }
 }
+

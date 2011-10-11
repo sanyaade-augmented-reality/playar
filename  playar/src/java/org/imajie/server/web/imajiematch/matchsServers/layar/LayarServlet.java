@@ -841,6 +841,211 @@ public class LayarServlet extends HttpServlet {
                     }
 
                 }
+                //********************************************
+                //
+                //          Add You see pois
+                //
+                //********************************************
+                String youseeList = "";
+
+                if (session.getAttribute("youseeList") != null) {
+
+                    youseeList = session.getAttribute("youseeList").toString();
+
+
+                }
+                String delimiter3 = "\\|!\\|";
+                String[] temp3 = youseeList.split(delimiter3);
+
+                if (temp3.length > 0) {
+
+
+                    //String list = (String) session.getAttribute("tasksList");
+
+
+
+
+                    for (int i = 0; i < temp3.length; i++) {
+                        if (i == 0) {
+                        } else {
+
+                            if (temp3[i] != null) {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String frienddlyDistance = "";
+
+                                String hotspot = temp3[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+                                String media = "";
+
+
+
+
+
+
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        hotspotDistance = temp2[ii];
+                                    }
+                                    if (ii == 6) {
+                                        media = temp2[ii];
+                                    }
+                                }
+
+
+
+
+
+                                JSONObject poi = new JSONObject();
+                                count++;
+
+                                //String[] matchPois = new String[4];
+
+
+                                //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                //"anchor": { "referenceImage": "myFirstImage" }
+
+                                //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                //"anchor": "geo:52.3,4.5"
+
+
+                                poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+
+                                JSONObject text = new JSONObject();
+                                text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                text.accumulate("description", description);
+                                text.accumulate("footnote", "Powered by ImajieMatch");
+                                poi.accumulate("text", text);
+
+
+
+//                            if (session.getAttribute("dialogMedia") != null) {
+//
+//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
+//
+//                            }
+
+                                poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+
+                                if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+
+                                    poi.accumulate("doNotIndex", false);
+                                } else {
+
+                                    poi.accumulate("doNotIndex", true);
+                                }
+                                poi.accumulate("inFocus", false);
+
+                                poi.accumulate("showSmallBiw", true);
+
+                                poi.accumulate("showBiwOnClick", false);
+
+
+
+                                JSONObject icon = new JSONObject();
+                                icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                icon.accumulate("type", "0");
+                                poi.accumulate("icon", icon);
+
+
+                                // Forces the POI's BIW style to "classic" or "collapsed". 
+                                //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                //if the POI is a Vision enabled POI.
+                                poi.accumulate("biwStyle", "classic");
+
+
+
+                                // Actions
+                                JSONArray actions = new JSONArray();
+                                JSONObject action1 = new JSONObject();
+                                action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
+                                action1.accumulate("label", title + " Details");
+
+                                // contenType
+                                //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                action1.accumulate("contentType", "text/html");
+                                action1.accumulate("method", "GET");
+                                action1.accumulate("activityType", 6);
+
+                                action1.accumulate("params", null);
+                                action1.accumulate("closeBiw", true);
+                                action1.accumulate("showActivity", false);
+                                action1.accumulate("activityMessage", "");
+                                //action1.accumulate("autoTriggerRange", "10");
+                                action1.accumulate("autoTriggerOnly ", false);
+                                action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                actions.add(action1);
+
+
+                                poi.accumulate("actions", actions);
+
+                                // Transform values
+                                JSONObject transform = new JSONObject();
+                                //transform.accumulate("rotate", "");
+                                //transform.accumulate("translate", "");
+                                transform.accumulate("scale", params.getScale());
+                                poi.accumulate("transform", transform);
+
+                                // Transform values
+                                JSONObject object = new JSONObject();
+                                // Content type of the object. Can be one of the following:
+
+                                //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                //   model/vnd.layar.l3d for 3D models
+                                //   image/jpeg, image/gif, image/png for images
+
+                                if (media.contains(".jpg")) {
+                                    object.accumulate("contentType", "image/jpeg");
+
+                                } else {
+                                    object.accumulate("contentType", "image/png");
+
+                                }
+                                object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                object.accumulate("size", params.getSize());
+                                poi.accumulate("object", object);
+
+                                hotspots.add(poi);
+
+
+                            }
+                        }
+
+                    }
+                }
 
 
             }
@@ -865,7 +1070,7 @@ public class LayarServlet extends HttpServlet {
 
         }
 
-        if (authorized == "yes") {
+        if ("yes".equals(authorized)) {
 
             JSONObject layarAction1 = new JSONObject();
             layarAction1.accumulate("contentType", "text/html");
@@ -934,6 +1139,7 @@ public class LayarServlet extends HttpServlet {
             layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/imajieste/login.jsp");
             layarAction1.accumulate("label", "Login");
             layarAction1.accumulate("activityType", 16);
+            layarAction1.accumulate("autoTriggerRange", "10000");
             layarAction1.accumulate("autoTriggerOnly ", true);
             layarAction1.accumulate("autoTrigger ", true);
             layarActions.add(layarAction1);
@@ -941,7 +1147,7 @@ public class LayarServlet extends HttpServlet {
             JSONObject layarAction2 = new JSONObject();
             layarAction2.accumulate("contentType", "text/html");
             layarAction2.accumulate("method", "GET");
-            layarAction2.accumulate("uri", "http://imajie.tv/index.php?option=com_comprofiler&task=registers" );
+            layarAction2.accumulate("uri", "http://imajie.tv/index.php?option=com_comprofiler&task=registers");
             layarAction2.accumulate("label", "Create an Account");
             layarAction2.accumulate("activityType", 1);
             layarAction2.accumulate("autoTriggerOnly ", false);

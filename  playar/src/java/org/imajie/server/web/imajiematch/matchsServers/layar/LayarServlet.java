@@ -865,6 +865,8 @@ public class LayarServlet extends HttpServlet {
 
 
 
+                    double angle = 0 ;
+                    
                     for (int i = 0; i < temp3.length; i++) {
                         if (i == 0) {
                         } else {
@@ -872,6 +874,9 @@ public class LayarServlet extends HttpServlet {
                             if (temp3[i] != null) {
 
 
+                                
+                                
+                                
                                 String title = "";
                                 String description = "";
                                 String hotspotAltitude = "";
@@ -884,11 +889,6 @@ public class LayarServlet extends HttpServlet {
                                 String delimiter2 = "\\|\\|";
                                 String[] temp2 = hotspot.split(delimiter2);
                                 String media = "";
-
-
-
-
-
 
 
                                 for (int ii = 0; ii < temp2.length; ii++) {
@@ -916,8 +916,19 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
+//                                x = cx + r * cos(a)
+//                                y = cy + r * sin(a)
+// float x = (float)(radius * Math.Cos(angleInDegrees * Math.PI / 180F)) + origin.X;
+//        float y = (float)(radius * Math.Sin(angleInDegrees * Math.PI / 180F)) + origin.Y;
 
 
+
+                                if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude))  {
+                                    
+                                    hotspotLatitude = ""+(latitude + 3 * Math.cos(angle));
+                                    hotspotLongitude = ""+(latitude + 3 * Math.sin(angle));
+                                    hotspotAltitude = "0.0";
+                                }
 
                                 JSONObject poi = new JSONObject();
                                 count++;
@@ -1041,6 +1052,7 @@ public class LayarServlet extends HttpServlet {
                                 hotspots.add(poi);
 
 
+                                angle = angle + 30;
                             }
                         }
 

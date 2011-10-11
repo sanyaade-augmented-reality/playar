@@ -208,7 +208,7 @@ public class ImajieMatchClientProtocol {
                             session.setAttribute("Button2", temp[ii].replace("BUTTON2", ""));
                         }
                         if (ii == 6) {
-                            session.setAttribute("dialogTexts", temp[ii]);
+                            session.setAttribute("dialogTexts", temp[ii].replace("DIALOGTEXT", ""));
                         }
                         if (ii == 7) {
                             session.setAttribute("dialogMedia", temp[ii]);
@@ -275,15 +275,15 @@ public class ImajieMatchClientProtocol {
 
 
 
-                            String SHOWDIALOGArrays = playerState.replace("PLAYER_STATE||||||", "");
-                            SHOWDIALOGArrays = SHOWDIALOGArrays.replace("|!!!|", "");
+                            //String SHOWDIALOGArrays = temp[ii].replace("SHOWDIALOG", "");
+                            SHOWDIALOG = SHOWDIALOG.replace("|!!!|", "");
 
                             String delimiter2 = "\\|\\|";
-                            String[] temp2 = SHOWDIALOGArrays.split(delimiter2);
+                            String[] temp2 = SHOWDIALOG.split(delimiter2);
 
                             for (int iii = 0; iii < temp2.length; iii++) {
 
-                                if (temp2[0].equals("null")) {
+                                if (temp2[0].equals("null") || temp2[0].equals("") || temp2[0].equals(null)) {
 
                                     session.setAttribute("showDialog", "null");
 

@@ -841,11 +841,11 @@ public class LayarServlet extends HttpServlet {
                     }
 
                 }
-                //********************************************
+                //**********************************************************************************
                 //
-                //          Add You see pois
+                //          Add Yousee pois and place it around the player if no position specified
                 //
-                //********************************************
+                //**********************************************************************************
                 String youseeList = "";
 
                 if (session.getAttribute("youseeList") != null) {
@@ -858,12 +858,6 @@ public class LayarServlet extends HttpServlet {
                 String[] temp3 = youseeList.split(delimiter3);
 
                 if (temp3.length > 0) {
-
-
-                    //String list = (String) session.getAttribute("tasksList");
-
-
-
 
                     double angle = 0 ;
                     

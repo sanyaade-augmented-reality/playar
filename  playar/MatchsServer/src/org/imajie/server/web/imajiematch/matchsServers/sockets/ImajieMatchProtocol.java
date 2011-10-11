@@ -197,34 +197,34 @@ public class ImajieMatchProtocol {
 
                 //************ Build the result player state and return it
                 String result = "PLAYER_STATE||||||";
-                result = result + "ZONE" + GameWindow.zoneList + "|!!!|";
-                result = result + "TASK" + GameWindow.tasksList + "|!!!|";
-                result = result + "INVENTORY" + GameWindow.inventoryList + "|!!!|";
-                result = result + "YOUSEE" + GameWindow.youseeList + "|!!!|";
-                result = result + "BUTTON1" + GameWindow.Button1 + "|!!!|";
-                result = result + "BUTTON2" + GameWindow.Button2 + "|!!!|";
-                result = result + "DIALOGTEXT" + GameWindow.dialogTexts + "|!!!|";
-                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia + "|!!!|";
-                result = result + "MEDIAALTTEXT" + GameWindow.altText + "|!!!|";
-                result = result + "MEDIADESCRIPTION" + GameWindow.description + "|!!!|";
-                result = result + "MEDIARAWNAME" + GameWindow.rawName + "|!!!|";
-                result = result + "ZONECOUNT" + GameWindow.zoneCount + "|!!!|";
-                result = result + "TASKCOUNT" + GameWindow.tasksCount + "|!!!|";
-                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";
-                result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";
-                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "." + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
-                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                result = result + "ZONE" + GameWindow.zoneList + "|!!!|";                  // 0
+                result = result + "TASK" + GameWindow.tasksList + "|!!!|";                 // 1
+                result = result + "INVENTORY" + GameWindow.inventoryList + "|!!!|";        // 2
+                result = result + "YOUSEE" + GameWindow.youseeList + "|!!!|";              // 3
+                result = result + "BUTTON1" + GameWindow.Button1 + "|!!!|";                // 4
+                result = result + "BUTTON2" + GameWindow.Button2 + "|!!!|";                // 5
+                result = result + "DIALOGTEXT" + GameWindow.dialogTexts + "|!!!|";         // 6
+                result = result + "DIALOGMEDIA" + GameWindow.dialogMedia + "|!!!|";        // 7
+                result = result + "MEDIAALTTEXT" + GameWindow.altText + "|!!!|";           // 8
+                result = result + "MEDIADESCRIPTION" + GameWindow.description + "|!!!|";   // 9
+                result = result + "MEDIARAWNAME" + GameWindow.rawName + "|!!!|";           // 10
+                result = result + "ZONECOUNT" + GameWindow.zoneCount + "|!!!|";            // 11
+                result = result + "TASKCOUNT" + GameWindow.tasksCount + "|!!!|";           // 12
+                result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";  // 13
+                result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";        // 14
+                result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "." + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|"; // 15
+                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";                  // 16
 
                 
                 
                 if (!GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
 
-                    result = result + "SHOWDIALOG" + GameWindow.dialogTexts + "||" + GameWindow.dialogMedia + "|!!!|";
+                    result = result + "SHOWDIALOG" + GameWindow.dialogTexts + "||" + GameWindow.dialogMedia + "|!!!|";      // 17
                 } else if (GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
 
                     result = result + "SHOWDIALOGnull|||!!!|";
                 }
-                result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";
+                result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";      // 18
                 theOutput = result + "|!!|PLAYER_STATE";
 
 

@@ -112,14 +112,12 @@ public class GetYouseeJspBean implements Serializable {
                                 hotspotDistance = temp2[ii];
                             }
                             if (ii == 6) {
-                                friendlyDistance = temp2[ii];
-                            }
-                            if (ii == 7) {
                                 media = temp2[ii];
                             }
+                            
                         }
                         
-                        msg = msg + "<li><IMG SRC= '" + Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + ""+"'>" + title + " - " + friendlyDistance + "</a></li>";
+                        msg = msg + "<li><IMG SRC= '" + Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + ""+"'>" + title + "</a></li>";
                     }
                     
                 }

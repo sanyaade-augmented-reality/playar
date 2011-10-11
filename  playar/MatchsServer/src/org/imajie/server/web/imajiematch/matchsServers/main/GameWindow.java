@@ -35,8 +35,8 @@ import org.imajie.server.web.imajiematch.matchsServers.openwig.ZonePoint;
 
 public class GameWindow implements UI {
 
-    public static String dialogTexts;
-    public static String dialogMedia;
+    public static String dialogTexts = "";
+    public static String dialogMedia = "";
     public static String Button1;
     public static String Button2;
     public static int zoneCount;
@@ -55,7 +55,7 @@ public class GameWindow implements UI {
     public static String mediaOverride;
     public static String triviaInput;
     public static String dialog;
-    public static String currentEvent;
+    public static String currentEvent = "";
     /** List of zones.
      * Its source reads data from <code>Engine.instance.cartridge.zones</code>
      */
@@ -488,7 +488,7 @@ public class GameWindow implements UI {
             
             
             
-            dialogTexts = arrayToString(texts, ",");
+            dialogTexts = texts[0];
             dialogMedia = media[0].name + "." + media[0].type;
             
             

@@ -470,7 +470,7 @@ public class LayarServlet extends HttpServlet {
                     session.setAttribute("dialogPlayed", "");
                 }
 
-                if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall) {
+                if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall && session.getAttribute("showDialog").toString().contains("null")) {
 
                     dialog = session.getAttribute("DIALOG").toString();
                     session.setAttribute("dialogPlayed", dialog);
@@ -479,6 +479,14 @@ public class LayarServlet extends HttpServlet {
                 } else {
                     Dodialog = false;
                 }
+
+            }
+
+            String currentEvent = "";
+            if (session.getAttribute("CURRENTEVENT") != null) {
+
+                currentEvent = session.getAttribute("CURRENTEVENT").toString();
+
 
             }
 
@@ -616,7 +624,7 @@ public class LayarServlet extends HttpServlet {
                 layarActionMedias.accumulate("method", "GET");
                 layarActionMedias.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start2.jsp");
                 layarActionMedias.accumulate("label", "Message");
-                layarActionMedias.accumulate("activityType", 3);
+                layarActionMedias.accumulate("activityType", 36);
                 layarActionMedias.accumulate("autoTrigger", true);
                 layarActionMedias.accumulate("autoTriggerRange", 20);
                 layarActionMedias.accumulate("autoTriggerOnly", true);
@@ -656,19 +664,23 @@ public class LayarServlet extends HttpServlet {
 
                         if (temp[i] != null) {
 
+
                             String title = "";
                             String description = "";
                             String hotspotAltitude = "";
                             String hotspotLatitude = "";
                             String hotspotLongitude = "";
                             String hotspotDistance = "";
-
+                            String frienddlyDistance = "";
 
                             String hotspot = temp[i];
                             String delimiter2 = "\\|\\|";
                             String[] temp2 = hotspot.split(delimiter2);
+                            String media = "";
 
-                            JSONObject poi = new JSONObject();
+
+
+
 
 
 
@@ -691,127 +703,139 @@ public class LayarServlet extends HttpServlet {
                                 if (ii == 5) {
                                     hotspotDistance = temp2[ii];
                                 }
-                            }
-                            count++;
-
-                            String[] matchPois = new String[4];
-
-
-                            //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                            //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
-
-                            //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                            //  Layar also supports the geo: URI scheme for specifying geolocations.
-
-                            //"anchor": { "referenceImage": "myFirstImage" }
-
-                            //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
-
-                            //"anchor": "geo:52.3,4.5"
-
-
-                            poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
-                            poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
-
-                            JSONObject text = new JSONObject();
-                            text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
-                            text.accumulate("description", description);
-                            text.accumulate("footnote", "Powered by ImajieMatch");
-                            poi.accumulate("text", text);
-
-                            String media = "";
-
-                            if (session.getAttribute("dialogMedia") != null) {
-
-                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
-
+                                if (ii == 6) {
+                                    frienddlyDistance = temp2[ii];
+                                }
+                                if (ii == 7) {
+                                    media = temp2[ii];
+                                }
                             }
 
-                            poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
 
-                            if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+                            if (!currentEvent.contentEquals(title + ".OnEnter")) {
 
-                                poi.accumulate("doNotIndex", false);
-                            } else {
 
-                                poi.accumulate("doNotIndex", true);
+                                JSONObject poi = new JSONObject();
+                                count++;
+
+                                //String[] matchPois = new String[4];
+
+
+                                //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                //"anchor": { "referenceImage": "myFirstImage" }
+
+                                //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                //"anchor": "geo:52.3,4.5"
+
+
+                                poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+
+                                JSONObject text = new JSONObject();
+                                text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                text.accumulate("description", description);
+                                text.accumulate("footnote", "Powered by ImajieMatch");
+                                poi.accumulate("text", text);
+
+
+
+//                            if (session.getAttribute("dialogMedia") != null) {
+//
+//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
+//
+//                            }
+
+                                poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+
+                                if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+
+                                    poi.accumulate("doNotIndex", false);
+                                } else {
+
+                                    poi.accumulate("doNotIndex", true);
+                                }
+                                poi.accumulate("inFocus", false);
+
+                                poi.accumulate("showSmallBiw", true);
+
+                                poi.accumulate("showBiwOnClick", false);
+
+
+
+                                JSONObject icon = new JSONObject();
+                                icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                icon.accumulate("type", "0");
+                                poi.accumulate("icon", icon);
+
+
+                                // Forces the POI's BIW style to "classic" or "collapsed". 
+                                //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                //if the POI is a Vision enabled POI.
+                                poi.accumulate("biwStyle", "classic");
+
+
+
+                                // Actions
+                                JSONArray actions = new JSONArray();
+                                JSONObject action1 = new JSONObject();
+                                action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
+                                action1.accumulate("label", title + " Details");
+
+                                // contenType
+                                //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                action1.accumulate("contentType", "text/html");
+                                action1.accumulate("method", "GET");
+                                action1.accumulate("activityType", 6);
+
+                                action1.accumulate("params", null);
+                                action1.accumulate("closeBiw", true);
+                                action1.accumulate("showActivity", false);
+                                action1.accumulate("activityMessage", "");
+                                //action1.accumulate("autoTriggerRange", "10");
+                                action1.accumulate("autoTriggerOnly ", false);
+                                action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                actions.add(action1);
+
+
+                                poi.accumulate("actions", actions);
+
+                                // Transform values
+                                JSONObject transform = new JSONObject();
+                                //transform.accumulate("rotate", "");
+                                //transform.accumulate("translate", "");
+                                transform.accumulate("scale", params.getScale());
+                                poi.accumulate("transform", transform);
+
+                                // Transform values
+                                JSONObject object = new JSONObject();
+                                // Content type of the object. Can be one of the following:
+
+                                //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                //   model/vnd.layar.l3d for 3D models
+                                //   image/jpeg, image/gif, image/png for images
+
+                                if (media.contains(".jpg")) {
+                                    object.accumulate("contentType", "image/jpeg");
+
+                                } else {
+                                    object.accumulate("contentType", "image/png");
+
+                                }
+                                object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                object.accumulate("size", params.getSize());
+                                poi.accumulate("object", object);
+
+                                hotspots.add(poi);
                             }
-                            poi.accumulate("inFocus", false);
-
-                            poi.accumulate("showSmallBiw", true);
-
-                            poi.accumulate("showBiwOnClick", false);
-
-
-
-                            JSONObject icon = new JSONObject();
-                            icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                            icon.accumulate("type", "0");
-                            poi.accumulate("icon", icon);
-
-
-                            // Forces the POI's BIW style to "classic" or "collapsed". 
-                            //Default is "classic" if the POI is a geolocated POI and "collapsed" 
-                            //if the POI is a Vision enabled POI.
-                            poi.accumulate("biwStyle", "classic");
-
-
-
-                            // Actions
-                            JSONArray actions = new JSONArray();
-                            JSONObject action1 = new JSONObject();
-                            action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                            action1.accumulate("label", title + " Details");
-
-                            // contenType
-                            //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
-                            //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
-                            action1.accumulate("contentType", "text/html");
-                            action1.accumulate("method", "GET");
-                            action1.accumulate("activityType", 1);
-
-                            action1.accumulate("params", null);
-                            action1.accumulate("closeBiw", true);
-                            action1.accumulate("showActivity", false);
-                            action1.accumulate("activityMessage", "");
-                            //action1.accumulate("autoTriggerRange", "10");
-                            action1.accumulate("autoTriggerOnly ", false);
-                            action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
-
-                            actions.add(action1);
-
-
-                            poi.accumulate("actions", actions);
-
-                            // Transform values
-                            JSONObject transform = new JSONObject();
-                            //transform.accumulate("rotate", "");
-                            //transform.accumulate("translate", "");
-                            transform.accumulate("scale", params.getScale());
-                            poi.accumulate("transform", transform);
-
-                            // Transform values
-                            JSONObject object = new JSONObject();
-                            // Content type of the object. Can be one of the following:
-
-                            //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
-                            //   model/vnd.layar.l3d for 3D models
-                            //   image/jpeg, image/gif, image/png for images
-
-                            if (media.contains(".jpg")) {
-                                object.accumulate("contentType", "image/jpeg");
-
-                            } else {
-                                object.accumulate("contentType", "image/png");
-
-                            }
-                            object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                            //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                            object.accumulate("size", params.getSize());
-                            poi.accumulate("object", object);
-
-                            hotspots.add(poi);
-
 
                         }
                     }
@@ -834,65 +858,96 @@ public class LayarServlet extends HttpServlet {
         //
         //****************************************************************************
 
-        JSONObject layarAction1 = new JSONObject();
-        layarAction1.accumulate("contentType", "text/html");
-        layarAction1.accumulate("method", "GET");
-        layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/controlpanel.jsp");
-        layarAction1.accumulate("label", "Mission Control");
-        layarAction1.accumulate("activityType", 3);
-        layarActions.add(layarAction1);
+        String authorized = "no";
+        if (session.getAttribute("authorized") != null) {
 
-        if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
-            JSONObject layarAction1a = new JSONObject();
-            layarAction1a.accumulate("contentType", "text/html");
-            layarAction1a.accumulate("method", "GET");
-            layarAction1a.accumulate("uri", Constants.URL_SERVER + "/imajiematch/getmatchs.jsp");
-            layarAction1a.accumulate("label", "Choose Mission");
-            layarAction1a.accumulate("activityType", 3);
-            layarActions.add(layarAction1a);
+            authorized = session.getAttribute("authorized").toString();
+
         }
 
+        if (authorized == "yes") {
 
-        if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
+            JSONObject layarAction1 = new JSONObject();
+            layarAction1.accumulate("contentType", "text/html");
+            layarAction1.accumulate("method", "GET");
+            layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/controlpanel.jsp");
+            layarAction1.accumulate("label", "Mission Control");
+            layarAction1.accumulate("activityType", 3);
+            layarActions.add(layarAction1);
+
+            if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+                JSONObject layarAction1a = new JSONObject();
+                layarAction1a.accumulate("contentType", "text/html");
+                layarAction1a.accumulate("method", "GET");
+                layarAction1a.accumulate("uri", Constants.URL_SERVER + "/imajiematch/getmatchs.jsp");
+                layarAction1a.accumulate("label", "Choose Mission");
+                layarAction1a.accumulate("activityType", 3);
+                layarActions.add(layarAction1a);
+            }
+
+
+            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
+                JSONObject layarAction2 = new JSONObject();
+                layarAction2.accumulate("contentType", "text/html");
+                layarAction2.accumulate("method", "GET");
+                layarAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
+                layarAction2.accumulate("label", "Tasks");
+                layarAction2.accumulate("activityType", 3);
+                layarActions.add(layarAction2);
+            }
+
+
+            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
+                JSONObject layarAction3 = new JSONObject();
+                layarAction3.accumulate("contentType", "text/html");
+                layarAction3.accumulate("method", "GET");
+                layarAction3.accumulate("uri", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
+                layarAction3.accumulate("label", "Inventory");
+                layarAction3.accumulate("activityType", 3);
+                layarActions.add(layarAction3);
+            }
+
+            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
+                JSONObject layarAction4 = new JSONObject();
+                layarAction4.accumulate("contentType", "text/html");
+                layarAction4.accumulate("method", "GET");
+                layarAction4.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp");
+                layarAction4.accumulate("label", "Locations");
+                layarAction4.accumulate("activityType", 3);
+                layarActions.add(layarAction4);
+            }
+            if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
+                JSONObject layarAction5 = new JSONObject();
+                layarAction5.accumulate("contentType", "text/html");
+                layarAction5.accumulate("method", "GET");
+                layarAction5.accumulate("uri", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
+                layarAction5.accumulate("label", "You See");
+                layarAction5.accumulate("activityType", 3);
+                layarActions.add(layarAction5);
+            }
+        } else {
+
+            // If user is not loged in
+            JSONObject layarAction1 = new JSONObject();
+            layarAction1.accumulate("contentType", "text/html");
+            layarAction1.accumulate("method", "GET");
+            layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/imajieste/login.jsp");
+            layarAction1.accumulate("label", "Login");
+            layarAction1.accumulate("activityType", 16);
+            layarAction1.accumulate("autoTriggerOnly ", true);
+            layarAction1.accumulate("autoTrigger ", true);
+            layarActions.add(layarAction1);
+
             JSONObject layarAction2 = new JSONObject();
             layarAction2.accumulate("contentType", "text/html");
             layarAction2.accumulate("method", "GET");
-            layarAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
-            layarAction2.accumulate("label", "Tasks");
-            layarAction2.accumulate("activityType", 3);
+            layarAction2.accumulate("uri", "http://imajie.tv/index.php?option=com_comprofiler&task=registers" );
+            layarAction2.accumulate("label", "Create an Account");
+            layarAction2.accumulate("activityType", 1);
+            layarAction2.accumulate("autoTriggerOnly ", false);
+            layarAction2.accumulate("autoTrigger ", false);
             layarActions.add(layarAction2);
         }
-
-
-        if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-            JSONObject layarAction3 = new JSONObject();
-            layarAction3.accumulate("contentType", "text/html");
-            layarAction3.accumulate("method", "GET");
-            layarAction3.accumulate("uri", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
-            layarAction3.accumulate("label", "Inventory");
-            layarAction3.accumulate("activityType", 3);
-            layarActions.add(layarAction3);
-        }
-
-        if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-            JSONObject layarAction4 = new JSONObject();
-            layarAction4.accumulate("contentType", "text/html");
-            layarAction4.accumulate("method", "GET");
-            layarAction4.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp");
-            layarAction4.accumulate("label", "Locations");
-            layarAction4.accumulate("activityType", 3);
-            layarActions.add(layarAction4);
-        }
-        if (!gameStarted.equals("none") && !gameStarted.equals("SERVER_FULL") && !gameStarted.equals("ALREADY_PLAYING")) {
-            JSONObject layarAction5 = new JSONObject();
-            layarAction5.accumulate("contentType", "text/html");
-            layarAction5.accumulate("method", "GET");
-            layarAction5.accumulate("uri", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
-            layarAction5.accumulate("label", "You See");
-            layarAction5.accumulate("activityType", 3);
-            layarActions.add(layarAction5);
-        }
-
         layer.accumulate("hotspots", hotspots);
         layer.accumulate("layer", layerName);
         if (count > 0) {
@@ -956,7 +1011,7 @@ public class LayarServlet extends HttpServlet {
 
             // TODO IMPLEMENTS SHOWDIALOG SESSION ATTRIBUTES        
             if (session.getAttribute("showDialog") != null) {
-                if (session.getAttribute("showDialog").toString() != "false") {
+                if (session.getAttribute("showDialog").toString() != "null" || session.getAttribute("showDialog").toString().length() > 5) {
 
                     JSONObject showDialog = new JSONObject();
 
@@ -965,7 +1020,7 @@ public class LayarServlet extends HttpServlet {
 
 
                     String msg = "";
-                   
+
 
                     String dialogTexts = "";
                     String dialogMedia = "";
@@ -985,7 +1040,7 @@ public class LayarServlet extends HttpServlet {
 
                     }
 
-                    msg = "Mission agent: " + username + ".\n\n" + dialogTexts + "";
+                    msg = dialogTexts;
 
                     showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
 
@@ -1005,7 +1060,7 @@ public class LayarServlet extends HttpServlet {
                     messageActions.add(messageAction1);
 
 
-                    if (session.getAttribute("Button2") != null || session.getAttribute("Button2") != "null") {
+                    if (!session.getAttribute("Button2").toString().contains("null")) {
                         JSONObject messageAction2 = new JSONObject();
 
 

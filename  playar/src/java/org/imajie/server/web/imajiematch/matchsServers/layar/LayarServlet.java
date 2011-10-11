@@ -925,8 +925,8 @@ public class LayarServlet extends HttpServlet {
 
                                 if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude))  {
                                     
-                                    hotspotLatitude = ""+(latitude + 3 * Math.cos(angle));
-                                    hotspotLongitude = ""+(latitude + 3 * Math.sin(angle));
+                                    hotspotLatitude = ""+(latitude + 0.00005 * Math.cos(angle));
+                                    hotspotLongitude = ""+(longitude + 0.00005 * Math.sin(angle));
                                     hotspotAltitude = "0.0";
                                 }
 

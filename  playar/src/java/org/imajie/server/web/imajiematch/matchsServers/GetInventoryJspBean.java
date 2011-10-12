@@ -111,11 +111,9 @@ public class GetInventoryJspBean implements Serializable {
                                 hotspotLongitude = temp2[ii];
                             }
                             if (ii == 5) {
-                                hotspotDistance = temp2[ii];
-                            }
-                            if (ii == 6) {
                                 media = temp2[ii];
                             }
+                            
                         }
 
 

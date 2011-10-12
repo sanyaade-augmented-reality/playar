@@ -295,7 +295,7 @@ public class LayarServlet extends HttpServlet {
                         if (cartridgeDetails[4].contains("***VISION")) {
                         } else {
                             text.accumulate("description", cartridgeDetails[1]);
-                            text.accumulate("footnote", "Powered by ImajieMatch");
+                            text.accumulate("footnote", "Powered by Playar");
 
 
                         }
@@ -408,7 +408,7 @@ public class LayarServlet extends HttpServlet {
                         if (cartridgeDetails[4].contains("***VISION")) {
                             object.accumulate("contentType", "image/png");
                             object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=getMission.png");
-                            object.accumulate("size", "0.25");
+                            object.accumulate("size", "1.00");
 
                         } else {
 
@@ -418,7 +418,7 @@ public class LayarServlet extends HttpServlet {
                             object.accumulate("size", "1.0");
                         }
 
-                        //object.accumulate("size", params.getSize());
+                        //object.accumulate("size", "1.00");
                         poi.accumulate("object", object);
 
                         hotspots.add(poi);
@@ -452,8 +452,8 @@ public class LayarServlet extends HttpServlet {
                 // inventory icon poi
                 //***************************************
                 double inventoryAngle = 0;
-                String inventoryLatitude = "" + (latitude + 0.00005 * Math.cos(inventoryAngle));
-                String inventoryLongitude = "" + (longitude + 0.00005 * Math.sin(inventoryAngle));
+                String inventoryLatitude = "" + (latitude + 0.001 * Math.cos(inventoryAngle));
+                String inventoryLongitude = "" + (longitude + 0.001 * Math.sin(inventoryAngle));
 
                 JSONObject inventoryPoi = new JSONObject();
                 count++;
@@ -464,7 +464,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject inventoryText = new JSONObject();
                 inventoryText.accumulate("title", "Inventory");
                 inventoryText.accumulate("description", "Clic to get your inventory");
-                inventoryText.accumulate("footnote", "Powered by ImajieMatch");
+                inventoryText.accumulate("footnote", "Powered by Playar");
                 inventoryPoi.accumulate("text", inventoryText);
                 inventoryPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
                 inventoryPoi.accumulate("doNotIndex", true);           
@@ -508,7 +508,7 @@ public class LayarServlet extends HttpServlet {
        
                 inventoryObject.accumulate("contentType", "image/png");
                 inventoryObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/inventory.jsp");      
-                inventoryObject.accumulate("size", params.getSize());
+                inventoryObject.accumulate("size", "1.00");
                 inventoryPoi.accumulate("object", inventoryObject);
 
                 hotspots.add(inventoryPoi);
@@ -520,8 +520,8 @@ public class LayarServlet extends HttpServlet {
                 // yousee icon poi
                 //***************************************
                 double youseeAngle = 30;
-                String youseeLatitude = "" + (latitude + 0.00005 * Math.cos(youseeAngle));
-                String youseeLongitude = "" + (longitude + 0.00005 * Math.sin(youseeAngle));
+                String youseeLatitude = "" + (latitude + 0.001 * Math.cos(youseeAngle));
+                String youseeLongitude = "" + (longitude + 0.001 * Math.sin(youseeAngle));
 
                 JSONObject youseePoi = new JSONObject();
                 count++;
@@ -532,7 +532,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject youseeText = new JSONObject();
                 youseeText.accumulate("title", "yousee");
                 youseeText.accumulate("description", "Clic to get your yousee");
-                youseeText.accumulate("footnote", "Powered by ImajieMatch");
+                youseeText.accumulate("footnote", "Powered by Playar");
                 youseePoi.accumulate("text", youseeText);
                 youseePoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
                 youseePoi.accumulate("doNotIndex", true);           
@@ -576,7 +576,7 @@ public class LayarServlet extends HttpServlet {
        
                 youseeObject.accumulate("contentType", "image/png");
                 youseeObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/yousee.jsp");      
-                youseeObject.accumulate("size", params.getSize());
+                youseeObject.accumulate("size", "1.00");
                 youseePoi.accumulate("object", youseeObject);
 
                 hotspots.add(youseePoi);
@@ -587,8 +587,8 @@ public class LayarServlet extends HttpServlet {
                 // locations icon poi
                 //***************************************
                 double locationsAngle = 60;
-                String locationsLatitude = "" + (latitude + 0.00005 * Math.cos(locationsAngle));
-                String locationsLongitude = "" + (longitude + 0.00005 * Math.sin(locationsAngle));
+                String locationsLatitude = "" + (latitude + 0.001 * Math.cos(locationsAngle));
+                String locationsLongitude = "" + (longitude + 0.001 * Math.sin(locationsAngle));
 
                 JSONObject locationsPoi = new JSONObject();
                 count++;
@@ -599,7 +599,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject locationsText = new JSONObject();
                 locationsText.accumulate("title", "locations");
                 locationsText.accumulate("description", "Clic to get your locations");
-                locationsText.accumulate("footnote", "Powered by ImajieMatch");
+                locationsText.accumulate("footnote", "Powered by Playar");
                 locationsPoi.accumulate("text", locationsText);
                 locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
                 locationsPoi.accumulate("doNotIndex", true);           
@@ -643,7 +643,7 @@ public class LayarServlet extends HttpServlet {
        
                 locationsObject.accumulate("contentType", "image/png");
                 locationsObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/locations.jsp");      
-                locationsObject.accumulate("size", params.getSize());
+                locationsObject.accumulate("size", "1.00");
                 locationsPoi.accumulate("object", locationsObject);
 
                 hotspots.add(locationsPoi);
@@ -653,8 +653,8 @@ public class LayarServlet extends HttpServlet {
                 // tasks icon poi
                 //***************************************
                 double tasksAngle = 90;
-                String tasksLatitude = "" + (latitude + 0.00005 * Math.cos(tasksAngle));
-                String tasksLongitude = "" + (longitude + 0.00005 * Math.sin(tasksAngle));
+                String tasksLatitude = "" + (latitude + 0.001 * Math.cos(tasksAngle));
+                String tasksLongitude = "" + (longitude + 0.001 * Math.sin(tasksAngle));
 
                 JSONObject tasksPoi = new JSONObject();
                 count++;
@@ -666,7 +666,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject tasksText = new JSONObject();
                 tasksText.accumulate("title", "tasks");
                 tasksText.accumulate("description", "Clic to get your tasks");
-                tasksText.accumulate("footnote", "Powered by ImajieMatch");
+                tasksText.accumulate("footnote", "Powered by Playar");
                 tasksPoi.accumulate("text", tasksText);
                 tasksPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
                 tasksPoi.accumulate("doNotIndex", true);           
@@ -710,7 +710,7 @@ public class LayarServlet extends HttpServlet {
        
                 tasksObject.accumulate("contentType", "image/png");
                 tasksObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/tasks.jsp");      
-                tasksObject.accumulate("size", params.getSize());
+                tasksObject.accumulate("size", "1.00");
                 tasksPoi.accumulate("object", tasksObject);
 
                 hotspots.add(tasksPoi);
@@ -719,8 +719,8 @@ public class LayarServlet extends HttpServlet {
                 // parameters icon poi
                 //***************************************
                 double parametersAngle = 120;
-                String parametersLatitude = "" + (latitude + 0.00005 * Math.cos(parametersAngle));
-                String parametersLongitude = "" + (longitude + 0.00005 * Math.sin(parametersAngle));
+                String parametersLatitude = "" + (latitude + 0.001 * Math.cos(parametersAngle));
+                String parametersLongitude = "" + (longitude + 0.001 * Math.sin(parametersAngle));
 
                 JSONObject parametersPoi = new JSONObject();
                 count++;
@@ -732,7 +732,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject parametersText = new JSONObject();
                 parametersText.accumulate("title", "parameters");
                 parametersText.accumulate("description", "Clic to get your parameters");
-                parametersText.accumulate("footnote", "Powered by ImajieMatch");
+                parametersText.accumulate("footnote", "Powered by Playar");
                 parametersPoi.accumulate("text", parametersText);
                 parametersPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
                 parametersPoi.accumulate("doNotIndex", true);           
@@ -776,7 +776,7 @@ public class LayarServlet extends HttpServlet {
        
                 parametersObject.accumulate("contentType", "image/png");
                 parametersObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/parameters.jsp");      
-                parametersObject.accumulate("size", params.getSize());
+                parametersObject.accumulate("size", "1.00");
                 parametersPoi.accumulate("object", parametersObject);
 
                 hotspots.add(parametersPoi);
@@ -868,7 +868,7 @@ public class LayarServlet extends HttpServlet {
                     text.accumulate("title", StringEscapeUtils.escapeJavaScript("Message"));
 
 
-                    text.accumulate("footnote", "Powered by ImajieMatch");
+                    text.accumulate("footnote", "Powered by Playar");
                     poi.accumulate("text", text);
 
                     JSONArray actions = new JSONArray();
@@ -967,7 +967,7 @@ public class LayarServlet extends HttpServlet {
                     text.accumulate("title", StringEscapeUtils.escapeJavaScript("Dialog"));
 
 
-                    text.accumulate("footnote", "Powered by ImajieMatch");
+                    text.accumulate("footnote", "Powered by Playar");
                     poi.accumulate("text", text);
 
                     JSONArray actions = new JSONArray();
@@ -1094,7 +1094,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject text = new JSONObject();
                                     text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
                                     text.accumulate("description", description);
-                                    text.accumulate("footnote", "Powered by ImajieMatch");
+                                    text.accumulate("footnote", "Powered by Playar");
                                     poi.accumulate("text", text);
 
 
@@ -1185,7 +1185,7 @@ public class LayarServlet extends HttpServlet {
                                     }
                                     object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
                                     //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", params.getSize());
+                                    object.accumulate("size", "1.00");
                                     poi.accumulate("object", object);
 
                                     hotspots.add(poi);
@@ -1273,8 +1273,8 @@ public class LayarServlet extends HttpServlet {
 
                                     if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude)) {
 
-                                        hotspotLatitude = "" + (latitude + 0.00005 * Math.cos(angle));
-                                        hotspotLongitude = "" + (longitude + 0.00005 * Math.sin(angle));
+                                        hotspotLatitude = "" + (latitude + 0.001 * Math.cos(angle));
+                                        hotspotLongitude = "" + (longitude + 0.001 * Math.sin(angle));
                                         hotspotAltitude = "0.0";
                                     }
 
@@ -1303,7 +1303,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject text = new JSONObject();
                                     text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
                                     text.accumulate("description", description);
-                                    text.accumulate("footnote", "Powered by ImajieMatch");
+                                    text.accumulate("footnote", "Powered by Playar");
                                     poi.accumulate("text", text);
 
 
@@ -1394,7 +1394,7 @@ public class LayarServlet extends HttpServlet {
                                     }
                                     object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
                                     //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", params.getSize());
+                                    object.accumulate("size", "1.00");
                                     poi.accumulate("object", object);
 
                                     hotspots.add(poi);

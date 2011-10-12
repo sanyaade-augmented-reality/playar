@@ -16,11 +16,11 @@
     String gameStarted = "none";
     String showControlPanel = request.getParameter("showControlPanel");
 
-    if (showControlPanel == "true") {
-        
+    if (request.getParameter("showControlPanel") != null) {
+         if (request.getParameter("showControlPanel").contains("true")) {
         session.setAttribute("showControlPanel", "true");
-        
-    } else if (showControlPanel == "false") {
+               }
+    } else {
         
         session.setAttribute("showControlPanel", "false");
         

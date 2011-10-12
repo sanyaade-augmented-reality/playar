@@ -110,7 +110,7 @@ public class LayarServlet extends HttpServlet {
 
         }
 
-
+        String showControlPanel = "false";
 
         String radiusParam = request.getParameter("radius");
         long radius = (radiusSession != null) ? Long.parseLong(radiusSession) : 10000L;
@@ -431,7 +431,7 @@ public class LayarServlet extends HttpServlet {
         } else {
 
 
-            String showControlPanel = "false";
+
             if (session.getAttribute("showControlPanel") != null) {
 
                 showControlPanel = session.getAttribute("showControlPanel").toString();
@@ -782,7 +782,7 @@ public class LayarServlet extends HttpServlet {
                 hotspots.add(parametersPoi);
 
 
-                session.setAttribute("showControlPanel", "false");
+
             } else {
 
                 String[] controlPanel = new String[]{"parameters", "inventory", "yousee", "locations", "tasks"};
@@ -1508,75 +1508,88 @@ public class LayarServlet extends HttpServlet {
 
         } else {
 
-            // TODO IMPLEMENTS SHOWDIALOG SESSION ATTRIBUTES        
+            String showDialogPlayed = "null";
+            if (session.getAttribute("showDialogPlayed") != null) {
+                showDialogPlayed = session.getAttribute("showDialogPlayed").toString();
+            } else {
+
+                session.setAttribute("showDialogPlayed", "null");
+            }
+
+
+
             if (session.getAttribute("showDialog") != null) {
-                if (session.getAttribute("showDialog").toString() != "null" || session.getAttribute("showDialog").toString().length() > 5) {
+                if (showControlPanel.contains("false") && !showDialogPlayed.equals(session.getAttribute("showDialog").toString())) {
 
-                    JSONObject showDialog = new JSONObject();
+                    if (session.getAttribute("showDialog").toString() != "null" || session.getAttribute("showDialog").toString().length() > 5) {
 
-                    showDialog.accumulate("title", "Mission : " + gameStarted + "");
+                        JSONObject showDialog = new JSONObject();
 
-
-
-                    String msg = "";
+                        showDialog.accumulate("title", "Mission : " + gameStarted + "");
 
 
-                    String dialogTexts = "";
-                    String dialogMedia = "";
 
-                    if (session.getAttribute("dialogTexts") != null) {
-
-                        dialogTexts = session.getAttribute("dialogTexts").toString();
+                        String msg = "";
 
 
-                    }
+                        String dialogTexts = "";
+                        String dialogMedia = "";
+
+                        if (session.getAttribute("dialogTexts") != null) {
+
+                            dialogTexts = session.getAttribute("dialogTexts").toString();
 
 
-                    if (session.getAttribute("dialogMedia") != null) {
-
-                        dialogMedia = session.getAttribute("dialogMedia").toString();
+                        }
 
 
-                    }
+                        if (session.getAttribute("dialogMedia") != null) {
 
-                    msg = dialogTexts;
-
-                    showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
-
-                    showDialog.accumulate("description", msg);
-
-                    JSONArray messageActions = new JSONArray();
-
-                    JSONObject messageAction1 = new JSONObject();
+                            dialogMedia = session.getAttribute("dialogMedia").toString();
 
 
-                    messageAction1.accumulate("contentType", "text/html");
-                    messageAction1.accumulate("method", "GET");
-                    messageAction1.accumulate("activityType", "1");
-                    messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button1=" + session.getAttribute("Button1"));
-                    messageAction1.accumulate("label", session.getAttribute("Button1"));
-                    //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-                    messageActions.add(messageAction1);
+                        }
+
+                        msg = dialogTexts;
+
+                        showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
+
+                        showDialog.accumulate("description", msg);
+
+                        JSONArray messageActions = new JSONArray();
+
+                        JSONObject messageAction1 = new JSONObject();
 
 
-                    if (!session.getAttribute("Button2").toString().contains("null")) {
-                        JSONObject messageAction2 = new JSONObject();
-
-
-                        messageAction2.accumulate("contentType", "text/html");
-                        messageAction2.accumulate("method", "GET");
-                        messageAction2.accumulate("activityType", "1");
-                        messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button2=" + session.getAttribute("Button2"));
-                        messageAction2.accumulate("label", session.getAttribute("Button2"));
+                        messageAction1.accumulate("contentType", "text/html");
+                        messageAction1.accumulate("method", "GET");
+                        messageAction1.accumulate("activityType", "1");
+                        messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button1=" + session.getAttribute("Button1"));
+                        messageAction1.accumulate("label", session.getAttribute("Button1"));
                         //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-                        messageActions.add(messageAction2);
+                        messageActions.add(messageAction1);
+
+
+                        if (!session.getAttribute("Button2").toString().contains("null")) {
+                            JSONObject messageAction2 = new JSONObject();
+
+
+                            messageAction2.accumulate("contentType", "text/html");
+                            messageAction2.accumulate("method", "GET");
+                            messageAction2.accumulate("activityType", "1");
+                            messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button2=" + session.getAttribute("Button2"));
+                            messageAction2.accumulate("label", session.getAttribute("Button2"));
+                            //messageAction1.accumulate("label", "Tasks (" + counts + ")");
+                            messageActions.add(messageAction2);
+                        }
+
+
+                        showDialog.accumulate("actions", messageActions);
+
+
+                        layer.accumulate("showDialog", showDialog);
+                        session.setAttribute("showDialogPlayed", dialogTexts);
                     }
-
-
-                    showDialog.accumulate("actions", messageActions);
-
-
-                    layer.accumulate("showDialog", showDialog);
                 }
             }
         }
@@ -1596,8 +1609,18 @@ public class LayarServlet extends HttpServlet {
 
 
         out.write(layer.toString(2));
+        if (session.getAttribute("showControlPanel") != null) {
+
+            if (!session.getAttribute("showControlPanel").toString().equals("false")) {
+
+                session.setAttribute("showDialogPlayed", "null");
+                session.setAttribute("showControlPanel", "false");
 
 
+            }
+
+
+        }
 
         Dodialog = false;
 

@@ -388,7 +388,7 @@ public class LayarServlet extends HttpServlet {
                         JSONObject transform = new JSONObject();
                         //transform.accumulate("rotate", "");
                         //transform.accumulate("translate", "");
-                        transform.accumulate("scale", params.getScale());
+                        transform.accumulate("scale", "1.0");
                         poi.accumulate("transform", transform);
 
 
@@ -467,7 +467,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryText.accumulate("footnote", "Powered by Playar");
                 inventoryPoi.accumulate("text", inventoryText);
                 inventoryPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
-                inventoryPoi.accumulate("doNotIndex", true);           
+                inventoryPoi.accumulate("doNotIndex", true);
                 inventoryPoi.accumulate("inFocus", false);
                 inventoryPoi.accumulate("showSmallBiw", true);
                 inventoryPoi.accumulate("showBiwOnClick", false);
@@ -500,22 +500,22 @@ public class LayarServlet extends HttpServlet {
 
                 // Transform values
                 JSONObject inventoryTransform = new JSONObject();
-                inventoryTransform.accumulate("scale", params.getScale());
+                inventoryTransform.accumulate("scale", "1.0");
                 inventoryPoi.accumulate("transform", inventoryTransform);
 
                 // Transform values
                 JSONObject inventoryObject = new JSONObject();
-       
+
                 inventoryObject.accumulate("contentType", "image/png");
-                inventoryObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/inventory.jsp");      
+                inventoryObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
                 inventoryObject.accumulate("size", "1.00");
                 inventoryPoi.accumulate("object", inventoryObject);
 
                 hotspots.add(inventoryPoi);
-                
-                
-                
-                
+
+
+
+
                 //***************************************
                 // yousee icon poi
                 //***************************************
@@ -535,7 +535,7 @@ public class LayarServlet extends HttpServlet {
                 youseeText.accumulate("footnote", "Powered by Playar");
                 youseePoi.accumulate("text", youseeText);
                 youseePoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
-                youseePoi.accumulate("doNotIndex", true);           
+                youseePoi.accumulate("doNotIndex", true);
                 youseePoi.accumulate("inFocus", false);
                 youseePoi.accumulate("showSmallBiw", true);
                 youseePoi.accumulate("showBiwOnClick", false);
@@ -568,14 +568,14 @@ public class LayarServlet extends HttpServlet {
 
                 // Transform values
                 JSONObject youseeTransform = new JSONObject();
-                youseeTransform.accumulate("scale", params.getScale());
+                youseeTransform.accumulate("scale", "1.0");
                 youseePoi.accumulate("transform", youseeTransform);
 
                 // Transform values
                 JSONObject youseeObject = new JSONObject();
-       
+
                 youseeObject.accumulate("contentType", "image/png");
-                youseeObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/yousee.jsp");      
+                youseeObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
                 youseeObject.accumulate("size", "1.00");
                 youseePoi.accumulate("object", youseeObject);
 
@@ -583,7 +583,7 @@ public class LayarServlet extends HttpServlet {
 
 
 
-                 //***************************************
+                //***************************************
                 // locations icon poi
                 //***************************************
                 double locationsAngle = 60;
@@ -602,7 +602,7 @@ public class LayarServlet extends HttpServlet {
                 locationsText.accumulate("footnote", "Powered by Playar");
                 locationsPoi.accumulate("text", locationsText);
                 locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
-                locationsPoi.accumulate("doNotIndex", true);           
+                locationsPoi.accumulate("doNotIndex", true);
                 locationsPoi.accumulate("inFocus", false);
                 locationsPoi.accumulate("showSmallBiw", true);
                 locationsPoi.accumulate("showBiwOnClick", false);
@@ -635,21 +635,21 @@ public class LayarServlet extends HttpServlet {
 
                 // Transform values
                 JSONObject locationsTransform = new JSONObject();
-                locationsTransform.accumulate("scale", params.getScale());
+                locationsTransform.accumulate("scale", "1.0");
                 locationsPoi.accumulate("transform", locationsTransform);
 
                 // Transform values
                 JSONObject locationsObject = new JSONObject();
-       
+
                 locationsObject.accumulate("contentType", "image/png");
-                locationsObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/locations.jsp");      
+                locationsObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/locations.jsp");
                 locationsObject.accumulate("size", "1.00");
                 locationsPoi.accumulate("object", locationsObject);
 
                 hotspots.add(locationsPoi);
 
-                
-                 //***************************************
+
+                //***************************************
                 // tasks icon poi
                 //***************************************
                 double tasksAngle = 90;
@@ -662,14 +662,14 @@ public class LayarServlet extends HttpServlet {
                 tasksPoi.accumulate("id", "tasks");
                 tasksPoi.accumulate("anchor", "geo:" + tasksLatitude + "," + tasksLongitude + "");
 
-                
+
                 JSONObject tasksText = new JSONObject();
                 tasksText.accumulate("title", "tasks");
                 tasksText.accumulate("description", "Clic to get your tasks");
                 tasksText.accumulate("footnote", "Powered by Playar");
                 tasksPoi.accumulate("text", tasksText);
                 tasksPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
-                tasksPoi.accumulate("doNotIndex", true);           
+                tasksPoi.accumulate("doNotIndex", true);
                 tasksPoi.accumulate("inFocus", false);
                 tasksPoi.accumulate("showSmallBiw", true);
                 tasksPoi.accumulate("showBiwOnClick", false);
@@ -702,20 +702,20 @@ public class LayarServlet extends HttpServlet {
 
                 // Transform values
                 JSONObject tasksTransform = new JSONObject();
-                tasksTransform.accumulate("scale", params.getScale());
+                tasksTransform.accumulate("scale", "1.0");
                 tasksPoi.accumulate("transform", tasksTransform);
 
                 // Transform values
                 JSONObject tasksObject = new JSONObject();
-       
+
                 tasksObject.accumulate("contentType", "image/png");
-                tasksObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/tasks.jsp");      
+                tasksObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
                 tasksObject.accumulate("size", "1.00");
                 tasksPoi.accumulate("object", tasksObject);
 
                 hotspots.add(tasksPoi);
-      
-                 //***************************************
+
+                //***************************************
                 // parameters icon poi
                 //***************************************
                 double parametersAngle = 120;
@@ -728,14 +728,14 @@ public class LayarServlet extends HttpServlet {
                 parametersPoi.accumulate("id", "parameters");
                 parametersPoi.accumulate("anchor", "geo:" + parametersLatitude + "," + parametersLongitude + "");
 
-                
+
                 JSONObject parametersText = new JSONObject();
                 parametersText.accumulate("title", "parameters");
                 parametersText.accumulate("description", "Clic to get your parameters");
                 parametersText.accumulate("footnote", "Powered by Playar");
                 parametersPoi.accumulate("text", parametersText);
                 parametersPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
-                parametersPoi.accumulate("doNotIndex", true);           
+                parametersPoi.accumulate("doNotIndex", true);
                 parametersPoi.accumulate("inFocus", false);
                 parametersPoi.accumulate("showSmallBiw", true);
                 parametersPoi.accumulate("showBiwOnClick", false);
@@ -768,14 +768,14 @@ public class LayarServlet extends HttpServlet {
 
                 // Transform values
                 JSONObject parametersTransform = new JSONObject();
-                parametersTransform.accumulate("scale", params.getScale());
+                parametersTransform.accumulate("scale", "1.0");
                 parametersPoi.accumulate("transform", parametersTransform);
 
                 // Transform values
                 JSONObject parametersObject = new JSONObject();
-       
+
                 parametersObject.accumulate("contentType", "image/png");
-                parametersObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/parameters.jsp");      
+                parametersObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/parameters.jsp");
                 parametersObject.accumulate("size", "1.00");
                 parametersPoi.accumulate("object", parametersObject);
 
@@ -784,6 +784,12 @@ public class LayarServlet extends HttpServlet {
 
                 session.setAttribute("showControlPanel", "false");
             } else {
+
+                String[] controlPanel = new String[]{"parameters", "inventory", "yousee", "locations", "tasks"};
+
+                layer.accumulate("deletedHotspots", controlPanel);
+                //"deletedHotspots":["spot0001", "spot0002"]
+
                 playMediaCall = "null";
                 dialog = "null";
                 // TODO DELETE ALL POI
@@ -1032,12 +1038,6 @@ public class LayarServlet extends HttpServlet {
                                 String[] temp2 = hotspot.split(delimiter2);
                                 String media = "";
 
-
-
-
-
-
-
                                 for (int ii = 0; ii < temp2.length; ii++) {
                                     if (ii == 0) {
                                         title = temp2[ii];
@@ -1097,13 +1097,6 @@ public class LayarServlet extends HttpServlet {
                                     text.accumulate("footnote", "Powered by Playar");
                                     poi.accumulate("text", text);
 
-
-
-//                            if (session.getAttribute("dialogMedia") != null) {
-//
-//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
-//
-//                            }
 
                                     poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
 
@@ -1165,7 +1158,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject transform = new JSONObject();
                                     //transform.accumulate("rotate", "");
                                     //transform.accumulate("translate", "");
-                                    transform.accumulate("scale", params.getScale());
+                                    transform.accumulate("scale", "1.0");
                                     poi.accumulate("transform", transform);
 
                                     // Transform values
@@ -1281,20 +1274,6 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject poi = new JSONObject();
                                     count++;
 
-                                    //String[] matchPois = new String[4];
-
-
-                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
-
-                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
-
-                                    //"anchor": { "referenceImage": "myFirstImage" }
-
-                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
-
-                                    //"anchor": "geo:52.3,4.5"
 
 
                                     poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
@@ -1305,14 +1284,6 @@ public class LayarServlet extends HttpServlet {
                                     text.accumulate("description", description);
                                     text.accumulate("footnote", "Powered by Playar");
                                     poi.accumulate("text", text);
-
-
-
-//                            if (session.getAttribute("dialogMedia") != null) {
-//
-//                                media = session.getAttribute("dialogMedia").toString().replace("DIALOGMEDIA", "");
-//
-//                            }
 
                                     poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
 
@@ -1374,7 +1345,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject transform = new JSONObject();
                                     //transform.accumulate("rotate", "");
                                     //transform.accumulate("translate", "");
-                                    transform.accumulate("scale", params.getScale());
+                                    transform.accumulate("scale", "1.0");
                                     poi.accumulate("transform", transform);
 
                                     // Transform values
@@ -1642,4 +1613,3 @@ public class LayarServlet extends HttpServlet {
         return URLEncoder.encode(uid, "UTF-8"); // encode any special chars
     }
 }
-

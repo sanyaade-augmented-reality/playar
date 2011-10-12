@@ -17,13 +17,13 @@
     String showControlPanel = request.getParameter("showControlPanel");
 
     if (request.getParameter("showControlPanel") != null) {
-         if (request.getParameter("showControlPanel").contains("true")) {
-        session.setAttribute("showControlPanel", "true");
-               }
+        if (request.getParameter("showControlPanel").contains("true")) {
+            session.setAttribute("showControlPanel", "true");
+        }
     } else {
-        
+
         session.setAttribute("showControlPanel", "false");
-        
+
     }
 
     if (session.getAttribute("username") != null) {
@@ -58,21 +58,102 @@
 
         session.setAttribute("sendCallback", true);
 
-        
+
     }
 %> 
+<html>
+    <head>
+        <%= match.refresh(gameStarted, session.getAttribute("username").toString(), request)%>
 
-<head>
-   <%= match.refresh(gameStarted, session.getAttribute("username").toString(), request) %>
-<script language='javascript'>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+        <title>Wait</title>
+        <!----><link rel="stylesheet" href="js/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.css" />
+        <script src="js/jquery/jquery-1.6.2.min.js"></script>
+
+        <script src="js/jquery.mobile-1.0b2/jquery.mobile-1.0b2.min.js"></script>
+
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function(){
+        
+                var    dheight = $('html').height(),
+                cbody = $('#contentbody').height(),
+                wheight = $(window).height(),
+                cheight = wheight - dheight + cbody;
+            
+                if (wheight > dheight){
+                    $('#contentbody').height(cheight);
+                }
+        
+                $(window).resize(function(){
+                    wheight = $(window).height();
+                    noscroll();
+                    changepush();
+                });
+
+                function noscroll(){
+                    if (wheight > dheight) {
+                        $('html').addClass('noscroll');
+                    }
+
+                    else if (wheight <= dheight) {
+                        $('html').removeClass('noscroll');
+                    }
+            
+                    else {}
+
+                }
+
+                function changepush(){
+                    if (wheight > dheight) {
+                        $('#contentbody').height(wheight-dheight+cbody);
+                    }
+            
+                }
+
+            });
+
+        </script>
+
+
+    </head>
+
+
+    <body>
+        <div data-role="page"  style="min-height:100%" data-theme='a'>
+            <div data-role="header"  data-theme="b">
+
+                <h1>Waiting ...</h1>
+
+
+            </div><!-- /header -->
+
+            <div data-role="content"  data-theme="a">
+
+                Mission request being transfered ...
+
+
+            </div><!-- /Content -->
+
+            <div data-role="footer"  data-theme="b">
+
+                <h4>Powered by Playar</h4>        
+
+
+            </div><!-- /Footer -->
+
+
+
+
+        </div> 
+    </body>
+
+
+
+
+    <script language='javascript'>
  
  
         window.location.replace("layar://imajiematch");
  
-   </script>
-</head>
-
-
-<body>
-    <h1>Hello World!</h1>
-</body>
+    </script>
+</html>

@@ -64,7 +64,7 @@
 
             <div data-role="footer"  data-theme="b">
 
-                <h4>&copy; imajie.tv 2011</h4>        
+                <h4>Powered by Playar</h4>        
 
 
             </div><!-- /Footer -->

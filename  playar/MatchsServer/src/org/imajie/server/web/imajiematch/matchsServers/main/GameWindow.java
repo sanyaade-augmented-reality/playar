@@ -460,7 +460,7 @@ public class GameWindow implements UI {
                 dialog = dialog + "</p>"
                         + "</div>"
                         + "<div data-role='footer' data-theme='b'>"
-                        + "<h4>&copy; imajie.tv 2011</h4>"
+                        + "<h4>Powered by Playar</h4>"
                         + "</div>"
                         + "</div>";
 
@@ -534,43 +534,6 @@ public class GameWindow implements UI {
 
 
             triviaInput = " <div data-role='fieldcontain'   data-theme='a'><label  data-theme='a' for='answer'>Answer</label><input type='text' name='answer' id='username' value=''  /></div><input type='submit'  id='callBack' data-theme='a' value='" + text + "'/>";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

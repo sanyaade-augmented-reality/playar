@@ -173,11 +173,7 @@ public class ImajieMatchClientProtocol {
                 }
                 if (theInput.contains("|!!|PLAYER_STATE")) {
 
-
-
-
                     playerState = playerState.replace("|!!|PLAYER_STATE", "");
-
 
                     String resultArrays = playerState.replace("PLAYER_STATE||||||", "");
 
@@ -214,68 +210,53 @@ public class ImajieMatchClientProtocol {
                             session.setAttribute("dialogMedia", temp[ii]);
                         }
                         if (ii == 8) {
-                            //"MEDIAALTTEXT"
                             String MEDIAALTTEXT = temp[ii].replace("MEDIAALTTEXT", "");
                             MEDIAALTTEXT = MEDIAALTTEXT.replace("|!!!|", "");
                             session.setAttribute("MEDIAALTTEXT", MEDIAALTTEXT);
                         }
                         if (ii == 9) {
-                            //"MEDIADESCRIPTION"
                             String MEDIADESCRIPTION = temp[ii].replace("MEDIADESCRIPTION", "");
                             MEDIADESCRIPTION = MEDIADESCRIPTION.replace("|!!!|", "");
                             session.setAttribute("MEDIADESCRIPTION", MEDIADESCRIPTION);
                         }
                         if (ii == 10) {
-                            //"MEDIARAWNAME"
                             String MEDIARAWNAME = temp[ii].replace("MEDIARAWNAME", "");
                             MEDIARAWNAME = MEDIARAWNAME.replace("|!!!|", "");
                             session.setAttribute("MEDIARAWNAME", MEDIARAWNAME);
                         }
                         if (ii == 11) {
-                            //"ZONECOUNT" + GameWindow.zoneCount+ "|!!!|";
                             String zoneCount = temp[ii].replace("ZONECOUNT", "");
                             zoneCount = zoneCount.replace("|!!!|", "");
                             session.setAttribute("zoneCount", zoneCount);
                         }
                         if (ii == 12) {
-                            //"TASKCOUNT" + GameWindow.tasksCount+ "|!!!|";
                             String tasksCount = temp[ii].replace("TASKCOUNT", "");
                             tasksCount = tasksCount.replace("|!!!|", "");
                             session.setAttribute("tasksCount", tasksCount);
                         }
                         if (ii == 13) {
-                            //"INVENTORYCOUNT" + GameWindow.inventoryCount+ "|!!!|";
                             String inventoryCount = temp[ii].replace("INVENTORYCOUNT", "");
                             inventoryCount = inventoryCount.replace("|!!!|", "");
                             session.setAttribute("inventoryCount", inventoryCount);
                         }
                         if (ii == 14) {
-                            //"YOUSEECOUNT" + GameWindow.youseeCount+ "";
                             String youseeCount = temp[ii].replace("YOUSEECOUNT", "");
                             youseeCount = youseeCount.replace("|!!!|", "");
                             session.setAttribute("youseeCount", youseeCount);
                         }
                         if (ii == 15) {
-                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
                             String PLAYMEDIA_CALL = temp[ii].replace("PLAYMEDIA_CALL", "");
                             PLAYMEDIA_CALL = PLAYMEDIA_CALL.replace("|!!!|", "");
                             session.setAttribute("PLAYMEDIA_CALL", PLAYMEDIA_CALL);
                         }
                         if (ii == 16) {
-                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
                             String DIALOG = temp[ii].replace("DIALOG", "");
                             DIALOG = DIALOG.replace("|!!!|", "");
                             session.setAttribute("DIALOG", DIALOG);
                         }
                         if (ii == 17) {
-                            //"PLAYMEDIA_CALL" + GameWindow.youseeCount+ "";
+                        
                             String SHOWDIALOG = temp[ii].replace("SHOWDIALOG", "");
-
-
-
-
-
-                            //String SHOWDIALOGArrays = temp[ii].replace("SHOWDIALOG", "");
                             SHOWDIALOG = SHOWDIALOG.replace("|!!!|", "");
 
                             String delimiter2 = "\\|\\|";
@@ -335,12 +316,12 @@ public class ImajieMatchClientProtocol {
 
                             if (request.getParameter("button1") != null) {
 
-                                theOutput = "PLAYER_CALLBACK" + request.getParameter("button1");
+                                theOutput = "PLAYER_CALLBACK" + "Button1";
                                 state = PLAYER_CALLBACK;
 
                             } else {
 
-                                theOutput = "PLAYER_CALLBACK" + request.getParameter("button2");
+                                theOutput = "PLAYER_CALLBACK" + "Button2";
                                 state = PLAYER_CALLBACK;
                             }
 

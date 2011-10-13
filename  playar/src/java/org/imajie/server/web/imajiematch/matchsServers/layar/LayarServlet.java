@@ -58,6 +58,7 @@ public class LayarServlet extends HttpServlet {
 
         LayarParamsService params = LayarParamsService.instance();
 
+        String locale = request.getParameter("lang");
         String layerName = request.getParameter("layerName");
         String developerId = request.getParameter("developerId");
         double latitude = Utils.getDouble(request, "lat", 45.49);
@@ -323,7 +324,7 @@ public class LayarServlet extends HttpServlet {
 
 
 
-                        poi.accumulate("showBiwOnClick", false);
+                        poi.accumulate("showBiwOnClick", true);
 
 
 
@@ -408,7 +409,7 @@ public class LayarServlet extends HttpServlet {
                         if (cartridgeDetails[4].contains("***VISION")) {
                             object.accumulate("contentType", "image/png");
                             object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=getMission.png");
-                            object.accumulate("size", "1.00");
+                            object.accumulate("size", "0.25");
 
                         } else {
 
@@ -470,7 +471,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryPoi.accumulate("doNotIndex", true);
                 inventoryPoi.accumulate("inFocus", false);
                 inventoryPoi.accumulate("showSmallBiw", true);
-                inventoryPoi.accumulate("showBiwOnClick", false);
+                inventoryPoi.accumulate("showBiwOnClick", true);
 
                 JSONObject inventoryIcon = new JSONObject();
                 inventoryIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
@@ -538,7 +539,7 @@ public class LayarServlet extends HttpServlet {
                 youseePoi.accumulate("doNotIndex", true);
                 youseePoi.accumulate("inFocus", false);
                 youseePoi.accumulate("showSmallBiw", true);
-                youseePoi.accumulate("showBiwOnClick", false);
+                youseePoi.accumulate("showBiwOnClick", true);
 
                 JSONObject youseeIcon = new JSONObject();
                 youseeIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
@@ -605,7 +606,7 @@ public class LayarServlet extends HttpServlet {
                 locationsPoi.accumulate("doNotIndex", true);
                 locationsPoi.accumulate("inFocus", false);
                 locationsPoi.accumulate("showSmallBiw", true);
-                locationsPoi.accumulate("showBiwOnClick", false);
+                locationsPoi.accumulate("showBiwOnClick", true);
 
                 JSONObject locationsIcon = new JSONObject();
                 locationsIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/compass.png");
@@ -672,7 +673,7 @@ public class LayarServlet extends HttpServlet {
                 tasksPoi.accumulate("doNotIndex", true);
                 tasksPoi.accumulate("inFocus", false);
                 tasksPoi.accumulate("showSmallBiw", true);
-                tasksPoi.accumulate("showBiwOnClick", false);
+                tasksPoi.accumulate("showBiwOnClick", true);
 
                 JSONObject tasksIcon = new JSONObject();
                 tasksIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
@@ -738,7 +739,7 @@ public class LayarServlet extends HttpServlet {
                 parametersPoi.accumulate("doNotIndex", true);
                 parametersPoi.accumulate("inFocus", false);
                 parametersPoi.accumulate("showSmallBiw", true);
-                parametersPoi.accumulate("showBiwOnClick", false);
+                parametersPoi.accumulate("showBiwOnClick", true);
 
                 JSONObject parametersIcon = new JSONObject();
                 parametersIcon.accumulate("url", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
@@ -1111,7 +1112,7 @@ public class LayarServlet extends HttpServlet {
 
                                     poi.accumulate("showSmallBiw", true);
 
-                                    poi.accumulate("showBiwOnClick", false);
+                                    poi.accumulate("showBiwOnClick", true);
 
 
 
@@ -1298,7 +1299,7 @@ public class LayarServlet extends HttpServlet {
 
                                     poi.accumulate("showSmallBiw", true);
 
-                                    poi.accumulate("showBiwOnClick", false);
+                                    poi.accumulate("showBiwOnClick", true);
 
 
 

@@ -65,6 +65,129 @@ public class LayarServlet extends HttpServlet {
         double longitude = Utils.getDouble(request, "lon", -73.56);
         double altitude = Utils.getDouble(request, "alt", 0);
 
+        //**************************************
+        //
+        //     Setting the locales
+        //*************************************
+        String footnote ;
+        String missionLabel;
+        String inventoryTitle;
+        String inventoryDescription;
+        String inventoryLabel;
+        String youseeTitle;
+        String youseeDescription;
+        String youseeLabel;
+        String locationsTitle;
+        String locationsDescription;
+        String getLocationsLabel;
+        String tasksTitle;
+        String taskDescription;
+        String getTaskLabel;
+        String parametersTitle;
+        String parametersDescription;
+        String getParametersLabel;
+        String messageLabel;
+        String dialogTitle;
+        String detailsLabel;
+        String missionControlLabel;
+        String chooseMissionLabel;
+        String loginLabel;
+        String createAccountLabel;
+        String errorString1;
+        String errorString2;
+        String showMessage;
+
+        if ("fr".equals(locale)) {
+            footnote = org.imajie.server.locales.fr.locales.footnote;
+            missionLabel = org.imajie.server.locales.fr.locales.missionLabel;
+            inventoryTitle = org.imajie.server.locales.fr.locales.inventoryTitle;
+            inventoryDescription = org.imajie.server.locales.fr.locales.inventoryDescription;
+            inventoryLabel = org.imajie.server.locales.fr.locales.inventoryLabel;
+            youseeTitle = org.imajie.server.locales.fr.locales.youseeTitle;
+            youseeDescription = org.imajie.server.locales.fr.locales.youseeDescription;
+            youseeLabel = org.imajie.server.locales.fr.locales.youseeLabel;
+            locationsTitle = org.imajie.server.locales.fr.locales.locationsTitle;
+            locationsDescription = org.imajie.server.locales.fr.locales.locationsDescription;
+            getLocationsLabel = org.imajie.server.locales.fr.locales.getLocationsLabel;
+            tasksTitle = org.imajie.server.locales.fr.locales.tasksTitle;
+            taskDescription = org.imajie.server.locales.fr.locales.taskDescription;
+            getTaskLabel = org.imajie.server.locales.fr.locales.getTaskLabel;
+            parametersTitle = org.imajie.server.locales.fr.locales.parametersTitle;
+            parametersDescription = org.imajie.server.locales.fr.locales.parametersDescription;
+            getParametersLabel = org.imajie.server.locales.fr.locales.getParametersLabel;
+            messageLabel = org.imajie.server.locales.fr.locales.messageLabel;
+            dialogTitle = org.imajie.server.locales.fr.locales.dialogTitle;
+            detailsLabel = org.imajie.server.locales.fr.locales.detailsLabel;
+            missionControlLabel = org.imajie.server.locales.fr.locales.missionControlLabel;
+            chooseMissionLabel = org.imajie.server.locales.fr.locales.chooseMissionLabel;
+            loginLabel = org.imajie.server.locales.fr.locales.loginLabel;
+            createAccountLabel = org.imajie.server.locales.fr.locales.createAccountLabel;
+            errorString1 = org.imajie.server.locales.fr.locales.errorString1;
+            errorString2 = org.imajie.server.locales.fr.locales.errorString2;
+            showMessage = org.imajie.server.locales.fr.locales.showMessage;
+            
+        } else if ("en".equals(locale)) {
+            
+            footnote = org.imajie.server.locales.en.locales.footnote;
+            missionLabel = org.imajie.server.locales.en.locales.missionLabel;
+            inventoryTitle = org.imajie.server.locales.en.locales.inventoryTitle;
+            inventoryDescription = org.imajie.server.locales.en.locales.inventoryDescription;
+            inventoryLabel = org.imajie.server.locales.en.locales.inventoryLabel;
+            youseeTitle = org.imajie.server.locales.en.locales.youseeTitle;
+            youseeDescription = org.imajie.server.locales.en.locales.youseeDescription;
+            youseeLabel = org.imajie.server.locales.en.locales.youseeLabel;
+            locationsTitle = org.imajie.server.locales.en.locales.locationsTitle;
+            locationsDescription = org.imajie.server.locales.en.locales.locationsDescription;
+            getLocationsLabel = org.imajie.server.locales.en.locales.getLocationsLabel;
+            tasksTitle = org.imajie.server.locales.en.locales.tasksTitle;
+            taskDescription = org.imajie.server.locales.en.locales.taskDescription;
+            getTaskLabel = org.imajie.server.locales.en.locales.getTaskLabel;
+            parametersTitle = org.imajie.server.locales.en.locales.parametersTitle;
+            parametersDescription = org.imajie.server.locales.en.locales.parametersDescription;
+            getParametersLabel = org.imajie.server.locales.en.locales.getParametersLabel;
+            messageLabel = org.imajie.server.locales.en.locales.messageLabel;
+            dialogTitle = org.imajie.server.locales.en.locales.dialogTitle;
+            detailsLabel = org.imajie.server.locales.en.locales.detailsLabel;
+            missionControlLabel = org.imajie.server.locales.en.locales.missionControlLabel;
+            chooseMissionLabel = org.imajie.server.locales.en.locales.chooseMissionLabel;
+            loginLabel = org.imajie.server.locales.en.locales.loginLabel;
+            createAccountLabel = org.imajie.server.locales.en.locales.createAccountLabel;
+            errorString1 = org.imajie.server.locales.en.locales.errorString1;
+            errorString2 = org.imajie.server.locales.en.locales.errorString2;
+            showMessage = org.imajie.server.locales.en.locales.showMessage;
+
+
+        } else {
+            
+            // Default language (EN)
+            footnote = org.imajie.server.locales.en.locales.footnote;
+            missionLabel = org.imajie.server.locales.en.locales.missionLabel;
+            inventoryTitle = org.imajie.server.locales.en.locales.inventoryTitle;
+            inventoryDescription = org.imajie.server.locales.en.locales.inventoryDescription;
+            inventoryLabel = org.imajie.server.locales.en.locales.inventoryLabel;
+            youseeTitle = org.imajie.server.locales.en.locales.youseeTitle;
+            youseeDescription = org.imajie.server.locales.en.locales.youseeDescription;
+            youseeLabel = org.imajie.server.locales.en.locales.youseeLabel;
+            locationsTitle = org.imajie.server.locales.en.locales.locationsTitle;
+            locationsDescription = org.imajie.server.locales.en.locales.locationsDescription;
+            getLocationsLabel = org.imajie.server.locales.en.locales.getLocationsLabel;
+            tasksTitle = org.imajie.server.locales.en.locales.tasksTitle;
+            taskDescription = org.imajie.server.locales.en.locales.taskDescription;
+            getTaskLabel = org.imajie.server.locales.en.locales.getTaskLabel;
+            parametersTitle = org.imajie.server.locales.en.locales.parametersTitle;
+            parametersDescription = org.imajie.server.locales.en.locales.parametersDescription;
+            getParametersLabel = org.imajie.server.locales.en.locales.getParametersLabel;
+            messageLabel = org.imajie.server.locales.en.locales.messageLabel;
+            dialogTitle = org.imajie.server.locales.en.locales.dialogTitle;
+            detailsLabel = org.imajie.server.locales.en.locales.detailsLabel;
+            missionControlLabel = org.imajie.server.locales.en.locales.missionControlLabel;
+            chooseMissionLabel = org.imajie.server.locales.en.locales.chooseMissionLabel;
+            loginLabel = org.imajie.server.locales.en.locales.loginLabel;
+            createAccountLabel = org.imajie.server.locales.en.locales.createAccountLabel;
+            errorString1 = org.imajie.server.locales.en.locales.errorString1;
+            errorString2 = org.imajie.server.locales.en.locales.errorString2;
+            showMessage = org.imajie.server.locales.en.locales.showMessage;
+        }
         HttpSession session = null;
 
         session = request.getSession(true);
@@ -296,7 +419,7 @@ public class LayarServlet extends HttpServlet {
                         if (cartridgeDetails[4].contains("***VISION")) {
                         } else {
                             text.accumulate("description", cartridgeDetails[1]);
-                            text.accumulate("footnote", "Powered by Playar");
+                            text.accumulate("footnote", footnote);
 
 
                         }
@@ -352,14 +475,14 @@ public class LayarServlet extends HttpServlet {
                         } else {
                             action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/startmatch.jsp?match=" + cartridgeDetails[0]);
                         }
-                        action1.accumulate("label", "View Mission");
+                        action1.accumulate("label", missionLabel);
 
                         // contenType
                         //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
                         //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
                         action1.accumulate("contentType", "text/html");
                         action1.accumulate("method", "GET");
-                        action1.accumulate("activityType", 3);
+                        action1.accumulate("activityType", 1);
                         action1.accumulate("params", null);
                         action1.accumulate("closeBiw", true);
                         action1.accumulate("showActivity", false);
@@ -445,7 +568,7 @@ public class LayarServlet extends HttpServlet {
             //
             //*******************************************************************************
 
-            if (showControlPanel == "true") {
+            if ("true".equals(showControlPanel)) {
 
 
 
@@ -463,9 +586,9 @@ public class LayarServlet extends HttpServlet {
                 inventoryPoi.accumulate("anchor", "geo:" + inventoryLatitude + "," + inventoryLongitude + "");
 
                 JSONObject inventoryText = new JSONObject();
-                inventoryText.accumulate("title", "Inventory");
-                inventoryText.accumulate("description", "Clic to get your inventory");
-                inventoryText.accumulate("footnote", "Powered by Playar");
+                inventoryText.accumulate("title", inventoryTitle);
+                inventoryText.accumulate("description", inventoryDescription);
+                inventoryText.accumulate("footnote", footnote);
                 inventoryPoi.accumulate("text", inventoryText);
                 inventoryPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
                 inventoryPoi.accumulate("doNotIndex", true);
@@ -483,7 +606,7 @@ public class LayarServlet extends HttpServlet {
                 JSONArray inventoryActions = new JSONArray();
                 JSONObject inventoryAction1 = new JSONObject();
                 inventoryAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
-                inventoryAction1.accumulate("label", "Get Inventory");
+                inventoryAction1.accumulate("label", inventoryLabel);
                 inventoryAction1.accumulate("contentType", "text/html");
                 inventoryAction1.accumulate("method", "GET");
                 inventoryAction1.accumulate("activityType", 6);
@@ -531,9 +654,9 @@ public class LayarServlet extends HttpServlet {
                 youseePoi.accumulate("anchor", "geo:" + youseeLatitude + "," + youseeLongitude + "");
 
                 JSONObject youseeText = new JSONObject();
-                youseeText.accumulate("title", "yousee");
-                youseeText.accumulate("description", "Clic to get your yousee");
-                youseeText.accumulate("footnote", "Powered by Playar");
+                youseeText.accumulate("title", youseeTitle);
+                youseeText.accumulate("description", youseeDescription);
+                youseeText.accumulate("footnote", footnote);
                 youseePoi.accumulate("text", youseeText);
                 youseePoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
                 youseePoi.accumulate("doNotIndex", true);
@@ -551,7 +674,7 @@ public class LayarServlet extends HttpServlet {
                 JSONArray youseeActions = new JSONArray();
                 JSONObject youseeAction1 = new JSONObject();
                 youseeAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
-                youseeAction1.accumulate("label", "Get yousee");
+                youseeAction1.accumulate("label", youseeLabel);
                 youseeAction1.accumulate("contentType", "text/html");
                 youseeAction1.accumulate("method", "GET");
                 youseeAction1.accumulate("activityType", 6);
@@ -598,9 +721,9 @@ public class LayarServlet extends HttpServlet {
                 locationsPoi.accumulate("anchor", "geo:" + locationsLatitude + "," + locationsLongitude + "");
 
                 JSONObject locationsText = new JSONObject();
-                locationsText.accumulate("title", "locations");
-                locationsText.accumulate("description", "Clic to get your locations");
-                locationsText.accumulate("footnote", "Powered by Playar");
+                locationsText.accumulate("title", locationsTitle);
+                locationsText.accumulate("description", locationsDescription);
+                locationsText.accumulate("footnote", footnote);
                 locationsPoi.accumulate("text", locationsText);
                 locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
                 locationsPoi.accumulate("doNotIndex", true);
@@ -618,7 +741,7 @@ public class LayarServlet extends HttpServlet {
                 JSONArray locationsActions = new JSONArray();
                 JSONObject locationsAction1 = new JSONObject();
                 locationsAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp");
-                locationsAction1.accumulate("label", "Get locations");
+                locationsAction1.accumulate("label", getLocationsLabel);
                 locationsAction1.accumulate("contentType", "text/html");
                 locationsAction1.accumulate("method", "GET");
                 locationsAction1.accumulate("activityType", 6);
@@ -665,9 +788,9 @@ public class LayarServlet extends HttpServlet {
 
 
                 JSONObject tasksText = new JSONObject();
-                tasksText.accumulate("title", "tasks");
-                tasksText.accumulate("description", "Clic to get your tasks");
-                tasksText.accumulate("footnote", "Powered by Playar");
+                tasksText.accumulate("title", tasksTitle);
+                tasksText.accumulate("description", taskDescription);
+                tasksText.accumulate("footnote", footnote);
                 tasksPoi.accumulate("text", tasksText);
                 tasksPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
                 tasksPoi.accumulate("doNotIndex", true);
@@ -685,7 +808,7 @@ public class LayarServlet extends HttpServlet {
                 JSONArray tasksActions = new JSONArray();
                 JSONObject tasksAction1 = new JSONObject();
                 tasksAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
-                tasksAction1.accumulate("label", "Get tasks");
+                tasksAction1.accumulate("label", getTaskLabel);
                 tasksAction1.accumulate("contentType", "text/html");
                 tasksAction1.accumulate("method", "GET");
                 tasksAction1.accumulate("activityType", 6);
@@ -731,9 +854,9 @@ public class LayarServlet extends HttpServlet {
 
 
                 JSONObject parametersText = new JSONObject();
-                parametersText.accumulate("title", "parameters");
-                parametersText.accumulate("description", "Clic to get your parameters");
-                parametersText.accumulate("footnote", "Powered by Playar");
+                parametersText.accumulate("title", parametersTitle);
+                parametersText.accumulate("description", parametersDescription);
+                parametersText.accumulate("footnote", footnote);
                 parametersPoi.accumulate("text", parametersText);
                 parametersPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/control_panel.png");
                 parametersPoi.accumulate("doNotIndex", true);
@@ -751,7 +874,7 @@ public class LayarServlet extends HttpServlet {
                 JSONArray parametersActions = new JSONArray();
                 JSONObject parametersAction1 = new JSONObject();
                 parametersAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/parameters.jsp");
-                parametersAction1.accumulate("label", "Get parameters");
+                parametersAction1.accumulate("label", getParametersLabel);
                 parametersAction1.accumulate("contentType", "text/html");
                 parametersAction1.accumulate("method", "GET");
                 parametersAction1.accumulate("activityType", 6);
@@ -872,10 +995,10 @@ public class LayarServlet extends HttpServlet {
                     poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
 
                     JSONObject text = new JSONObject();
-                    text.accumulate("title", StringEscapeUtils.escapeJavaScript("Message"));
+                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(messageLabel));
 
 
-                    text.accumulate("footnote", "Powered by Playar");
+                    text.accumulate("footnote", footnote);
                     poi.accumulate("text", text);
 
                     JSONArray actions = new JSONArray();
@@ -888,7 +1011,7 @@ public class LayarServlet extends HttpServlet {
                         layarActionMedias.accumulate("contentType", "video/mp4");
                         layarActionMedias.accumulate("method", "GET");
                         layarActionMedias.accumulate("uri", "video://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                        layarActionMedias.accumulate("label", "Message");
+                        layarActionMedias.accumulate("label", messageLabel);
                         layarActionMedias.accumulate("activityType", 3);
                         layarActionMedias.accumulate("autoTrigger", true);
                         layarActionMedias.accumulate("autoTriggerRange", 20);
@@ -907,7 +1030,7 @@ public class LayarServlet extends HttpServlet {
                         layarActionMedias.accumulate("contentTyp", "audio/mp3");
                         layarActionMedias.accumulate("method", "GET");
                         layarActionMedias.accumulate("uri", "audio://" + Constants.URL_SERVER.replace("http://", "") + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                        layarActionMedias.accumulate("label", "Message");
+                        layarActionMedias.accumulate("label", messageLabel);
                         layarActionMedias.accumulate("activityType", 2);
                         layarActionMedias.accumulate("autoTrigger", true);
                         layarActionMedias.accumulate("autoTriggerRange", 20);
@@ -971,10 +1094,10 @@ public class LayarServlet extends HttpServlet {
                     poi.accumulate("anchor", "geo:" + latitude + "," + longitude + "");
 
                     JSONObject text = new JSONObject();
-                    text.accumulate("title", StringEscapeUtils.escapeJavaScript("Dialog"));
+                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(dialogTitle));
 
 
-                    text.accumulate("footnote", "Powered by Playar");
+                    text.accumulate("footnote", footnote);
                     poi.accumulate("text", text);
 
                     JSONArray actions = new JSONArray();
@@ -984,7 +1107,7 @@ public class LayarServlet extends HttpServlet {
                     layarActionMedias.accumulate("contentType", "text/html");
                     layarActionMedias.accumulate("method", "GET");
                     layarActionMedias.accumulate("uri", Constants.URL_SERVER + "/imajiematch/start2.jsp");
-                    layarActionMedias.accumulate("label", "Message");
+                    layarActionMedias.accumulate("label", messageLabel);
                     layarActionMedias.accumulate("activityType", 36);
                     layarActionMedias.accumulate("autoTrigger", true);
                     layarActionMedias.accumulate("autoTriggerRange", 20);
@@ -1095,7 +1218,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject text = new JSONObject();
                                     text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
                                     text.accumulate("description", description);
-                                    text.accumulate("footnote", "Powered by Playar");
+                                    text.accumulate("footnote", footnote);
                                     poi.accumulate("text", text);
 
 
@@ -1133,7 +1256,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONArray actions = new JSONArray();
                                     JSONObject action1 = new JSONObject();
                                     action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                                    action1.accumulate("label", title + " Details");
+                                    action1.accumulate("label", title + detailsLabel);
 
                                     // contenType
                                     //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
@@ -1283,7 +1406,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONObject text = new JSONObject();
                                     text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
                                     text.accumulate("description", description);
-                                    text.accumulate("footnote", "Powered by Playar");
+                                    text.accumulate("footnote", footnote);
                                     poi.accumulate("text", text);
 
                                     poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
@@ -1320,7 +1443,7 @@ public class LayarServlet extends HttpServlet {
                                     JSONArray actions = new JSONArray();
                                     JSONObject action1 = new JSONObject();
                                     action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                                    action1.accumulate("label", title + " Details");
+                                    action1.accumulate("label", title + detailsLabel);
 
                                     // contenType
                                     //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
@@ -1408,8 +1531,8 @@ public class LayarServlet extends HttpServlet {
             layarAction1.accumulate("contentType", "text/html");
             layarAction1.accumulate("method", "GET");
             layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?showControlPanel=true");
-            layarAction1.accumulate("label", "Mission Control");
-            layarAction1.accumulate("activityType", 3);
+            layarAction1.accumulate("label", missionControlLabel);
+            layarAction1.accumulate("activityType", 32);
             layarActions.add(layarAction1);
 
             if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
@@ -1417,8 +1540,8 @@ public class LayarServlet extends HttpServlet {
                 layarAction1a.accumulate("contentType", "text/html");
                 layarAction1a.accumulate("method", "GET");
                 layarAction1a.accumulate("uri", Constants.URL_SERVER + "/imajiematch/getmatchs.jsp");
-                layarAction1a.accumulate("label", "Choose Mission");
-                layarAction1a.accumulate("activityType", 3);
+                layarAction1a.accumulate("label", chooseMissionLabel);
+                layarAction1a.accumulate("activityType", 33);
                 layarActions.add(layarAction1a);
             }
 
@@ -1431,7 +1554,7 @@ public class LayarServlet extends HttpServlet {
             layarAction1.accumulate("contentType", "text/html");
             layarAction1.accumulate("method", "GET");
             layarAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/imajieste/login.jsp");
-            layarAction1.accumulate("label", "Login");
+            layarAction1.accumulate("label", loginLabel);
             layarAction1.accumulate("activityType", 16);
             layarAction1.accumulate("autoTriggerRange", "10000");
             layarAction1.accumulate("autoTriggerOnly ", true);
@@ -1442,7 +1565,7 @@ public class LayarServlet extends HttpServlet {
             layarAction2.accumulate("contentType", "text/html");
             layarAction2.accumulate("method", "GET");
             layarAction2.accumulate("uri", "http://imajie.tv/index.php?option=com_comprofiler&task=registers");
-            layarAction2.accumulate("label", "Create an Account");
+            layarAction2.accumulate("label", createAccountLabel);
             layarAction2.accumulate("activityType", 1);
             layarAction2.accumulate("autoTriggerOnly ", false);
             layarAction2.accumulate("autoTrigger ", false);
@@ -1459,12 +1582,12 @@ public class LayarServlet extends HttpServlet {
 
             if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
 
-                layer.accumulate("errorString", "No mission available at this location. Adjust the Radar Range in the parameter menu below.");
+                layer.accumulate("errorString", errorString1);
 
 
             } else {
 
-                layer.accumulate("errorString", "Nothing available at this location. Adjust the Radar Range in the parameter menu or go to mission control for further details.");
+                layer.accumulate("errorString", errorString2);
 
 
 
@@ -1504,7 +1627,7 @@ public class LayarServlet extends HttpServlet {
         if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
 
 
-            layer.accumulate("showMessage", "Go to layer actions menu for setting up your game.");
+            layer.accumulate("showMessage", showMessage);
 
 
         } else {
@@ -1522,7 +1645,7 @@ public class LayarServlet extends HttpServlet {
             if (session.getAttribute("showDialog") != null) {
                 if (showControlPanel.contains("false") && !showDialogPlayed.equals(session.getAttribute("showDialog").toString())) {
 
-                    if (session.getAttribute("showDialog").toString() != "null" || session.getAttribute("showDialog").toString().length() > 5) {
+                    if (!"null".equals(session.getAttribute("showDialog").toString()) || session.getAttribute("showDialog").toString().length() > 5) {
 
                         JSONObject showDialog = new JSONObject();
 

@@ -22,4 +22,33 @@ package org.imajie.server.locales.fr;
  */
 public class locales {
     
+    //French locales
+    public static final String footnote = "Propuls&eacute;e par Playar";
+    public static final String missionLabel = "Voir Missions";
+    public static final String inventoryTitle = "Inventaire";
+    public static final String inventoryDescription = "Clique pour voir l'inventaire";
+    public static final String inventoryLabel = "Voir l'inventaire";
+    public static final String youseeTitle = "Tu vois";
+    public static final String youseeDescription = "Clique pour voir ce que tu vois";
+    public static final String youseeLabel = "Tu vois";
+    public static final String locationsTitle = "Endroits";
+    public static final String locationsDescription = "Clique pour voir les endroits";
+    public static final String getLocationsLabel = "Voir les endroits";
+    public static final String tasksTitle = "T&acirc;ches";
+    public static final String taskDescription = "Clique pour voir les t&acirc;ches";
+    public static final String getTaskLabel = "T&acirc;ches";
+    public static final String parametersTitle = "Param&egrave;tres";
+    public static final String parametersDescription = "Clique pour voir les param&egrave;tres";
+    public static final String getParametersLabel = "Param&egrave;tres";
+    public static final String messageLabel = "Message";
+    public static final String dialogTitle = "Dialogue";
+    public static final String detailsLabel = " D&eacute;tails";
+    public static final String missionControlLabel = "Contr&ocirc;le de mission";
+    public static final String chooseMissionLabel = "Choisir une mission";
+    public static final String loginLabel = "Connexion";
+    public static final String createAccountLabel = "Cr&eacute;er un compte";
+    public static final String errorString1 = "Aucune mission de disponible &agrave; cet endroit. Ajustez la port&eacute;e du radar dans le menu des param&egrave;tres ci-dessous.";
+    public static final String errorString2 = "Rien disponible &agrave; cet endroit. Ajustez la port&eacute;e du radar dans le menu param&egrave;tres ou aller au contr&ocirc;le de mission pour plus de d&eacute;tails.";
+    public static final String showMessage = "Aller au menu param&egrave;tres pour configurer votre jeu.";
+    
 }

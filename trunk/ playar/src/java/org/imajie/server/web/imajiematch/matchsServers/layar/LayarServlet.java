@@ -1354,6 +1354,7 @@ public class LayarServlet extends HttpServlet {
                                     String delimiter2 = "\\|\\|";
                                     String[] temp2 = hotspot.split(delimiter2);
                                     String media = "";
+                                    String buttonsArray = "";
 
 
                                     for (int ii = 0; ii < temp2.length; ii++) {
@@ -1378,9 +1379,15 @@ public class LayarServlet extends HttpServlet {
                                         if (ii == 6) {
                                             media = temp2[ii];
                                         }
+                                        if (ii == 6) {
+                                            buttonsArray = temp2[ii];
+                                        }
                                     }
 
 
+                                    
+                                    String[] buttonsray = buttonsArray.split("\\*\\*");
+                                    
 //                                x = cx + r * cos(a)
 //                                y = cy + r * sin(a)
 // float x = (float)(radius * Math.Cos(angleInDegrees * Math.PI / 180F)) + origin.X;
@@ -1441,9 +1448,14 @@ public class LayarServlet extends HttpServlet {
 
                                     // Actions
                                     JSONArray actions = new JSONArray();
-                                    JSONObject action1 = new JSONObject();
-                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/locations.jsp?zonePoint=" + title);
-                                    action1.accumulate("label", title + detailsLabel);
+                                    
+                           
+                                    for (int iiii = 0; iiii < buttonsray.length; iiii++) {
+                                        
+                                      
+                                        JSONObject action1 = new JSONObject();
+                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button"+(iiii + 1)+"=Button"+(iiii + 1));
+                                    action1.accumulate("label", buttonsray[iiii]);
 
                                     // contenType
                                     //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
@@ -1461,7 +1473,16 @@ public class LayarServlet extends HttpServlet {
                                     action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                                     actions.add(action1);
+                                        
+                                        
+                                    }
+                                    
+                                    
+                                    
 
+                                    
+                                    
+                                    
 
                                     poi.accumulate("actions", actions);
 

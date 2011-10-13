@@ -32,6 +32,7 @@ import org.imajie.server.web.imajiematch.matchsServers.platform.UI;
 import org.imajie.server.web.imajiematch.matchsServers.kahlua.vm.LuaClosure;
 import org.imajie.server.web.imajiematch.matchsServers.kahlua.vm.LuaTable;
 import org.imajie.server.web.imajiematch.matchsServers.openwig.ZonePoint;
+import org.imajie.server.web.imajiematch.matchsServers.openwig.Action;
 
 public class GameWindow implements UI {
 
@@ -56,6 +57,10 @@ public class GameWindow implements UI {
     public static String triviaInput;
     public static String dialog;
     public static String currentEvent = "";
+    
+    
+    private ArrayList<Action> actions = new ArrayList<Action>();
+    private ArrayList<String> buttons = new ArrayList<String>();
     /** List of zones.
      * Its source reads data from <code>Engine.instance.cartridge.zones</code>
      */
@@ -157,44 +162,46 @@ public class GameWindow implements UI {
 
                     }
 
-                    
+                    String youseeButtonsArray = "";
                     
                     // TODO SET the actions for each kind of item to be displayed in layar ( CALLBACK OF EACH ITEMS )
                       
                     
                     
-//                    
-//                    
-//                    
-//                    for (Object o : t.actions) {
-//				actions.add((Action)o);
-//			}
-//                    
-//                    
-//                    int nb = Math.max(0, actions.size() - buttons.size());
-//		 make sure we have enough buttons in panel
-//		for (int i = 0; i < nb; i++) {
-//			JButton jb = new JButton();
-//			addButton(jb);
-//			buttons.add(jb);
-//		}
-//		// update their labels/visibility according to actions
-//		for (int i = 0; i < actions.size(); i++) {
-//			Action a = actions.get(i);
-//			JButton b = buttons.get(i);
-//			b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
-//			String label;
-//			if (a.getActor() == table) {
-//				label = a.text;
-//			} else {
-//				label = a.getActor().name + ": " + a.text;
-//			}
-//			b.setText(label);
-//		}
-//		// hide the rest
-//		for (int i = actions.size(); i < buttons.size(); i++) {
-//			buttons.get(i).setVisible(false);
-//		}
+                    
+                    
+                    
+                    for (Object o : t.actions) {
+				actions.add((Action)o);
+			}
+                    
+                    
+                    int nb = Math.max(0, actions.size() - buttons.size());
+		 //make sure we have enough buttons in panel
+		for (int i = 0; i < nb; i++) {
+			String jb = new String();
+			//addButton(jb);
+			buttons.add(jb);
+		}
+		// update their labels/visibility according to actions
+		for (int i = 0; i < actions.size(); i++) {
+			Action a = actions.get(i);
+			String b = buttons.get(i);
+			//b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
+			String label;
+			if (a.getActor() == t.table) {
+				label = a.text;
+                                youseeButtonsArray = youseeButtonsArray + label + "**";
+			} else {
+				label = a.getActor().name + ": " + a.text;
+                                youseeButtonsArray = youseeButtonsArray + label + "**";
+			}
+			//b.setText(label);
+		}
+		// hide the rest
+		for (int i = actions.size(); i < buttons.size(); i++) {
+			//buttons.get(i).setVisible(false);
+		}
 //                    
 //                    
 //                    t.actions.
@@ -250,8 +257,8 @@ public class GameWindow implements UI {
 //
 //                        friendlyDistance = Navigator.getDistanceAndDirection(zp);
 //                    }
-                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance + "||" + youseemedia;
-                    list = list + "|!|" + content;
+                    String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance + "||" + youseemedia + "||" + youseeButtonsArray;
+                    list = list + "|!|" + content ;
                 }
 
             }

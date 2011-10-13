@@ -241,11 +241,11 @@ public class ImajieMatchProtocol {
 
                 String resultRequest = theInput.replace("PLAYER_CALLBACK", "");
 
-                if (resultRequest.equals("OK")) {
+                if (resultRequest.contains("Button")) {
 
 
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
-                    Engine.ui.callAndClose("OK");
+                    Engine.ui.callAndClose(resultRequest);
 
                 } else if (resultRequest.equals("CANCEL")) {
                     Engine.ui.cancel();

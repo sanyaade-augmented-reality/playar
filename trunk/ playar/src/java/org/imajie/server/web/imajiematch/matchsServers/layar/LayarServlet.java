@@ -97,7 +97,7 @@ public class LayarServlet extends HttpServlet {
         String errorString2;
         String showMessage;
 
-        if ("fr".equals(locale)) {
+        if ("fr".equals(locale) || "fr-ca".equals(locale) || "fr-br".equals(locale) || "fr-ca".equals(locale)) {
             footnote = org.imajie.server.locales.fr.locales.footnote;
             missionLabel = org.imajie.server.locales.fr.locales.missionLabel;
             inventoryTitle = org.imajie.server.locales.fr.locales.inventoryTitle;

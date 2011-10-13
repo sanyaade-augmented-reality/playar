@@ -442,10 +442,10 @@ public class GameWindow implements UI {
     public void setStatusText(String text) {
     }
 
-    public void showDialog(String[] texts, Media[] media, String btn1, String btn2, LuaClosure callback) {
-        this.callback = callback;
-        this.texts = texts;
-        this.media = media;
+    public void showDialog(String[] dialogtexts, Media[] dialogmedia, String btn1, String btn2, LuaClosure luacallback) {
+        callback = luacallback;
+        texts = dialogtexts;
+        media = dialogmedia;
         Button1 = (btn1 == null ? "OK" : btn1);
         Button2 = (btn2);
         //button2.setVisible(btn2 != null);
@@ -477,8 +477,9 @@ public class GameWindow implements UI {
     }
 
     public void callAndClose(String what) {
-        System.out.println("Call and Close method what value : "+what+" --- Callback Value : "+ callback.toString());
+        System.out.println("Call and Close method what value : "+what);
         if (callback != null) {
+            System.out.println("Callback Value : "+ callback.toString());
             Engine.invokeCallback(callback, what);
         }
         //parent.close();

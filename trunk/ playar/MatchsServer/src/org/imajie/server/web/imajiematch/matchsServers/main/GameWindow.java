@@ -157,6 +157,94 @@ public class GameWindow implements UI {
 
                     }
 
+                    
+                    
+                    // TODO SET the actions for each kind of item to be displayed in layar ( CALLBACK OF EACH ITEMS )
+                      
+                    
+                    
+//                    
+//                    
+//                    
+//                    for (Object o : t.actions) {
+//				actions.add((Action)o);
+//			}
+//                    
+//                    
+//                    int nb = Math.max(0, actions.size() - buttons.size());
+//		 make sure we have enough buttons in panel
+//		for (int i = 0; i < nb; i++) {
+//			JButton jb = new JButton();
+//			addButton(jb);
+//			buttons.add(jb);
+//		}
+//		// update their labels/visibility according to actions
+//		for (int i = 0; i < actions.size(); i++) {
+//			Action a = actions.get(i);
+//			JButton b = buttons.get(i);
+//			b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
+//			String label;
+//			if (a.getActor() == table) {
+//				label = a.text;
+//			} else {
+//				label = a.getActor().name + ": " + a.text;
+//			}
+//			b.setText(label);
+//		}
+//		// hide the rest
+//		for (int i = actions.size(); i < buttons.size(); i++) {
+//			buttons.get(i).setVisible(false);
+//		}
+//                    
+//                    
+//                    t.actions.
+//                            
+//                            
+                          
+//	public void buttonClicked (JButton button) {
+//		int id = buttons.indexOf(button);
+//		if (id < 0) return;
+//		Action a = actions.get(id);
+//		if (a.getActor() == table) {
+//			if (a.hasParameter()) {
+//				picker.showPicker(a);
+//			} else {
+//				Engine.callEvent(table, "On"+a.getName(), null);
+//			}
+//		}
+//		else Engine.callEvent(a.getActor(), "On"+a.getName(), table);
+//	}
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
 //                    if (t.position.latitude != 0 || t.position.longitude != 0) {
 //                        ZonePoint zp = new ZonePoint(t.position.latitude, t.position.longitude, 0);
 //
@@ -389,6 +477,7 @@ public class GameWindow implements UI {
     }
 
     public void callAndClose(String what) {
+        System.out.println("Call and Close method what value : "+what+" --- Callback Value : "+ callback.toString());
         if (callback != null) {
             Engine.invokeCallback(callback, what);
         }

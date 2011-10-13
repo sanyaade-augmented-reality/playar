@@ -531,7 +531,7 @@ public class GameWindow implements UI {
                     dialog = dialog + "<a href='#page" + (i + 1) + "' data-transition='slide' data-role='button'>" + Button1 + "</a>";
                 } else {
 
-                    dialog = dialog + "<a href='./dialogCallback.jsp?button1=" + Button1 + "' data-role='button' target='_top'>" + Button1 + "</a>";
+                    dialog = dialog + "<a href='./dialogCallback.jsp?button1=Button1' data-role='button' target='_top'>" + Button1 + "</a>";
 
 
                 }
@@ -540,7 +540,7 @@ public class GameWindow implements UI {
                 if (Button2 != null) {
 
                     if (!Button2.equals("null")) {
-                        dialog = dialog + "<a href='#/callBack.jsp?button2=" + Button2 + "' data-role='button' target='_top'>" + Button2 + "</a>";
+                        dialog = dialog + "<a href='#/callBack.jsp?button2=Button2' data-role='button' target='_top'>" + Button2 + "</a>";
 
 
                     }
@@ -579,8 +579,9 @@ public class GameWindow implements UI {
             
             
             dialogTexts = texts[0];
+            if (media[0] != null) {
             dialogMedia = media[0].name + "." + media[0].type;
-            
+            }
             
         }
 

@@ -53,25 +53,27 @@ public class TargetPickerWindow  {
 
 	/** List component with the targets. */
 	private WigList list = new WigList() {
-//		@Override
-//		protected void onClick (int id, Object item) {
-//			TargetItem ti = (TargetItem)item;
-//			Engine.callEvent(action.getActor(), "On" + action.text, ti.table);
-//			TargetPickerWindow.this.setVisible(false);
-//		}
+		
+            //@Override
+            
+		protected void onClick (int id, Object item) {
+			TargetItem ti = (TargetItem)item;
+			Engine.callEvent(action.getActor(), "On" + action.text, ti.table);
+			//TargetPickerWindow.this.setVisible(false);
+		}
 	};
 
-//	public TargetPickerWindow (JFrame parent) {
-//		super(parent);
-//		//getContentPane().add(list.getScrollable());
-//		setLocationRelativeTo(parent);
-//		setModal(false);
-//		setDefaultCloseOperation(HIDE_ON_CLOSE);
-//		setTitle("Pick a target");
-//		pack();
-//
-//		//list.setModel(model);
-//	}
+	public TargetPickerWindow () {
+		//super(parent);
+		//getContentPane().add(list.getScrollable());
+		//setLocationRelativeTo(parent);
+		//setModal(false);
+		//setDefaultCloseOperation(HIDE_ON_CLOSE);
+		//setTitle("Pick a target");
+		//pack();
+
+		//list.setModel(model);
+	}
 
 	/** Shows the picker window and updates it with list of available
 	 * targets for the selected action.
@@ -85,12 +87,14 @@ public class TargetPickerWindow  {
 		while ((key = t.next(key)) != null) {
 			Thing th = (Thing)t.rawget(key);
 			if (th.isVisible() && action.isTarget(th)) model.add(new TargetItem(th));
+                        System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
 		}
 		t = Engine.instance.player.inventory;
 		key = null;
 		while ((key = t.next(key)) != null) {
 			Thing th = (Thing)t.rawget(key);
 			if (th.isVisible() && action.isTarget(th)) model.add(new TargetItem(th));
+                        System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
 		}
 		//setVisible(true);
 	}

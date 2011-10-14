@@ -112,9 +112,11 @@ public class ImajieMatchProtocol {
 
                 result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";
 
+                //
+                
                 theOutput = result + "|!!|PLAYER_STATE";
 
-                theOutput = result;
+                //theOutput = result;
 
                 state = COMMAND;
             } //***** Return input From Player  *****
@@ -192,6 +194,8 @@ public class ImajieMatchProtocol {
                 Engine.instance.alt = alt;
                 Engine.instance.accuracy = accuracy;
                 Engine.instance.player.refreshLocation();
+                Engine.ui.refreshPlayer();
+                Engine.ui.refresh();
 
 
 

@@ -9,6 +9,7 @@ import org.imajie.server.web.imajiematch.matchsServers.openwig.EventTable;
 import org.imajie.server.web.imajiematch.matchsServers.openwig.Thing;
 import org.imajie.server.web.imajiematch.matchsServers.openwig.Zone;
 import java.util.ArrayList;
+import org.imajie.server.web.imajiematch.matchsServers.openwig.Engine;
 //import javax.swing.JButton;
 
 
@@ -25,7 +26,7 @@ public class EventTableDetails extends DetailPane  {
 	/** list of currently active Actions on this EventTable */
 	private ArrayList<Action> actions = new ArrayList<Action>();
 	/** pool of JButtons to be reused for Actions */
-	//private ArrayList<JButton> buttons = new ArrayList<JButton>();
+	private ArrayList<String> buttons = new ArrayList<String>();
 
 	ZonePointCompass navpoint = new ZonePointCompass();
 
@@ -35,6 +36,7 @@ public class EventTableDetails extends DetailPane  {
 	public EventTableDetails (GameWindow parent) {
 		this.parent = parent;
 		//picker = new TargetPickerWindow(parent);
+                picker = new TargetPickerWindow();
 	}
 
 	/** Ensures that displayed buttons correspond to available actions.
@@ -44,30 +46,33 @@ public class EventTableDetails extends DetailPane  {
 	 * rest, if any.
 	 */
 	private void updateButtons () {
-		//int nb = Math.max(0, actions.size() - buttons.size());
-		// make sure we have enough buttons in panel
-//		for (int i = 0; i < nb; i++) {
-//			JButton jb = new JButton();
-//			addButton(jb);
-//			buttons.add(jb);
-//		}
-//		// update their labels/visibility according to actions
-//		for (int i = 0; i < actions.size(); i++) {
-//			Action a = actions.get(i);
-//			JButton b = buttons.get(i);
-//			b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
-//			String label;
-//			if (a.getActor() == table) {
-//				label = a.text;
-//			} else {
-//				label = a.getActor().name + ": " + a.text;
-//			}
-//			b.setText(label);
-//		}
-//		// hide the rest
-//		for (int i = actions.size(); i < buttons.size(); i++) {
-//			buttons.get(i).setVisible(false);
-//		}
+		int nb = Math.max(0, actions.size() - buttons.size());
+		 //make sure we have enough buttons in panel
+		for (int i = 0; i < nb; i++) {
+			String jb = new String();
+			//addButton(jb);
+			buttons.add(jb);
+                        System.out.println("Button JB: " + jb);
+		}
+		// update their labels/visibility according to actions
+		for (int i = 0; i < actions.size(); i++) {
+			Action a = actions.get(i);
+			String b = buttons.get(i);
+			//b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
+			String label;
+			if (a.getActor() == table) {
+				label = a.text;
+			} else {
+				label = a.getActor().name + ": " + a.text;
+			}
+			//b.setText(label);
+                        System.out.println("Label: " + label);
+		}
+		// hide the rest
+		for (int i = actions.size(); i < buttons.size(); i++) {
+		System.out.println("Button added : " + buttons.get(i).toString());	
+                   // buttons.get(i).setVisible(false);
+		}
 	}
 
 	/** Updates the display with new information that might have appeared
@@ -115,29 +120,33 @@ public class EventTableDetails extends DetailPane  {
 		refresh();
 	}
 
-//	@Override
-//	public void buttonClicked (JButton button) {
-//		int id = buttons.indexOf(button);
-//		if (id < 0) return;
-//		Action a = actions.get(id);
-//		if (a.getActor() == table) {
-//			if (a.hasParameter()) {
-//				picker.showPicker(a);
-//			} else {
-//				Engine.callEvent(table, "On"+a.getName(), null);
-//			}
-//		}
-//		else Engine.callEvent(a.getActor(), "On"+a.getName(), table);
-//	}
+	
+	public void buttonClicked (String button) {
+		int id = buttons.indexOf(button);
+		if (id < 0) return;
+		Action a = actions.get(id);
+		if (a.getActor() == table) {
+			if (a.hasParameter()) {
+				picker.showPicker(a);
+			} else {
+				Engine.callEvent(table, "On"+a.getName(), null);
+			}
+		}
+		else Engine.callEvent(a.getActor(), "On"+a.getName(), table);
+	}
 
-//	@Override
-//	public void updateNavigation () {
-//		super.updateNavigation();
-//		if (table instanceof Zone) {
-//			Zone z = (Zone)table;
-//			if (z.contain == Zone.INSIDE) distance.setText("inside");
-//		}
-//	}
+	@Override
+	public void updateNavigation () {
+		super.updateNavigation();
+		if (table instanceof Zone) {
+			Zone z = (Zone)table;
+			if (z.contain == Zone.INSIDE) {
+                            
+                            
+                            //distance.setText("inside");
+                        }
+		}
+	}
 
 	/** Moves simulated GPS to approximately the right place.
 	 * Zones report distance to nearest point on their edge. If simulator

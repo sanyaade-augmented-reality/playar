@@ -34,7 +34,8 @@ public class EventTableListItem implements ListItemAdapter {
 	/** Default icon for Zone */
 	//private static final ImageIcon ZONE = new ImageIcon(EventTableListItem.class.getResource("/icons/locations.png"));
 
-	protected EventTable table;
+	//protected EventTable table;
+        public EventTable table;
 	private ZonePointIcon icon = new ZonePointIcon();
 
 	public EventTable getTable () {

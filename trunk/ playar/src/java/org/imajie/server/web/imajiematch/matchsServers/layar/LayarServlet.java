@@ -1379,7 +1379,7 @@ public class LayarServlet extends HttpServlet {
                                         if (ii == 6) {
                                             media = temp2[ii];
                                         }
-                                        if (ii == 6) {
+                                        if (ii == 7) {
                                             buttonsArray = temp2[ii];
                                         }
                                     }
@@ -1454,7 +1454,7 @@ public class LayarServlet extends HttpServlet {
                                         
                                       
                                         JSONObject action1 = new JSONObject();
-                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button"+(iiii + 1)+"=Button"+(iiii + 1));
+                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?thingButton"+(iiii + 1)+"="+title+".On"+buttonsray[iiii]);
                                     action1.accumulate("label", buttonsray[iiii]);
 
                                     // contenType

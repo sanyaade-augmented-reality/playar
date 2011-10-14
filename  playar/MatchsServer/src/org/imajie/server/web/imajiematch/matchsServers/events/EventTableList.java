@@ -51,13 +51,13 @@ public class EventTableList extends WigList {
                 
                 //session.setAttribute("eventTableList"+source.toString(), i);
                 //System.out.println("eventTableList setted to..."+source.toString()+"....Table:...."+i+"\n");
-		//model.clear();
-		//model.addAll(i);
+		model.clear();
+		model.addAll(i);
 	}
 
 	@Override
 	public void updateNavigation () {
-		//model.refresh();
+		model.refresh();
 	}
 
 	public EventTableList (GameWindow parent, Source source) {
@@ -93,9 +93,9 @@ public class EventTableList extends WigList {
 	}
 
 	
-	
-//		EventTable table = ((EventTableListItem)item).getTable();
-//		parent.showDetails(table);
-//		if (table.hasEvent("OnClick")) Engine.callEvent(table, "OnClick", null);
-//	
+	protected void onClick (int id, Object item) {
+		EventTable table = ((EventTableListItem)item).getTable();
+		parent.showDetails(table);
+		if (table.hasEvent("OnClick")) Engine.callEvent(table, "OnClick", null);
+	}
 }

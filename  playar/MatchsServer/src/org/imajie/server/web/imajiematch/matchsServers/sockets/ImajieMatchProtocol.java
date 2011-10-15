@@ -256,12 +256,24 @@ public class ImajieMatchProtocol {
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
 
 
-                } else {
+                } else if (resultRequest.contains("thingButton")) {
+                    // TODO IMPLEMENTS THINGS BUTTON CALLBACK FOR LAYAR POIS
+                    
+                   Engine.ui.thingsButton(resultRequest); 
+                    
+                    theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
+
+
+                }
+                
+                
+                else {
 
                     theOutput = "PLAYER_CALLBACK_STATE||";
 
                 }
-
+                Engine.playerRefresh();
+                Engine.refreshUI();
 
                 state = COMMAND;
 

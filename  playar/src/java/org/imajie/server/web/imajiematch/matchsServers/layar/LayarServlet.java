@@ -69,7 +69,7 @@ public class LayarServlet extends HttpServlet {
         //
         //     Setting the locales
         //*************************************
-        String footnote ;
+        String footnote;
         String missionLabel;
         String inventoryTitle;
         String inventoryDescription;
@@ -125,9 +125,9 @@ public class LayarServlet extends HttpServlet {
             errorString1 = org.imajie.server.locales.fr.locales.errorString1;
             errorString2 = org.imajie.server.locales.fr.locales.errorString2;
             showMessage = org.imajie.server.locales.fr.locales.showMessage;
-            
+
         } else if ("en".equals(locale)) {
-            
+
             footnote = org.imajie.server.locales.en.locales.footnote;
             missionLabel = org.imajie.server.locales.en.locales.missionLabel;
             inventoryTitle = org.imajie.server.locales.en.locales.inventoryTitle;
@@ -158,7 +158,7 @@ public class LayarServlet extends HttpServlet {
 
 
         } else {
-            
+
             // Default language (EN)
             footnote = org.imajie.server.locales.en.locales.footnote;
             missionLabel = org.imajie.server.locales.en.locales.missionLabel;
@@ -586,8 +586,97 @@ public class LayarServlet extends HttpServlet {
                 inventoryPoi.accumulate("anchor", "geo:" + inventoryLatitude + "," + inventoryLongitude + "");
 
                 JSONObject inventoryText = new JSONObject();
-                inventoryText.accumulate("title", inventoryTitle);
-                inventoryText.accumulate("description", inventoryDescription);
+                String InventoryCount = "0";
+                if (session.getAttribute("inventoryList") != null) {
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = session.getAttribute("inventoryList").toString().split(delimiter);
+
+                    if (temp.length == 0) {
+                        InventoryCount = "0";
+                    } else {
+                        InventoryCount = InventoryCount + (temp.length - 1);
+                    }
+
+                } else {
+
+                    InventoryCount = "0";
+
+                }
+
+                inventoryText.accumulate("title", inventoryTitle + " (" + InventoryCount + ")");
+
+                String inventoryList = "";
+                if (session.getAttribute("inventoryList") != null) {
+
+                    String list = (String) session.getAttribute("inventoryList");
+                    count = list.length();
+                    if (count > 0) {
+
+
+                        String delimiter = "\\|!\\|";
+                        String[] temp = list.split(delimiter);
+                        for (int i = 0; i < temp.length; i++) {
+                            if (i == 0) {
+                            } else {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String media = "";
+
+                                String hotspot = temp[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        media = temp2[ii];
+                                    }
+
+                                }
+
+
+                                inventoryList = inventoryList + title + " :" + description + "<br>";
+                            }
+
+                        }
+
+                        if ("".equals(inventoryList)) {
+
+                            inventoryList = "Nothing in your inventory";
+
+
+                        }
+
+
+                    }
+                } else {
+
+                    inventoryList = "Nothing in your inventory";
+
+                }
+
+                inventoryText.accumulate("description", inventoryList);
                 inventoryText.accumulate("footnote", footnote);
                 inventoryPoi.accumulate("text", inventoryText);
                 inventoryPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/backpack.png");
@@ -619,6 +708,22 @@ public class LayarServlet extends HttpServlet {
                 inventoryAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 inventoryActions.add(inventoryAction1);
+                
+                JSONObject inventoryAction2 = new JSONObject();
+                inventoryAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
+                inventoryAction2.accumulate("label", missionLabel);
+                inventoryAction2.accumulate("contentType", "application/vnd.layar.async");
+                inventoryAction2.accumulate("method", "GET");
+                inventoryAction2.accumulate("activityType", 6);
+
+                inventoryAction2.accumulate("params", null);
+                inventoryAction2.accumulate("closeBiw", true);
+                inventoryAction2.accumulate("showActivity", false);
+                inventoryAction2.accumulate("activityMessage", "");
+                inventoryAction2.accumulate("autoTriggerOnly ", false);
+                inventoryAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                inventoryActions.add(inventoryAction2);
 
                 inventoryPoi.accumulate("actions", inventoryActions);
 
@@ -653,9 +758,99 @@ public class LayarServlet extends HttpServlet {
                 youseePoi.accumulate("id", "yousee");
                 youseePoi.accumulate("anchor", "geo:" + youseeLatitude + "," + youseeLongitude + "");
 
-                JSONObject youseeText = new JSONObject();
-                youseeText.accumulate("title", youseeTitle);
-                youseeText.accumulate("description", youseeDescription);
+                JSONObject youseeText = new JSONObject();    
+                
+                String YouseeCount = "0";
+                if (session.getAttribute("youseeList") != null) {
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = session.getAttribute("youseeList").toString().split(delimiter);
+
+                    if (temp.length == 0) {
+                        YouseeCount = "0";
+                    } else {
+                        YouseeCount = YouseeCount + (temp.length - 1);
+                    }
+
+                } else {
+
+                    YouseeCount = "0";
+
+                }
+
+                youseeText.accumulate("title", youseeTitle + " (" + YouseeCount + ")");
+
+                String youseeList = "";
+                if (session.getAttribute("youseeList") != null) {
+
+                    String list = (String) session.getAttribute("youseeList");
+                    count = list.length();
+                    if (count > 0) {
+
+
+                        String delimiter = "\\|!\\|";
+                        String[] temp = list.split(delimiter);
+                        for (int i = 0; i < temp.length; i++) {
+                            if (i == 0) {
+                            } else {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String media = "";
+
+                                String hotspot = temp[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        media = temp2[ii];
+                                    }
+
+                                }
+
+
+                                youseeList = youseeList + title + " :" + description + "<br>";
+                            }
+
+                        }
+
+                        if ("".equals(youseeList)) {
+
+                            youseeList = "Nothing to see";
+
+
+                        }
+
+
+                    }
+                } else {
+
+                    youseeList = "Nothing to see";
+
+                }
+
+                youseeText.accumulate("description", youseeList);
                 youseeText.accumulate("footnote", footnote);
                 youseePoi.accumulate("text", youseeText);
                 youseePoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/binoculars.png");
@@ -688,6 +883,22 @@ public class LayarServlet extends HttpServlet {
 
                 youseeActions.add(youseeAction1);
 
+                JSONObject youseeAction2 = new JSONObject();
+                youseeAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
+                youseeAction2.accumulate("label", missionLabel);
+                youseeAction2.accumulate("contentType", "application/vnd.layar.async");
+                youseeAction2.accumulate("method", "GET");
+                youseeAction2.accumulate("activityType", 6);
+
+                youseeAction2.accumulate("params", null);
+                youseeAction2.accumulate("closeBiw", true);
+                youseeAction2.accumulate("showActivity", false);
+                youseeAction2.accumulate("activityMessage", "");
+                youseeAction2.accumulate("autoTriggerOnly ", false);
+                youseeAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                youseeActions.add(youseeAction2);
+                
                 youseePoi.accumulate("actions", youseeActions);
 
                 // Transform values
@@ -721,8 +932,101 @@ public class LayarServlet extends HttpServlet {
                 locationsPoi.accumulate("anchor", "geo:" + locationsLatitude + "," + locationsLongitude + "");
 
                 JSONObject locationsText = new JSONObject();
-                locationsText.accumulate("title", locationsTitle);
-                locationsText.accumulate("description", locationsDescription);
+    
+                
+                String LocationsCount = "0";
+                if (session.getAttribute("locationsList") != null) {
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = session.getAttribute("locationsList").toString().split(delimiter);
+
+                    if (temp.length == 0) {
+                        LocationsCount = "0";
+                    } else {
+                        LocationsCount = LocationsCount + (temp.length - 1);
+                    }
+
+                } else {
+
+                    LocationsCount = "0";
+
+                }
+
+               
+                locationsText.accumulate("title", locationsTitle+ " (" + LocationsCount + ")");
+                
+                String locationsList = "";
+                if (session.getAttribute("locationsList") != null) {
+
+                    String list = (String) session.getAttribute("locationsList");
+                    count = list.length();
+                    if (count > 0) {
+
+
+                        String delimiter = "\\|!\\|";
+                        String[] temp = list.split(delimiter);
+                        for (int i = 0; i < temp.length; i++) {
+                            if (i == 0) {
+                            } else {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String media = "";
+
+                                String hotspot = temp[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        media = temp2[ii];
+                                    }
+
+                                }
+
+
+                                locationsList = locationsList + title + " :" + description + "<br>";
+                            }
+
+                        }
+
+                        if ("".equals(locationsList)) {
+
+                            locationsList = "No place to go";
+
+
+                        }
+
+
+                    }
+                } else {
+
+                    locationsList = "No place to go";
+
+                }
+
+                locationsText.accumulate("description", locationsList);
+    
                 locationsText.accumulate("footnote", footnote);
                 locationsPoi.accumulate("text", locationsText);
                 locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
@@ -755,6 +1059,22 @@ public class LayarServlet extends HttpServlet {
 
                 locationsActions.add(locationsAction1);
 
+                JSONObject locationsAction2 = new JSONObject();
+                locationsAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
+                locationsAction2.accumulate("label", missionLabel);
+                locationsAction2.accumulate("contentType", "application/vnd.layar.async");
+                locationsAction2.accumulate("method", "GET");
+                locationsAction2.accumulate("activityType", 6);
+
+                locationsAction2.accumulate("params", null);
+                locationsAction2.accumulate("closeBiw", true);
+                locationsAction2.accumulate("showActivity", false);
+                locationsAction2.accumulate("activityMessage", "");
+                locationsAction2.accumulate("autoTriggerOnly ", false);
+                locationsAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                locationsActions.add(locationsAction2);
+                
                 locationsPoi.accumulate("actions", locationsActions);
 
                 // Transform values
@@ -788,8 +1108,110 @@ public class LayarServlet extends HttpServlet {
 
 
                 JSONObject tasksText = new JSONObject();
-                tasksText.accumulate("title", tasksTitle);
-                tasksText.accumulate("description", taskDescription);
+                
+                
+                
+                
+               
+                
+                
+                
+                
+                
+                String TasksCount = "0";
+                if (session.getAttribute("tasksList") != null) {
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = session.getAttribute("tasksList").toString().split(delimiter);
+
+                    if (temp.length == 0) {
+                        TasksCount = "0";
+                    } else {
+                        TasksCount = TasksCount + (temp.length - 1);
+                    }
+
+                } else {
+
+                    TasksCount = "0";
+
+                }
+
+                tasksText.accumulate("title", tasksTitle+ " (" + TasksCount + ")");
+             
+                
+                String tasksList = "";
+                if (session.getAttribute("tasksList") != null) {
+
+                    String list = (String) session.getAttribute("tasksList");
+                    count = list.length();
+                    if (count > 0) {
+
+
+                        String delimiter = "\\|!\\|";
+                        String[] temp = list.split(delimiter);
+                        for (int i = 0; i < temp.length; i++) {
+                            if (i == 0) {
+                            } else {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String media = "";
+
+                                String hotspot = temp[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        media = temp2[ii];
+                                    }
+
+                                }
+
+
+                                tasksList = tasksList + title + " :" + description + "<br>";
+                            }
+
+                        }
+
+                        if ("".equals(tasksList)) {
+
+                            tasksList = "Nothing to do";
+
+
+                        }
+
+
+                    }
+                } else {
+
+                    tasksList = "Nothing to do";
+
+                }
+
+             
+                
+                tasksText.accumulate("description", tasksList);
                 tasksText.accumulate("footnote", footnote);
                 tasksPoi.accumulate("text", tasksText);
                 tasksPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/tasks_folder.png");
@@ -822,6 +1244,22 @@ public class LayarServlet extends HttpServlet {
 
                 tasksActions.add(tasksAction1);
 
+                JSONObject tasksAction2 = new JSONObject();
+                tasksAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
+                tasksAction2.accumulate("label", missionLabel);
+                tasksAction2.accumulate("contentType", "application/vnd.layar.async");
+                tasksAction2.accumulate("method", "GET");
+                tasksAction2.accumulate("activityType", 6);
+
+                tasksAction2.accumulate("params", null);
+                tasksAction2.accumulate("closeBiw", true);
+                tasksAction2.accumulate("showActivity", false);
+                tasksAction2.accumulate("activityMessage", "");
+                tasksAction2.accumulate("autoTriggerOnly ", false);
+                tasksAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                tasksActions.add(tasksAction2);
+                
                 tasksPoi.accumulate("actions", tasksActions);
 
                 // Transform values
@@ -888,6 +1326,22 @@ public class LayarServlet extends HttpServlet {
 
                 parametersActions.add(parametersAction1);
 
+                JSONObject parametersAction2 = new JSONObject();
+                parametersAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
+                parametersAction2.accumulate("label", missionLabel);
+                parametersAction2.accumulate("contentType", "application/vnd.layar.async");
+                parametersAction2.accumulate("method", "GET");
+                parametersAction2.accumulate("activityType", 6);
+
+                parametersAction2.accumulate("params", null);
+                parametersAction2.accumulate("closeBiw", true);
+                parametersAction2.accumulate("showActivity", false);
+                parametersAction2.accumulate("activityMessage", "");
+                parametersAction2.accumulate("autoTriggerOnly ", false);
+                parametersAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                parametersActions.add(parametersAction2);
+                
                 parametersPoi.accumulate("actions", parametersActions);
 
                 // Transform values
@@ -1385,9 +1839,9 @@ public class LayarServlet extends HttpServlet {
                                     }
 
 
-                                    
+
                                     String[] buttonsray = buttonsArray.split("\\*\\*");
-                                    
+
 //                                x = cx + r * cos(a)
 //                                y = cy + r * sin(a)
 // float x = (float)(radius * Math.Cos(angleInDegrees * Math.PI / 180F)) + origin.X;
@@ -1448,41 +1902,41 @@ public class LayarServlet extends HttpServlet {
 
                                     // Actions
                                     JSONArray actions = new JSONArray();
-                                    
-                           
+
+
                                     for (int iiii = 0; iiii < buttonsray.length; iiii++) {
-                                        
-                                      
+
+
                                         JSONObject action1 = new JSONObject();
-                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?thingButton"+(iiii + 1)+"="+title+".On"+buttonsray[iiii]);
-                                    action1.accumulate("label", buttonsray[iiii]);
+                                        action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?thingButton=" + title + ".On" + buttonsray[iiii]);
+                                        action1.accumulate("label", buttonsray[iiii]);
 
-                                    // contenType
-                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
-                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
-                                    action1.accumulate("contentType", "text/html");
-                                    action1.accumulate("method", "GET");
-                                    action1.accumulate("activityType", 6);
+                                        // contenType
+                                        //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                        //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                        action1.accumulate("contentType", "text/html");
+                                        action1.accumulate("method", "GET");
+                                        action1.accumulate("activityType", 6);
 
-                                    action1.accumulate("params", null);
-                                    action1.accumulate("closeBiw", true);
-                                    action1.accumulate("showActivity", false);
-                                    action1.accumulate("activityMessage", "");
-                                    //action1.accumulate("autoTriggerRange", "10");
-                                    action1.accumulate("autoTriggerOnly ", false);
-                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+                                        action1.accumulate("params", null);
+                                        action1.accumulate("closeBiw", true);
+                                        action1.accumulate("showActivity", false);
+                                        action1.accumulate("activityMessage", "");
+                                        //action1.accumulate("autoTriggerRange", "10");
+                                        action1.accumulate("autoTriggerOnly ", false);
+                                        action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
-                                    actions.add(action1);
-                                        
-                                        
+                                        actions.add(action1);
+
+
                                     }
-                                    
-                                    
-                                    
 
-                                    
-                                    
-                                    
+
+
+
+
+
+
 
                                     poi.accumulate("actions", actions);
 

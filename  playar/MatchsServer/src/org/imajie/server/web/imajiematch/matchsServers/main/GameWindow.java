@@ -383,7 +383,7 @@ public class GameWindow implements UI {
 
                 if (t.name.toString() != null) {
                     
-                    if (t.name.toString()  == temp2[0]) {
+                    if (t.toString()  == temp2[0]) {
                         
                         Vector action = t.actions;
                 int actionsCount = 0;
@@ -398,7 +398,7 @@ public class GameWindow implements UI {
 //                            System.out.println("Event Name :" + a.getName());
 //				Engine.callEvent(t, "On"+a.getName(), null);
 //			}
-                    } else if (a.getName() == temp2[1]){
+                    } else if (a.getName() == temp2[1].replace("On", "")){
 
 
                         Engine.callEvent(a.getActor(), "On" + a.getName(), t);

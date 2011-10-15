@@ -57,7 +57,6 @@ public class GameWindow implements UI {
     public static String triviaInput;
     public static String dialog;
     public static String currentEvent = "";
-    
     public static TargetPickerWindow picker;
     private ArrayList<Action> actions = new ArrayList<Action>();
     private ArrayList<String> buttons = new ArrayList<String>();
@@ -163,155 +162,37 @@ public class GameWindow implements UI {
                     }
 
                     String youseeButtonsArray = "";
-                    
-                    // TODO SET the actions for each kind of item to be displayed in layar ( CALLBACK OF EACH ITEMS )
-                    
-                    
-                     Vector action = t.actions;
-            int actionsCount = 0;
-            String label;
-            for (Object o : action) {
-                Action a = (Action) o;
-               System.out.println("Actor visible actions: "+ a.getActor().visibleActions());
-               
-               
-         
-               
-               
-               
-                //picker.showPicker(a);
-                if (a.getActor()== t && a.isVisible()) {
+
+
+                    Vector action = t.actions;
+                    int actionsCount = 0;
+                    String label;
+                    for (Object o : action) {
+                        Action a = (Action) o;
+                        System.out.println("Actor visible actions: " + a.getActor().visibleActions());
+
+
+                        if (a.getActor() == t && a.isVisible()) {
 //			if (a.hasParameter()) {
 //				picker.showPicker(a);
 //			} else {
 //                            System.out.println("Event Name :" + a.getName());
 //				//Engine.callEvent(t, "On"+a.getName(), null);
 //			}
-		}
-		else {
-                    
-                    System.out.println("Event Name :" + a.getName() + "Actor : " + a.getActor() + "Event text "+ a.text);
-                    youseeButtonsArray = youseeButtonsArray + a.text + "**";
-                    //Engine.callEvent(a.getActor(), "On"+a.getName(), t);
-                }
-                
-                
+                        } else {
 
-				//label = a.text;
-                                //youseeButtonsArray = youseeButtonsArray + label + "**";
-//			} else {
-//				label = a.getActor().name + ": " + a.text;
-//                                youseeButtonsArray = youseeButtonsArray + label + "**";
-//			}
+                            System.out.println("Event Name :" + a.getName() + "Actor : " + a.getActor() + "Event text " + a.text);
+                            youseeButtonsArray = youseeButtonsArray + a.text + "**";
+                            //Engine.callEvent(a.getActor(), "On"+a.getName(), t);
+                        }
 
 
-            }
-                    
-                    
-         
-                    
-                    
-//                      for (int i =0; i < t.actions.size(); i++) {
-//                          
-//                          picker.showPicker(t.actions[i]);
-//                          
-//                          
-//                      }
-                    
-                    
-//                     if (t.table instanceof Thing) {
-//			Thing thing = (Thing)t.table;
-//			actions.clear(); actions.ensureCapacity(thing.actions.size());
-//			for (Object o : thing.actions) {
-//				actions.add((Action)o);
-//			}
-//                     }
-//                    
-                    
-                    
-//                    int nb = Math.max(0, actions.size() - buttons.size());
-//		 //make sure we have enough buttons in panel
-//		for (int i = 0; i < nb; i++) {
-//			String jb = new String();
-//			//addButton(jb);
-//			buttons.add(jb);
-//		}
-//		// update their labels/visibility according to actions
-//		for (int i = 0; i < actions.size(); i++) {
-//			Action a = actions.get(i);
-//			String b = buttons.get(i);
-//			//b.setVisible(a.isEnabled() && a.getActor().visibleToPlayer());
-//			String label;
-//			if (a.getActor() == t.table) {
-//				label = a.text;
-//                                youseeButtonsArray = youseeButtonsArray + label + "**";
-//			} else {
-//				label = a.getActor().name + ": " + a.text;
-//                                youseeButtonsArray = youseeButtonsArray + label + "**";
-//			}
-//			//b.setText(label);
-//		}
-//		// hide the rest
-//		for (int i = actions.size(); i < buttons.size(); i++) {
-//			//buttons.get(i).setVisible(false);
-//		}
-//                    
-//                    
-//                    t.actions.
-//                            
-//                            
-                          
-//	public void buttonClicked (JButton button) {
-//		int id = buttons.indexOf(button);
-//		if (id < 0) return;
-//		Action a = actions.get(id);
-//		if (a.getActor() == table) {
-//			if (a.hasParameter()) {
-//				picker.showPicker(a);
-//			} else {
-//				Engine.callEvent(table, "On"+a.getName(), null);
-//			}
-//		}
-//		else Engine.callEvent(a.getActor(), "On"+a.getName(), table);
-//	}
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-//                    if (t.position.latitude != 0 || t.position.longitude != 0) {
-//                        ZonePoint zp = new ZonePoint(t.position.latitude, t.position.longitude, 0);
-//
-//                        friendlyDistance = Navigator.getDistanceAndDirection(zp);
-//                    }
+                    }
+
+
+
                     String content = name + "||" + description + "||" + altitude + "||" + latitude + "||" + longitude + "||" + friendlyDistance + "||" + youseemedia + "||" + youseeButtonsArray;
-                    list = list + "|!|" + content ;
+                    list = list + "|!|" + content;
                 }
 
             }
@@ -430,7 +311,7 @@ public class GameWindow implements UI {
 //    return details.;
 //    
 //    }
-    public  EventTableDetails details = new EventTableDetails(this);
+    public EventTableDetails details = new EventTableDetails(this);
     private boolean buttonsVisible = true;
 
     /** Timer for refreshing navigation displays. */
@@ -467,6 +348,106 @@ public class GameWindow implements UI {
 
     public void showSubmenu(String key) {
         //submenus.show(key);
+    }
+
+    public void thingsButton(String call) {
+
+        String requestCall = call.replace("thingButton", "");
+
+        String delimiter2 = ".";
+        String[] temp2 = requestCall.split(delimiter2);
+
+        for (int iii = 0; iii < temp2.length; iii++) {
+            
+        }
+
+
+
+
+
+
+
+
+
+        LuaTable container = Engine.instance.cartridge.currentThings();
+        List<EventTable> ret = new ArrayList<EventTable>(container.len());
+        Object key = null;
+        while ((key = container.next(key)) != null) {
+            Thing t = (Thing) container.rawget(key);
+            if (t.isVisible()) {
+
+                String name = "";
+
+
+                ret.add(t);
+
+                if (t.name.toString() != null) {
+                    
+                    if (t.name.toString()  == temp2[0]) {
+                        
+                        Vector action = t.actions;
+                int actionsCount = 0;
+                String label;
+                for (Object o : action) {
+                    Action a = (Action) o;
+
+                    if (a.getActor() == t && a.isVisible()) {
+//			if (a.hasParameter()) {
+//				picker.showPicker(a);
+//			} else {
+//                            System.out.println("Event Name :" + a.getName());
+//				Engine.callEvent(t, "On"+a.getName(), null);
+//			}
+                    } else if (a.getName() == temp2[1]){
+
+
+                        Engine.callEvent(a.getActor(), "On" + a.getName(), t);
+                    }
+
+
+                }
+                        
+                        
+                    }
+                    
+                } 
+
+
+
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     public void refresh() {
@@ -511,7 +492,7 @@ public class GameWindow implements UI {
         //button2.setVisible(btn2 != null);
         page = -1;
         flipPage();
-        
+
         System.out.println("Details event tables" + details.toString());
         details.buttonClicked("Button1");
         details.refresh();
@@ -541,9 +522,9 @@ public class GameWindow implements UI {
     }
 
     public void callAndClose(String what) {
-        System.out.println("Call and Close method what value : "+what);
+        System.out.println("Call and Close method what value : " + what);
         if (callback != null) {
-            System.out.println("Callback Value : "+ callback.toString());
+            System.out.println("Callback Value : " + callback.toString());
             Engine.invokeCallback(callback, what);
         }
         //parent.close();
@@ -639,14 +620,14 @@ public class GameWindow implements UI {
             dialogMedia = "null";
 
         } else {
-            
-            
-            
+
+
+
             dialogTexts = texts[0];
             if (media[0] != null) {
-            dialogMedia = media[0].name + "." + media[0].type;
+                dialogMedia = media[0].name + "." + media[0].type;
             }
-            
+
         }
 
 

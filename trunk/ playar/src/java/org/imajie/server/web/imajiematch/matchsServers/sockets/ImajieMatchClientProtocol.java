@@ -319,10 +319,20 @@ public class ImajieMatchClientProtocol {
                                 theOutput = "PLAYER_CALLBACK" + "Button1";
                                 state = PLAYER_CALLBACK;
 
-                            } else {
+                            } else if (request.getParameter("button2") != null) {
 
                                 theOutput = "PLAYER_CALLBACK" + "Button2";
                                 state = PLAYER_CALLBACK;
+                            }
+                            else if (request.getParameter("thingButton") != null) {
+
+                                theOutput = "PLAYER_CALLBACK" + "thingButton"+request.getParameter("thingButton");
+                                state = PLAYER_CALLBACK;
+                            } else {
+                                
+                                theOutput = "PLAYER_CALLBACK";
+                            state = PLAYER_CALLBACK;
+                                
                             }
 
 

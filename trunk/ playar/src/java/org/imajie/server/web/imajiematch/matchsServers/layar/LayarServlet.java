@@ -63,7 +63,7 @@ public class LayarServlet extends HttpServlet {
         String developerId = request.getParameter("developerId");
         double latitude = Utils.getDouble(request, "lat", 45.49);
         double longitude = Utils.getDouble(request, "lon", -73.56);
-        double altitude = Utils.getDouble(request, "alt", 0);
+        double altitude = Utils.getDouble(request, "alt", 1);
 
         //**************************************
         //
@@ -586,7 +586,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryPoi.accumulate("anchor", "geo:" + inventoryLatitude + "," + inventoryLongitude + "");
 
                 JSONObject inventoryText = new JSONObject();
-                String InventoryCount = "0";
+                String InventoryCount = "";
                 if (session.getAttribute("inventoryList") != null) {
 
                     String delimiter = "\\|!\\|";
@@ -656,7 +656,7 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                                inventoryList = inventoryList + title + " :" + description + "<br>";
+                                inventoryList = inventoryList + title + " :" + description + "\\p";
                             }
 
                         }
@@ -690,7 +690,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryIcon.accumulate("type", "0");
                 inventoryPoi.accumulate("icon", inventoryIcon);
 
-                inventoryPoi.accumulate("biwStyle", "classic");
+                inventoryPoi.accumulate("biwStyle", "collapsed");
 
                 JSONArray inventoryActions = new JSONArray();
                 JSONObject inventoryAction1 = new JSONObject();
@@ -698,7 +698,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryAction1.accumulate("label", inventoryLabel);
                 inventoryAction1.accumulate("contentType", "text/html");
                 inventoryAction1.accumulate("method", "GET");
-                inventoryAction1.accumulate("activityType", 6);
+                inventoryAction1.accumulate("activityType", 33);
 
                 inventoryAction1.accumulate("params", null);
                 inventoryAction1.accumulate("closeBiw", true);
@@ -714,7 +714,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryAction2.accumulate("label", missionLabel);
                 inventoryAction2.accumulate("contentType", "application/vnd.layar.async");
                 inventoryAction2.accumulate("method", "GET");
-                inventoryAction2.accumulate("activityType", 6);
+                inventoryAction2.accumulate("activityType", 23);
 
                 inventoryAction2.accumulate("params", null);
                 inventoryAction2.accumulate("closeBiw", true);
@@ -760,7 +760,7 @@ public class LayarServlet extends HttpServlet {
 
                 JSONObject youseeText = new JSONObject();    
                 
-                String YouseeCount = "0";
+                String YouseeCount = "";
                 if (session.getAttribute("youseeList") != null) {
 
                     String delimiter = "\\|!\\|";
@@ -830,7 +830,7 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                                youseeList = youseeList + title + " :" + description + "<br>";
+                                youseeList = youseeList + title + " :" + description + "\\p";
                             }
 
                         }
@@ -864,7 +864,7 @@ public class LayarServlet extends HttpServlet {
                 youseeIcon.accumulate("type", "0");
                 youseePoi.accumulate("icon", youseeIcon);
 
-                youseePoi.accumulate("biwStyle", "classic");
+                youseePoi.accumulate("biwStyle", "collapsed");
 
                 JSONArray youseeActions = new JSONArray();
                 JSONObject youseeAction1 = new JSONObject();
@@ -872,7 +872,7 @@ public class LayarServlet extends HttpServlet {
                 youseeAction1.accumulate("label", youseeLabel);
                 youseeAction1.accumulate("contentType", "text/html");
                 youseeAction1.accumulate("method", "GET");
-                youseeAction1.accumulate("activityType", 6);
+                youseeAction1.accumulate("activityType", 33);
 
                 youseeAction1.accumulate("params", null);
                 youseeAction1.accumulate("closeBiw", true);
@@ -888,7 +888,7 @@ public class LayarServlet extends HttpServlet {
                 youseeAction2.accumulate("label", missionLabel);
                 youseeAction2.accumulate("contentType", "application/vnd.layar.async");
                 youseeAction2.accumulate("method", "GET");
-                youseeAction2.accumulate("activityType", 6);
+                youseeAction2.accumulate("activityType", 23);
 
                 youseeAction2.accumulate("params", null);
                 youseeAction2.accumulate("closeBiw", true);
@@ -934,7 +934,7 @@ public class LayarServlet extends HttpServlet {
                 JSONObject locationsText = new JSONObject();
     
                 
-                String LocationsCount = "0";
+                String LocationsCount = "";
                 if (session.getAttribute("locationsList") != null) {
 
                     String delimiter = "\\|!\\|";
@@ -1005,7 +1005,7 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                                locationsList = locationsList + title + " :" + description + "<br>";
+                                locationsList = locationsList + title + " :" + description + "\\p";
                             }
 
                         }
@@ -1040,7 +1040,7 @@ public class LayarServlet extends HttpServlet {
                 locationsIcon.accumulate("type", "0");
                 locationsPoi.accumulate("icon", locationsIcon);
 
-                locationsPoi.accumulate("biwStyle", "classic");
+                locationsPoi.accumulate("biwStyle", "collapsed");
 
                 JSONArray locationsActions = new JSONArray();
                 JSONObject locationsAction1 = new JSONObject();
@@ -1048,7 +1048,7 @@ public class LayarServlet extends HttpServlet {
                 locationsAction1.accumulate("label", getLocationsLabel);
                 locationsAction1.accumulate("contentType", "text/html");
                 locationsAction1.accumulate("method", "GET");
-                locationsAction1.accumulate("activityType", 6);
+                locationsAction1.accumulate("activityType", 33);
 
                 locationsAction1.accumulate("params", null);
                 locationsAction1.accumulate("closeBiw", true);
@@ -1064,7 +1064,7 @@ public class LayarServlet extends HttpServlet {
                 locationsAction2.accumulate("label", missionLabel);
                 locationsAction2.accumulate("contentType", "application/vnd.layar.async");
                 locationsAction2.accumulate("method", "GET");
-                locationsAction2.accumulate("activityType", 6);
+                locationsAction2.accumulate("activityType", 23);
 
                 locationsAction2.accumulate("params", null);
                 locationsAction2.accumulate("closeBiw", true);
@@ -1118,7 +1118,7 @@ public class LayarServlet extends HttpServlet {
                 
                 
                 
-                String TasksCount = "0";
+                String TasksCount = "";
                 if (session.getAttribute("tasksList") != null) {
 
                     String delimiter = "\\|!\\|";
@@ -1189,7 +1189,7 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                                tasksList = tasksList + title + " :" + description + "<br>";
+                                tasksList = tasksList + title + " :" + description + "\\p";
                             }
 
                         }
@@ -1225,7 +1225,7 @@ public class LayarServlet extends HttpServlet {
                 tasksIcon.accumulate("type", "0");
                 tasksPoi.accumulate("icon", tasksIcon);
 
-                tasksPoi.accumulate("biwStyle", "classic");
+                tasksPoi.accumulate("biwStyle", "collapsed");
 
                 JSONArray tasksActions = new JSONArray();
                 JSONObject tasksAction1 = new JSONObject();
@@ -1233,7 +1233,7 @@ public class LayarServlet extends HttpServlet {
                 tasksAction1.accumulate("label", getTaskLabel);
                 tasksAction1.accumulate("contentType", "text/html");
                 tasksAction1.accumulate("method", "GET");
-                tasksAction1.accumulate("activityType", 6);
+                tasksAction1.accumulate("activityType", 33);
 
                 tasksAction1.accumulate("params", null);
                 tasksAction1.accumulate("closeBiw", true);
@@ -1249,7 +1249,7 @@ public class LayarServlet extends HttpServlet {
                 tasksAction2.accumulate("label", missionLabel);
                 tasksAction2.accumulate("contentType", "application/vnd.layar.async");
                 tasksAction2.accumulate("method", "GET");
-                tasksAction2.accumulate("activityType", 6);
+                tasksAction2.accumulate("activityType", 23);
 
                 tasksAction2.accumulate("params", null);
                 tasksAction2.accumulate("closeBiw", true);
@@ -1307,7 +1307,7 @@ public class LayarServlet extends HttpServlet {
                 parametersIcon.accumulate("type", "0");
                 parametersPoi.accumulate("icon", parametersIcon);
 
-                parametersPoi.accumulate("biwStyle", "classic");
+                parametersPoi.accumulate("biwStyle", "collapsed");
 
                 JSONArray parametersActions = new JSONArray();
                 JSONObject parametersAction1 = new JSONObject();
@@ -1315,7 +1315,7 @@ public class LayarServlet extends HttpServlet {
                 parametersAction1.accumulate("label", getParametersLabel);
                 parametersAction1.accumulate("contentType", "text/html");
                 parametersAction1.accumulate("method", "GET");
-                parametersAction1.accumulate("activityType", 6);
+                parametersAction1.accumulate("activityType", 33);
 
                 parametersAction1.accumulate("params", null);
                 parametersAction1.accumulate("closeBiw", true);
@@ -1331,7 +1331,7 @@ public class LayarServlet extends HttpServlet {
                 parametersAction2.accumulate("label", missionLabel);
                 parametersAction2.accumulate("contentType", "application/vnd.layar.async");
                 parametersAction2.accumulate("method", "GET");
-                parametersAction2.accumulate("activityType", 6);
+                parametersAction2.accumulate("activityType", 23);
 
                 parametersAction2.accumulate("params", null);
                 parametersAction2.accumulate("closeBiw", true);
@@ -1410,7 +1410,7 @@ public class LayarServlet extends HttpServlet {
 
                     if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall) {
                             
-                        if (   session.getAttribute("showDialog").toString().contains("null") ||  session.getAttribute("showDialog").toString().contains(".On")) {
+                        if (   session.getAttribute("showDialog").toString().contains("null") ||  session.getAttribute("showDialog").toString().contains(".On") || session.getAttribute("DIALOG").toString().contains("<input type='text' name='answer'")) {
 
                         dialog = session.getAttribute("DIALOG").toString();
                         session.setAttribute("dialogPlayed", dialog);
@@ -1705,7 +1705,7 @@ public class LayarServlet extends HttpServlet {
                                     // Forces the POI's BIW style to "classic" or "collapsed". 
                                     //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                                     //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "classic");
+                                    poi.accumulate("biwStyle", "collapsed");
 
 
 
@@ -1899,7 +1899,7 @@ public class LayarServlet extends HttpServlet {
                                     // Forces the POI's BIW style to "classic" or "collapsed". 
                                     //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                                     //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "classic");
+                                    poi.accumulate("biwStyle", "collapsed");
 
 
 
@@ -1919,7 +1919,37 @@ public class LayarServlet extends HttpServlet {
                                         //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
                                         action1.accumulate("contentType", "text/html");
                                         action1.accumulate("method", "GET");
-                                        action1.accumulate("activityType", 6);
+                                        
+                                        // TODO ******* IMPORTANT *******  IMPLEMENTS LOCALES FOR THIS FUNCTION IN LAYAR
+                                        // if (buttonsray[iiii].contains("Talk")) {  <------ Talk language value to locales
+                                        
+//                                            action1.accumulate("activityType", 33);
+//                                            
+//                                        } else if (buttonsray[iiii].contains("Examine")) { <------ Examine language value to locales
+//                                        
+//                                            action1.accumulate("activityType", 27);
+//                                            
+//                                        } else { 
+//                                        
+//                                            action1.accumulate("activityType", 0);
+//                                        
+//                                        }
+                                        
+                                        if (buttonsray[iiii].contains("Talk")) { 
+                                        
+                                            action1.accumulate("activityType", 33);
+                                            
+                                        } else if (buttonsray[iiii].contains("Examine")) {
+                                        
+                                            action1.accumulate("activityType", 27);
+                                            
+                                        } else { 
+                                        
+                                            action1.accumulate("activityType", 0);
+                                        
+                                        }
+                                        
+                                        
 
                                         action1.accumulate("params", null);
                                         action1.accumulate("closeBiw", true);
@@ -1933,13 +1963,6 @@ public class LayarServlet extends HttpServlet {
 
 
                                     }
-
-
-
-
-
-
-
 
                                     poi.accumulate("actions", actions);
 
@@ -2121,7 +2144,7 @@ public class LayarServlet extends HttpServlet {
 
 
             if (session.getAttribute("showDialog") != null) {
-                if (showControlPanel.contains("false") && !showDialogPlayed.equals(session.getAttribute("showDialog").toString())) {
+                if (showControlPanel.contains("false") && !showDialogPlayed.equals(session.getAttribute("showDialog").toString()) && !session.getAttribute("DIALOG").toString().contains("<input type='text' name='answer'")) {
 
                     if (!"null".equals(session.getAttribute("showDialog").toString()) || session.getAttribute("showDialog").toString().length() > 5) {
 

@@ -97,9 +97,23 @@ public class ImajieMatchProtocol {
                 result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";
                 result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";
                 result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "||" + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|";
-                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                if (GameWindow.triviaInput != null) {
+                    if (GameWindow.triviaInput != "") {
+                        
+                        result = result + "DIALOG" + GameWindow.triviaInput + "|!!!|";
+                        
+                        
+                        
+                    } else {
+                        result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                    }
+                } else {
 
-                
+                    result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                }
+
+
+                GameWindow.triviaInput = "";
 
 
                 if (!GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
@@ -113,7 +127,7 @@ public class ImajieMatchProtocol {
                 result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";
 
                 //
-                
+
                 theOutput = result + "|!!|PLAYER_STATE";
 
                 //theOutput = result;
@@ -217,10 +231,26 @@ public class ImajieMatchProtocol {
                 result = result + "INVENTORYCOUNT" + GameWindow.inventoryCount + "|!!!|";  // 13
                 result = result + "YOUSEECOUNT" + GameWindow.youseeCount + "|!!!|";        // 14
                 result = result + "PLAYMEDIA_CALL" + GameWindow.mediaName + "." + GameWindow.mediaType + "||" + GameWindow.mediaOverride + "|!!!|"; // 15
-                result = result + "DIALOG" + GameWindow.dialog + "|!!!|";                  // 16
+                if (GameWindow.triviaInput != null) {
+                    if (GameWindow.triviaInput != "") {
+                        
+                        result = result + "DIALOG" + GameWindow.triviaInput + "|!!!|";
+                        
+                        
+                        
+                    } else {
+                        result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                    }
+                } else {
 
-                
-                
+                    result = result + "DIALOG" + GameWindow.dialog + "|!!!|";
+                }
+
+
+                GameWindow.triviaInput = "";
+
+
+
                 if (!GameWindow.dialogTexts.equals(GameWindow.currentEvent)) {
 
                     result = result + "SHOWDIALOG" + GameWindow.dialogTexts + "||" + GameWindow.dialogMedia + "|!!!|";      // 17
@@ -258,14 +288,23 @@ public class ImajieMatchProtocol {
 
                 } else if (resultRequest.contains("thingButton")) {
                     // TODO IMPLEMENTS THINGS BUTTON CALLBACK FOR LAYAR POIS
-                    
-                   Engine.ui.thingsButton(resultRequest); 
-                    
+
+                    Engine.ui.thingsButton(resultRequest);
+
+                    theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
+
+
+                }else if (resultRequest.contains("input")) {
+                    // TODO IMPLEMENTS THINGS BUTTON CALLBACK FOR LAYAR POIS
+
+                    String inputRequest = resultRequest.replace("input", "");
+
+                    Engine.callEvent(GameWindow.currentInput, "OnGetInput", inputRequest);
+                            
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";
 
 
                 }
-                
                 
                 else {
 

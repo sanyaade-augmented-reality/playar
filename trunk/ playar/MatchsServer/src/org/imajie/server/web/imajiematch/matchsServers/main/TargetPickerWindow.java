@@ -87,14 +87,14 @@ public class TargetPickerWindow  {
 		while ((key = t.next(key)) != null) {
 			Thing th = (Thing)t.rawget(key);
 			if (th.isVisible() && action.isTarget(th)) model.add(new TargetItem(th));
-                        System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
+                        //System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
 		}
 		t = Engine.instance.player.inventory;
 		key = null;
 		while ((key = t.next(key)) != null) {
 			Thing th = (Thing)t.rawget(key);
 			if (th.isVisible() && action.isTarget(th)) model.add(new TargetItem(th));
-                        System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
+                       // System.out.println("Event Name:"+th.name+" Event Description:"+th.description);
 		}
 		//setVisible(true);
 	}

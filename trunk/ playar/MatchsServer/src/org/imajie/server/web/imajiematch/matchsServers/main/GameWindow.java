@@ -354,7 +354,7 @@ public class GameWindow implements UI {
 
         String requestCall = call.replace("thingButton", "");
 
-        String delimiter2 = ".";
+        String delimiter2 = "\\.";
         String[] temp2 = requestCall.split(delimiter2);
 
         for (int iii = 0; iii < temp2.length; iii++) {
@@ -364,13 +364,13 @@ public class GameWindow implements UI {
 
 
 
+//yousee.
 
 
-
-
+System.out.println(call);
 
         LuaTable container = Engine.instance.cartridge.currentThings();
-        List<EventTable> ret = new ArrayList<EventTable>(container.len());
+        //EventTableList ret = yousee;
         Object key = null;
         while ((key = container.next(key)) != null) {
             Thing t = (Thing) container.rawget(key);
@@ -379,11 +379,11 @@ public class GameWindow implements UI {
                 String name = "";
 
 
-                ret.add(t);
+                //ret.add(t);
 
                 if (t.name.toString() != null) {
                     
-                    if (t.toString()  == temp2[0]) {
+                    if (t.name.toString().equals(temp2[0])) {
                         
                         Vector action = t.actions;
                 int actionsCount = 0;
@@ -391,14 +391,14 @@ public class GameWindow implements UI {
                 for (Object o : action) {
                     Action a = (Action) o;
 
-                    if (a.getActor() == t && a.isVisible()) {
+                    if (    a.getActor().toString().equals(t.name.toString()) && a.isVisible()) {
 //			if (a.hasParameter()) {
 //				picker.showPicker(a);
 //			} else {
 //                            System.out.println("Event Name :" + a.getName());
 //				Engine.callEvent(t, "On"+a.getName(), null);
 //			}
-                    } else if (a.getName() == temp2[1].replace("On", "")){
+                    } else if (a.getName().equals(temp2[1].replace("On", ""))){
 
 
                         Engine.callEvent(a.getActor(), "On" + a.getName(), t);
@@ -656,8 +656,9 @@ public class GameWindow implements UI {
 
         String text = Engine.removeHtml((String) input.rawget("Text"));
         String inputText = (text);
+        if (input.media != null) {
         String inputMedia = (input.media.name);
-
+        }
         String type = (String) input.rawget("InputType");
         if ("Text".equals(type)) {
             // hide buttons

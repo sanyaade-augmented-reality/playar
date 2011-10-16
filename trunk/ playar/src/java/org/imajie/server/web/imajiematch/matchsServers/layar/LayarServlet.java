@@ -1408,11 +1408,14 @@ public class LayarServlet extends HttpServlet {
                         session.setAttribute("dialogPlayed", "");
                     }
 
-                    if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall && session.getAttribute("showDialog").toString().contains("null")) {
+                    if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall) {
+                            
+                        if (   session.getAttribute("showDialog").toString().contains("null") ||  session.getAttribute("showDialog").toString().contains(".On")) {
 
                         dialog = session.getAttribute("DIALOG").toString();
                         session.setAttribute("dialogPlayed", dialog);
                         Dodialog = true;
+                        }
 
                     } else {
                         Dodialog = false;
@@ -2122,6 +2125,7 @@ public class LayarServlet extends HttpServlet {
 
                     if (!"null".equals(session.getAttribute("showDialog").toString()) || session.getAttribute("showDialog").toString().length() > 5) {
 
+                    if (     !session.getAttribute("showDialog").toString().contains(".On")) {
                         JSONObject showDialog = new JSONObject();
 
                         showDialog.accumulate("title", "Mission : " + gameStarted + "");
@@ -2188,6 +2192,7 @@ public class LayarServlet extends HttpServlet {
 
                         layer.accumulate("showDialog", showDialog);
                         session.setAttribute("showDialogPlayed", dialogTexts);
+                    }
                     }
                 }
             }

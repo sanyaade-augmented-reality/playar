@@ -245,7 +245,7 @@ public class ImajieMatchProtocol {
 
                 String resultRequest = theInput.replace("PLAYER_CALLBACK", "");
 
-                if (resultRequest.contains("Button")) {
+                if (resultRequest.contains("Button") && !resultRequest.contains("thing")) {
 
 
                     theOutput = "PLAYER_CALLBACK_STATE||REFRESH";

@@ -328,7 +328,13 @@ public class ImajieMatchClientProtocol {
 
                                 theOutput = "PLAYER_CALLBACK" + "thingButton"+request.getParameter("thingButton");
                                 state = PLAYER_CALLBACK;
-                            } else {
+                            }else if (request.getParameter("input") != null) {
+
+                                theOutput = "PLAYER_CALLBACK" + "input"+request.getParameter("answer");
+                                state = PLAYER_CALLBACK;
+                            } 
+                            
+                            else {
                                 
                                 theOutput = "PLAYER_CALLBACK";
                             state = PLAYER_CALLBACK;

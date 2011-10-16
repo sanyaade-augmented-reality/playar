@@ -55,8 +55,10 @@ public class GameWindow implements UI {
     public static String mediaType;
     public static String mediaOverride;
     public static String triviaInput;
+    public static String triviaInputPlayed;
     public static String dialog;
     public static String currentEvent = "";
+    public static EventTable currentInput;
     public static TargetPickerWindow picker;
     private ArrayList<Action> actions = new ArrayList<Action>();
     private ArrayList<String> buttons = new ArrayList<String>();
@@ -169,7 +171,7 @@ public class GameWindow implements UI {
                     String label;
                     for (Object o : action) {
                         Action a = (Action) o;
-                        System.out.println("Actor visible actions: " + a.getActor().visibleActions());
+                        //System.out.println("Actor visible actions: " + a.getActor().visibleActions());
 
 
                         if (a.getActor() == t && a.isVisible()) {
@@ -181,7 +183,7 @@ public class GameWindow implements UI {
 //			}
                         } else {
 
-                            System.out.println("Event Name :" + a.getName() + "Actor : " + a.getActor() + "Event text " + a.text);
+                            // System.out.println("Event Name :" + a.getName() + "Actor : " + a.getActor() + "Event text " + a.text);
                             youseeButtonsArray = youseeButtonsArray + a.text + "**";
                             //Engine.callEvent(a.getActor(), "On"+a.getName(), t);
                         }
@@ -313,6 +315,7 @@ public class GameWindow implements UI {
 //    }
     public EventTableDetails details = new EventTableDetails(this);
     private boolean buttonsVisible = true;
+    
 
     /** Timer for refreshing navigation displays. */
 //	private FrameTimer refresher = new FrameTimer(this, new ActionListener() {
@@ -357,20 +360,8 @@ public class GameWindow implements UI {
         String delimiter2 = "\\.";
         String[] temp2 = requestCall.split(delimiter2);
 
-        for (int iii = 0; iii < temp2.length; iii++) {
-            
-        }
-
-
-
-
-//yousee.
-
-
-System.out.println(call);
-
         LuaTable container = Engine.instance.cartridge.currentThings();
-        //EventTableList ret = yousee;
+
         Object key = null;
         while ((key = container.next(key)) != null) {
             Thing t = (Thing) container.rawget(key);
@@ -382,70 +373,39 @@ System.out.println(call);
                 //ret.add(t);
 
                 if (t.name.toString() != null) {
-                    
-                    if (t.name.toString().equals(temp2[0])) {
-                        
-                        Vector action = t.actions;
-                int actionsCount = 0;
-                String label;
-                for (Object o : action) {
-                    Action a = (Action) o;
 
-                    if (    a.getActor().toString().equals(t.name.toString()) && a.isVisible()) {
+                    if (t.name.toString().equals(temp2[0])) {
+
+                        Vector action = t.actions;
+                        int actionsCount = 0;
+                        String label;
+                        for (Object o : action) {
+                            Action a = (Action) o;
+
+                            if (a.getActor().toString().equals(t.name.toString()) && a.isVisible()) {
 //			if (a.hasParameter()) {
 //				picker.showPicker(a);
 //			} else {
 //                            System.out.println("Event Name :" + a.getName());
 //				Engine.callEvent(t, "On"+a.getName(), null);
 //			}
-                    } else if (a.getName().equals(temp2[1].replace("On", ""))){
+                            } else if (a.getName().equals(temp2[1].replace("On", ""))) {
 
 
-                        Engine.callEvent(a.getActor(), "On" + a.getName(), t);
+                                Engine.callEvent(a.getActor(), "On" + a.getName(), t);
+                            }
+
+
+                        }
+
+
                     }
-
 
                 }
-                        
-                        
-                    }
-                    
-                } 
-
-
-
 
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -600,7 +560,6 @@ System.out.println(call);
                         + "</div>";
 
 
-
             }
 
 
@@ -651,33 +610,69 @@ System.out.println(call);
 
     public void pushInput(final EventTable input) {
 
+        currentInput = input;
+        String[] event = currentEvent.split("\\.");
 
+        String inputMedia = "";
+
+        LuaTable container = Engine.instance.cartridge.currentThings();
+
+        Object key = null;
+        while ((key = container.next(key)) != null) {
+            Thing t = (Thing) container.rawget(key);
+            if (t.isVisible()) {
+
+
+                if (t.name.toString() != null) {
+
+                    if (t.name.toString().equals(event[0])) {
+
+                        if (t.media != null) {
+
+                            inputMedia = t.media.name + "." + t.media.type;
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+
+        }
 
 
         String text = Engine.removeHtml((String) input.rawget("Text"));
         String inputText = (text);
-        if (input.media != null) {
-        String inputMedia = (input.media.name);
-        }
+
         String type = (String) input.rawget("InputType");
         if ("Text".equals(type)) {
             // hide buttons
             buttonsVisible = false;
-            //for (String button : options) button.setVisible(false);
-            // show text/answer
-            //textInput.setVisible(true);
-            //textInput.setText("");
-            //answer.setVisible(true);
 
-
-            triviaInput = " <div data-role='fieldcontain'   data-theme='a'><label  data-theme='a' for='answer'>Answer</label><input type='text' name='answer' id='username' value=''  /></div><input type='submit'  id='callBack' data-theme='a' value='" + text + "'/>";
-
-
+            triviaInput = "<div data-role='page' style='min-height:100%' data-theme='a'>"
+                    + "<div data-role='header'  data-theme='b'>"
+                    + "<h6>Trivia</h6>"
+                    + "</div>"
+                    + " <div data-role='fieldcontain'  data-theme='a' align='center'>"
+                    + "<p>"
+                    + "<IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + inputMedia + "' align='center'>"
+                    + "<h4 align='center'>" + text + "</h4>"
+                    + "</p>"             
+                    + " <form method='POST' action'./dialogCallback.jsp?input=" + currentInput.name + "' >"
+                    + " <div data-role='fieldcontain'   data-theme='a'><input type='text' name='answer' id='answer' value=''  /></div>"              
+                    + "</form>"  
+                    + " <input type='submit'  id='submit' data-theme='a' value='OK'/>"
+                    + "</div>"
+                    + "<div data-role='footer' data-theme='b'>"
+                    + "<h4>Powered by Playar</h4>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div><body>";
 
         } else if ("MultipleChoice".equals(type)) {
-            // hide text/answer
-            //textInput.setVisible(false);
-            //answer.setVisible(false);
+
             LuaTable choices = (LuaTable) input.rawget("Choices");
             int n = choices.len();
             // make sure we have enough buttons

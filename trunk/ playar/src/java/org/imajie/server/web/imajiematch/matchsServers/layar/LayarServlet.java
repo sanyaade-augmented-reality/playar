@@ -50,6 +50,7 @@ public class LayarServlet extends HttpServlet {
     public static String dialog = "null";
     public static boolean DoplayMediaCall = false;
     public static boolean Dodialog = false;
+    private String currentInsideZone = "";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -553,6 +554,8 @@ public class LayarServlet extends HttpServlet {
             }
 
         } else {
+            
+            RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
 
 
@@ -1373,8 +1376,8 @@ public class LayarServlet extends HttpServlet {
                 // TODO DELETE ALL POI
 
 
-
                 RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
+                
 
                 if (session.getAttribute("playMediaCallPlayed") == null) {
 
@@ -1429,6 +1432,14 @@ public class LayarServlet extends HttpServlet {
                     currentEvent = session.getAttribute("CURRENTEVENT").toString();
 
 
+                    if (currentEvent.contains("OnEnter") ) {
+                        currentInsideZone = currentEvent;
+                        
+                    }
+                    if (currentEvent.contains("OnExit") ) {
+                        currentInsideZone = "";
+                        
+                    }
                 }
 
 
@@ -1544,7 +1555,7 @@ public class LayarServlet extends HttpServlet {
 
                     JSONObject poi = new JSONObject();
 
-                    poi.accumulate("id", session.getAttribute("dialogTexts"));
+                    poi.accumulate("id", session.getAttribute("dialogTexts").toString()+latitude+longitude);
 
 
 
@@ -1582,6 +1593,7 @@ public class LayarServlet extends HttpServlet {
 
                 if (!Dodialog
                         && !DoplayMediaCall) {
+                    RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
                     //   **************************************************************************
                     //****************************************************************************
@@ -1647,7 +1659,7 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                                if (!currentEvent.contentEquals(title + ".OnEnter")) {
+                                if (!currentInsideZone.contentEquals(title + ".OnEnter")) {
 
 
                                     JSONObject poi = new JSONObject();

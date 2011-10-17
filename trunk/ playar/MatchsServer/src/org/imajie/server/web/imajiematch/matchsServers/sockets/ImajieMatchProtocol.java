@@ -131,7 +131,7 @@ public class ImajieMatchProtocol {
                 theOutput = result + "|!!|PLAYER_STATE";
 
                 //theOutput = result;
-
+               // System.out.println("State Refresh");
                 state = COMMAND;
             } //***** Return input From Player  *****
             else if (theInput.equalsIgnoreCase("CALLBACK")) {
@@ -206,10 +206,17 @@ public class ImajieMatchProtocol {
                 Engine.instance.lat = lat;
                 Engine.instance.lon = lon;
                 Engine.instance.alt = alt;
+                
                 Engine.instance.accuracy = accuracy;
+                 
                 Engine.instance.player.refreshLocation();
-                Engine.ui.refreshPlayer();
-                Engine.ui.refresh();
+                //Engine.playerRefresh();
+//                Engine.ui.refreshPlayer();
+//                Engine.ui.refresh();
+//      
+//                Engine.instance.cartridge.tick();
+                Engine.requestSync();
+                
 
 
 
@@ -261,7 +268,7 @@ public class ImajieMatchProtocol {
                 result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";      // 18
                 theOutput = result + "|!!|PLAYER_STATE";
 
-
+                //System.out.println("Geolocation Refresh");
                 state = COMMAND;
 
             }
@@ -311,9 +318,16 @@ public class ImajieMatchProtocol {
                     theOutput = "PLAYER_CALLBACK_STATE||";
 
                 }
-                Engine.playerRefresh();
-                Engine.refreshUI();
-
+               
+//                Engine.instance.player.refreshLocation();
+//    
+//                Engine.ui.refresh();
+//                Engine.playerRefresh();
+//                Engine.refreshUI();
+//                Engine.instance.cartridge.tick();
+//
+//                
+               // System.out.println("Callback Refresh");
                 state = COMMAND;
 
             }

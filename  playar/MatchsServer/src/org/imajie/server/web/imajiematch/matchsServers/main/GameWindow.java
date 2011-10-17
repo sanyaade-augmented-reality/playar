@@ -118,6 +118,7 @@ public class GameWindow implements UI {
 
             zoneCount = Count;
             zoneList = list;
+            //System.out.println("Zone Refresh");
             return ret;
         }
     });
@@ -201,6 +202,7 @@ public class GameWindow implements UI {
 
             youseeCount = Count;
             youseeList = list;
+           // System.out.println("Yousee Refresh");
             return ret;
         }
     });
@@ -255,6 +257,7 @@ public class GameWindow implements UI {
 
             inventoryCount = Count;
             inventoryList = list;
+           // System.out.println("Inventory Refresh");
             return ret;
         }
     });
@@ -304,6 +307,7 @@ public class GameWindow implements UI {
 
             tasksCount = Count;
             tasksList = list;
+            //System.out.println("Task Refresh");
             return ret;
         }
     });

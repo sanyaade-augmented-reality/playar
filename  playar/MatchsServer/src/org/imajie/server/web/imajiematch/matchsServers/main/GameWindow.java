@@ -202,7 +202,7 @@ public class GameWindow implements UI {
 
             youseeCount = Count;
             youseeList = list;
-           // System.out.println("Yousee Refresh");
+            // System.out.println("Yousee Refresh");
             return ret;
         }
     });
@@ -257,7 +257,7 @@ public class GameWindow implements UI {
 
             inventoryCount = Count;
             inventoryList = list;
-           // System.out.println("Inventory Refresh");
+            // System.out.println("Inventory Refresh");
             return ret;
         }
     });
@@ -319,7 +319,6 @@ public class GameWindow implements UI {
 //    }
     public EventTableDetails details = new EventTableDetails(this);
     private boolean buttonsVisible = true;
-    
 
     /** Timer for refreshing navigation displays. */
 //	private FrameTimer refresher = new FrameTimer(this, new ActionListener() {
@@ -415,6 +414,10 @@ public class GameWindow implements UI {
     }
 
     public void refresh() {
+        zones.updateNavigation();
+        tasks.updateNavigation();
+        yousee.updateNavigation();
+        details.updateNavigation();
         zones.refresh();
         yousee.refresh();
         inventory.refresh();
@@ -423,6 +426,10 @@ public class GameWindow implements UI {
         //mainMenu.refresh();
         details.refresh();
         Engine.instance.player.refreshLocation();
+        zones.updateNavigation();
+        tasks.updateNavigation();
+        yousee.updateNavigation();
+        details.updateNavigation();
     }
 
     public void refreshPlayer() {
@@ -655,25 +662,29 @@ public class GameWindow implements UI {
             // hide buttons
             buttonsVisible = false;
 
-            triviaInput = "<div data-role='page' style='min-height:100%' data-theme='a'>"
+            triviaInput = "<body><div data-role='page' style='min-height:100%' data-theme='a'>"
                     + "<div data-role='header'  data-theme='b'>"
                     + "<h6>Trivia</h6>"
                     + "</div>"
-                    + " <div data-role='fieldcontain'  data-theme='a' align='center'>"
-                    + "<p>"
-                    + "<IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + inputMedia + "' align='center'>"
-                    + "<h4 align='center'>" + text + "</h4>"
-                    + "</p>"             
-                    + " <form method='POST' action'./dialogCallback.jsp?input=" + currentInput.name + "' >"
-                    + " <div data-role='fieldcontain'   data-theme='a'><input type='text' name='answer' id='answer' value=''  /></div>"              
-                    + "</form>"  
-                    + " <input type='submit'  id='submit' data-theme='a' value='OK'/>"
+                    + "<div data-role='content'  data-theme='a'>"
+                    + "<form method='POST' action='dialogCallback.jsp?input=" + currentInput.name + "' target='_top' >"
+                    + "<div data-role='fieldcontain'  data-theme='a' align='center'>"
+                    + "<p><IMG SRC= '../icon?matchtitle=" + Engine.instance.cartridge.name + "&icon=" + inputMedia + "' align='center'>"
+                    + "<h4 align='center'>" + text + "</h4></p>"
+                    + " </div>"
+                    + "<div data-role='fieldcontain'   data-theme='a'>"
+                    + "<input type='text' name='answer' id='answer' value=''  />"
+                    + "</div>"
+                    + "<input type='submit'  id='submit' data-theme='a' value='OK'/>"
+                    + "</form>"
                     + "</div>"
                     + "<div data-role='footer' data-theme='b'>"
                     + "<h4>Powered by Playar</h4>"
                     + "</div>"
                     + "</div>"
-                    + "</div><body>";
+                    + "</body>";
+
+
 
         } else if ("MultipleChoice".equals(type)) {
 

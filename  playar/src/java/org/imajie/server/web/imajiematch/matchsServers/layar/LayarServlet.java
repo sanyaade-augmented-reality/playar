@@ -1376,7 +1376,7 @@ public class LayarServlet extends HttpServlet {
                 // TODO DELETE ALL POI
 
 
-                RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
+                //RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
                 
 
                 if (session.getAttribute("playMediaCallPlayed") == null) {
@@ -1593,7 +1593,7 @@ public class LayarServlet extends HttpServlet {
 
                 if (!Dodialog
                         && !DoplayMediaCall) {
-                    RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
+                    //RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
                     //   **************************************************************************
                     //****************************************************************************

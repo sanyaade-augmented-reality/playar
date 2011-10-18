@@ -211,11 +211,11 @@ public class ImajieMatchProtocol {
                  
                 Engine.instance.player.refreshLocation();
                 //Engine.playerRefresh();
-//                Engine.ui.refreshPlayer();
-//                Engine.ui.refresh();
+                //Engine.ui.refreshPlayer();
+                //Engine.ui.refresh();
 //      
 //                Engine.instance.cartridge.tick();
-                Engine.requestSync();
+                //Engine.requestSync();
                 
 
 
@@ -319,9 +319,9 @@ public class ImajieMatchProtocol {
 
                 }
                
-//                Engine.instance.player.refreshLocation();
+                Engine.instance.player.refreshLocation();
 //    
-//                Engine.ui.refresh();
+                //Engine.ui.refresh();
 //                Engine.playerRefresh();
 //                Engine.refreshUI();
 //                Engine.instance.cartridge.tick();

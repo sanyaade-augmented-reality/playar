@@ -202,7 +202,7 @@ public class GameWindow implements UI {
 
             youseeCount = Count;
             youseeList = list;
-            // System.out.println("Yousee Refresh");
+             System.out.println("Yousee list : " + list);
             return ret;
         }
     });

@@ -210,13 +210,11 @@ public class ImajieMatchProtocol {
                 Engine.instance.accuracy = accuracy;
                  
                 Engine.instance.player.refreshLocation();
-                //Engine.playerRefresh();
-                //Engine.ui.refreshPlayer();
-                //Engine.ui.refresh();
-//      
-//                Engine.instance.cartridge.tick();
-                //Engine.requestSync();
-                
+                // TODO IMPLEMENTS A BETTER WAY TO HANDLE THE WAITING FOR THE EVENT TO BE PROCESSED
+                // SOMETHINGS THAT LOOK FOR THE EVENT TABLE CONTENT AND WAIT FOR ALL OF THEM PROCESS 
+                // COMPLETE BEFORE CONTINUE TO FILL THIS PROTOCOL REQUEST
+                waiting(1000);
+           
 
 
 
@@ -268,7 +266,7 @@ public class ImajieMatchProtocol {
                 result = result + "CURRENTEVENT" + GameWindow.currentEvent + "|!!!|";      // 18
                 theOutput = result + "|!!|PLAYER_STATE";
 
-                //System.out.println("Geolocation Refresh");
+                System.out.println("Geolocation Refresh");
                 state = COMMAND;
 
             }
@@ -334,5 +332,15 @@ public class ImajieMatchProtocol {
         }
 
         return theOutput;
+    }
+    public static void waiting(int n) {
+
+        long t0, t1;
+
+        t0 = System.currentTimeMillis();
+
+        do {
+            t1 = System.currentTimeMillis();
+        } while ((t1 - t0) < (n));
     }
 }

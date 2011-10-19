@@ -471,6 +471,7 @@ public class Engine implements Serializable, Runnable {
         LuaClosure callback = (LuaClosure) message.rawget("Callback");
 
         ui.pushDialog(texts, media, button1, button2, callback, altText, description, rawName);
+  
     }
 
     /** builds and calls a dialog from a Dialog table */

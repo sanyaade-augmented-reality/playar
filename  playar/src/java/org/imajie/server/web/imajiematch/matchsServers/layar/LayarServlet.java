@@ -464,7 +464,7 @@ public class LayarServlet extends HttpServlet {
                         // Forces the POI's BIW style to "classic" or "collapsed". 
                         //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                         //if the POI is a Vision enabled POI.
-                        poi.accumulate("biwStyle", "collapsed");
+                        poi.accumulate("biwStyle", "classic");
 
 
 
@@ -693,7 +693,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryIcon.accumulate("type", "0");
                 inventoryPoi.accumulate("icon", inventoryIcon);
 
-                inventoryPoi.accumulate("biwStyle", "collapsed");
+                inventoryPoi.accumulate("biwStyle", "classic");
 
                 JSONArray inventoryActions = new JSONArray();
                 JSONObject inventoryAction1 = new JSONObject();
@@ -867,7 +867,7 @@ public class LayarServlet extends HttpServlet {
                 youseeIcon.accumulate("type", "0");
                 youseePoi.accumulate("icon", youseeIcon);
 
-                youseePoi.accumulate("biwStyle", "collapsed");
+                youseePoi.accumulate("biwStyle", "classic");
 
                 JSONArray youseeActions = new JSONArray();
                 JSONObject youseeAction1 = new JSONObject();
@@ -1043,7 +1043,7 @@ public class LayarServlet extends HttpServlet {
                 locationsIcon.accumulate("type", "0");
                 locationsPoi.accumulate("icon", locationsIcon);
 
-                locationsPoi.accumulate("biwStyle", "collapsed");
+                locationsPoi.accumulate("biwStyle", "classic");
 
                 JSONArray locationsActions = new JSONArray();
                 JSONObject locationsAction1 = new JSONObject();
@@ -1228,7 +1228,7 @@ public class LayarServlet extends HttpServlet {
                 tasksIcon.accumulate("type", "0");
                 tasksPoi.accumulate("icon", tasksIcon);
 
-                tasksPoi.accumulate("biwStyle", "collapsed");
+                tasksPoi.accumulate("biwStyle", "classic");
 
                 JSONArray tasksActions = new JSONArray();
                 JSONObject tasksAction1 = new JSONObject();
@@ -1310,7 +1310,7 @@ public class LayarServlet extends HttpServlet {
                 parametersIcon.accumulate("type", "0");
                 parametersPoi.accumulate("icon", parametersIcon);
 
-                parametersPoi.accumulate("biwStyle", "collapsed");
+                parametersPoi.accumulate("biwStyle", "classic");
 
                 JSONArray parametersActions = new JSONArray();
                 JSONObject parametersAction1 = new JSONObject();
@@ -1717,7 +1717,7 @@ public class LayarServlet extends HttpServlet {
                                     // Forces the POI's BIW style to "classic" or "collapsed". 
                                     //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                                     //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "collapsed");
+                                    poi.accumulate("biwStyle", "classic");
 
 
 
@@ -1866,9 +1866,9 @@ public class LayarServlet extends HttpServlet {
 
                                     if ("".equals(hotspotLatitude) && "".equals(hotspotLongitude)) {
 
-                                        hotspotLatitude = "" + (latitude + 0.001 * Math.cos(angle));
-                                        hotspotLongitude = "" + (longitude + 0.001 * Math.sin(angle));
-                                        hotspotAltitude = "0.0";
+                                        hotspotLatitude = "" + (latitude + 0.0005 * Math.cos(angle));
+                                        hotspotLongitude = "" + (longitude + 0.0005 * Math.sin(angle));
+                                        hotspotAltitude = "1.0";
                                     }
 
                                     JSONObject poi = new JSONObject();
@@ -1911,7 +1911,7 @@ public class LayarServlet extends HttpServlet {
                                     // Forces the POI's BIW style to "classic" or "collapsed". 
                                     //Default is "classic" if the POI is a geolocated POI and "collapsed" 
                                     //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "collapsed");
+                                    poi.accumulate("biwStyle", "classic");
 
 
 
@@ -2118,7 +2118,7 @@ public class LayarServlet extends HttpServlet {
 
         }
 
-        layer.accumulate("refreshDistance", 15);
+        layer.accumulate("refreshDistance", 10);
 
 
 
@@ -2241,7 +2241,7 @@ public class LayarServlet extends HttpServlet {
         //Set to null or do not send for default behavior, which is "classic" for geolocated POIs and "collapsed" 
         //for feature tracked POIs.
 
-        layer.accumulate("biwStyle", "collapsed");
+        layer.accumulate("biwStyle", "classic");
 
 
         layer.accumulate("disableClueMenu", false);

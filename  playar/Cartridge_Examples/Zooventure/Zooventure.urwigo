@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Wherigo:WigoCartridge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Wherigo="clr-namespace:YourSelf.Urwigo.Wherigo;assembly=Urwigo" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Actions="clr-namespace:YourSelf.Urwigo.Wherigo.Actions;assembly=Urwigo" key="key23">
+<Wherigo:WigoCartridge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Wherigo="clr-namespace:YourSelf.Urwigo.Wherigo;assembly=Urwigo" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Actions="clr-namespace:YourSelf.Urwigo.Wherigo.Actions;assembly=Urwigo" key="key22">
 <Identifier>
 <System:String>cartZooventureLevelThree</System:String>
 </Identifier>
@@ -13,7 +13,7 @@
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia key="key1">
+<Wherigo:WigoMedia key="key0">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -76,7 +76,7 @@
 <System:DateTime>01/12/2008 17:33:36</System:DateTime>
 </CreateDate>
 <UpdateDate>
-<System:DateTime>09/23/2011 16:17:51</System:DateTime>
+<System:DateTime>10/16/2011 15:22:55</System:DateTime>
 </UpdateDate>
 <Complete>
 <System:Boolean>False</System:Boolean>
@@ -106,7 +106,7 @@
 <System:String xsi:nil="true" />
 </ProtectSimulationText>
 <Media>
-<Wherigo:WigoMedia key="key5">
+<Wherigo:WigoMedia key="key4">
 <Identifier>
 <System:String>zmediabrianpenguin</System:String>
 </Identifier>
@@ -128,7 +128,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\brianpenguin.jpg</System:String>
+<System:String>Halloventure\brianpenguin.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -138,7 +138,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key47">
+<Wherigo:WigoMedia key="key46">
 <Identifier>
 <System:String>zmediabrianpenguinmsg</System:String>
 </Identifier>
@@ -160,7 +160,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\brianpenguinmsg.jpg</System:String>
+<System:String>Halloventure\brianpenguinmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -170,7 +170,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key27">
+<Wherigo:WigoMedia key="key26">
 <Identifier>
 <System:String>zmediacolobus</System:String>
 </Identifier>
@@ -192,7 +192,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\colobus.jpg</System:String>
+<System:String>Halloventure\colobus.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -202,7 +202,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key28">
+<Wherigo:WigoMedia key="key27">
 <Identifier>
 <System:String>zmediacolobusmsg</System:String>
 </Identifier>
@@ -224,7 +224,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String key="key0">..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\colobusmsg.jpg</System:String>
+<System:String>Halloventure\colobusmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -234,7 +234,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key59">
+<Wherigo:WigoMedia key="key58">
 <Identifier>
 <System:String>zmediahen</System:String>
 </Identifier>
@@ -256,7 +256,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\hen.jpg</System:String>
+<System:String>Halloventure\hen.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -266,7 +266,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key58">
+<Wherigo:WigoMedia key="key57">
 <Identifier>
 <System:String>zmediahenmsg</System:String>
 </Identifier>
@@ -288,7 +288,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\henmsg.jpg</System:String>
+<System:String>Halloventure\henmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -298,7 +298,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key14">
+<Wherigo:WigoMedia key="key13">
 <Identifier>
 <System:String>zmediajaredpenguin</System:String>
 </Identifier>
@@ -320,7 +320,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\jaredpenguin.jpg</System:String>
+<System:String>Halloventure\jaredpenguin.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -330,7 +330,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key19">
+<Wherigo:WigoMedia key="key18">
 <Identifier>
 <System:String>zmediajaredpenguinmsg</System:String>
 </Identifier>
@@ -352,7 +352,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\jaredpenguinmsg.jpg</System:String>
+<System:String>Halloventure\jaredpenguinmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -384,7 +384,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\penguingroup.jpg</System:String>
+<System:String>Halloventure\penguingroup.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -394,7 +394,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key22">
+<Wherigo:WigoMedia key="key21">
 <Identifier>
 <System:String>zmediapenguingroupmsg</System:String>
 </Identifier>
@@ -416,7 +416,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\penguingroupmsg.jpg</System:String>
+<System:String>Halloventure\penguingroupmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -426,7 +426,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key11">
+<Wherigo:WigoMedia key="key10">
 <Identifier>
 <System:String>zmediapinkbackgorilla</System:String>
 </Identifier>
@@ -448,7 +448,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\pinkbackgorilla.jpg</System:String>
+<System:String>Halloventure\pinkbackgorilla.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -458,7 +458,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key10">
+<Wherigo:WigoMedia key="key9">
 <Identifier>
 <System:String>zmediapinkbackgorillamsg</System:String>
 </Identifier>
@@ -480,7 +480,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\pinkbackgorillamsg.jpg</System:String>
+<System:String>Halloventure\pinkbackgorilla.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -490,7 +490,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key70">
+<Wherigo:WigoMedia key="key69">
 <Identifier>
 <System:String>zmediasadpig</System:String>
 </Identifier>
@@ -512,7 +512,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String xsi:nil="true" ref="key0" />
+<System:String>Halloventure\sadpig.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -544,7 +544,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String xsi:nil="true" ref="key0" />
+<System:String>Halloventure\sadpigmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -554,7 +554,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key2">
+<Wherigo:WigoMedia key="key1">
 <Identifier>
 <System:String>zmediazonepenguinpool</System:String>
 </Identifier>
@@ -576,7 +576,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\zonepenguinpool.jpg</System:String>
+<System:String>Halloventure\zonepenguinpool.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -586,7 +586,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key7">
+<Wherigo:WigoMedia key="key6">
 <Identifier>
 <System:String>zmediazonerainforest</System:String>
 </Identifier>
@@ -608,7 +608,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\zonerainforest.jpg</System:String>
+<System:String>Halloventure\zonerainforest.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -640,7 +640,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\egg2msg.jpg</System:String>
+<System:String>Halloventure\egg2msg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -650,7 +650,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key53">
+<Wherigo:WigoMedia key="key52">
 <Identifier>
 <System:String>zmediazonetemperate</System:String>
 </Identifier>
@@ -672,7 +672,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\zonetemperate.jpg</System:String>
+<System:String>Halloventure\zonetemperate.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -704,7 +704,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\egg2.jpg</System:String>
+<System:String>Halloventure\egg2.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -736,7 +736,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\egg.jpg</System:String>
+<System:String>Halloventure\egg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -768,7 +768,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\eggmsg.jpg</System:String>
+<System:String>Halloventure\eggmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -778,7 +778,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key4">
+<Wherigo:WigoMedia key="key3">
 <Identifier>
 <System:String>zmediazookeepermsg</System:String>
 </Identifier>
@@ -800,7 +800,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\zookeepermsg.jpg</System:String>
+<System:String>Halloventure\zookeepermsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -810,7 +810,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key43">
+<Wherigo:WigoMedia key="key42">
 <Identifier>
 <System:String>zmediazookeeper</System:String>
 </Identifier>
@@ -832,7 +832,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\zookeeper.jpg</System:String>
+<System:String>Halloventure\zookeeper.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -864,7 +864,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\lemon.jpg</System:String>
+<System:String>Halloventure\lemon.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -896,7 +896,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\lemonmsg.jpg</System:String>
+<System:String>Halloventure\lemonmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -906,7 +906,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key29">
+<Wherigo:WigoMedia key="key28">
 <Identifier>
 <System:String>zmediashampoo</System:String>
 </Identifier>
@@ -928,7 +928,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\shampoo.jpg</System:String>
+<System:String>Halloventure\shampoo.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -960,7 +960,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\shampoomsg.jpg</System:String>
+<System:String>Halloventure\shampoomsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -970,7 +970,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key55">
+<Wherigo:WigoMedia key="key54">
 <Identifier>
 <System:String>zmediahappypig</System:String>
 </Identifier>
@@ -992,7 +992,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\happypig.jpg</System:String>
+<System:String>Halloventure\happypig.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1002,7 +1002,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key56">
+<Wherigo:WigoMedia key="key55">
 <Identifier>
 <System:String>zmediahappypigmsg</System:String>
 </Identifier>
@@ -1024,7 +1024,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\happypigmsg.jpg</System:String>
+<System:String>Halloventure\happypigmsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1034,7 +1034,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key33">
+<Wherigo:WigoMedia key="key32">
 <Identifier>
 <System:String>zmediasilverbackgorilla</System:String>
 </Identifier>
@@ -1056,7 +1056,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\silverbackgorilla.jpg</System:String>
+<System:String>Halloventure\silverbackgorilla.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1066,7 +1066,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key12">
+<Wherigo:WigoMedia key="key11">
 <Identifier>
 <System:String>zmediasilverbackgorillamsg</System:String>
 </Identifier>
@@ -1088,7 +1088,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\silverbackgorillamsg.jpg</System:String>
+<System:String>Halloventure\silverbackgorillamsg.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1098,7 +1098,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key52">
+<Wherigo:WigoMedia key="key51">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -1120,7 +1120,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\alwaysintro.mp3</System:String>
+<System:String>Halloventure\AmbientalTensionSci-fibyAugustoCasanovas.wav</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1130,7 +1130,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key54">
+<Wherigo:WigoMedia key="key53">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -1152,7 +1152,7 @@
 <System:String xsi:nil="true" />
 </Identifier>
 <Filename>
-<System:String>..\..\..\..\..\Urwigo Projects\ZooventureTutorial\Zouventure\dame Bleue.jpg</System:String>
+<System:String>Halloventure\dame Bleue.jpg</System:String>
 </Filename>
 <Directives>
 <Wherigo:WigoResourceDirectives>None</Wherigo:WigoResourceDirectives>
@@ -1162,7 +1162,7 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia key="key72">
+<Wherigo:WigoMedia key="key71">
 <Identifier>
 <System:String xsi:nil="true" />
 </Identifier>
@@ -1194,10 +1194,10 @@
 </Wherigo:WigoMedia>
 </Media>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key1" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key0" />
 </Media>
 <Zones>
-<Wherigo:WigoZone key="key18">
+<Wherigo:WigoZone key="key17">
 <Identifier>
 <System:String>zonePenguinPool</System:String>
 </Identifier>
@@ -1211,7 +1211,7 @@
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key2" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key1" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -1321,7 +1321,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key3">
+<Wherigo:WigoTask key="key2">
 <Identifier>
 <System:String>ztaskGotothePenguinPool</System:String>
 </Identifier>
@@ -1335,7 +1335,7 @@
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key2" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key1" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -1355,7 +1355,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -1365,7 +1365,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -1375,7 +1375,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -1385,7 +1385,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -1429,7 +1429,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -1462,7 +1462,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand key="key49">
+<Wherigo:WigoCommand key="key48">
 <Identifier>
 <System:String>Return</System:String>
 </Identifier>
@@ -1504,7 +1504,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key6">
+<Wherigo:WigoCharacter key="key5">
 <Identifier>
 <System:String>zcharacterBrianthePenguin</System:String>
 </Identifier>
@@ -1518,7 +1518,7 @@
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key5" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -1527,7 +1527,7 @@
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key8">
+<Wherigo:WigoCommand key="key7">
 <Identifier>
 <System:String>Take</System:String>
 </Identifier>
@@ -1559,7 +1559,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -1569,7 +1569,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer key="key16">
+<Wherigo:WigoPlayer key="key15">
 <Identifier>
 <System:String>Player</System:String>
 </Identifier>
@@ -1600,7 +1600,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key5" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -1620,7 +1620,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -1640,7 +1640,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key7" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key6" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -1673,7 +1673,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key8" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key7" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -1703,7 +1703,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key9">
+<Wherigo:WigoTask key="key8">
 <Identifier>
 <System:String>ztaskGototheTropicalRainForest</System:String>
 </Identifier>
@@ -1717,7 +1717,7 @@
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key7" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key6" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -1737,7 +1737,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -1747,7 +1747,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -1757,7 +1757,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -1767,7 +1767,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -1801,7 +1801,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone key="key32">
+<Wherigo:WigoZone key="key31">
 <Identifier>
 <System:String>zoneTropicalRainForest</System:String>
 </Identifier>
@@ -1815,7 +1815,7 @@
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key7" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key6" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -1932,7 +1932,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -1972,7 +1972,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -1992,7 +1992,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2025,7 +2025,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key30">
+<Wherigo:WigoCharacter key="key29">
 <Identifier>
 <System:String>zcharacterGorilla</System:String>
 </Identifier>
@@ -2039,7 +2039,7 @@
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -2048,7 +2048,7 @@
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key40">
+<Wherigo:WigoCommand key="key39">
 <Identifier>
 <System:String>Talk</System:String>
 </Identifier>
@@ -2095,7 +2095,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key12" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -2131,7 +2131,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key13">
+<Wherigo:WigoTask key="key12">
 <Identifier>
 <System:String>ztaskFixGorillashair</System:String>
 </Identifier>
@@ -2145,7 +2145,7 @@
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -2165,7 +2165,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -2175,7 +2175,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -2185,7 +2185,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -2195,7 +2195,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -2232,7 +2232,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key15">
+<Wherigo:WigoCharacter key="key14">
 <Identifier>
 <System:String>zcharacterJaredthePenguin</System:String>
 </Identifier>
@@ -2246,7 +2246,7 @@
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key14" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key13" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -2255,7 +2255,7 @@
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key17">
+<Wherigo:WigoCommand key="key16">
 <Identifier>
 <System:String>Take</System:String>
 </Identifier>
@@ -2297,7 +2297,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key14" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key13" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2317,7 +2317,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2337,7 +2337,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key2" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key1" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2370,7 +2370,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -2380,7 +2380,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -2397,7 +2397,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key17" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key16" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -2427,7 +2427,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -2457,7 +2457,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -2487,7 +2487,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -2507,14 +2507,14 @@
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key17" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key16" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key20">
+<Wherigo:WigoCommand key="key19">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -2551,7 +2551,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key19" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key18" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -2569,14 +2569,14 @@
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key19" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key21">
+<Wherigo:WigoCommand key="key20">
 <Identifier>
 <System:String>Return</System:String>
 </Identifier>
@@ -2618,7 +2618,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -2628,7 +2628,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -2650,7 +2650,7 @@
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -2678,7 +2678,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key21" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -2711,7 +2711,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -2721,7 +2721,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -2745,7 +2745,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -2755,7 +2755,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -2772,7 +2772,7 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key21" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -2807,12 +2807,12 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String key="key50">"Merci d'avoir rapporté les pingouins! Maintenant je peux les nourrir et tout va rentrer dans l'ordre. Tu as fais du bon boulot agent Imajieste! "</System:String>
+<System:String key="key49">"Merci d'avoir rapporté les pingouins! Maintenant je peux les nourrir et tout va rentrer dans l'ordre. Tu as fais du bon boulot agent Imajieste! "</System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2827,14 +2827,14 @@
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String key="key51">Cet épisode de Imajie vous as été offert par imajie.tv.
+<System:String key="key50">Cet épisode de Imajie vous as été offert par imajie.tv.
 
 Merci de participer!</System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key22" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key21" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -2867,7 +2867,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -2904,7 +2904,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key24">
+<Wherigo:WigoVariable key="key23">
 <Identifier>
 <System:String>penguinvar</System:String>
 </Identifier>
@@ -2935,7 +2935,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </Actions>
@@ -2963,7 +2963,7 @@ Merci de participer!</System:String>
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key21" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -2975,7 +2975,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -2992,7 +2992,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -3012,7 +3012,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key26">
+<Wherigo:WigoVariable key="key25">
 <Identifier>
 <System:String>colobusconvo</System:String>
 </Identifier>
@@ -3069,7 +3069,7 @@ Merci de participer!</System:String>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key12" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -3100,7 +3100,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -3110,7 +3110,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -3146,7 +3146,7 @@ Merci de participer!</System:String>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -3182,7 +3182,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -3215,7 +3215,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key25">
+<Wherigo:WigoTask key="key24">
 <Identifier>
 <System:String>ztaskFindJaredthePenguin</System:String>
 </Identifier>
@@ -3229,7 +3229,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key14" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key13" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -3249,7 +3249,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -3259,7 +3259,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -3269,7 +3269,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -3279,7 +3279,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -3316,7 +3316,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -3364,7 +3364,7 @@ Merci de participer!</System:String>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -3400,7 +3400,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3433,7 +3433,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -3466,7 +3466,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -3514,7 +3514,7 @@ Merci de participer!</System:String>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -3550,7 +3550,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -3583,7 +3583,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -3616,7 +3616,7 @@ Merci de participer!</System:String>
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -3671,7 +3671,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -3691,7 +3691,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -3711,7 +3711,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -3744,7 +3744,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key39">
+<Wherigo:WigoCharacter key="key38">
 <Identifier>
 <System:String>zcharacterColobus</System:String>
 </Identifier>
@@ -3758,7 +3758,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key26" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -3767,7 +3767,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key37">
+<Wherigo:WigoCommand key="key36">
 <Identifier>
 <System:String>Talk</System:String>
 </Identifier>
@@ -3814,7 +3814,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -3850,7 +3850,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -3883,7 +3883,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -3893,7 +3893,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -3913,7 +3913,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -3957,7 +3957,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -4002,7 +4002,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput key="key36">
+<Wherigo:WigoInput key="key35">
 <Identifier>
 <System:String>zinputPuzzletwo</System:String>
 </Identifier>
@@ -4043,7 +4043,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key35">
+<Wherigo:WigoVariable key="key34">
 <Identifier>
 <System:String>Jaredpuzzle</System:String>
 </Identifier>
@@ -4093,7 +4093,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem key="key31">
+<Wherigo:WigoItem key="key30">
 <Identifier>
 <System:String>zitemShampoo</System:String>
 </Identifier>
@@ -4107,7 +4107,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key29" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -4116,7 +4116,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key34">
+<Wherigo:WigoCommand key="key33">
 <Identifier>
 <System:String>UseWith</System:String>
 </Identifier>
@@ -4133,7 +4133,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoCommandTargets>List</Wherigo:WigoCommandTargets>
 </Targets>
 <WorksWith>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </WorksWith>
 <ExecuteAction>
 <Actions:EventAction>
@@ -4151,7 +4151,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -4161,7 +4161,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -4178,7 +4178,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -4188,7 +4188,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -4205,7 +4205,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </Target>
 <Property>
 <System:String>Image</System:String>
@@ -4218,7 +4218,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoMedia xsi:nil="true" ref="key33" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key32" />
 </Target>
 </Actions:ObjectExpressionAction>
 </RightContent>
@@ -4235,7 +4235,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key34" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key33" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -4265,7 +4265,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -4302,7 +4302,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key12" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -4320,7 +4320,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key34" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key33" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -4332,7 +4332,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -4372,7 +4372,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -4382,7 +4382,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -4399,7 +4399,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key34" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key33" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -4441,7 +4441,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -4461,7 +4461,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key29" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -4494,7 +4494,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -4524,7 +4524,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4539,7 +4539,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </Actions>
@@ -4580,7 +4580,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key35" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key34" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4619,7 +4619,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -4644,7 +4644,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key36" />
+<Wherigo:WigoInput xsi:nil="true" ref="key35" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -4654,7 +4654,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key36" />
+<Wherigo:WigoInput xsi:nil="true" ref="key35" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
@@ -4683,7 +4683,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -4716,7 +4716,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4769,7 +4769,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -4789,7 +4789,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -4809,7 +4809,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key14" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key13" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -4842,7 +4842,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4872,7 +4872,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4887,7 +4887,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </Actions>
@@ -4933,7 +4933,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -4966,7 +4966,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -4989,14 +4989,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key37" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key36" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key38">
+<Wherigo:WigoCommand key="key37">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -5033,7 +5033,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key28" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key27" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5051,7 +5051,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key38" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key37" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -5063,7 +5063,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key39" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key38" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -5100,7 +5100,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -5138,7 +5138,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -5171,7 +5171,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -5204,7 +5204,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -5227,14 +5227,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key40" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key39" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key42">
+<Wherigo:WigoCommand key="key41">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -5276,12 +5276,12 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String key="key41">Gorille mâle adulte. Il mange environ 30 kilos de nouriture par jour. Ça c'est environ 280 cheeseburger.</System:String>
+<System:String key="key40">Gorille mâle adulte. Il mange environ 30 kilos de nouriture par jour. Ça c'est environ 280 cheeseburger.</System:String>
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key12" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key11" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5312,7 +5312,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -5349,12 +5349,12 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String xsi:nil="true" ref="key41" />
+<System:String xsi:nil="true" ref="key40" />
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key10" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key9" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5379,7 +5379,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key42" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key41" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -5391,7 +5391,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -5428,7 +5428,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key46">
+<Wherigo:WigoCharacter key="key45">
 <Identifier>
 <System:String>zcharacterZookeeper</System:String>
 </Identifier>
@@ -5442,7 +5442,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key43" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key42" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -5451,7 +5451,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key45">
+<Wherigo:WigoCommand key="key44">
 <Identifier>
 <System:String>Talk</System:String>
 </Identifier>
@@ -5498,7 +5498,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5529,7 +5529,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key44">
+<Wherigo:WigoTask key="key43">
 <Identifier>
 <System:String>ztaskFindBrianthePenguin</System:String>
 </Identifier>
@@ -5543,7 +5543,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key5" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -5563,7 +5563,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -5573,7 +5573,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -5583,7 +5583,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -5593,7 +5593,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -5646,7 +5646,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5677,7 +5677,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -5726,7 +5726,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5762,7 +5762,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -5795,7 +5795,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -5805,7 +5805,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -5843,7 +5843,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5879,7 +5879,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -5912,7 +5912,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -5922,7 +5922,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -5960,7 +5960,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -5996,7 +5996,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6029,7 +6029,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6080,7 +6080,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -6116,7 +6116,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6149,7 +6149,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -6159,7 +6159,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -6202,7 +6202,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -6243,7 +6243,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6276,7 +6276,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6309,7 +6309,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -6319,7 +6319,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -6357,7 +6357,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -6393,7 +6393,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6426,7 +6426,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6477,7 +6477,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -6513,7 +6513,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6546,7 +6546,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6594,7 +6594,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -6630,7 +6630,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -6663,7 +6663,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -6686,7 +6686,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key45" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key44" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -6698,7 +6698,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -6725,7 +6725,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -6755,7 +6755,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -6765,7 +6765,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -6790,7 +6790,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6823,7 +6823,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6856,7 +6856,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6882,7 +6882,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -6892,7 +6892,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -6902,7 +6902,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -6912,7 +6912,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -6946,7 +6946,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -6976,7 +6976,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -6986,7 +6986,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -7003,7 +7003,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -7013,7 +7013,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -7030,7 +7030,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key39" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key38" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -7040,21 +7040,21 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
 </Actions:MoveAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key8" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key7" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key48">
+<Wherigo:WigoCommand key="key47">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -7091,7 +7091,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key47" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key46" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -7109,14 +7109,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key47" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand xsi:nil="true" ref="key49" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
 </Commands>
 <ClickAction>
 <Actions:EventAction>
@@ -7124,7 +7124,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -7141,7 +7141,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -7163,7 +7163,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -7191,7 +7191,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key49" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -7224,7 +7224,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -7234,7 +7234,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -7258,7 +7258,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -7268,7 +7268,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -7285,7 +7285,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key49" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -7320,12 +7320,12 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String xsi:nil="true" ref="key50" />
+<System:String xsi:nil="true" ref="key49" />
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key3" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -7340,12 +7340,12 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Value>
-<System:String xsi:nil="true" ref="key51" />
+<System:String xsi:nil="true" ref="key50" />
 </Value>
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key22" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key21" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -7378,7 +7378,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -7415,7 +7415,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -7430,7 +7430,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </Actions>
@@ -7458,7 +7458,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key49" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -7492,7 +7492,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key21" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -7512,7 +7512,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -7522,7 +7522,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -7532,7 +7532,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -7552,14 +7552,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoMedia xsi:nil="true" ref="key52" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key51" />
 </Target>
 </Actions:ObjectExpressionAction>
 </SoundContent>
 </Actions:PlayAudioAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -7569,14 +7569,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key18" />
+<Wherigo:WigoZone xsi:nil="true" ref="key17" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
 </Wherigo:WigoZone>
 </Zones>
 <Zones>
-<Wherigo:WigoZone key="key60">
+<Wherigo:WigoZone key="key59">
 <Identifier>
 <System:String>zoneTemperateForest</System:String>
 </Identifier>
@@ -7590,7 +7590,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key52" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -7700,7 +7700,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key34" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key33" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -7735,7 +7735,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key54" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -7763,7 +7763,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key57">
+<Wherigo:WigoCharacter key="key56">
 <Identifier>
 <System:String>zcharacterPig</System:String>
 </Identifier>
@@ -7777,7 +7777,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key54" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -7786,7 +7786,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key67">
+<Wherigo:WigoCommand key="key66">
 <Identifier>
 <System:String>Talk</System:String>
 </Identifier>
@@ -7833,7 +7833,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -7869,7 +7869,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -7902,7 +7902,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -7953,7 +7953,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -7989,7 +7989,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -8022,7 +8022,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -8032,7 +8032,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -8063,7 +8063,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -8091,7 +8091,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key57" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key56" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -8124,7 +8124,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -8134,7 +8134,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -8175,7 +8175,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8195,7 +8195,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8215,7 +8215,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8235,7 +8235,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key5" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8268,7 +8268,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter key="key66">
+<Wherigo:WigoCharacter key="key65">
 <Identifier>
 <System:String>zcharacterChicken</System:String>
 </Identifier>
@@ -8282,7 +8282,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>False</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key59" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -8291,7 +8291,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <Wherigo:WigoObjectLocation xsi:nil="true" />
 </ObjectLocation>
 <Commands>
-<Wherigo:WigoCommand key="key64">
+<Wherigo:WigoCommand key="key63">
 <Identifier>
 <System:String>Talk</System:String>
 </Identifier>
@@ -8338,7 +8338,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -8374,7 +8374,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -8407,7 +8407,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -8417,7 +8417,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -8448,7 +8448,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -8479,7 +8479,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -8489,7 +8489,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -8520,7 +8520,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoInput key="key62">
+<Wherigo:WigoInput key="key61">
 <Identifier>
 <System:String>zinputPuzzleone</System:String>
 </Identifier>
@@ -8561,7 +8561,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key61">
+<Wherigo:WigoVariable key="key60">
 <Identifier>
 <System:String>Brianpuzzle</System:String>
 </Identifier>
@@ -8621,7 +8621,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key5" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key4" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8641,7 +8641,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8661,7 +8661,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -8694,7 +8694,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -8704,7 +8704,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -8721,7 +8721,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -8751,7 +8751,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -8784,7 +8784,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key61" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key60" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -8823,7 +8823,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -8848,7 +8848,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key62" />
+<Wherigo:WigoInput xsi:nil="true" ref="key61" />
 </Owner>
 </Actions:EventAction>
 </GetInputAction>
@@ -8858,7 +8858,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoInput xsi:nil="true" ref="key62" />
+<Wherigo:WigoInput xsi:nil="true" ref="key61" />
 </Owner>
 </Actions:EventAction>
 </ErrorAction>
@@ -8887,7 +8887,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -8920,7 +8920,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable key="key63">
+<Wherigo:WigoVariable key="key62">
 <Identifier>
 <System:String>Chickenchat</System:String>
 </Identifier>
@@ -8989,7 +8989,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -9009,7 +9009,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -9029,7 +9029,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -9062,7 +9062,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key63" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key62" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -9077,7 +9077,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key63" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key62" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </Actions>
@@ -9123,7 +9123,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -9156,7 +9156,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key63" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key62" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -9179,14 +9179,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key64" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key63" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key65">
+<Wherigo:WigoCommand key="key64">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -9223,7 +9223,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key58" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key57" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -9241,7 +9241,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key65" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key64" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -9253,7 +9253,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key66" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key65" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -9290,7 +9290,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -9328,7 +9328,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -9361,7 +9361,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoVariable xsi:nil="true" ref="key63" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key62" />
 </Target>
 </Actions:ObjectReferenceExpressionAction>
 </LeftContent>
@@ -9384,14 +9384,14 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key67" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key66" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
 </Wherigo:WigoCommand>
 </Commands>
 <Commands>
-<Wherigo:WigoCommand key="key68">
+<Wherigo:WigoCommand key="key67">
 <Identifier>
 <System:String>Examine</System:String>
 </Identifier>
@@ -9428,7 +9428,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key56" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key55" />
 </Media>
 <Button1Text>
 <System:String xsi:nil="true" />
@@ -9446,7 +9446,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:MessageBoxAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCommand xsi:nil="true" ref="key68" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key67" />
 </Owner>
 </Actions:EventAction>
 </ExecuteAction>
@@ -9458,7 +9458,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key57" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key56" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -9475,7 +9475,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -9492,7 +9492,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key66" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key65" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -9502,7 +9502,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -9519,7 +9519,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -9529,7 +9529,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -9546,7 +9546,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key57" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key56" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -9576,7 +9576,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -9606,7 +9606,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask key="key69">
+<Wherigo:WigoTask key="key68">
 <Identifier>
 <System:String>ztaskGototheTemperateForest</System:String>
 </Identifier>
@@ -9620,7 +9620,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key52" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -9640,7 +9640,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -9650,7 +9650,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -9660,7 +9660,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -9670,7 +9670,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
@@ -9704,7 +9704,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key49" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key48" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -9734,7 +9734,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCommand xsi:nil="true" ref="key21" />
+<Wherigo:WigoCommand xsi:nil="true" ref="key20" />
 </Target>
 <Property>
 <System:String>Enabled</System:String>
@@ -9754,7 +9754,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Owner>
 </Actions:EventAction>
 </EnterAction>
@@ -9784,7 +9784,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ItemContent>
@@ -9794,7 +9794,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Target>
 </Actions:ObjectExpressionAction>
 </ContainerContent>
@@ -9811,7 +9811,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -9841,7 +9841,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -9874,7 +9874,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Target>
 <Property>
 <System:String>Complete</System:String>
@@ -9898,7 +9898,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:IfElseAction>
 </Actions>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Owner>
 </Actions:EventAction>
 </ExitAction>
@@ -9908,7 +9908,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Owner>
 </Actions:EventAction>
 </DistantAction>
@@ -9918,7 +9918,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Owner>
 </Actions:EventAction>
 </ProximityAction>
@@ -9928,56 +9928,56 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
 </Wherigo:WigoZone>
 </Zones>
 <Zones>
-<Wherigo:WigoZone xsi:nil="true" ref="key32" />
+<Wherigo:WigoZone xsi:nil="true" ref="key31" />
 </Zones>
 <Items>
-<Wherigo:WigoItem xsi:nil="true" ref="key31" />
+<Wherigo:WigoItem xsi:nil="true" ref="key30" />
 </Items>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key46" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key45" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key66" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key65" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key57" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key56" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key30" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key29" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key39" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key38" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key6" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key5" />
 </Characters>
 <Characters>
-<Wherigo:WigoCharacter xsi:nil="true" ref="key15" />
+<Wherigo:WigoCharacter xsi:nil="true" ref="key14" />
 </Characters>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key26" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key25" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key35" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key34" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key61" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key60" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key24" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key23" />
 </Variables>
 <Variables>
-<Wherigo:WigoVariable xsi:nil="true" ref="key63" />
+<Wherigo:WigoVariable xsi:nil="true" ref="key62" />
 </Variables>
 <Tasks>
-<Wherigo:WigoTask key="key71">
+<Wherigo:WigoTask key="key70">
 <Identifier>
 <System:String>ztaskCurlthePigstail</System:String>
 </Identifier>
@@ -9991,7 +9991,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Visible>
 <Image>
-<Wherigo:WigoMedia xsi:nil="true" ref="key70" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key69" />
 </Image>
 <Icon>
 <Wherigo:WigoMedia xsi:nil="true" />
@@ -10011,7 +10011,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key71" />
+<Wherigo:WigoTask xsi:nil="true" ref="key70" />
 </Owner>
 </Actions:EventAction>
 </ActiveChangedAction>
@@ -10021,7 +10021,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key71" />
+<Wherigo:WigoTask xsi:nil="true" ref="key70" />
 </Owner>
 </Actions:EventAction>
 </CompleteChangedAction>
@@ -10031,7 +10031,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key71" />
+<Wherigo:WigoTask xsi:nil="true" ref="key70" />
 </Owner>
 </Actions:EventAction>
 </CorrectStateChangedAction>
@@ -10041,38 +10041,38 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoTask xsi:nil="true" ref="key71" />
+<Wherigo:WigoTask xsi:nil="true" ref="key70" />
 </Owner>
 </Actions:EventAction>
 </ClickAction>
 </Wherigo:WigoTask>
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key9" />
+<Wherigo:WigoTask xsi:nil="true" ref="key8" />
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key25" />
+<Wherigo:WigoTask xsi:nil="true" ref="key24" />
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key44" />
+<Wherigo:WigoTask xsi:nil="true" ref="key43" />
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key3" />
+<Wherigo:WigoTask xsi:nil="true" ref="key2" />
 </Tasks>
 <Tasks>
-<Wherigo:WigoTask xsi:nil="true" ref="key13" />
+<Wherigo:WigoTask xsi:nil="true" ref="key12" />
 </Tasks>
 <Inputs>
-<Wherigo:WigoInput xsi:nil="true" ref="key62" />
+<Wherigo:WigoInput xsi:nil="true" ref="key61" />
 </Inputs>
 <Inputs>
-<Wherigo:WigoInput xsi:nil="true" ref="key36" />
+<Wherigo:WigoInput xsi:nil="true" ref="key35" />
 </Inputs>
 <Player>
-<Wherigo:WigoPlayer xsi:nil="true" ref="key16" />
+<Wherigo:WigoPlayer xsi:nil="true" ref="key15" />
 </Player>
 <Environment>
 <Wherigo:WigoEnvironment>
@@ -10097,7 +10097,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoMedia xsi:nil="true" ref="key72" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key71" />
 </Target>
 </Actions:ObjectExpressionAction>
 </SoundContent>
@@ -10124,7 +10124,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key54" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -10144,7 +10144,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key54" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -10164,7 +10164,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:ValueExpressionAction>
 </Text>
 <Media>
-<Wherigo:WigoMedia xsi:nil="true" ref="key53" />
+<Wherigo:WigoMedia xsi:nil="true" ref="key52" />
 </Media>
 </Actions:DialogEntryAction>
 </Actions>
@@ -10197,7 +10197,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 <Property>
 <System:String>Visible</System:String>
@@ -10227,7 +10227,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoZone xsi:nil="true" ref="key60" />
+<Wherigo:WigoZone xsi:nil="true" ref="key59" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -10257,7 +10257,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Target>
-<Wherigo:WigoTask xsi:nil="true" ref="key69" />
+<Wherigo:WigoTask xsi:nil="true" ref="key68" />
 </Target>
 <Property>
 <System:String>Active</System:String>
@@ -10277,7 +10277,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 </Actions:SetAction>
 </Actions>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </StartAction>
@@ -10287,7 +10287,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </EndAction>
@@ -10297,7 +10297,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </ResumeAction>
@@ -10307,7 +10307,7 @@ Je ne fait plus confiance à personne pour la coiffure de mes poils "</System:St
 <System:Boolean>True</System:Boolean>
 </Enabled>
 <Owner>
-<Wherigo:WigoCartridge xsi:nil="true" ref="key23" />
+<Wherigo:WigoCartridge xsi:nil="true" ref="key22" />
 </Owner>
 </Actions:EventAction>
 </SaveAction>

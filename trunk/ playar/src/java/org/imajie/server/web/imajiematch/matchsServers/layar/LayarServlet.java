@@ -1592,7 +1592,7 @@ public class LayarServlet extends HttpServlet {
 
 
                 if (!Dodialog
-                        && !DoplayMediaCall) {
+                        && !DoplayMediaCall && !gameStarted.contains("Occupons")) {
                     //RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
                     //   **************************************************************************
@@ -2014,6 +2014,369 @@ public class LayarServlet extends HttpServlet {
 
                         }
                     }
+
+
+                }
+
+                
+                
+                if (!Dodialog
+                        && !DoplayMediaCall && gameStarted.contains("Occupons")) {
+                    //*****************************************************************************
+                    //             ***Initial Mission ***
+                    //                Mission Occupons
+                    //*****************************************************************************
+                    //*****************************************************************************
+                    //
+                    //                Set  Zone POIS
+                    //
+                    //*****************************************************************************
+
+
+                    String zoneList = session.getAttribute("zoneList").toString();
+
+                    String list = (String) session.getAttribute("tasksList");
+
+                    String dameBleueLatitude = "";
+                    String dameBleueLongitude = "";
+
+                    String delimiter = "\\|!\\|";
+                    String[] temp = zoneList.split(delimiter);
+                    for (int i = 0; i < temp.length; i++) {
+                        if (i == 0) {
+                        } else {
+
+                            if (temp[i] != null) {
+
+
+                                String title = "";
+                                String description = "";
+                                String hotspotAltitude = "";
+                                String hotspotLatitude = "";
+                                String hotspotLongitude = "";
+                                String hotspotDistance = "";
+                                String frienddlyDistance = "";
+
+                                String hotspot = temp[i];
+                                String delimiter2 = "\\|\\|";
+                                String[] temp2 = hotspot.split(delimiter2);
+                                String media = "";
+
+                                for (int ii = 0; ii < temp2.length; ii++) {
+                                    if (ii == 0) {
+                                        title = temp2[ii];
+                                    }
+                                    if (ii == 1) {
+                                        description = temp2[ii];
+                                    }
+                                    if (ii == 2) {
+                                        hotspotAltitude = temp2[ii];
+                                    }
+                                    if (ii == 3) {
+                                        hotspotLatitude = temp2[ii];
+                                        dameBleueLatitude = temp2[ii];
+                                    }
+                                    if (ii == 4) {
+                                        hotspotLongitude = temp2[ii];
+                                        dameBleueLongitude = temp2[ii];
+                                    }
+                                    if (ii == 5) {
+                                        hotspotDistance = temp2[ii];
+                                    }
+                                    if (ii == 6) {
+                                        frienddlyDistance = temp2[ii];
+                                    }
+                                    if (ii == 7) {
+                                        media = temp2[ii];
+                                    }
+                                }
+
+
+                               
+
+
+                                    JSONObject poi = new JSONObject();
+                                    count++;
+
+                                    //String[] matchPois = new String[4];
+
+
+                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                    //"anchor": { "referenceImage": "myFirstImage" }
+
+                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                    //"anchor": "geo:52.3,4.5"
+
+
+                                    poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                    poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+
+                                    JSONObject text = new JSONObject();
+                                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                    text.accumulate("description", description);
+                                    text.accumulate("footnote", footnote);
+                                    poi.accumulate("text", text);
+
+
+                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+
+                                    if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+
+                                        poi.accumulate("doNotIndex", false);
+                                    } else {
+
+                                        poi.accumulate("doNotIndex", true);
+                                    }
+                                    poi.accumulate("inFocus", false);
+
+                                    poi.accumulate("showSmallBiw", true);
+
+                                    poi.accumulate("showBiwOnClick", true);
+
+
+
+                                    JSONObject icon = new JSONObject();
+                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    icon.accumulate("type", 0);
+                                    poi.accumulate("icon", icon);
+
+
+                                    // Forces the POI's BIW style to "classic" or "collapsed". 
+                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                    //if the POI is a Vision enabled POI.
+                                    poi.accumulate("biwStyle", "classic");
+
+
+
+                                    // Actions
+                                    JSONArray actions = new JSONArray();
+                                    JSONObject action1 = new JSONObject();
+                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/occupy.jsp?zoneOccupied=" + gameStarted);
+                                    action1.accumulate("label", title);
+
+                                    // contenType
+                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                    action1.accumulate("contentType", "text/html");
+                                    action1.accumulate("method", "GET");
+                                    action1.accumulate("activityType", 6);
+
+                                    action1.accumulate("params", null);
+                                    action1.accumulate("closeBiw", true);
+                                    action1.accumulate("showActivity", false);
+                                    action1.accumulate("activityMessage", "");
+                                    //action1.accumulate("autoTriggerRange", "10");
+                                    action1.accumulate("autoTriggerOnly ", false);
+                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                    actions.add(action1);
+
+
+                                    poi.accumulate("actions", actions);
+
+                                    // Transform values
+                                    JSONObject transform = new JSONObject();
+            
+                                    transform.accumulate("scale", 10.0);
+//                                    JSONObject translate = new JSONObject();
+//                                    translate.accumulate("x", "0.0");
+//                                    translate.accumulate("y", "0.0");
+//                                    translate.accumulate("z", "20.0");
+//                                    transform.accumulate("translate",translate);
+                                   //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
+                                    JSONObject rotate = new JSONObject();
+                                    JSONObject axis = new JSONObject();
+                                    axis.accumulate("x", 0);
+                                    axis.accumulate("y", 0);
+                                    axis.accumulate("z", 1);
+                                    rotate.accumulate("axis", axis);
+                                    rotate.accumulate("angle", 0);
+                                    rotate.accumulate("rel", true);
+ 
+                                    transform.accumulate("rotate",rotate);
+                                    poi.accumulate("transform", transform);
+
+                                    // Transform values
+                                    JSONObject object = new JSONObject();
+                                    // Content type of the object. Can be one of the following:
+
+                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                    //   model/vnd.layar.l3d for 3D models
+                                    //   image/jpeg, image/gif, image/png for images
+
+                                    if (media.contains(".jpg")) {
+                                        object.accumulate("contentType", "image/jpeg");
+
+                                    } else {
+                                        object.accumulate("contentType", "image/png");
+
+                                    }
+                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    object.accumulate("size", 10.00);
+                                    poi.accumulate("object", object);
+
+                                    
+                                    hotspots.add(poi);
+                                
+
+                            }
+                            
+                            //********************************************************************************************
+                            //********************************************************************************************
+                            //
+                            //                  Placer la Dame Bleue au - dessus de toute mission occupy
+                            //
+                            //********************************************************************************************
+                            
+                            
+                            
+
+                                    JSONObject poi = new JSONObject();
+                                    count++;
+
+                                    //String[] matchPois = new String[4];
+
+
+                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                    //"anchor": { "referenceImage": "myFirstImage" }
+
+                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                    //"anchor": "geo:52.3,4.5"
+
+
+                                    poi.accumulate("id", "Dame Bleue Occupy");
+                                    poi.accumulate("anchor", "geo:" + dameBleueLatitude + "," + dameBleueLongitude + "");
+
+                                    JSONObject text = new JSONObject();
+                                    text.accumulate("title", "Dame Bleue");
+                                    text.accumulate("description", "");
+                                    text.accumulate("footnote", footnote);
+                                    poi.accumulate("text", text);
+
+
+                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=Dame Bleue.png");
+
+                                   
+
+                                    poi.accumulate("doNotIndex", false);
+                                    
+                                    poi.accumulate("inFocus", false);
+
+                                    poi.accumulate("showSmallBiw", true);
+
+                                    poi.accumulate("showBiwOnClick", true);
+
+
+
+                                    JSONObject icon = new JSONObject();
+                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
+                                    icon.accumulate("type", 0);
+                                    poi.accumulate("icon", icon);
+
+
+                                    // Forces the POI's BIW style to "classic" or "collapsed". 
+                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                    //if the POI is a Vision enabled POI.
+                                    poi.accumulate("biwStyle", "classic");
+
+
+
+                                    // Actions
+//                                    JSONArray actions = new JSONArray();
+//                                    JSONObject action1 = new JSONObject();
+//                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/occupy.jsp?zoneOccupied=" + gameStarted);
+//                                    action1.accumulate("label", title + detailsLabel);
+//
+//                                    // contenType
+//                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+//                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+//                                    action1.accumulate("contentType", "text/html");
+//                                    action1.accumulate("method", "GET");
+//                                    action1.accumulate("activityType", 6);
+//
+//                                    action1.accumulate("params", null);
+//                                    action1.accumulate("closeBiw", true);
+//                                    action1.accumulate("showActivity", false);
+//                                    action1.accumulate("activityMessage", "");
+//                                    //action1.accumulate("autoTriggerRange", "10");
+//                                    action1.accumulate("autoTriggerOnly ", false);
+//                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+//
+//                                    actions.add(action1);
+//
+//
+//                                    poi.accumulate("actions", actions);
+
+                                    // Transform values
+                                    JSONObject transform = new JSONObject();
+                                    //transform.accumulate("rotate", "");
+                                    //transform.accumulate("translate", "");
+                                    // "translate": { "x": 2, "y": 3, "z": 1 }
+                                    transform.accumulate("scale", 10.0);
+                                    
+                                    JSONObject translate = new JSONObject();
+                                    translate.accumulate("x", 0.0);
+                                    translate.accumulate("y", 0.0);
+                                    translate.accumulate("z", 125.0);
+                                    transform.accumulate("translate",translate);
+                                   //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
+                                    JSONObject rotate = new JSONObject();
+                                    JSONObject axis = new JSONObject();
+                                    axis.accumulate("x", 0);
+                                    axis.accumulate("y", 0);
+                                    axis.accumulate("z", 1);
+                                    rotate.accumulate("axis", axis);
+                                    rotate.accumulate("angle", 0);
+                                    rotate.accumulate("rel", true);
+ 
+                                    transform.accumulate("rotate",rotate);
+                                    poi.accumulate("transform", transform);
+
+                                    // Transform values
+                                    JSONObject object = new JSONObject();
+                                    // Content type of the object. Can be one of the following:
+
+                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                    //   model/vnd.layar.l3d for 3D models
+                                    //   image/jpeg, image/gif, image/png for images
+
+                                    
+                                    object.accumulate("contentType", "image/png");
+
+                                    
+                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
+                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                    object.accumulate("size", 18.00);
+                                    poi.accumulate("object", object);
+
+                                    
+                                    hotspots.add(poi);
+                            
+                         
+                            
+                            
+                        }
+
+                    }
+                    //*************************************************************************************************************
+                    //
+                    //         TODO Function to display the Avatar of people virtualy in place from on POI to display all the folks
+                    //
+                    //**************************************************************************************************************
+               
 
 
                 }

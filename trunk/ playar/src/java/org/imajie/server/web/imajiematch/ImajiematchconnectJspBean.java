@@ -20,7 +20,6 @@ package org.imajie.server.web.imajiematch;
  *
  * @author Carl Tremblay <carl_tremblay at imajie.tv>
  */
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,19 +28,12 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Serializable;
 import java.io.Writer;
-import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import javax.servlet.http.HttpServletRequest;
-import org.w3c.dom.Document;
-import org.w3c.dom.*;
 import org.imajie.server.web.Constants;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 public class ImajiematchconnectJspBean implements Serializable {
 

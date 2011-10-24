@@ -199,7 +199,7 @@ public class LayarServlet extends HttpServlet {
         session.setAttribute("accuracy", Utils.getDouble(request, "accuracy", 1));
 
         String username = "";
-        String radiusSession = "10000";
+        String radiusSession = "40000";
         // TODO implements practice and team-playing in layar
         String practice = "true";
         String gameType = "stand-alone";
@@ -513,11 +513,18 @@ public class LayarServlet extends HttpServlet {
                         JSONObject transform = new JSONObject();
                         //transform.accumulate("rotate", "");
                         //transform.accumulate("translate", "");
-                        transform.accumulate("scale", "1.0");
+                        transform.accumulate("scale", "10.0");
+                        JSONObject rotate = new JSONObject();
+                        JSONObject axis = new JSONObject();
+                        axis.accumulate("x", 0);
+                        axis.accumulate("y", 0);
+                        axis.accumulate("z", 1);
+                        rotate.accumulate("axis", axis);
+                        rotate.accumulate("angle", 0);
+                        rotate.accumulate("rel", true);
+
+                        transform.accumulate("rotate", rotate);
                         poi.accumulate("transform", transform);
-
-
-
 
                         // Transform values
                         JSONObject object = new JSONObject();
@@ -540,10 +547,9 @@ public class LayarServlet extends HttpServlet {
                             object.accumulate("contentType", "image/png");
                             object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashid.png");
                             // object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + cartridgeDetails[0] + "&icon=splashidsmall.jpg");
-                            object.accumulate("size", "1.0");
+                            object.accumulate("size", "15.0");
                         }
 
-                        //object.accumulate("size", "1.00");
                         poi.accumulate("object", object);
 
                         hotspots.add(poi);
@@ -554,7 +560,7 @@ public class LayarServlet extends HttpServlet {
             }
 
         } else {
-            
+
             RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
 
 
@@ -711,7 +717,7 @@ public class LayarServlet extends HttpServlet {
                 inventoryAction1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 inventoryActions.add(inventoryAction1);
-                
+
                 JSONObject inventoryAction2 = new JSONObject();
                 inventoryAction2.accumulate("uri", Constants.URL_SERVER + "layar://");
                 inventoryAction2.accumulate("label", missionLabel);
@@ -733,6 +739,16 @@ public class LayarServlet extends HttpServlet {
                 // Transform values
                 JSONObject inventoryTransform = new JSONObject();
                 inventoryTransform.accumulate("scale", "1.0");
+                JSONObject inventoryRotate = new JSONObject();
+                JSONObject inventoryAxis = new JSONObject();
+                inventoryAxis.accumulate("x", 0);
+                inventoryAxis.accumulate("y", 0);
+                inventoryAxis.accumulate("z", 1);
+                inventoryRotate.accumulate("axis", inventoryAxis);
+                inventoryRotate.accumulate("angle", 0);
+                inventoryRotate.accumulate("rel", true);
+
+                inventoryTransform.accumulate("rotate", inventoryRotate);
                 inventoryPoi.accumulate("transform", inventoryTransform);
 
                 // Transform values
@@ -740,7 +756,7 @@ public class LayarServlet extends HttpServlet {
 
                 inventoryObject.accumulate("contentType", "image/png");
                 inventoryObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/inventory.jsp");
-                inventoryObject.accumulate("size", "1.00");
+                inventoryObject.accumulate("size", "5.00");
                 inventoryPoi.accumulate("object", inventoryObject);
 
                 hotspots.add(inventoryPoi);
@@ -761,8 +777,8 @@ public class LayarServlet extends HttpServlet {
                 youseePoi.accumulate("id", "yousee");
                 youseePoi.accumulate("anchor", "geo:" + youseeLatitude + "," + youseeLongitude + "");
 
-                JSONObject youseeText = new JSONObject();    
-                
+                JSONObject youseeText = new JSONObject();
+
                 String YouseeCount = "";
                 if (session.getAttribute("youseeList") != null) {
 
@@ -901,12 +917,22 @@ public class LayarServlet extends HttpServlet {
                 youseeAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 youseeActions.add(youseeAction2);
-                
+
                 youseePoi.accumulate("actions", youseeActions);
 
                 // Transform values
                 JSONObject youseeTransform = new JSONObject();
                 youseeTransform.accumulate("scale", "1.0");
+                JSONObject youseeRotate = new JSONObject();
+                JSONObject youseeAxis = new JSONObject();
+                youseeAxis.accumulate("x", 0);
+                youseeAxis.accumulate("y", 0);
+                youseeAxis.accumulate("z", 1);
+                youseeRotate.accumulate("axis", youseeAxis);
+                youseeRotate.accumulate("angle", 0);
+                youseeRotate.accumulate("rel", true);
+
+                youseeTransform.accumulate("rotate", youseeRotate);
                 youseePoi.accumulate("transform", youseeTransform);
 
                 // Transform values
@@ -914,7 +940,7 @@ public class LayarServlet extends HttpServlet {
 
                 youseeObject.accumulate("contentType", "image/png");
                 youseeObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/yousee.jsp");
-                youseeObject.accumulate("size", "1.00");
+                youseeObject.accumulate("size", "5.00");
                 youseePoi.accumulate("object", youseeObject);
 
                 hotspots.add(youseePoi);
@@ -935,8 +961,8 @@ public class LayarServlet extends HttpServlet {
                 locationsPoi.accumulate("anchor", "geo:" + locationsLatitude + "," + locationsLongitude + "");
 
                 JSONObject locationsText = new JSONObject();
-    
-                
+
+
                 String LocationsCount = "";
                 if (session.getAttribute("locationsList") != null) {
 
@@ -955,9 +981,9 @@ public class LayarServlet extends HttpServlet {
 
                 }
 
-               
-                locationsText.accumulate("title", locationsTitle+ " (" + LocationsCount + ")");
-                
+
+                locationsText.accumulate("title", locationsTitle + " (" + LocationsCount + ")");
+
                 String locationsList = "";
                 if (session.getAttribute("locationsList") != null) {
 
@@ -1029,7 +1055,7 @@ public class LayarServlet extends HttpServlet {
                 }
 
                 locationsText.accumulate("description", locationsList);
-    
+
                 locationsText.accumulate("footnote", footnote);
                 locationsPoi.accumulate("text", locationsText);
                 locationsPoi.accumulate("imageUrl", Constants.URL_SERVER + "/imajiematch/images/compass.png");
@@ -1077,12 +1103,22 @@ public class LayarServlet extends HttpServlet {
                 locationsAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 locationsActions.add(locationsAction2);
-                
+
                 locationsPoi.accumulate("actions", locationsActions);
 
                 // Transform values
                 JSONObject locationsTransform = new JSONObject();
                 locationsTransform.accumulate("scale", "1.0");
+                JSONObject locationsRotate = new JSONObject();
+                JSONObject locationsAxis = new JSONObject();
+                locationsAxis.accumulate("x", 0);
+                locationsAxis.accumulate("y", 0);
+                locationsAxis.accumulate("z", 1);
+                locationsRotate.accumulate("axis", locationsAxis);
+                locationsRotate.accumulate("angle", 0);
+                locationsRotate.accumulate("rel", true);
+
+                locationsTransform.accumulate("rotate", locationsRotate);
                 locationsPoi.accumulate("transform", locationsTransform);
 
                 // Transform values
@@ -1090,7 +1126,7 @@ public class LayarServlet extends HttpServlet {
 
                 locationsObject.accumulate("contentType", "image/png");
                 locationsObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/locations.jsp");
-                locationsObject.accumulate("size", "1.00");
+                locationsObject.accumulate("size", "5.00");
                 locationsPoi.accumulate("object", locationsObject);
 
                 hotspots.add(locationsPoi);
@@ -1111,16 +1147,16 @@ public class LayarServlet extends HttpServlet {
 
 
                 JSONObject tasksText = new JSONObject();
-                
-                
-                
-                
-               
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
                 String TasksCount = "";
                 if (session.getAttribute("tasksList") != null) {
 
@@ -1139,9 +1175,9 @@ public class LayarServlet extends HttpServlet {
 
                 }
 
-                tasksText.accumulate("title", tasksTitle+ " (" + TasksCount + ")");
-             
-                
+                tasksText.accumulate("title", tasksTitle + " (" + TasksCount + ")");
+
+
                 String tasksList = "";
                 if (session.getAttribute("tasksList") != null) {
 
@@ -1212,8 +1248,8 @@ public class LayarServlet extends HttpServlet {
 
                 }
 
-             
-                
+
+
                 tasksText.accumulate("description", tasksList);
                 tasksText.accumulate("footnote", footnote);
                 tasksPoi.accumulate("text", tasksText);
@@ -1262,12 +1298,22 @@ public class LayarServlet extends HttpServlet {
                 tasksAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 tasksActions.add(tasksAction2);
-                
+
                 tasksPoi.accumulate("actions", tasksActions);
 
                 // Transform values
                 JSONObject tasksTransform = new JSONObject();
                 tasksTransform.accumulate("scale", "1.0");
+                JSONObject tasksRotate = new JSONObject();
+                JSONObject tasksAxis = new JSONObject();
+                tasksAxis.accumulate("x", 0);
+                tasksAxis.accumulate("y", 0);
+                tasksAxis.accumulate("z", 1);
+                tasksRotate.accumulate("axis", tasksAxis);
+                tasksRotate.accumulate("angle", 0);
+                tasksRotate.accumulate("rel", true);
+
+                tasksTransform.accumulate("rotate", tasksRotate);
                 tasksPoi.accumulate("transform", tasksTransform);
 
                 // Transform values
@@ -1275,7 +1321,7 @@ public class LayarServlet extends HttpServlet {
 
                 tasksObject.accumulate("contentType", "image/png");
                 tasksObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/tasks.jsp");
-                tasksObject.accumulate("size", "1.00");
+                tasksObject.accumulate("size", "5.00");
                 tasksPoi.accumulate("object", tasksObject);
 
                 hotspots.add(tasksPoi);
@@ -1344,12 +1390,22 @@ public class LayarServlet extends HttpServlet {
                 parametersAction2.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
 
                 parametersActions.add(parametersAction2);
-                
+
                 parametersPoi.accumulate("actions", parametersActions);
 
                 // Transform values
                 JSONObject parametersTransform = new JSONObject();
-                parametersTransform.accumulate("scale", "1.0");
+                parametersTransform.accumulate("scale", "10.0");
+                JSONObject parametersRotate = new JSONObject();
+                JSONObject parametersAxis = new JSONObject();
+                parametersAxis.accumulate("x", 0);
+                parametersAxis.accumulate("y", 0);
+                parametersAxis.accumulate("z", 1);
+                parametersRotate.accumulate("axis", parametersAxis);
+                parametersRotate.accumulate("angle", 0);
+                parametersRotate.accumulate("rel", true);
+
+                parametersTransform.accumulate("rotate", parametersRotate);
                 parametersPoi.accumulate("transform", parametersTransform);
 
                 // Transform values
@@ -1357,7 +1413,7 @@ public class LayarServlet extends HttpServlet {
 
                 parametersObject.accumulate("contentType", "image/png");
                 parametersObject.accumulate("url", Constants.URL_SERVER + "/imajiematch/parameters.jsp");
-                parametersObject.accumulate("size", "1.00");
+                parametersObject.accumulate("size", "5.00");
                 parametersPoi.accumulate("object", parametersObject);
 
                 hotspots.add(parametersPoi);
@@ -1377,7 +1433,7 @@ public class LayarServlet extends HttpServlet {
 
 
                 //RefreshMatchsJspBean.layarRefresh(gameStarted, username, request);
-                
+
 
                 if (session.getAttribute("playMediaCallPlayed") == null) {
 
@@ -1412,12 +1468,12 @@ public class LayarServlet extends HttpServlet {
                     }
 
                     if (!session.getAttribute("DIALOG").toString().equals(session.getAttribute("dialogPlayed").toString()) && !DoplayMediaCall) {
-                            
-                        if (   session.getAttribute("showDialog").toString().contains("null") ||  session.getAttribute("showDialog").toString().contains(".On") || session.getAttribute("DIALOG").toString().contains("<input type='text' name='answer'")) {
 
-                        dialog = session.getAttribute("DIALOG").toString();
-                        session.setAttribute("dialogPlayed", dialog);
-                        Dodialog = true;
+                        if (session.getAttribute("showDialog").toString().contains("null") || session.getAttribute("showDialog").toString().contains(".On") || session.getAttribute("DIALOG").toString().contains("<input type='text' name='answer'")) {
+
+                            dialog = session.getAttribute("DIALOG").toString();
+                            session.setAttribute("dialogPlayed", dialog);
+                            Dodialog = true;
                         }
 
                     } else {
@@ -1432,13 +1488,13 @@ public class LayarServlet extends HttpServlet {
                     currentEvent = session.getAttribute("CURRENTEVENT").toString();
 
 
-                    if (currentEvent.contains("OnEnter") ) {
+                    if (currentEvent.contains("OnEnter")) {
                         currentInsideZone = currentEvent;
-                        
+
                     }
-                    if (currentEvent.contains("OnExit") ) {
+                    if (currentEvent.contains("OnExit")) {
                         currentInsideZone = "";
-                        
+
                     }
                 }
 
@@ -1555,7 +1611,7 @@ public class LayarServlet extends HttpServlet {
 
                     JSONObject poi = new JSONObject();
 
-                    poi.accumulate("id", session.getAttribute("dialogTexts").toString()+latitude+longitude);
+                    poi.accumulate("id", session.getAttribute("dialogTexts").toString() + latitude + longitude);
 
 
 
@@ -1752,6 +1808,16 @@ public class LayarServlet extends HttpServlet {
                                     //transform.accumulate("rotate", "");
                                     //transform.accumulate("translate", "");
                                     transform.accumulate("scale", "1.0");
+                                    JSONObject rotate = new JSONObject();
+                                    JSONObject axis = new JSONObject();
+                                    axis.accumulate("x", 0);
+                                    axis.accumulate("y", 0);
+                                    axis.accumulate("z", 1);
+                                    rotate.accumulate("axis", axis);
+                                    rotate.accumulate("angle", 0);
+                                    rotate.accumulate("rel", true);
+
+                                    transform.accumulate("rotate", rotate);
                                     poi.accumulate("transform", transform);
 
                                     // Transform values
@@ -1771,7 +1837,7 @@ public class LayarServlet extends HttpServlet {
                                     }
                                     object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
                                     //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", "1.00");
+                                    object.accumulate("size", "10.00");
                                     poi.accumulate("object", object);
 
                                     hotspots.add(poi);
@@ -1931,10 +1997,10 @@ public class LayarServlet extends HttpServlet {
                                         //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
                                         action1.accumulate("contentType", "text/html");
                                         action1.accumulate("method", "GET");
-                                        
+
                                         // TODO ******* IMPORTANT *******  IMPLEMENTS LOCALES FOR THIS FUNCTION IN LAYAR
                                         // if (buttonsray[iiii].contains("Talk")) {  <------ Talk language value to locales
-                                        
+
 //                                            action1.accumulate("activityType", 33);
 //                                            
 //                                        } else if (buttonsray[iiii].contains("Examine")) { <------ Examine language value to locales
@@ -1946,22 +2012,22 @@ public class LayarServlet extends HttpServlet {
 //                                            action1.accumulate("activityType", 0);
 //                                        
 //                                        }
-                                        
-                                        if (buttonsray[iiii].contains("Talk")) { 
-                                        
+
+                                        if (buttonsray[iiii].contains("Talk")) {
+
                                             action1.accumulate("activityType", 33);
-                                            
+
                                         } else if (buttonsray[iiii].contains("Examine")) {
-                                        
+
                                             action1.accumulate("activityType", 27);
-                                            
-                                        } else { 
-                                        
+
+                                        } else {
+
                                             action1.accumulate("activityType", 0);
-                                        
+
                                         }
-                                        
-                                        
+
+
 
                                         action1.accumulate("params", null);
                                         action1.accumulate("closeBiw", true);
@@ -1983,6 +2049,16 @@ public class LayarServlet extends HttpServlet {
                                     //transform.accumulate("rotate", "");
                                     //transform.accumulate("translate", "");
                                     transform.accumulate("scale", "1.0");
+                                    JSONObject rotate = new JSONObject();
+                                    JSONObject axis = new JSONObject();
+                                    axis.accumulate("x", 0);
+                                    axis.accumulate("y", 0);
+                                    axis.accumulate("z", 1);
+                                    rotate.accumulate("axis", axis);
+                                    rotate.accumulate("angle", 0);
+                                    rotate.accumulate("rel", true);
+
+                                    transform.accumulate("rotate", rotate);
                                     poi.accumulate("transform", transform);
 
                                     // Transform values
@@ -2002,7 +2078,7 @@ public class LayarServlet extends HttpServlet {
                                     }
                                     object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
                                     //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", "1.00");
+                                    object.accumulate("size", "5.00");
                                     poi.accumulate("object", object);
 
                                     hotspots.add(poi);
@@ -2018,8 +2094,8 @@ public class LayarServlet extends HttpServlet {
 
                 }
 
-                
-                
+
+
                 if (!Dodialog
                         && !DoplayMediaCall && gameStarted.contains("Occupons")) {
                     //*****************************************************************************
@@ -2092,209 +2168,209 @@ public class LayarServlet extends HttpServlet {
                                 }
 
 
-                               
-
-
-                                    JSONObject poi = new JSONObject();
-                                    count++;
-
-                                    //String[] matchPois = new String[4];
-
-
-                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
-
-                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
-
-                                    //"anchor": { "referenceImage": "myFirstImage" }
-
-                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
-
-                                    //"anchor": "geo:52.3,4.5"
-
-
-                                    poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
-                                    poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
-
-                                    JSONObject text = new JSONObject();
-                                    text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
-                                    text.accumulate("description", description);
-                                    text.accumulate("footnote", footnote);
-                                    poi.accumulate("text", text);
-
-
-                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-
-                                    if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
-
-                                        poi.accumulate("doNotIndex", false);
-                                    } else {
-
-                                        poi.accumulate("doNotIndex", true);
-                                    }
-                                    poi.accumulate("inFocus", false);
-
-                                    poi.accumulate("showSmallBiw", true);
-
-                                    poi.accumulate("showBiwOnClick", true);
 
 
 
-                                    JSONObject icon = new JSONObject();
-                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    icon.accumulate("type", 0);
-                                    poi.accumulate("icon", icon);
+                                JSONObject poi = new JSONObject();
+                                count++;
+
+                                //String[] matchPois = new String[4];
 
 
-                                    // Forces the POI's BIW style to "classic" or "collapsed". 
-                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
-                                    //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "classic");
+                                //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                                //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                                //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                                //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                                //"anchor": { "referenceImage": "myFirstImage" }
+
+                                //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                                //"anchor": "geo:52.3,4.5"
+
+
+                                poi.accumulate("id", StringEscapeUtils.escapeJavaScript(title));
+                                poi.accumulate("anchor", "geo:" + hotspotLatitude + "," + hotspotLongitude + "");
+
+                                JSONObject text = new JSONObject();
+                                text.accumulate("title", StringEscapeUtils.escapeJavaScript(title));
+                                text.accumulate("description", description);
+                                text.accumulate("footnote", footnote);
+                                poi.accumulate("text", text);
+
+
+                                poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+
+                                if (gameStarted.equals("none") || gameStarted.equals("SERVER_FULL") || gameStarted.equals("ALREADY_PLAYING")) {
+
+                                    poi.accumulate("doNotIndex", false);
+                                } else {
+
+                                    poi.accumulate("doNotIndex", true);
+                                }
+                                poi.accumulate("inFocus", false);
+
+                                poi.accumulate("showSmallBiw", true);
+
+                                poi.accumulate("showBiwOnClick", true);
 
 
 
-                                    // Actions
-                                    JSONArray actions = new JSONArray();
-                                    JSONObject action1 = new JSONObject();
-                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/occupy.jsp?zoneOccupied=" + gameStarted);
-                                    action1.accumulate("label", title);
-
-                                    // contenType
-                                    //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
-                                    //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
-                                    action1.accumulate("contentType", "text/html");
-                                    action1.accumulate("method", "GET");
-                                    action1.accumulate("activityType", 6);
-
-                                    action1.accumulate("params", null);
-                                    action1.accumulate("closeBiw", true);
-                                    action1.accumulate("showActivity", false);
-                                    action1.accumulate("activityMessage", "");
-                                    //action1.accumulate("autoTriggerRange", "10");
-                                    action1.accumulate("autoTriggerOnly ", false);
-                                    action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
-
-                                    actions.add(action1);
+                                JSONObject icon = new JSONObject();
+                                icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                icon.accumulate("type", 0);
+                                poi.accumulate("icon", icon);
 
 
-                                    poi.accumulate("actions", actions);
+                                // Forces the POI's BIW style to "classic" or "collapsed". 
+                                //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                                //if the POI is a Vision enabled POI.
+                                poi.accumulate("biwStyle", "classic");
 
-                                    // Transform values
-                                    JSONObject transform = new JSONObject();
-            
-                                    transform.accumulate("scale", 10.0);
+
+
+                                // Actions
+                                JSONArray actions = new JSONArray();
+                                JSONObject action1 = new JSONObject();
+                                action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/occupy.jsp?zoneOccupied=" + gameStarted);
+                                action1.accumulate("label", title);
+
+                                // contenType
+                                //"text/html", "text/plain", "audio/mpeg", "audio/mp4",
+                                //"video/3gpp", "video/mp4", "application/vnd.layar.internal", "application/vnd.layar.async".
+                                action1.accumulate("contentType", "text/html");
+                                action1.accumulate("method", "GET");
+                                action1.accumulate("activityType", 6);
+
+                                action1.accumulate("params", null);
+                                action1.accumulate("closeBiw", true);
+                                action1.accumulate("showActivity", false);
+                                action1.accumulate("activityMessage", "");
+                                //action1.accumulate("autoTriggerRange", "10");
+                                action1.accumulate("autoTriggerOnly ", false);
+                                action1.accumulate("autoTrigger ", false); // Autotrigger indicator for Vision enabled POIs. 
+
+                                actions.add(action1);
+
+
+                                poi.accumulate("actions", actions);
+
+                                // Transform values
+                                JSONObject transform = new JSONObject();
+
+                                transform.accumulate("scale", 10.0);
 //                                    JSONObject translate = new JSONObject();
 //                                    translate.accumulate("x", "0.0");
 //                                    translate.accumulate("y", "0.0");
 //                                    translate.accumulate("z", "20.0");
 //                                    transform.accumulate("translate",translate);
-                                   //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
-                                    JSONObject rotate = new JSONObject();
-                                    JSONObject axis = new JSONObject();
-                                    axis.accumulate("x", 0);
-                                    axis.accumulate("y", 0);
-                                    axis.accumulate("z", 1);
-                                    rotate.accumulate("axis", axis);
-                                    rotate.accumulate("angle", 0);
-                                    rotate.accumulate("rel", true);
- 
-                                    transform.accumulate("rotate",rotate);
-                                    poi.accumulate("transform", transform);
+                                //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
+                                JSONObject rotate = new JSONObject();
+                                JSONObject axis = new JSONObject();
+                                axis.accumulate("x", 0);
+                                axis.accumulate("y", 0);
+                                axis.accumulate("z", 1);
+                                rotate.accumulate("axis", axis);
+                                rotate.accumulate("angle", 0);
+                                rotate.accumulate("rel", true);
 
-                                    // Transform values
-                                    JSONObject object = new JSONObject();
-                                    // Content type of the object. Can be one of the following:
+                                transform.accumulate("rotate", rotate);
+                                poi.accumulate("transform", transform);
 
-                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
-                                    //   model/vnd.layar.l3d for 3D models
-                                    //   image/jpeg, image/gif, image/png for images
+                                // Transform values
+                                JSONObject object = new JSONObject();
+                                // Content type of the object. Can be one of the following:
 
-                                    if (media.contains(".jpg")) {
-                                        object.accumulate("contentType", "image/jpeg");
+                                //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                                //   model/vnd.layar.l3d for 3D models
+                                //   image/jpeg, image/gif, image/png for images
 
-                                    } else {
-                                        object.accumulate("contentType", "image/png");
+                                if (media.contains(".jpg")) {
+                                    object.accumulate("contentType", "image/jpeg");
 
-                                    }
-                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", 10.00);
-                                    poi.accumulate("object", object);
+                                } else {
+                                    object.accumulate("contentType", "image/png");
 
-                                    
-                                    hotspots.add(poi);
-                                
+                                }
+                                object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                                object.accumulate("size", 10.00);
+                                poi.accumulate("object", object);
+
+
+                                hotspots.add(poi);
+
 
                             }
-                            
+
                             //********************************************************************************************
                             //********************************************************************************************
                             //
                             //                  Placer la Dame Bleue au - dessus de toute mission occupy
                             //
                             //********************************************************************************************
-                            
-                            
-                            
-
-                                    JSONObject poi = new JSONObject();
-                                    count++;
-
-                                    //String[] matchPois = new String[4];
-
-
-                                    //Placement of the POI. Can either be a geolocation or the key of a reference image 
-                                    //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
-
-                                    //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
-                                    //  Layar also supports the geo: URI scheme for specifying geolocations.
-
-                                    //"anchor": { "referenceImage": "myFirstImage" }
-
-                                    //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
-
-                                    //"anchor": "geo:52.3,4.5"
-
-
-                                    poi.accumulate("id", "Dame Bleue Occupy");
-                                    poi.accumulate("anchor", "geo:" + dameBleueLatitude + "," + dameBleueLongitude + "");
-
-                                    JSONObject text = new JSONObject();
-                                    text.accumulate("title", "Dame Bleue");
-                                    text.accumulate("description", "");
-                                    text.accumulate("footnote", footnote);
-                                    poi.accumulate("text", text);
-
-
-                                    poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=Dame Bleue.png");
-
-                                   
-
-                                    poi.accumulate("doNotIndex", false);
-                                    
-                                    poi.accumulate("inFocus", false);
-
-                                    poi.accumulate("showSmallBiw", true);
-
-                                    poi.accumulate("showBiwOnClick", true);
 
 
 
-                                    JSONObject icon = new JSONObject();
-                                    icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
-                                    icon.accumulate("type", 0);
-                                    poi.accumulate("icon", icon);
+
+                            JSONObject poi = new JSONObject();
+                            count++;
+
+                            //String[] matchPois = new String[4];
 
 
-                                    // Forces the POI's BIW style to "classic" or "collapsed". 
-                                    //Default is "classic" if the POI is a geolocated POI and "collapsed" 
-                                    //if the POI is a Vision enabled POI.
-                                    poi.accumulate("biwStyle", "classic");
+                            //Placement of the POI. Can either be a geolocation or the key of a reference image 
+                            //in Layar Vision. For geolocation, alt is optional but lat and lon are mandatory. 
+
+                            //NOTE: lat and lon are now decimal degrees instead of integer millionths of degrees.
+                            //  Layar also supports the geo: URI scheme for specifying geolocations.
+
+                            //"anchor": { "referenceImage": "myFirstImage" }
+
+                            //"anchor": { "geolocation": { "lat": 52.3, "lon": 4.5 } }
+
+                            //"anchor": "geo:52.3,4.5"
+
+
+                            poi.accumulate("id", "Dame Bleue Occupy");
+                            poi.accumulate("anchor", "geo:" + dameBleueLatitude + "," + dameBleueLongitude + "");
+
+                            JSONObject text = new JSONObject();
+                            text.accumulate("title", "Dame Bleue");
+                            text.accumulate("description", "");
+                            text.accumulate("footnote", footnote);
+                            poi.accumulate("text", text);
+
+
+                            poi.accumulate("imageUrl", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=Dame Bleue.png");
 
 
 
-                                    // Actions
+                            poi.accumulate("doNotIndex", false);
+
+                            poi.accumulate("inFocus", false);
+
+                            poi.accumulate("showSmallBiw", true);
+
+                            poi.accumulate("showBiwOnClick", true);
+
+
+
+                            JSONObject icon = new JSONObject();
+                            icon.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
+                            icon.accumulate("type", 0);
+                            poi.accumulate("icon", icon);
+
+
+                            // Forces the POI's BIW style to "classic" or "collapsed". 
+                            //Default is "classic" if the POI is a geolocated POI and "collapsed" 
+                            //if the POI is a Vision enabled POI.
+                            poi.accumulate("biwStyle", "classic");
+
+
+
+                            // Actions
 //                                    JSONArray actions = new JSONArray();
 //                                    JSONObject action1 = new JSONObject();
 //                                    action1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/occupy.jsp?zoneOccupied=" + gameStarted);
@@ -2320,54 +2396,54 @@ public class LayarServlet extends HttpServlet {
 //
 //                                    poi.accumulate("actions", actions);
 
-                                    // Transform values
-                                    JSONObject transform = new JSONObject();
-                                    //transform.accumulate("rotate", "");
-                                    //transform.accumulate("translate", "");
-                                    // "translate": { "x": 2, "y": 3, "z": 1 }
-                                    transform.accumulate("scale", 10.0);
-                                    
-                                    JSONObject translate = new JSONObject();
-                                    translate.accumulate("x", 0.0);
-                                    translate.accumulate("y", 0.0);
-                                    translate.accumulate("z", 125.0);
-                                    transform.accumulate("translate",translate);
-                                   //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
-                                    JSONObject rotate = new JSONObject();
-                                    JSONObject axis = new JSONObject();
-                                    axis.accumulate("x", 0);
-                                    axis.accumulate("y", 0);
-                                    axis.accumulate("z", 1);
-                                    rotate.accumulate("axis", axis);
-                                    rotate.accumulate("angle", 0);
-                                    rotate.accumulate("rel", true);
- 
-                                    transform.accumulate("rotate",rotate);
-                                    poi.accumulate("transform", transform);
+                            // Transform values
+                            JSONObject transform = new JSONObject();
+                            //transform.accumulate("rotate", "");
+                            //transform.accumulate("translate", "");
+                            // "translate": { "x": 2, "y": 3, "z": 1 }
+                            transform.accumulate("scale", 10.0);
 
-                                    // Transform values
-                                    JSONObject object = new JSONObject();
-                                    // Content type of the object. Can be one of the following:
+                            JSONObject translate = new JSONObject();
+                            translate.accumulate("x", 0.0);
+                            translate.accumulate("y", 0.0);
+                            translate.accumulate("z", 125.0);
+                            transform.accumulate("translate", translate);
+                            //  "rotate": { "axis": { "x": 0, "y": 0, "z": 1}, "angle": 45 , "rel": true }
+                            JSONObject rotate = new JSONObject();
+                            JSONObject axis = new JSONObject();
+                            axis.accumulate("x", 0);
+                            axis.accumulate("y", 0);
+                            axis.accumulate("z", 1);
+                            rotate.accumulate("axis", axis);
+                            rotate.accumulate("angle", 0);
+                            rotate.accumulate("rel", true);
 
-                                    //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
-                                    //   model/vnd.layar.l3d for 3D models
-                                    //   image/jpeg, image/gif, image/png for images
+                            transform.accumulate("rotate", rotate);
+                            poi.accumulate("transform", transform);
 
-                                    
-                                    object.accumulate("contentType", "image/png");
+                            // Transform values
+                            JSONObject object = new JSONObject();
+                            // Content type of the object. Can be one of the following:
 
-                                    
-                                    object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
-                                    //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
-                                    object.accumulate("size", 18.00);
-                                    poi.accumulate("object", object);
+                            //   image/vnd.layar.generic for any supported image type (PNG, GIF, JPEG)
+                            //   model/vnd.layar.l3d for 3D models
+                            //   image/jpeg, image/gif, image/png for images
 
-                                    
-                                    hotspots.add(poi);
-                            
-                         
-                            
-                            
+
+                            object.accumulate("contentType", "image/png");
+
+
+                            object.accumulate("url", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=DameBleue.png");
+                            //object.accumulate("reducedURL", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + media + "");
+                            object.accumulate("size", 18.00);
+                            poi.accumulate("object", object);
+
+
+                            hotspots.add(poi);
+
+
+
+
                         }
 
                     }
@@ -2376,7 +2452,7 @@ public class LayarServlet extends HttpServlet {
                     //         TODO Function to display the Avatar of people virtualy in place from on POI to display all the folks
                     //
                     //**************************************************************************************************************
-               
+
 
 
                 }
@@ -2387,12 +2463,12 @@ public class LayarServlet extends HttpServlet {
         JSONArray layarActions = new JSONArray();
 
 
-        //   **************************************************************************
-        //****************************************************************************
+        //**************************************************************************
+        //**************************************************************************
         //
         //       Set  the default layer buttons
         //
-        //****************************************************************************
+        //**************************************************************************
 
         String authorized = "no";
         if (session.getAttribute("authorized") != null) {
@@ -2523,74 +2599,74 @@ public class LayarServlet extends HttpServlet {
 
                     if (!"null".equals(session.getAttribute("showDialog").toString()) || session.getAttribute("showDialog").toString().length() > 5) {
 
-                    if (     !session.getAttribute("showDialog").toString().contains(".On")) {
-                        JSONObject showDialog = new JSONObject();
+                        if (!session.getAttribute("showDialog").toString().contains(".On")) {
+                            JSONObject showDialog = new JSONObject();
 
-                        showDialog.accumulate("title", "Mission : " + gameStarted + "");
-
-
-
-                        String msg = "";
+                            showDialog.accumulate("title", "Mission : " + gameStarted + "");
 
 
-                        String dialogTexts = "";
-                        String dialogMedia = "";
 
-                        if (session.getAttribute("dialogTexts") != null) {
-
-                            dialogTexts = session.getAttribute("dialogTexts").toString();
+                            String msg = "";
 
 
-                        }
+                            String dialogTexts = "";
+                            String dialogMedia = "";
+
+                            if (session.getAttribute("dialogTexts") != null) {
+
+                                dialogTexts = session.getAttribute("dialogTexts").toString();
 
 
-                        if (session.getAttribute("dialogMedia") != null) {
-
-                            dialogMedia = session.getAttribute("dialogMedia").toString();
+                            }
 
 
-                        }
+                            if (session.getAttribute("dialogMedia") != null) {
 
-                        msg = dialogTexts;
-
-                        showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
-
-                        showDialog.accumulate("description", msg);
-
-                        JSONArray messageActions = new JSONArray();
-
-                        JSONObject messageAction1 = new JSONObject();
+                                dialogMedia = session.getAttribute("dialogMedia").toString();
 
 
-                        messageAction1.accumulate("contentType", "text/html");
-                        messageAction1.accumulate("method", "GET");
-                        messageAction1.accumulate("activityType", "1");
-                        messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button1=Button1");
-                        messageAction1.accumulate("label", session.getAttribute("Button1"));
-                        //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-                        messageActions.add(messageAction1);
+                            }
+
+                            msg = dialogTexts;
+
+                            showDialog.accumulate("iconURL ", Constants.URL_SERVER + "/icon?matchtitle=" + gameStarted + "&icon=" + dialogMedia + "");
+
+                            showDialog.accumulate("description", msg);
+
+                            JSONArray messageActions = new JSONArray();
+
+                            JSONObject messageAction1 = new JSONObject();
 
 
-                        if (!session.getAttribute("Button2").toString().contains("null")) {
-                            JSONObject messageAction2 = new JSONObject();
-
-
-                            messageAction2.accumulate("contentType", "text/html");
-                            messageAction2.accumulate("method", "GET");
-                            messageAction2.accumulate("activityType", "1");
-                            messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button2=Button2");
-                            messageAction2.accumulate("label", session.getAttribute("Button2"));
+                            messageAction1.accumulate("contentType", "text/html");
+                            messageAction1.accumulate("method", "GET");
+                            messageAction1.accumulate("activityType", "1");
+                            messageAction1.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button1=Button1");
+                            messageAction1.accumulate("label", session.getAttribute("Button1"));
                             //messageAction1.accumulate("label", "Tasks (" + counts + ")");
-                            messageActions.add(messageAction2);
+                            messageActions.add(messageAction1);
+
+
+                            if (!session.getAttribute("Button2").toString().contains("null")) {
+                                JSONObject messageAction2 = new JSONObject();
+
+
+                                messageAction2.accumulate("contentType", "text/html");
+                                messageAction2.accumulate("method", "GET");
+                                messageAction2.accumulate("activityType", "1");
+                                messageAction2.accumulate("uri", Constants.URL_SERVER + "/imajiematch/dialogCallback.jsp?button2=Button2");
+                                messageAction2.accumulate("label", session.getAttribute("Button2"));
+                                //messageAction1.accumulate("label", "Tasks (" + counts + ")");
+                                messageActions.add(messageAction2);
+                            }
+
+
+                            showDialog.accumulate("actions", messageActions);
+
+
+                            layer.accumulate("showDialog", showDialog);
+                            session.setAttribute("showDialogPlayed", dialogTexts);
                         }
-
-
-                        showDialog.accumulate("actions", messageActions);
-
-
-                        layer.accumulate("showDialog", showDialog);
-                        session.setAttribute("showDialogPlayed", dialogTexts);
-                    }
                     }
                 }
             }
